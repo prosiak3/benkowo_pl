@@ -79,6 +79,8 @@
     .button-primary:hover { background: #7e422c; }
     .button-light { background: var(--paper); color: var(--ink); }
     .button-light:hover { background: #e9e5dc; }
+    .button-dark { background: var(--ink); color: var(--paper); }
+    .button-dark:hover { background: #343934; }
     .button-outline { border-color: currentColor; background: transparent; }
 
     .site-header {
@@ -118,23 +120,33 @@
         repeating-linear-gradient(90deg, rgba(245,243,237,.045) 0 1px, transparent 1px 7.5rem);
       pointer-events: none;
     }
-    .hero-inner { position: relative; min-height: min(54rem, calc(100svh - 5rem)); display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(2rem, 6vw, 7rem); align-items: center; padding-block: clamp(4rem, 9vw, 8rem); }
+    .hero-inner { position: relative; min-height: min(54rem, calc(100svh - 5rem)); display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-block: clamp(4rem, 8vw, 7rem); }
     .hero-copy { position: relative; z-index: 2; }
     .hero .eyebrow { color: #d58b68; }
     .hero h1 { max-width: 10ch; font-size: clamp(4.5rem, 9.3vw, 9rem); }
     .hero-lead { max-width: 39rem; margin: 1.75rem 0 0; color: rgba(245,243,237,.78); font-size: clamp(1.06rem, 1.7vw, 1.3rem); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.2rem; }
     .hero-note { margin: 1.2rem 0 0; color: rgba(245,243,237,.54); font-size: .82rem; }
-    .hero-art { position: relative; min-height: 29rem; display: grid; place-items: center; }
+    .hero-art { position: relative; min-height: 36rem; display: grid; place-items: center; }
+    .hero-photo { position: absolute; inset: 0 0 0 8%; margin: 0; overflow: hidden; border: 1px solid rgba(245,243,237,.2); background: #101310; }
+    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(12,15,12,.68)); pointer-events: none; }
+    .hero-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 43% center; }
+    .hero-photo figcaption { position: absolute; z-index: 1; right: 1.2rem; bottom: 1rem; color: rgba(245,243,237,.76); font-size: .72rem; letter-spacing: .04em; }
     .hero-letter {
-      width: min(38rem, 42vw);
-      opacity: .045;
+      position: absolute;
+      right: -7%;
+      top: -8%;
+      z-index: 1;
+      width: min(18rem, 42vw);
+      opacity: .12;
       user-select: none;
     }
     .hero-letter img { display: block; width: 100%; height: auto; }
     .estate-card {
       position: absolute;
-      right: 0;
+      left: 0;
+      bottom: 2rem;
+      z-index: 2;
       width: min(22rem, 100%);
       border: 1px solid rgba(245,243,237,.2);
       padding: 1.5rem;
@@ -194,6 +206,20 @@
     .plan li::before { content: "0" counter(stop); color: var(--copper); font-size: .7rem; font-weight: 700; }
     .plan-foot { margin-top: 1.5rem; color: rgba(26,29,26,.48); font-size: .72rem; }
 
+    .location { padding-block: clamp(6rem, 10vw, 9rem); background: #e9e6dd; }
+    .location-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+    .location-copy p:not(.eyebrow) { max-width: 32rem; color: rgba(26,29,26,.7); }
+    .location-address { margin: 2rem 0; border-left: 2px solid var(--copper); padding-left: 1rem; font-family: var(--serif); font-size: 1.4rem; line-height: 1.25; }
+    .map-frame { min-height: 33rem; border: 1px solid rgba(26,29,26,.18); background: #d9d6cd; box-shadow: 0 1.2rem 3rem rgba(26,29,26,.12); }
+    .map-frame iframe { width: 100%; height: 33rem; display: block; border: 0; filter: saturate(.72) contrast(.95); }
+    .street-views { display: grid; grid-template-columns: 1.25fr .75fr; gap: 1rem; margin-top: 1rem; }
+    .street-view { position: relative; min-height: 23rem; overflow: hidden; margin: 0; background: var(--ink); }
+    .street-view img { width: 100%; height: 100%; position: absolute; inset: 0; display: block; object-fit: cover; }
+    .street-view::after { content: ""; position: absolute; inset: auto 0 0; height: 45%; background: linear-gradient(transparent, rgba(12,15,12,.78)); pointer-events: none; }
+    .street-view figcaption { position: absolute; z-index: 1; right: 1.2rem; bottom: 1rem; left: 1.2rem; display: flex; justify-content: space-between; gap: 1rem; align-items: end; color: var(--paper); }
+    .street-view figcaption span { max-width: 25rem; font-family: var(--serif); font-size: 1.55rem; line-height: 1.05; }
+    .street-view figcaption small { color: rgba(245,243,237,.72); white-space: nowrap; }
+
     .availability { padding-block: clamp(5.5rem, 9vw, 8rem); background: var(--copper); color: var(--paper); }
     .availability-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2.5rem, 8vw, 8rem); align-items: center; }
     .availability .eyebrow { color: #f0c6b2; }
@@ -243,7 +269,12 @@
       .nav > a:not(.button) { padding: .9rem 0; border-bottom: 1px solid rgba(245,243,237,.1); }
       .nav .button { margin-top: 1rem; }
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-art { position: absolute; inset: 14rem 0 auto 48%; opacity: .64; pointer-events: none; }
+      .hero-art { position: absolute; inset: 0; min-height: 100%; opacity: .5; pointer-events: none; }
+      .hero-photo { inset: 0; border: 0; }
+      .hero-photo img { object-position: 54% center; }
+      .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(26,29,26,.97) 0%, rgba(26,29,26,.84) 58%, rgba(26,29,26,.38)); pointer-events: none; }
+      .hero-copy { z-index: 3; }
+      .hero-letter, .hero-photo figcaption { display: none; }
       .estate-card { display: none; }
       .facts-grid { grid-template-columns: repeat(3, 1fr); }
       .fact:nth-child(3) { border-right: 0; }
@@ -253,6 +284,8 @@
       .house-grid { grid-template-columns: 1fr 1fr; }
       .house-card:last-child { grid-column: 1 / -1; min-height: 22rem; }
       .plans { grid-template-columns: 1fr 1fr; }
+      .location-grid { grid-template-columns: 1fr; }
+      .street-views { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 44rem) {
@@ -273,7 +306,9 @@
       .fact:last-child { grid-column: 1 / -1; border-right: 0 !important; }
       .intro-copy { columns: 1; }
       .houses-head, .experience-head { display: block; }
-      .house-grid, .plans, .availability-grid, .contact-card { grid-template-columns: 1fr; }
+      .house-grid, .plans, .availability-grid, .contact-card, .location-grid { grid-template-columns: 1fr; }
+      .street-view { min-height: 18rem; }
+      .street-view figcaption { align-items: start; flex-direction: column; }
       .house-card, .house-card:last-child { grid-column: auto; min-height: 24rem; }
       .experience-head .section-lead { margin-top: 1.2rem; }
       .plans { gap: .7rem; }
@@ -341,6 +376,7 @@
         <a href="#miejsce">Miejsce</a>
         <a href="#domy">Domy i ogród</a>
         <a href="#plany">Pomysły na pobyt</a>
+        <a href="#lokalizacja">Lokalizacja</a>
         <a href="#kontakt">Kontakt</a>
         <a class="button button-primary" href="#dostepnosc">Zapytaj o termin</a>
       </nav>
@@ -361,6 +397,10 @@
           <p class="hero-note">Benkowo wynajmowane jest w całości — niezależnie od liczby gości.</p>
         </div>
         <div class="hero-art" aria-hidden="true">
+          <figure class="hero-photo">
+            <img src="assets/benkowo-zewnatrz-google.jpg" alt="" width="1600" height="900" fetchpriority="high">
+            <figcaption>Dom główny od ul. Stoczek</figcaption>
+          </figure>
           <div class="hero-letter"><img src="data:image/png;base64,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" alt=""></div>
           <div class="estate-card">
             <p class="number">20 lat</p>
@@ -483,6 +523,33 @@
               <ol><li>Wybór obszaru, na którym zbiór jest dozwolony</li><li>Spacer lub grzybobranie</li><li>Powrót na wspólny posiłek</li></ol>
             </div><p class="plan-foot">Zbieranie grzybów nie jest dozwolone na wszystkich terenach chronionych.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="lokalizacja" aria-labelledby="location-title">
+      <div class="shell">
+        <div class="location-grid">
+          <div class="location-copy">
+            <p class="eyebrow">W samej Białowieży</p>
+            <h2 class="display section-title" id="location-title">Stoczek 178. Dom zaczyna się już od bramy.</h2>
+            <p>Benkowo leży przy ulicy Stoczek w Białowieży. Na mapie można sprawdzić dokładne położenie, zaplanować dojazd i zobaczyć najbliższe otoczenie.</p>
+            <p class="location-address">Stoczek 178<br>17-230 Białowieża</p>
+            <a class="button button-dark" href="https://www.google.com/maps/place/Benkowo+Bia%C5%82owie%C5%BCa+-+make+Yourself+at+home/@52.7002613,23.8717881,17z" target="_blank" rel="noopener">Wyznacz trasę w Mapach Google ↗</a>
+          </div>
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps?q=Benkowo+Bia%C5%82owie%C5%BCa&amp;output=embed" title="Mapa lokalizacji Benkowo Białowieża" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="street-views" aria-label="Widoki Benkowa od ulicy Stoczek">
+          <figure class="street-view">
+            <img src="assets/street-view-ulica.webp" alt="Ulica Stoczek i wjazd do Benkowa po prawej stronie" width="900" height="600" loading="lazy">
+            <figcaption><span>Benkowo w rytmie ulicy Stoczek</span><small>Google Street View · maj 2025</small></figcaption>
+          </figure>
+          <figure class="street-view">
+            <img src="assets/street-view-dom.webp" alt="Zbliżenie drewnianej elewacji domu głównego Benkowa" width="900" height="600" loading="lazy">
+            <figcaption><span>Drewniany dom od strony ulicy</span><small>Google Street View · maj 2025</small></figcaption>
+          </figure>
         </div>
       </div>
     </section>
