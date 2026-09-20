@@ -1,14 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "benkowo",
+  "name": "benkowo-pl",
   "compatibility_date": "2026-09-18",
   "assets": {
     "directory": "./public"
   },
   "routes": [
     {
-      "pattern": "benkowo.pl",
-      "custom_domain": true
+      "pattern": "benkowo.pl/*",
+      "zone_name": "benkowo.pl"
     }
   ]
 }
