@@ -9,6 +9,10 @@
     {
       "pattern": "benkowo.pl/*",
       "zone_name": "benkowo.pl"
+    },
+    {
+      "pattern": "www.benkowo.pl/*",
+      "zone_name": "benkowo.pl"
     }
   ]
 }
