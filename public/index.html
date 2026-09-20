@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1d1a'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='46' fill='%23f5f3ed'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMAgMAAADTrqmtAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAJUExURRodGhodGv///5u6JXIAAAABdFJOUwBA5thmAAAAAWJLR0QCZgt8ZAAAAAd0SU1FB+oJFBIpN0o5fQcAAAL9SURBVFjD7ZhLbiQhDIbxgn0W4T7MYva0BPe/ymAbKPygqrKMNEhRpzpf8dvGGJwQfvOAtkZ+wbT2hqkvmFZeMO0NU3zm+j0eLNqZkPwACCYYsW/LRC2WMjNpC7T2LBXFNLRIGpSqZkp/lAbRO4LpEymDEr4jmdIfFFOZKSvktXuWJdOfNwbjnJVBiY28GFI3TJUMhlAanQrN3T9hC2GSTO1zExNnnLtXscl5+tw7Q15pps+9Mw3DDML5hBH77Ax6ZRj8IzEzhN1i4Tz6vDHTK8OknUlkcdJM3BnwGOD5JxM4XFUy6FnZmB6urBmMWr0YtDhHwWCQ0bMHplCGTCa6DIptTPMYXKJHhjx7YMizB4bE7m1msT+3TGTPbuMzPLuPc+IwXmuq1guZIXZcd2SG2J4/dk2xwoxS6eUhMSxG73r5TMwlBt6+QObrEkve/kLme4gVlMrgMmmJgbvfuSBMMY5m8Jg6xdAmttquxRQbcs1j8hDjlNT1kBn2Kja2Clymac88JivPPIbF0vLMMp9LbAbcxnAYOz3LHhOXGHqlz8E6izx5ND/9eZZYDod52ubZwZ7PWqn548Wn3IitOEch5jLbWp3Wq4bdM3/dMx+saebPKQ83sXTI57KE/JwvvM1XCONpf8URvnjcpzxH4PPUqwlqv7+pG26NYn/pXfbqsY6BV1dlPSygCseqq1ftpfpsGHJmr+HFMqLO47lTQDPyvIi8TxTDUn/H12MvZcnI84vywDKUNLCY7DG0ng8Mncv3DJ/v9wzfE+4Zvm+A9F3GZ9xb4C6G4/4Dd2vB5XR97a3pvI/BTW7Mex2IHKuKaTvDuaryed4zmYHmnd3zvrqaJ9o7RTLj3gvXndbZg1UwOdi9PO/hcN2xTU2Q9/kWnNpi+oJga5TpL6I9l3WfEpqtmarf8XuZsjOxuT1Rfu6tTB/XTENo+8Fiz6asmBpm1Vtj9qdpzWJ7z6/BbMP0sMEw4DfeP+2p27E3FyM/M/4/HeB5GsmU8MgckP/jV4x/RBfmucP0h7kAAAAASUVORK5CYII=">
   <style>
     :root {
       color-scheme: light;
@@ -93,15 +93,11 @@
     .header-inner { min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
     .brand { display: inline-flex; align-items: center; gap: .72rem; text-decoration: none; }
     .brand-mark {
-      display: grid;
+      display: block;
       width: 2.55rem;
       height: 2.55rem;
-      place-items: center;
-      border: 1px solid rgba(245,243,237,.46);
-      font-family: var(--serif);
-      font-size: 2.15rem;
-      line-height: 1;
     }
+    .brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
     .brand-type { display: grid; line-height: 1; text-transform: uppercase; }
     .brand-type strong { font-family: var(--serif); font-size: 1.22rem; letter-spacing: .055em; }
     .brand-type small { margin-top: .28rem; font-size: .56rem; letter-spacing: .32em; }
@@ -131,13 +127,11 @@
     .hero-note { margin: 1.2rem 0 0; color: rgba(245,243,237,.54); font-size: .82rem; }
     .hero-art { position: relative; min-height: 29rem; display: grid; place-items: center; }
     .hero-letter {
-      color: rgba(245,243,237,.035);
-      font-family: var(--serif);
-      font-size: clamp(24rem, 42vw, 40rem);
-      font-weight: 600;
-      line-height: .7;
+      width: min(38rem, 42vw);
+      opacity: .045;
       user-select: none;
     }
+    .hero-letter img { display: block; width: 100%; height: auto; }
     .estate-card {
       position: absolute;
       right: 0;
@@ -339,7 +333,7 @@
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="#start" aria-label="Benkowo Białowieża — strona główna">
-        <span class="brand-mark" aria-hidden="true">B</span>
+        <span class="brand-mark" aria-hidden="true"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAQAAAAEyYm1AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAd0SU1FB+oJFBIpN0o5fQcAAAVDSURBVHja7Z3JlpwwDEVxTv7/l8mismgoyZqeJDvxW/WBKhC3rMETPe7riNKvbgNW1QHD6IBhdMAw+g2+XkYsHxUg3kKDydATdhGmHcA89cGUjmc/MB+l49k7+N4pMe26rt3BXFcanDxXymjmN3scfre9Ysz4i+Fb9wX+KXZ0pXENEgLUpTRgEkNcQBQcoJ1aV4o0VZS5gzzyvDos2lhcqbvd3GTbHV+fgsgWY7rRfGx4W/F2KoiV1uC7Rryh4DzPh+XJSiug+YYDRuOrY7whzh8Yb+bozyuOx6eCYdhbx1S7FF+73I9PPc81gAnf2KUhVi+w6jdW+fZEG31hF7DPFmOogsr3K1lMthV2oyNd0xjshti+cZOlHf9zjMd3S8AMxqQal0pO0E/5YszIKsRF6dAA2ow/+H6j6Wg3aaO+Q/E09C/xPENcefJ9/aNxd+DaxBCOqhUbwfvODmjRD5oymPlUfASvap6Qb61DPOoQYmizDk3hZK2/r9Rjsq91ONzd32LmVUVNlrqVxxxC9pVqCr+hPlo47HALR0ZbdQNXPPhKLoVXSTzDTLi1rGAh7gwUaiayD02ScFO07z7M5nCwc9cdWSpJ6En9ajRp7RK/2kFyKfiCjRwhOpFSu0DXNiUOiWkxVjQbCOVKUs2Ly1LysNTsWDmYp5m0aTXtpmF9jMcoNBp9ewkKnZWk+YNIAvcHbccPkrE40RptdA/MT7iltKKcVZt2l5IeQz8PCRISjFzYzR6MRzOfnk2ZPKntK2lqYumaMyxQ9faV5GgzX4jIXQ0wV9nTV5qZfTNX+v50apWUE3wRLiWt6OXvAZnbztpLgHYp/aKPJaZPLGisLsV/W7+IKOBembtP5Ck5/uH57xVlqextOTaXkafNfFlqQTBxl2rKUhUbuawuRaPxZ6mFwMSykKabOQ/HgJomq8VEu5FSluK/CSr18lzJPtipReNL3cuAoY2MJ3BLW1oWjDxEbU/gFrRLguHH5XDdzEQ0NX0l6bzVpebnIYuVKnrXiNlK+/klwbyx0HByXWp5MIP5W/NwETRLzhJYjEXWxIvsiZSh6AyNukwKmszK92nizEhktAGhqekrobNUwU7ait413ZuJtgttgi7f4cZD8XfyYoNasC05GWD8A5H0A2F64M1gpCxkGdSeoUlK0HlgePP9WD5nZu0maSdtTV9JHlySooIeDUgZYOKRhZIWDSgE41c74Fzo+5P+iGJ2psz1Me/HRoyTaCIKRFkrqigsGMkIWl7epTdHiix+6a/bPqlf8JYxUQsOVNmTcwcE44+D2Cz6NhqRnLE2OVTbV+JfzdMKgVLmXoKe1gIS7kXH9eE2Vbj9Sj+1PZacHW7/ABaEK3W9xou7v+XYRFEwmnCLR1UAP+ZKK2WhJd6DRz12HZb4O9EU8rqSHG4rsGhscyqnr5QnzUYcSmZY8axUh8XaGQ1ZFgPTB4U/C3LhCBgq3NpRxbcMp0QdP5jyfa3MvbxRRxDmBYF9WNKs8LSYzkLOs8/NZZ0dTBcWeac29F0PVjAoF8K+/mJ2Reed4u/z7ZB+BsttYQRMDxap+wGqrTB9pSrRD52yK9IHpgqLtXQDrhX3gPHfMPcteNAl9FYw60yAJA+p2v/3yQqy1DROWcCsgIWyIaXk1ILphaJfG1w87BC7WR7UxO6JBswKLvSWXNEEtdc/6f2Iyz/QH3AfMGmLymjlgakbD05x9X1aDK20+LczmNSksCeYgjy5F5jCwkHzr8r+S1Xs1N9SBwyjA4bRAcPogGF0wDA6YBgdMIwOGEYHDKMDhtEfItecaTJAjbUAAAAASUVORK5CYII=" alt=""></span>
         <span class="brand-type"><strong>Benkowo</strong><small>Białowieża</small></span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
@@ -367,7 +361,7 @@
           <p class="hero-note">Benkowo wynajmowane jest w całości — niezależnie od liczby gości.</p>
         </div>
         <div class="hero-art" aria-hidden="true">
-          <div class="hero-letter">B</div>
+          <div class="hero-letter"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAQAAAAEyYm1AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAd0SU1FB+oJFBIpN0o5fQcAAAVDSURBVHja7Z3JlpwwDEVxTv7/l8mismgoyZqeJDvxW/WBKhC3rMETPe7riNKvbgNW1QHD6IBhdMAw+g2+XkYsHxUg3kKDydATdhGmHcA89cGUjmc/MB+l49k7+N4pMe26rt3BXFcanDxXymjmN3scfre9Ysz4i+Fb9wX+KXZ0pXENEgLUpTRgEkNcQBQcoJ1aV4o0VZS5gzzyvDos2lhcqbvd3GTbHV+fgsgWY7rRfGx4W/F2KoiV1uC7Rryh4DzPh+XJSiug+YYDRuOrY7whzh8Yb+bozyuOx6eCYdhbx1S7FF+73I9PPc81gAnf2KUhVi+w6jdW+fZEG31hF7DPFmOogsr3K1lMthV2oyNd0xjshti+cZOlHf9zjMd3S8AMxqQal0pO0E/5YszIKsRF6dAA2ow/+H6j6Wg3aaO+Q/E09C/xPENcefJ9/aNxd+DaxBCOqhUbwfvODmjRD5oymPlUfASvap6Qb61DPOoQYmizDk3hZK2/r9Rjsq91ONzd32LmVUVNlrqVxxxC9pVqCr+hPlo47HALR0ZbdQNXPPhKLoVXSTzDTLi1rGAh7gwUaiayD02ScFO07z7M5nCwc9cdWSpJ6En9ajRp7RK/2kFyKfiCjRwhOpFSu0DXNiUOiWkxVjQbCOVKUs2Ly1LysNTsWDmYp5m0aTXtpmF9jMcoNBp9ewkKnZWk+YNIAvcHbccPkrE40RptdA/MT7iltKKcVZt2l5IeQz8PCRISjFzYzR6MRzOfnk2ZPKntK2lqYumaMyxQ9faV5GgzX4jIXQ0wV9nTV5qZfTNX+v50apWUE3wRLiWt6OXvAZnbztpLgHYp/aKPJaZPLGisLsV/W7+IKOBembtP5Ck5/uH57xVlqextOTaXkafNfFlqQTBxl2rKUhUbuawuRaPxZ6mFwMSykKabOQ/HgJomq8VEu5FSluK/CSr18lzJPtipReNL3cuAoY2MJ3BLW1oWjDxEbU/gFrRLguHH5XDdzEQ0NX0l6bzVpebnIYuVKnrXiNlK+/klwbyx0HByXWp5MIP5W/NwETRLzhJYjEXWxIvsiZSh6AyNukwKmszK92nizEhktAGhqekrobNUwU7ait413ZuJtgttgi7f4cZD8XfyYoNasC05GWD8A5H0A2F64M1gpCxkGdSeoUlK0HlgePP9WD5nZu0maSdtTV9JHlySooIeDUgZYOKRhZIWDSgE41c74Fzo+5P+iGJ2psz1Me/HRoyTaCIKRFkrqigsGMkIWl7epTdHiix+6a/bPqlf8JYxUQsOVNmTcwcE44+D2Cz6NhqRnLE2OVTbV+JfzdMKgVLmXoKe1gIS7kXH9eE2Vbj9Sj+1PZacHW7/ABaEK3W9xou7v+XYRFEwmnCLR1UAP+ZKK2WhJd6DRz12HZb4O9EU8rqSHG4rsGhscyqnr5QnzUYcSmZY8axUh8XaGQ1ZFgPTB4U/C3LhCBgq3NpRxbcMp0QdP5jyfa3MvbxRRxDmBYF9WNKs8LSYzkLOs8/NZZ0dTBcWeac29F0PVjAoF8K+/mJ2Reed4u/z7ZB+BsttYQRMDxap+wGqrTB9pSrRD52yK9IHpgqLtXQDrhX3gPHfMPcteNAl9FYw60yAJA+p2v/3yQqy1DROWcCsgIWyIaXk1ILphaJfG1w87BC7WR7UxO6JBswKLvSWXNEEtdc/6f2Iyz/QH3AfMGmLymjlgakbD05x9X1aDK20+LczmNSksCeYgjy5F5jCwkHzr8r+S1Xs1N9SBwyjA4bRAcPogGF0wDA6YBgdMIwOGEYHDKMDhtEfItecaTJAjbUAAAAASUVORK5CYII=" alt=""></div>
           <div class="estate-card">
             <p class="number">20 lat</p>
             <p class="label">rodzinnej historii tego miejsca</p>
