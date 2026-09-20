@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a1d1a">\n  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Benkowo Białowieża — dwa budynki, ogród i sauna na wyłączność jednej rodziny lub grupy. Pobyt dla maksymalnie 14 osób.">
+  <title>Benkowo Białowieża — u siebie, na skraju puszczy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1d1a'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-size='46' fill='%23f5f3ed'%3EB%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1a1d1a;
+      --linen: #f5f3ed;
+      --paper: #fffdf8;
+      --oak: #3d433a;
+      --copper: #9e5a3c;
+      --mist: #dbded6;
+      --line: rgba(26, 29, 26, .16);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: Inter, ui-sans-serif, system-ui, sans-serif;
+      --radius: 1.15rem;
+      --page: min(76rem, calc(100% - 2.5rem));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--linen); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--linen);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    section { scroll-margin-top: 6.5rem; }
+    .shell { width: var(--page); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 .8rem;
+      color: var(--copper);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .display {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: .95;
+      letter-spacing: -.035em;
+    }
+    .section-title { max-width: 14ch; font-size: clamp(2.7rem, 6vw, 5.8rem); }
+    .section-lead { max-width: 42rem; margin: 1.4rem 0 0; font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: rgba(26,29,26,.72); }
+    .button {
+      display: inline-flex;
+      min-height: 3.25rem;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: .8rem 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--copper); color: var(--paper); }
+    .button-primary:hover { background: #7e422c; }
+    .button-light { background: var(--paper); color: var(--ink); }
+    .button-light:hover { background: #e9e5dc; }
+    .button-outline { border-color: currentColor; background: transparent; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid rgba(245,243,237,.13);
+      background: rgba(26,29,26,.94);
+      color: var(--paper);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner { min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .brand { display: inline-flex; align-items: center; gap: .72rem; text-decoration: none; }
+    .brand-mark {
+      display: grid;
+      width: 2.55rem;
+      height: 2.55rem;
+      place-items: center;
+      border: 1px solid rgba(245,243,237,.46);
+      font-family: var(--serif);
+      font-size: 2.15rem;
+      line-height: 1;
+    }
+    .brand-type { display: grid; line-height: 1; text-transform: uppercase; }
+    .brand-type strong { font-family: var(--serif); font-size: 1.22rem; letter-spacing: .055em; }
+    .brand-type small { margin-top: .28rem; font-size: .56rem; letter-spacing: .32em; }
+    .nav { display: flex; align-items: center; gap: 1.45rem; }
+    .nav > a:not(.button) { color: rgba(245,243,237,.78); font-size: .88rem; font-weight: 600; text-decoration: none; }
+    .nav > a:not(.button):hover { color: var(--paper); }
+    .nav-toggle { display: none; border: 0; background: transparent; color: inherit; padding: .6rem; cursor: pointer; }
+    .nav-toggle span { display: block; width: 1.55rem; height: 2px; margin: .3rem 0; background: currentColor; }
+
+    .hero { position: relative; overflow: clip; background: var(--ink); color: var(--paper); }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .38;
+      background:
+        linear-gradient(110deg, transparent 48%, rgba(158,90,60,.15) 48%, rgba(158,90,60,.15) 49%, transparent 49%),
+        repeating-linear-gradient(90deg, rgba(245,243,237,.045) 0 1px, transparent 1px 7.5rem);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; min-height: min(54rem, calc(100svh - 5rem)); display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(2rem, 6vw, 7rem); align-items: center; padding-block: clamp(4rem, 9vw, 8rem); }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero .eyebrow { color: #d58b68; }
+    .hero h1 { max-width: 10ch; font-size: clamp(4.5rem, 9.3vw, 9rem); }
+    .hero-lead { max-width: 39rem; margin: 1.75rem 0 0; color: rgba(245,243,237,.78); font-size: clamp(1.06rem, 1.7vw, 1.3rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.2rem; }
+    .hero-note { margin: 1.2rem 0 0; color: rgba(245,243,237,.54); font-size: .82rem; }
+    .hero-art { position: relative; min-height: 29rem; display: grid; place-items: center; }
+    .hero-letter {
+      color: rgba(245,243,237,.035);
+      font-family: var(--serif);
+      font-size: clamp(24rem, 42vw, 40rem);
+      font-weight: 600;
+      line-height: .7;
+      user-select: none;
+    }
+    .estate-card {
+      position: absolute;
+      right: 0;
+      width: min(22rem, 100%);
+      border: 1px solid rgba(245,243,237,.2);
+      padding: 1.5rem;
+      background: rgba(26,29,26,.72);
+      backdrop-filter: blur(12px);
+    }
+    .estate-card p { margin: 0; }
+    .estate-card .number { font-family: var(--serif); font-size: 4.2rem; line-height: .9; }
+    .estate-card .label { margin-top: .55rem; color: rgba(245,243,237,.66); font-size: .85rem; }
+    .estate-diagram { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .75rem; margin-top: 1.7rem; }
+    .estate-diagram span { border: 1px solid rgba(245,243,237,.25); padding: .8rem .6rem; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+    .estate-diagram i { width: 2.4rem; height: 1px; background: rgba(245,243,237,.3); }
+
+    .facts { position: relative; z-index: 4; margin-top: -2.4rem; }
+    .facts-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line); background: var(--paper); box-shadow: 0 1.3rem 3.5rem rgba(26,29,26,.11); }
+    .fact { min-height: 8.8rem; padding: 1.45rem; border-right: 1px solid var(--line); }
+    .fact:last-child { border-right: 0; }
+    .fact strong { display: block; font-family: var(--serif); font-size: 2.4rem; font-weight: 500; line-height: 1; }
+    .fact span { display: block; margin-top: .65rem; color: rgba(26,29,26,.62); font-size: .77rem; letter-spacing: .06em; text-transform: uppercase; }
+
+    .intro { padding-block: clamp(6.5rem, 12vw, 11rem); }
+    .intro-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 8vw, 9rem); align-items: start; }
+    .intro-aside { position: sticky; top: 7rem; }
+    .intro-aside p { max-width: 18rem; margin: 1.2rem 0 0; color: rgba(26,29,26,.62); }
+    .manifesto { margin: 0; font-family: var(--serif); font-size: clamp(2.55rem, 5vw, 5rem); line-height: 1.05; letter-spacing: -.03em; }
+    .manifesto em { color: var(--copper); font-style: normal; }
+    .intro-copy { columns: 2; column-gap: 2rem; margin-top: 2rem; color: rgba(26,29,26,.72); }
+    .intro-copy p { margin: 0 0 1rem; break-inside: avoid; }
+
+    .houses { padding-block: clamp(6rem, 10vw, 9rem); background: var(--oak); color: var(--paper); }
+    .houses-head { display: flex; justify-content: space-between; gap: 2rem; align-items: end; }
+    .houses .eyebrow { color: #d58b68; }
+    .houses .section-lead { color: rgba(245,243,237,.7); }
+    .house-grid { display: grid; grid-template-columns: 1.25fr .9fr .85fr; gap: 1px; margin-top: 3.5rem; background: rgba(245,243,237,.18); border: 1px solid rgba(245,243,237,.18); }
+    .house-card { min-height: 31rem; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(1.5rem, 3vw, 2.5rem); background: var(--oak); }
+    .house-card:first-child { background: #333a31; }
+    .house-card:nth-child(2) { background: #42473e; }
+    .house-index { color: rgba(245,243,237,.45); font-size: .72rem; letter-spacing: .15em; }
+    .house-card h3 { max-width: 10ch; margin: 0; font-family: var(--serif); font-size: clamp(2.6rem, 4vw, 4.4rem); font-weight: 500; line-height: .95; }
+    .house-card p { margin: 1rem 0 0; color: rgba(245,243,237,.68); }
+    .tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.4rem; }
+    .tag { border: 1px solid rgba(245,243,237,.24); border-radius: 999px; padding: .35rem .7rem; color: rgba(245,243,237,.8); font-size: .74rem; }
+
+    .experience { padding-block: clamp(6.5rem, 11vw, 10rem); }
+    .experience-head { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; }
+    .experience-head .section-lead { justify-self: end; }
+    .plan-tabs { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 3rem; }
+    .plan-tab { border: 1px solid var(--line); border-radius: 999px; padding: .65rem 1rem; background: transparent; color: var(--ink); font-weight: 700; cursor: pointer; }
+    .plan-tab[aria-selected="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+    .plan { min-height: 24rem; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; background: var(--paper); }
+    .plan[hidden] { display: none; }
+    .plan-time { color: var(--copper); font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .plan h3 { margin: .8rem 0 0; font-family: var(--serif); font-size: 2.25rem; font-weight: 500; line-height: 1; }
+    .plan ol { margin: 1.5rem 0 0; padding: 0; list-style: none; counter-reset: stop; }
+    .plan li { counter-increment: stop; display: grid; grid-template-columns: 1.5rem 1fr; gap: .6rem; padding-block: .55rem; border-top: 1px solid var(--line); color: rgba(26,29,26,.7); font-size: .9rem; }
+    .plan li::before { content: "0" counter(stop); color: var(--copper); font-size: .7rem; font-weight: 700; }
+    .plan-foot { margin-top: 1.5rem; color: rgba(26,29,26,.48); font-size: .72rem; }
+
+    .availability { padding-block: clamp(5.5rem, 9vw, 8rem); background: var(--copper); color: var(--paper); }
+    .availability-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2.5rem, 8vw, 8rem); align-items: center; }
+    .availability .eyebrow { color: #f0c6b2; }
+    .availability .section-title { max-width: 11ch; }
+    .availability-copy > p:not(.eyebrow) { max-width: 34rem; color: rgba(255,253,248,.76); }
+    .availability-form { border: 1px solid rgba(255,253,248,.28); padding: clamp(1.3rem, 3vw, 2rem); background: rgba(71,28,14,.18); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    .field { display: grid; gap: .38rem; }
+    .field-wide { grid-column: 1 / -1; }
+    .field label { font-size: .76rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .field input, .field select { width: 100%; min-height: 3.35rem; border: 1px solid rgba(255,253,248,.35); border-radius: 0; padding: .75rem; background: rgba(255,253,248,.08); color: var(--paper); }
+    .field select option { color: var(--ink); }
+    .availability-form .button { width: 100%; margin-top: 1rem; }
+    .form-result { margin-top: 1rem; border-top: 1px solid rgba(255,253,248,.28); padding-top: 1rem; }
+    .form-result[hidden] { display: none; }
+    .form-result p { margin: 0 0 .8rem; }
+    .result-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+
+    .contact { padding-block: clamp(6rem, 11vw, 10rem); }
+    .contact-card { display: grid; grid-template-columns: 1.1fr .9fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .contact-main { padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 6vw, 5rem) clamp(2rem, 6vw, 5rem) 0; }
+    .contact-main a.phone { display: inline-block; margin-top: 2rem; font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 4.6rem); line-height: 1; text-decoration: none; }
+    .contact-main a.phone:hover { color: var(--copper); }
+    .contact-aside { display: grid; align-content: center; gap: 1.3rem; border-left: 1px solid var(--line); padding: clamp(2rem, 5vw, 4rem); }
+    .contact-item span { display: block; color: rgba(26,29,26,.52); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .contact-item strong, .contact-item a { display: block; margin-top: .25rem; font-weight: 600; text-decoration: none; }
+
+    .footer { padding-block: 2rem 6rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; color: rgba(26,29,26,.53); font-size: .78rem; }
+    .footer a { text-decoration: none; }
+    .mobile-cta { display: none; }
+
+    @media (max-width: 64rem) {
+      .nav-toggle { display: block; }
+      .nav {
+        position: fixed;
+        inset: 5rem 0 auto 0;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 1.25rem 1.5rem;
+        background: var(--ink);
+        border-bottom: 1px solid rgba(245,243,237,.15);
+      }
+      .menu-open .nav { display: flex; }
+      .nav > a:not(.button) { padding: .9rem 0; border-bottom: 1px solid rgba(245,243,237,.1); }
+      .nav .button { margin-top: 1rem; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-art { position: absolute; inset: 14rem 0 auto 48%; opacity: .64; pointer-events: none; }
+      .estate-card { display: none; }
+      .facts-grid { grid-template-columns: repeat(3, 1fr); }
+      .fact:nth-child(3) { border-right: 0; }
+      .fact:nth-child(n+4) { border-top: 1px solid var(--line); }
+      .intro-grid { grid-template-columns: 1fr; }
+      .intro-aside { position: static; }
+      .house-grid { grid-template-columns: 1fr 1fr; }
+      .house-card:last-child { grid-column: 1 / -1; min-height: 22rem; }
+      .plans { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 44rem) {
+      :root { --page: min(100% - 1.5rem, 76rem); }
+      .header-inner { min-height: 4.5rem; }
+      .brand-type strong { font-size: 1.02rem; }
+      .brand-mark { width: 2.2rem; height: 2.2rem; font-size: 1.85rem; }
+      .nav { inset-block-start: 4.5rem; }
+      .hero-inner { min-height: calc(100svh - 4.5rem); padding-block: 4rem 6.5rem; }
+      .hero h1 { font-size: clamp(4rem, 19vw, 6rem); }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .facts { margin-top: -1.4rem; }
+      .facts-grid { grid-template-columns: 1fr 1fr; }
+      .fact { min-height: 7.7rem; border-right: 1px solid var(--line) !important; border-top: 1px solid var(--line); }
+      .fact:nth-child(odd) { border-right: 0 !important; }
+      .fact:first-child, .fact:nth-child(2) { border-top: 0; }
+      .fact:last-child { grid-column: 1 / -1; border-right: 0 !important; }
+      .intro-copy { columns: 1; }
+      .houses-head, .experience-head { display: block; }
+      .house-grid, .plans, .availability-grid, .contact-card { grid-template-columns: 1fr; }
+      .house-card, .house-card:last-child { grid-column: auto; min-height: 24rem; }
+      .experience-head .section-lead { margin-top: 1.2rem; }
+      .plans { gap: .7rem; }
+      .plan { min-height: 21rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-wide { grid-column: auto; }
+      .contact-main { padding-right: 0; }
+      .contact-aside { border-top: 1px solid var(--line); border-left: 0; padding-inline: 0; }
+      .footer { padding-bottom: 7rem; }
+      .mobile-cta {
+        position: fixed;
+        z-index: 50;
+        right: .75rem;
+        bottom: .75rem;
+        left: .75rem;
+        display: flex;
+        min-height: 3.5rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: var(--copper);
+        color: var(--paper);
+        box-shadow: 0 .75rem 2.2rem rgba(26,29,26,.28);
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Benkowo Białowieża",
+      "url": "https://benkowo.pl/",
+      "telephone": "+48602761082",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Stoczek 178",
+        "postalCode": "17-230",
+        "addressLocality": "Białowieża",
+        "addressCountry": "PL"
+      },
+      "amenityFeature": [
+        {"@type":"LocationFeatureSpecification","name":"Sauna","value":true},
+        {"@type":"LocationFeatureSpecification","name":"Kuchnia","value":true},
+        {"@type":"LocationFeatureSpecification","name":"Ogród","value":true}
+      ]
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#start" aria-label="Benkowo Białowieża — strona główna">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <span class="brand-type"><strong>Benkowo</strong><small>Białowieża</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+      <nav class="nav" id="main-nav" aria-label="Główna nawigacja">
+        <a href="#miejsce">Miejsce</a>
+        <a href="#domy">Domy i ogród</a>
+        <a href="#plany">Pomysły na pobyt</a>
+        <a href="#kontakt">Kontakt</a>
+        <a class="button button-primary" href="#dostepnosc">Zapytaj o termin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="start">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Cała posesja na wyłączność · Białowieża</p>
+          <h1 class="display" id="hero-title">U siebie, na skraju puszczy.</h1>
+          <p class="hero-lead">Dwa budynki, ogród, sauna i przestrzeń dla jednej rodziny albo jednej, zaufanej grupy. Bez przypadkowych gości. Do 14 osób.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#dostepnosc">Zapytaj o wolny termin</a>
+            <a class="button button-outline" href="#miejsce">Poznaj Benkowo</a>
+          </div>
+          <p class="hero-note">Benkowo wynajmowane jest w całości — niezależnie od liczby gości.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-letter">B</div>
+          <div class="estate-card">
+            <p class="number">20 lat</p>
+            <p class="label">rodzinnej historii tego miejsca</p>
+            <div class="estate-diagram"><span>Dom główny</span><i></i><span>Drugi dom</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="facts" aria-label="Najważniejsze informacje">
+      <div class="shell facts-grid">
+        <div class="fact"><strong>14</strong><span>maksymalnie osób</span></div>
+        <div class="fact"><strong>2</strong><span>osobne budynki</span></div>
+        <div class="fact"><strong>5</strong><span>sypialni w domu głównym</span></div>
+        <div class="fact"><strong>3</strong><span>łazienki w domu głównym</span></div>
+        <div class="fact"><strong>1</strong><span>posesja tylko dla Was</span></div>
+      </div>
+    </div>
+
+    <section class="intro" id="miejsce">
+      <div class="shell intro-grid">
+        <aside class="intro-aside">
+          <p class="eyebrow">Benkowo Białowieża</p>
+          <p>Rodzinne miejsce tworzone przez dwie dekady. Nie hotel, nie pensjonat i nie zbiór pokoi do wynajęcia.</p>
+        </aside>
+        <div>
+          <p class="manifesto">Przyjeżdżacie razem. Mieszkacie <em>bez obcych osób</em>. Macie dwa budynki, ogród i czas po swojemu.</p>
+          <div class="intro-copy">
+            <p>Benkowo jest przeznaczone dla rodzin, kilku zaprzyjaźnionych rodzin, grup przyjaciół i kameralnych zespołów, które chcą pobyć razem, nie rezygnując z własnej przestrzeni.</p>
+            <p>Mniejsza grupa również może wynająć całość. Nie dokładamy wtedy innych gości — prywatność nie zależy od liczby zajętych łóżek.</p>
+            <p>Swoboda nie oznacza anonimowości. Szukamy ludzi, którzy czują się jak u siebie i potrafią zadbać o miejsce jak o własne.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="houses" id="domy" aria-labelledby="houses-title">
+      <div class="shell">
+        <div class="houses-head">
+          <div>
+            <p class="eyebrow">Jedno siedlisko, kilka rytmów</p>
+            <h2 class="display section-title" id="houses-title">Razem, ale nie cały czas w jednym pokoju.</h2>
+          </div>
+          <p class="section-lead">Wspólny pobyt dużej grupy jest wygodny wtedy, gdy można spotkać się przy jednym stole, a później znaleźć własny spokojny kąt.</p>
+        </div>
+        <div class="house-grid">
+          <article class="house-card">
+            <span class="house-index">01 · DOM GŁÓWNY</span>
+            <div>
+              <h3>Serce wspólnego pobytu</h3>
+              <p>Pięć sypialni, trzy łazienki, kuchnia i salon. Do tego przeszklone „Akwarium” — miejsce na książkę, rozmowę i patrzenie w ogród.</p>
+              <div class="tags"><span class="tag">5 sypialni</span><span class="tag">3 łazienki</span><span class="tag">kuchnia</span><span class="tag">salon</span></div>
+            </div>
+          </article>
+          <article class="house-card">
+            <span class="house-index">02 · DRUGI BUDYNEK</span>
+            <div>
+              <h3>Własny rytm obok</h3>
+              <p>Osobna kuchnia i łazienka, sypialnia na dole oraz poddasze z czterema łóżkami. Dodatkowa przestrzeń dla części rodziny albo starszych dzieci.</p>
+              <div class="tags"><span class="tag">osobna kuchnia</span><span class="tag">łazienka</span><span class="tag">4 łóżka na poddaszu</span></div>
+            </div>
+          </article>
+          <article class="house-card">
+            <span class="house-index">03 · OGRÓD</span>
+            <div>
+              <h3>Dzień może zostać na miejscu</h3>
+              <p>Sauna opalana drewnem, zadaszona wiata, miejsce na wspólny posiłek i mały plac zabaw. Nie każdy dzień wymaga układania planu.</p>
+              <div class="tags"><span class="tag">sauna</span><span class="tag">wiata</span><span class="tag">plac zabaw</span><span class="tag">ogród</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="plany" aria-labelledby="plans-title">
+      <div class="shell">
+        <div class="experience-head">
+          <div>
+            <p class="eyebrow">Pomysły na pobyt</p>
+            <h2 class="display section-title" id="plans-title">Białowieża bez odhaczania atrakcji.</h2>
+          </div>
+          <p class="section-lead">Zamiast długiej listy przygotujemy gotowe scenariusze dnia — dla dzieci, aktywnych, na zimę i na pogodę, która zmienia plany.</p>
+        </div>
+        <div class="plan-tabs" role="tablist" aria-label="Rodzaje planów pobytu">
+          <button class="plan-tab" type="button" role="tab" aria-selected="true" data-filter="all">Wszystkie</button>
+          <button class="plan-tab" type="button" role="tab" aria-selected="false" data-filter="family">Z dziećmi</button>
+          <button class="plan-tab" type="button" role="tab" aria-selected="false" data-filter="active">Aktywnie</button>
+          <button class="plan-tab" type="button" role="tab" aria-selected="false" data-filter="weather">Na niepogodę</button>
+          <button class="plan-tab" type="button" role="tab" aria-selected="false" data-filter="winter">Zimą</button>
+        </div>
+        <div class="plans" aria-live="polite">
+          <article class="plan" data-categories="family active">
+            <div><span class="plan-time">Spokojny pełny dzień</span><h3>Rodzinnie w Białowieży</h3>
+              <ol><li>Krótka wyprawa do Puszczy</li><li>Minigolf albo czas na publicznym korcie</li><li>Powrót do ogrodu i wspólna kolacja</li></ol>
+            </div><p class="plan-foot">Dokładne trasy, odległości i godziny potwierdzimy przed publikacją.</p>
+          </article>
+          <article class="plan" data-categories="active">
+            <div><span class="plan-time">Dla grupy w ruchu</span><h3>Rowerem, potem sauna</h3>
+              <ol><li>Wybór trasy dopasowanej do grupy</li><li>Przerwa w Białowieży</li><li>Wieczorna sauna opalana drewnem</li></ol>
+            </div><p class="plan-foot">Na miejscu są rowery; ich liczbę i zasady udostępniania jeszcze potwierdzamy.</p>
+          </article>
+          <article class="plan" data-categories="weather winter family">
+            <div><span class="plan-time">Plan odporny na pogodę</span><h3>Hajnówka i spokojny wieczór</h3>
+              <ol><li>Kryty basen w Hajnówce</li><li>Zimą możliwość wizyty na lodowisku</li><li>Powrót do Benkowa i czas pod dachem</li></ol>
+            </div><p class="plan-foot">Atrakcje zewnętrzne działają niezależnie od Benkowa i mogą być dodatkowo płatne.</p>
+          </article>
+          <article class="plan" data-categories="winter active">
+            <div><span class="plan-time">Zimowy rytm</span><h3>Biegówki i ciepło sauny</h3>
+              <ol><li>Wypożyczenie nart biegowych</li><li>Trasa odpowiednia do warunków</li><li>Rozgrzanie w saunie na posesji</li></ol>
+            </div><p class="plan-foot">Plan sezonowy — dostępność sprzętu i tras wymaga wcześniejszego sprawdzenia.</p>
+          </article>
+          <article class="plan" data-categories="family weather">
+            <div><span class="plan-time">Bez pośpiechu</span><h3>Dzień bez wyjazdu</h3>
+              <ol><li>Śniadanie bez hotelowych godzin</li><li>Ogród, plac zabaw i „Akwarium”</li><li>Wspólne gotowanie i wieczór pod wiatą</li></ol>
+            </div><p class="plan-foot">Najprostszy plan wykorzystuje to, co jest dostępne bezpośrednio w Benkowie.</p>
+          </article>
+          <article class="plan" data-categories="active family">
+            <div><span class="plan-time">Jesienią</span><h3>Puszcza i grzyby — legalnie</h3>
+              <ol><li>Wybór obszaru, na którym zbiór jest dozwolony</li><li>Spacer lub grzybobranie</li><li>Powrót na wspólny posiłek</li></ol>
+            </div><p class="plan-foot">Zbieranie grzybów nie jest dozwolone na wszystkich terenach chronionych.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="availability" id="dostepnosc" aria-labelledby="availability-title">
+      <div class="shell availability-grid">
+        <div class="availability-copy">
+          <p class="eyebrow">Dostępność i rezerwacja</p>
+          <h2 class="display section-title" id="availability-title">Najpierw termin. Potem jasna cena za całość.</h2>
+          <p>Benkowo jest wynajmowane na wyłączność. Do czasu uruchomienia kalendarza online dostępność potwierdzamy osobiście pod numerem telefonu.</p>
+        </div>
+        <form class="availability-form" id="enquiry-form">
+          <div class="form-grid">
+            <div class="field"><label for="arrival">Przyjazd</label><input id="arrival" name="arrival" type="date" required></div>
+            <div class="field"><label for="departure">Wyjazd</label><input id="departure" name="departure" type="date" required></div>
+            <div class="field field-wide"><label for="guests">Liczba gości</label><select id="guests" name="guests"><option value="2–4">2–4 osoby</option><option value="5–8">5–8 osób</option><option value="9–12">9–12 osób</option><option value="13–14">13–14 osób</option></select></div>
+          </div>
+          <button class="button button-light" type="submit">Przygotuj zapytanie</button>
+          <div class="form-result" id="form-result" hidden>
+            <p id="result-text"></p>
+            <div class="result-actions"><button class="button button-light" id="copy-message" type="button">Kopiuj treść</button><a class="button button-outline" href="tel:+48602761082">Zadzwoń</a></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt" aria-labelledby="contact-title">
+      <div class="shell contact-card">
+        <div class="contact-main">
+          <p class="eyebrow">Porozmawiajmy o terminie</p>
+          <h2 class="display section-title" id="contact-title">Czy Benkowo jest wolne, gdy chcecie przyjechać?</h2>
+          <a class="phone" href="tel:+48602761082">+48 602 761 082</a>
+        </div>
+        <div class="contact-aside">
+          <div class="contact-item"><span>Adres</span><strong>Stoczek 178<br>17-230 Białowieża</strong></div>
+          <div class="contact-item"><span>Lokalizacja</span><a href="https://maps.google.com/?q=Stoczek+178%2C+17-230+Białowieża" target="_blank" rel="noopener">Otwórz w Mapach Google ↗</a></div>
+          <div class="contact-item"><span>Model wynajmu</span><strong>Całość na wyłączność jednej grupy</strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner"><span>© 2026 Benkowo Białowieża</span><span>Rodzinne miejsce w Białowieży od ponad 20 lat</span><a href="tel:+48602761082">+48 602 761 082</a></div>
+  </footer>
+  <a class="mobile-cta" href="tel:+48602761082">Zadzwoń i zapytaj o termin</a>
+
+  <script>
+    const body = document.body;
+    const menuButton = document.querySelector('.nav-toggle');
+    menuButton.addEventListener('click', () => {
+      const open = body.classList.toggle('menu-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+    });
+    document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => {
+      body.classList.remove('menu-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+
+    const tabs = document.querySelectorAll('.plan-tab');
+    const plans = document.querySelectorAll('.plan');
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+      tabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
+      const filter = tab.dataset.filter;
+      plans.forEach(plan => {
+        const categories = plan.dataset.categories.split(' ');
+        plan.hidden = filter !== 'all' && !categories.includes(filter);
+      });
+    }));
+
+    const today = new Date();
+    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const arrival = document.getElementById('arrival');
+    const departure = document.getElementById('departure');
+    arrival.min = localToday;
+    departure.min = localToday;
+    arrival.addEventListener('change', () => {
+      departure.min = arrival.value || localToday;
+      if (departure.value && departure.value <= arrival.value) departure.value = '';
+    });
+
+    let enquiryText = '';
+    const form = document.getElementById('enquiry-form');
+    const result = document.getElementById('form-result');
+    const resultText = document.getElementById('result-text');
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      enquiryText = `Dzień dobry, pytam o dostępność całego Benkowa od ${arrival.value} do ${departure.value} dla ${document.getElementById('guests').value}.`;
+      resultText.textContent = enquiryText;
+      result.hidden = false;
+    });
+    document.getElementById('copy-message').addEventListener('click', async event => {
+      try {
+        await navigator.clipboard.writeText(enquiryText);
+        event.currentTarget.textContent = 'Skopiowano';
+        setTimeout(() => { event.currentTarget.textContent = 'Kopiuj treść'; }, 1800);
+      } catch (_) {
+        resultText.focus?.();
+      }
+    });
+  </script>
+</body>
+</html>
