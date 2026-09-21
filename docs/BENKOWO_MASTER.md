@@ -4,7 +4,7 @@
 
 ## A. Metryka dokumentu
 
-- **Wersja:** 0.2
+- **Wersja:** 0.3
 - **Status:** `W TOKU` — pierwsza wersja rejestru; wymaga bieżącej synchronizacji z wynikami wątków specjalistycznych
 - **Data aktualizacji:** 2026-09-21
 - **Autor aktualizacji:** główny koordynator projektu BENKOWO.PL
@@ -152,6 +152,15 @@ Doprowadzić wersję testową i model rezerwacji do stanu, w którym właścicie
 - **Obszary:** strategia, atrakcje, SEO, zdjęcia, strona/Cloudflare, analityka.
 - **Zatwierdzający:** właściciel.
 
+### DEC-007 — lokalne doświadczenia i partnerstwa
+
+- **Data:** 2026-09-21
+- **Status:** `ZATWIERDZONE`
+- **Decyzja:** badanie i plany dnia mają obejmować również wędkarstwo, legalne zbieractwo, cerkwie, muzea, lokalną sztukę, rękodzieło, żywność, stragany i restauracje. Projekt ma szukać możliwości współpracy z lokalnymi podmiotami, w tym korzyści dla gości Benkowa.
+- **Warunek:** żadnego rabatu, pozwolenia ani dostępności nie wolno komunikować przed potwierdzeniem u właściwego zarządcy lub partnera.
+- **Obszary:** strategia, atrakcje, partnerstwa, treści, prawo, SEO.
+- **Zatwierdzający:** właściciel.
+
 ## E. Hipotezy
 
 - `HIPOTEZA HYP-001` Publiczna nazwa drugiego budynku „Dom Ogrodowy” — użyta w wersji rozwojowej, ale wymaga potwierdzenia jako stały element nazewnictwa.
@@ -160,6 +169,7 @@ Doprowadzić wersję testową i model rezerwacji do stanu, w którym właścicie
 - `HIPOTEZA HYP-004` Naturalna automatyczna wersja językowa powinna uwzględniać język przeglądarki i ostatni wybór użytkownika — mechanizm istnieje na podglądzie i wymaga testów przed produkcją.
 - `HIPOTEZA HYP-005` Główny komunikat sprzedażowy powinien eksponować całą prywatną posesję, dwa budynki, 6 sypialni, 4 łazienki, 2 kuchnie, ogród i saunę do 14 osób.
 - `HIPOTEZA HYP-006` Najwygodniejszym wdrożeniem map może być stabilny adres Benkowa dla każdego planu, przekierowujący do zweryfikowanego Google Maps URL; wymaga testów limitów punktów pośrednich na telefonach.
+- `HIPOTEZA HYP-007` Program lokalnych partnerstw może zwiększyć wartość pobytu przez rabat, zestaw dla gości, dostawę, kosz piknikowy, priorytet rezerwacji lub inną korzyść; model wymaga rozmów z każdym partnerem.
 
 ## F. Otwarte pytania
 
@@ -173,13 +183,14 @@ Doprowadzić wersję testową i model rezerwacji do stanu, w którym właścicie
 | OQ-006 | Czy rozkład pomieszczeń użyty w plikach Markdown i podglądzie jest w pełni potwierdzony: Dom Główny 5 sypialni/3 łazienki, drugi budynek 1 sypialnia + poddasze z 4 łóżkami/1 łazienka? | Właściciel | blokuje uznanie szczegółowego rozkładu za fakt publikacyjny | przed produkcją |
 | OQ-007 | Jaki zestaw materiałów zdjęciowych jest dostępny i czego brakuje? | Zdjęcia i materiały + właściciel | blokuje galerię i pełną wiarygodność oferty | teraz |
 | OQ-008 | Czy Cloudflare ma zachować/zmienić ustawienia content signals oraz jak zapewnić docelowy `robots.txt` z sitemapą? | Strona/Cloudflare + SEO + właściciel dla polityki AI | blokuje docelową konfigurację indeksowania i widoczności AI | przed produkcją nowej strony |
+| OQ-009 | Jaki model współpracy lokalnej preferujemy: rabaty, korzyści rzeczowe, dostawy, wzajemne polecenia czy prowizje? | Koordynator + właściciel po rozpoznaniu partnerów | wpływa na rozmowy i sposób komunikacji korzyści | po przygotowaniu shortlisty partnerów |
 
 ## G. Rejestr wątków roboczych
 
 | Wątek | Rola | Aktualne zadanie / wynik | Status | Zależności | Ostatnia synchronizacja |
 |---|---|---|---|---|---|
 | Główny koordynator BENKOWO.PL | wspólny stan, decyzje, briefy, odbiór | utworzenie rejestru centralnego i diagnoza projektu | `W TOKU` | wszystkie obszary | 2026-09-21 |
-| Strategia Benkowo Białowieża | marka, oferta, treści, SEO | zlecono szeroką bazę atrakcji, sezonowość i 12+ gotowych planów dnia; brief: `docs/briefs/BRIEF_STRATEGIA_ATRAKCJE_I_PLANY_DNIA.md` | `W TOKU` | atrakcje, SEO, zdjęcia, strona, mapy | 2026-09-21 |
+| Strategia Benkowo Białowieża | marka, oferta, treści, SEO | zlecono bazę atrakcji i 12+ planów dnia, rozszerzoną o wędkarstwo, zbieractwo, cerkwie, muzeum, sztukę, lokalną żywność, restauracje i partnerstwa | `W TOKU` | atrakcje, SEO, zdjęcia, strona, mapy, prawo | 2026-09-21 |
 | Strona Benkowa Cloudflare | implementacja i wdrożenia | działa podgląd PL/EN pod `/test`; automatyczny język i pamięć wyboru wdrożone testowo | `W TOKU` | treści, SEO, akceptacja właściciela | 2026-09-21 |
 | Analiza systemu rezerwacji | rezerwacje i płatności | trwa porównanie bezpieczeństwa płatności polskich i zagranicznych oraz ochrony obu stron | `W TOKU` | ceny, regulamin, anulowanie | 2026-09-21 |
 | Ceny i rentowność | model cenowy | brak potwierdzonego modelu w rejestrze | `ZABLOKOWANE` | koszty, sezonowość, strategia sprzedaży | 2026-09-21 |
@@ -223,6 +234,7 @@ Każdy etap kończy się sekcjami: **Wykonano, Rekomendacje, Decyzje potrzebne o
 | BL-004 | P1 | przegląd wersji testowej desktop/mobile, języków, 404, formularzy i konsoli | strona/Cloudflare | aktualny `/test` | raport testów z błędami i kryteriami publikacji |
 | BL-005 | P1 | zinwentaryzować zdjęcia i przygotować shot list | zdjęcia/materiały | dostęp do materiałów | lista istniejących i brakujących ujęć z priorytetem |
 | BL-012 | P1 | zbadać atrakcje i przygotować sezonowe plany dnia z danymi do map/QR | strategia | brief atrakcji, oficjalne źródła | baza atrakcji, macierz sezonowa, 12+ scenariuszy i shortlista 6–8 |
+| BL-013 | P1 | zweryfikować zasady wędkarstwa/zbieractwa oraz zbudować shortlistę partnerów lokalnych | strategia + koordynator | zarządcy wód i lasów, aktywni przedsiębiorcy | rejestr zezwoleń i macierz partnerów bez niepotwierdzonych obietnic |
 
 ### Następne
 
@@ -273,8 +285,18 @@ Każdy etap kończy się sekcjami: **Wykonano, Rekomendacje, Decyzje potrzebne o
 | RSK-013 | niespójność cen między kanałami | średnie / wysokie | jeden model cenowy i kontrolowany channel manager |
 | RSK-014 | brak pomiaru konwersji | wysokie / średnie | plan zdarzeń i test przed pełną publikacją |
 | RSK-015 | informacje o atrakcjach zewnętrznych się zestarzeją | średnie / średnie | oznaczać niezależność, weryfikować aktualność, nie obiecywać dostępności |
+| RSK-016 | błędna informacja o możliwości łowienia lub zbierania narazi gościa na mandat albo naruszenie ochrony przyrody | średnie / wysokie | potwierdzenie u zarządcy, data weryfikacji, rozdzielenie karty od zezwolenia, brak publikacji „miejscówek” |
+| RSK-017 | komunikacja rabatu lub partnerstwa bez umowy | średnie / wysokie | status `DO ROZMOWY` do czasu pisemnego potwierdzenia warunków |
 
 ## K. Dziennik zmian
+
+### 2026-09-21 — wersja 0.3
+
+- rozszerzono badanie o wędkarstwo, legalne zbieractwo, cerkwie, muzea, lokalną sztukę, rękodzieło, żywność, restauracje i partnerstwa;
+- wskazano do weryfikacji Stawy Dyrektorskie, Topiło i lokalne rzeki bez uznawania niepotwierdzonych zasad za fakt;
+- dodano obowiązek przygotowania rejestru zezwoleń oraz macierzy potencjalnych partnerów;
+- zapisano warunek: żadnych rabatów ani korzyści w komunikacji bez potwierdzonego porozumienia;
+- zaktualizowano brief `docs/briefs/BRIEF_STRATEGIA_ATRAKCJE_I_PLANY_DNIA.md`.
 
 ### 2026-09-21 — wersja 0.2
 
