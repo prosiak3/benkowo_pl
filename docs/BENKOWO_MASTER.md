@@ -4,7 +4,7 @@
 
 ## A. Metryka dokumentu
 
-- **Wersja:** 0.1
+- **Wersja:** 0.2
 - **Status:** `W TOKU` — pierwsza wersja rejestru; wymaga bieżącej synchronizacji z wynikami wątków specjalistycznych
 - **Data aktualizacji:** 2026-09-21
 - **Autor aktualizacji:** główny koordynator projektu BENKOWO.PL
@@ -143,6 +143,15 @@ Doprowadzić wersję testową i model rezerwacji do stanu, w którym właścicie
 - **Obszary:** treści PL/EN, oznaczenia planu, SEO.
 - **Zatwierdzający:** właściciel.
 
+### DEC-006 — gotowe plany dnia jako element wartości pobytu
+
+- **Data:** 2026-09-21
+- **Status:** `ZATWIERDZONE`
+- **Decyzja:** strona ma dawać gościowi gotowe, opcjonalne plany dnia dopasowane do pory roku, pogody, składu grupy i tempa. Gość nie musi z nich korzystać, ale nie powinien przyjeżdżać bez łatwo dostępnego pomysłu na pobyt.
+- **Konsekwencje:** każdy rekomendowany plan ma mieć praktyczną oś dnia, logistykę, rezerwacje, plan B oraz dane mapowe. Docelowo strona ma oferować otwarcie planu w telefonie/Google Maps i kod QR.
+- **Obszary:** strategia, atrakcje, SEO, zdjęcia, strona/Cloudflare, analityka.
+- **Zatwierdzający:** właściciel.
+
 ## E. Hipotezy
 
 - `HIPOTEZA HYP-001` Publiczna nazwa drugiego budynku „Dom Ogrodowy” — użyta w wersji rozwojowej, ale wymaga potwierdzenia jako stały element nazewnictwa.
@@ -150,6 +159,7 @@ Doprowadzić wersję testową i model rezerwacji do stanu, w którym właścicie
 - `HIPOTEZA HYP-003` Strona może pozostać one-page w pierwszym wydaniu; podział na podstrony nastąpi po zebraniu wystarczającej liczby potwierdzonych treści i zdjęć.
 - `HIPOTEZA HYP-004` Naturalna automatyczna wersja językowa powinna uwzględniać język przeglądarki i ostatni wybór użytkownika — mechanizm istnieje na podglądzie i wymaga testów przed produkcją.
 - `HIPOTEZA HYP-005` Główny komunikat sprzedażowy powinien eksponować całą prywatną posesję, dwa budynki, 6 sypialni, 4 łazienki, 2 kuchnie, ogród i saunę do 14 osób.
+- `HIPOTEZA HYP-006` Najwygodniejszym wdrożeniem map może być stabilny adres Benkowa dla każdego planu, przekierowujący do zweryfikowanego Google Maps URL; wymaga testów limitów punktów pośrednich na telefonach.
 
 ## F. Otwarte pytania
 
@@ -169,7 +179,7 @@ Doprowadzić wersję testową i model rezerwacji do stanu, w którym właścicie
 | Wątek | Rola | Aktualne zadanie / wynik | Status | Zależności | Ostatnia synchronizacja |
 |---|---|---|---|---|---|
 | Główny koordynator BENKOWO.PL | wspólny stan, decyzje, briefy, odbiór | utworzenie rejestru centralnego i diagnoza projektu | `W TOKU` | wszystkie obszary | 2026-09-21 |
-| Strategia Benkowo Białowieża | marka, oferta, treści, SEO | opracowano nową wersję, treści i kierunek widoczności; konieczny raport końcowy do koordynatora | `W TOKU` | strona, ceny, zdjęcia, rezerwacje | 2026-09-21 |
+| Strategia Benkowo Białowieża | marka, oferta, treści, SEO | zlecono szeroką bazę atrakcji, sezonowość i 12+ gotowych planów dnia; brief: `docs/briefs/BRIEF_STRATEGIA_ATRAKCJE_I_PLANY_DNIA.md` | `W TOKU` | atrakcje, SEO, zdjęcia, strona, mapy | 2026-09-21 |
 | Strona Benkowa Cloudflare | implementacja i wdrożenia | działa podgląd PL/EN pod `/test`; automatyczny język i pamięć wyboru wdrożone testowo | `W TOKU` | treści, SEO, akceptacja właściciela | 2026-09-21 |
 | Analiza systemu rezerwacji | rezerwacje i płatności | trwa porównanie bezpieczeństwa płatności polskich i zagranicznych oraz ochrony obu stron | `W TOKU` | ceny, regulamin, anulowanie | 2026-09-21 |
 | Ceny i rentowność | model cenowy | brak potwierdzonego modelu w rejestrze | `ZABLOKOWANE` | koszty, sezonowość, strategia sprzedaży | 2026-09-21 |
@@ -185,6 +195,7 @@ Każdy etap kończy się sekcjami: **Wykonano, Rekomendacje, Decyzje potrzebne o
 | Artefakt | Ścieżka / adres | Właściciel obszaru | Status | Ostatnia aktualizacja |
 |---|---|---|---|---|
 | Centralny rejestr projektu | `docs/BENKOWO_MASTER.md` | koordynator | `W TOKU` | 2026-09-21 |
+| Brief: atrakcje i gotowe plany dnia | `docs/briefs/BRIEF_STRATEGIA_ATRAKCJE_I_PLANY_DNIA.md` | strategia + koordynator | `W TOKU` | 2026-09-21 |
 | Strategia SEO i widoczności AI | `docs/seo-strategia.md` na `redesign-preview` | SEO/analityka | `W TOKU` | 2026-09-21 |
 | Produkcyjna zapowiedź | `public/index.html` na `main` | strona/Cloudflare | `ZATWIERDZONE` jako stan tymczasowy | 2026-09-21 |
 | Polski podgląd | `public/test/index.html` na `main`; https://benkowo.pl/test/ | strona/Cloudflare | `W TOKU` | 2026-09-21 |
@@ -211,6 +222,7 @@ Każdy etap kończy się sekcjami: **Wykonano, Rekomendacje, Decyzje potrzebne o
 | BL-003 | P0 | potwierdzić fakty publikacyjne oraz brakujące zasady | koordynator + właściciel | lista OQ | zatwierdzony pakiet danych do strony, regulaminu i rezerwacji |
 | BL-004 | P1 | przegląd wersji testowej desktop/mobile, języków, 404, formularzy i konsoli | strona/Cloudflare | aktualny `/test` | raport testów z błędami i kryteriami publikacji |
 | BL-005 | P1 | zinwentaryzować zdjęcia i przygotować shot list | zdjęcia/materiały | dostęp do materiałów | lista istniejących i brakujących ujęć z priorytetem |
+| BL-012 | P1 | zbadać atrakcje i przygotować sezonowe plany dnia z danymi do map/QR | strategia | brief atrakcji, oficjalne źródła | baza atrakcji, macierz sezonowa, 12+ scenariuszy i shortlista 6–8 |
 
 ### Następne
 
@@ -263,6 +275,14 @@ Każdy etap kończy się sekcjami: **Wykonano, Rekomendacje, Decyzje potrzebne o
 | RSK-015 | informacje o atrakcjach zewnętrznych się zestarzeją | średnie / średnie | oznaczać niezależność, weryfikować aktualność, nie obiecywać dostępności |
 
 ## K. Dziennik zmian
+
+### 2026-09-21 — wersja 0.2
+
+- właściciel zatwierdził zasadę, że gość ma otrzymać gotowe, opcjonalne plany dnia zamiast samej listy atrakcji;
+- zlecono wątkowi strategii szerokie badanie atrakcji Białowieży i okolic z podziałem na sezony, pogodę i typ grupy;
+- dodano wymóg przygotowania danych do linków Google Maps oraz kodów QR;
+- utworzono `docs/briefs/BRIEF_STRATEGIA_ATRAKCJE_I_PLANY_DNIA.md`;
+- do poinformowania po oddaniu wyniku: SEO, zdjęcia i materiały, strona/Cloudflare.
 
 ### 2026-09-21 — wersja 0.1
 
