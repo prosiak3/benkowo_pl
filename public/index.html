@@ -273,30 +273,75 @@
     .experience { padding-block: clamp(6.5rem, 11vw, 10rem); }
     .experience-head { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; }
     .experience-head .section-lead { justify-self: end; }
-    .plan-tabs { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 3rem; }
-    .plan-tab { border: 1px solid var(--line); border-radius: 999px; padding: .65rem 1rem; background: transparent; color: var(--ink); font-weight: 700; cursor: pointer; }
-    .plan-tab[aria-selected="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
-    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
-    .plan { min-height: 31rem; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); transition: transform .22s ease, box-shadow .22s ease; }
+    .plan-filter-bar { display: flex; align-items: center; gap: .65rem; margin-top: 2.5rem; }
+    .quick-filters { display: flex; flex: 1; flex-wrap: wrap; gap: .5rem; }
+    .filter-chip, .more-filters, .clear-filters, .filter-close, .filter-apply {
+      min-height: 2.8rem; border: 1px solid var(--line); border-radius: 999px; padding: .62rem 1rem;
+      background: var(--paper); color: var(--ink); font-weight: 700; cursor: pointer;
+    }
+    .filter-chip[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+    .filter-chip:focus-visible, .more-filters:focus-visible, .clear-filters:focus-visible, .filter-close:focus-visible,
+    .filter-apply:focus-visible, .plan-title-link:focus-visible, .youtube-trigger:focus-visible {
+      outline: 3px solid rgba(158,90,60,.38); outline-offset: 3px;
+    }
+    .more-filters { flex: 0 0 auto; background: transparent; }
+    .filter-summary { display: flex; min-height: 2.8rem; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .75rem; }
+    .filter-count { margin: 0; color: rgba(26,29,26,.66); font-size: .88rem; }
+    .clear-filters { min-height: 2.35rem; border: 0; padding: .35rem .25rem; background: transparent; color: var(--copper); }
+    .filter-dialog { width: min(47rem, calc(100% - 2rem)); max-height: min(48rem, calc(100dvh - 2rem)); border: 0; border-radius: var(--radius); padding: 0; background: var(--paper); color: var(--ink); box-shadow: 0 2rem 6rem rgba(26,29,26,.28); }
+    .filter-dialog::backdrop { background: rgba(18,21,18,.62); backdrop-filter: blur(3px); }
+    .filter-form { display: flex; max-height: inherit; flex-direction: column; }
+    .filter-dialog-head, .filter-dialog-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; }
+    .filter-dialog-head { border-bottom: 1px solid var(--line); }
+    .filter-dialog-head h3 { margin: 0; font-family: var(--serif); font-size: 1.8rem; font-weight: 500; }
+    .filter-close { width: 2.75rem; padding: 0; font-size: 1.4rem; }
+    .filter-groups { overflow: auto; padding: .5rem 1.25rem 1.25rem; }
+    .filter-group { margin: 0; border: 0; border-bottom: 1px solid var(--line); padding: 1rem 0; }
+    .filter-group:last-child { border-bottom: 0; }
+    .filter-group legend { margin-bottom: .65rem; padding: 0; font-weight: 800; }
+    .filter-options { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .filter-option { position: relative; }
+    .filter-option input { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+    .filter-option span { display: inline-flex; min-height: 2.65rem; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: .55rem .85rem; cursor: pointer; }
+    .filter-option input:checked + span { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+    .filter-option input:focus-visible + span { outline: 3px solid rgba(158,90,60,.38); outline-offset: 2px; }
+    .filter-dialog-foot { border-top: 1px solid var(--line); }
+    .filter-dialog-foot .clear-filters { margin-right: auto; }
+    .filter-apply { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.2rem; }
+    .plan { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); transition: transform .22s ease, box-shadow .22s ease; }
     .plan:hover { transform: translateY(-4px); box-shadow: 0 1.2rem 2.8rem rgba(26,29,26,.12); }
-    .plan[hidden] { display: none; }
-    .plan-link { min-height: 31rem; display: flex; flex-direction: column; color: inherit; text-decoration: none; }
-    .plan-media { position: relative; aspect-ratio: 16 / 9; margin: 0; overflow: hidden; background: var(--mist); }
-    .plan-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(20,24,20,.55)); }
+    .plan[hidden], .no-results[hidden] { display: none; }
+    .plan-media { position: relative; aspect-ratio: 16 / 9; margin: 0; overflow: hidden; background: #30362f; color: var(--paper); }
+    .plan-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(20,24,20,.58)); pointer-events: none; }
     .plan-media img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .45s ease; }
     .plan:hover .plan-media img { transform: scale(1.035); }
-    .plan-badge { position: absolute; z-index: 1; left: 1rem; bottom: .9rem; color: #fff; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-    .plan-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 1.35rem 1.5rem 1.5rem; }
-    .plan-time { color: var(--copper); font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-    .plan h3 { margin: .65rem 0 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; line-height: 1; }
-    .plan ol { margin: 1.25rem 0 0; padding: 0; list-style: none; counter-reset: stop; }
-    .plan li { counter-increment: stop; display: grid; grid-template-columns: 1.5rem 1fr; gap: .6rem; padding-block: .48rem; border-top: 1px solid var(--line); color: rgba(26,29,26,.7); font-size: .86rem; }
-    .plan li::before { content: "0" counter(stop); color: var(--copper); font-size: .68rem; font-weight: 700; }
-    .plan-foot { margin: 1.25rem 0 0; color: rgba(26,29,26,.52); font-size: .72rem; }
+    .plan-media-missing { display: grid; place-items: center; padding: 1.5rem; background: linear-gradient(135deg, #30362f, #596052); text-align: center; }
+    .plan-media-missing::after { background: repeating-linear-gradient(135deg, transparent 0 24px, rgba(255,255,255,.025) 24px 25px); }
+    .plan-media-missing span { position: relative; z-index: 1; max-width: 19rem; color: rgba(245,243,237,.84); font-size: .8rem; font-weight: 700; line-height: 1.45; }
+    .plan-badge { position: absolute; z-index: 2; left: 1rem; bottom: .9rem; color: #fff; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .photo-credit { position: absolute; z-index: 2; right: .75rem; bottom: .65rem; max-width: 60%; color: rgba(255,255,255,.88); font-size: .62rem; text-align: right; }
+    .photo-credit a { color: inherit; }
+    .plan-body { padding: 1.25rem 1.35rem 1.4rem; }
+    .plan-title-link { color: inherit; text-decoration: none; }
+    .plan h3 { margin: 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; line-height: 1; }
+    .plan-facts { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem .8rem; margin: 1rem 0 0; padding: .9rem 0; border-block: 1px solid var(--line); }
+    .plan-facts div { min-width: 0; }
+    .plan-facts dt { color: rgba(26,29,26,.5); font-size: .64rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .plan-facts dd { margin: .15rem 0 0; font-size: .78rem; font-weight: 650; line-height: 1.35; }
+    .plan-description { margin: .9rem 0 0; color: rgba(26,29,26,.72); font-size: .88rem; }
+    .plan-limit { margin: .75rem 0 0; border-left: 2px solid var(--copper); padding-left: .7rem; color: rgba(26,29,26,.62); font-size: .74rem; }
     .plan-more { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1rem; color: var(--ink); font-size: .8rem; font-weight: 800; }
     .plan-more::after { content: "→"; color: var(--copper); transition: transform .2s ease; }
     .plan:hover .plan-more::after { transform: translateX(.25rem); }
-
+    .plan-video { margin-top: 1rem; }
+    .youtube-poster { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: .75rem; background: #171a17; }
+    .youtube-poster img, .youtube-frame { width: 100%; height: 100%; display: block; border: 0; object-fit: cover; }
+    .youtube-trigger { position: absolute; inset: 50% auto auto 50%; min-height: 2.8rem; transform: translate(-50%,-50%); border: 0; border-radius: 999px; padding: .65rem 1rem; background: var(--paper); color: var(--ink); font-weight: 800; cursor: pointer; }
+    .youtube-fallback { display: inline-block; margin-top: .55rem; font-size: .75rem; }
+    .no-results { grid-column: 1 / -1; border: 1px dashed var(--line); border-radius: var(--radius); padding: 2rem; background: rgba(255,253,248,.55); text-align: center; }
+    .no-results h3 { margin: 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; }
+    .no-results p { margin: .5rem 0 0; color: rgba(26,29,26,.66); }
 
     .location { padding-block: clamp(6rem, 10vw, 9rem); background: #e9e6dd; }
     .location-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
@@ -376,6 +421,8 @@
       .house-grid { grid-template-columns: 1fr 1fr; }
       .house-card:last-child { grid-column: 1 / -1; min-height: 22rem; }
       .plans { grid-template-columns: 1fr 1fr; }
+      .quick-filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .35rem; scrollbar-width: thin; }
+      .filter-chip { flex: 0 0 auto; }
       .estate-plan-copy, .history-grid { grid-template-columns: 1fr; }
       .estate-plan-copy p:not(.eyebrow) { justify-self: start; }
       .estate-explorer { grid-template-columns: .9fr 1.1fr; }
@@ -410,6 +457,12 @@
       .house-card, .house-card:last-child { grid-column: auto; min-height: 24rem; }
       .experience-head .section-lead { margin-top: 1.2rem; }
       .plans { gap: .7rem; }
+      .plan-filter-bar { align-items: stretch; flex-direction: column; }
+      .more-filters { width: 100%; }
+      .filter-dialog { width: 100%; max-width: none; max-height: 88dvh; margin: auto 0 0; border-radius: 1.25rem 1.25rem 0 0; }
+      .filter-options { display: grid; grid-template-columns: 1fr 1fr; }
+      .filter-option span { width: 100%; }
+      .plan-facts { grid-template-columns: 1fr; }
       .plan { min-height: 21rem; }
       .form-grid { grid-template-columns: 1fr; }
       .field-wide { grid-column: auto; }
@@ -631,72 +684,145 @@
         <div class="experience-head">
           <div>
             <p class="eyebrow">Pomysły na pobyt</p>
-            <h2 class="display section-title" id="plans-title">Gotowe pomysły na dzień w Białowieży.</h2>
+            <h2 class="display section-title" id="plans-title">Nie szukajcie planu od zera.</h2>
           </div>
-          <p class="section-lead">Wybierz plan dnia dopasowany do Waszej grupy, pory roku albo pogody.</p>
+          <p class="section-lead">Połącz filtry według pory roku, pogody, składu grupy i tempa. Wyniki zmieniają się od razu.</p>
         </div>
-        <div class="plan-tabs" role="tablist" aria-label="Rodzaje planów pobytu">
-          <button class="plan-tab" type="button" role="tab" aria-selected="true" data-filter="all">Wszystkie</button>
-          <button class="plan-tab" type="button" role="tab" aria-selected="false" data-filter="family">Z dziećmi</button>
-          <button class="plan-tab" type="button" role="tab" aria-selected="false" data-filter="active">Aktywnie</button>
-          <button class="plan-tab" type="button" role="tab" aria-selected="false" data-filter="weather">Na niepogodę</button>
-          <button class="plan-tab" type="button" role="tab" aria-selected="false" data-filter="winter">Zimą</button>
+        <div class="plan-filter-bar">
+          <div class="quick-filters" role="group" aria-label="Szybkie filtry planów">
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="children">Z dziećmi</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="active">Aktywnie</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="weather" data-value="rain">Na deszcz</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="winter">Zimą</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="car">Samochodem</button>
+          </div>
+          <button class="more-filters" type="button" aria-haspopup="dialog" aria-controls="plan-filter-dialog">Więcej filtrów <span aria-hidden="true">＋</span></button>
         </div>
-        <div class="plans" aria-live="polite">
-          <article class="plan" data-categories="family active">
-            <a class="plan-link" href="/aktywnosci/rodzinnie-w-bialowiezy/" aria-label="Dowiedz się więcej: Rodzinnie w Białowieży">
-              <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg" alt="Żubr europejski w Białowieży" loading="lazy" decoding="async"><span class="plan-badge">Dla rodzin</span></figure>
-              <div class="plan-body"><div><span class="plan-time">Dla rodzin</span><h3>Rodzinnie w Białowieży</h3><ol><li>Krótka wyprawa w stronę Puszczy</li><li>Atrakcja dobrana do wieku dzieci</li><li>Powrót do ogrodu i wspólna kolacja</li></ol></div><div><p class="plan-foot">Trasę i tempo najlepiej dobrać do wieku dzieci oraz pogody.</p><span class="plan-more">Zobacz cały plan</span></div></div>
-            </a>
+        <div class="filter-summary">
+          <p class="filter-count" id="filter-count" aria-live="polite">7 planów</p>
+          <button class="clear-filters" type="button" hidden>Wyczyść filtry</button>
+        </div>
+        <dialog class="filter-dialog" id="plan-filter-dialog" aria-labelledby="filter-dialog-title">
+          <form class="filter-form" method="dialog">
+            <div class="filter-dialog-head"><h3 id="filter-dialog-title">Dopasuj plan dnia</h3><button class="filter-close" value="close" aria-label="Zamknij filtry">×</button></div>
+            <div class="filter-groups">
+              <fieldset class="filter-group"><legend>Pora roku</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="spring"><span>Wiosna</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="summer"><span>Lato</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="autumn"><span>Jesień</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="winter"><span>Zima</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="year-round"><span>Cały rok</span></label>
+              </div></fieldset>
+              <fieldset class="filter-group"><legend>Dla kogo</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="group" value="children"><span>Dzieci</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="group" value="intergenerational"><span>Międzypokoleniowo</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="group" value="adults"><span>Dorośli</span></label>
+              </div></fieldset>
+              <fieldset class="filter-group"><legend>Charakter</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="active"><span>Aktywnie</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="calm"><span>Spokojnie</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="culture"><span>Kultura</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="food"><span>Jedzenie</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="nature"><span>Przyroda</span></label>
+              </div></fieldset>
+              <fieldset class="filter-group"><legend>Pogoda</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="weather" value="sun"><span>Słońce</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="weather" value="rain"><span>Deszcz</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="weather" value="snow"><span>Śnieg</span></label>
+              </div></fieldset>
+              <fieldset class="filter-group"><legend>Transport</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="transport" value="foot"><span>Pieszo</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="transport" value="bike"><span>Rower</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="transport" value="car"><span>Samochód</span></label>
+              </div></fieldset>
+              <fieldset class="filter-group"><legend>Czas</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="duration" value="short"><span>2–3 godziny</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="duration" value="half"><span>Pół dnia</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="duration" value="full"><span>Cały dzień</span></label>
+              </div></fieldset>
+              <fieldset class="filter-group"><legend>Rezerwacja</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="reservation" value="none"><span>Bez rezerwacji</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="reservation" value="required"><span>Wymagana</span></label>
+              </div></fieldset>
+            </div>
+            <div class="filter-dialog-foot"><button class="clear-filters" type="button" hidden>Wyczyść</button><button class="filter-apply" value="close">Pokaż wyniki</button></div>
+          </form>
+        </dialog>
+        <div class="plans" id="plan-results" aria-live="polite" aria-busy="false">
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm culture nature food" data-weather="sun rain snow" data-transport="foot" data-duration="half" data-reservation="none">
+            <div class="plan-media plan-media-missing" role="img" aria-label="Brak zweryfikowanego zdjęcia Muzeum BPN i Parku Pałacowego"><span>Zdjęcie własne lub licencjonowane — do uzupełnienia</span></div>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/aktywnosci/rodzinnie-w-bialowiezy/"><h3>Pierwszy dzień w Białowieży bez pośpiechu</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>3–5 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · także deszcz</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i grupy wielopokoleniowe</dd></div><div><dt>Transport</dt><dd>Pieszo w Białowieży</dd></div><div><dt>Rezerwacja</dt><dd>Zwykle nie</dd></div><div><dt>Tempo</dt><dd>Spokojne</dd></div></dl>
+              <p class="plan-description">Muzeum BPN, Park Pałacowy, przerwa i lokalny posiłek — bez przeładowania pierwszego dnia.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> godziny muzeum i bieżące komunikaty BPN trzeba sprawdzić przed wyjściem.</p>
+              <a class="plan-more" href="/aktywnosci/rodzinnie-w-bialowiezy/">Zobacz szkic planu</a>
+            </div>
           </article>
-          <article class="plan" data-categories="active">
-            <a class="plan-link" href="/aktywnosci/rowerem-i-sauna/" aria-label="Dowiedz się więcej: Rowerem przez puszczańskie drogi">
-              <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bialowieza_National_Park_in_Poland0029.JPG" alt="Leśna droga w Puszczy Białowieskiej" loading="lazy" decoding="async"><span class="plan-badge">Aktywnie</span></figure>
-              <div class="plan-body"><div><span class="plan-time">Aktywnie</span><h3>Rowerem przez puszczańskie drogi</h3><ol><li>Trasa dopasowana do możliwości grupy</li><li>Przerwa na odpoczynek w Białowieży</li><li>Wieczorna sauna opalana drewnem</li></ol></div><div><p class="plan-foot">Przebieg trasy trzeba dostosować do pogody, nawierzchni i zasad ruchu w obszarach chronionych.</p><span class="plan-more">Zobacz cały plan</span></div></div>
-            </a>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm nature" data-weather="sun" data-transport="car" data-duration="short" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg" alt="Samiec żubra europejskiego sfotografowany w Puszczy Białowieskiej" loading="lazy" decoding="async"><span class="plan-badge">Żubry i łatwy spacer</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:European_bison_(Bison_bonasus)_male_Bia%C5%82owieza.jpg" target="_blank" rel="noopener">Fot. Charles J. Sharp · CC BY-SA 4.0</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/aktywnosci/rezerwat-pokazowy-zubrow/"><h3>Żubry i łatwy spacer z dziećmi</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>2–3 godziny</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · bez ulewy</dd></div><div><dt>Dla kogo</dt><dd>Dzieci i seniorzy</dd></div><div><dt>Transport</dt><dd>Samochód</dd></div><div><dt>Rezerwacja</dt><dd>Bez rezerwacji indywidualnej</dd></div><div><dt>Tempo</dt><dd>Łatwe</dd></div></dl>
+              <p class="plan-description">Rezerwat Pokazowy Żubrów i spokojny spacer dopasowany do wieku dzieci.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> psy są zakazane poza psami asystującymi; aktualne bilety i godziny publikuje BPN.</p>
+              <a class="plan-more" href="/aktywnosci/rezerwat-pokazowy-zubrow/">Zobacz szkic planu</a>
+            </div>
           </article>
-          <article class="plan" data-categories="weather winter family">
-            <a class="plan-link" href="/aktywnosci/hajnowka-na-niepogode/" aria-label="Dowiedz się więcej: Hajnówka i spokojny wieczór">
-              <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Kolejka-hajnowka-2.JPG" alt="Leśna kolejka wąskotorowa w Hajnówce" loading="lazy" decoding="async"><span class="plan-badge">Na niepogodę</span></figure>
-              <div class="plan-body"><div><span class="plan-time">Na niepogodę</span><h3>Hajnówka i spokojny wieczór</h3><ol><li>Kryty basen lub inna dostępna atrakcja</li><li>Krótki pobyt w Hajnówce</li><li>Powrót i wspólny wieczór pod dachem</li></ol></div><div><p class="plan-foot">Godziny otwarcia, ceny i dostępność atrakcji należy sprawdzić bezpośrednio przed wyjazdem.</p><span class="plan-more">Zobacz cały plan</span></div></div>
-            </a>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm culture food" data-weather="rain sun snow" data-transport="foot car" data-duration="half" data-reservation="required">
+            <div class="plan-media plan-media-missing" role="img" aria-label="Brak zweryfikowanego zdjęcia planu muzeum, cerkiew, sztuka i jedzenie"><span>Zdjęcie własne lub licencjonowane — do uzupełnienia</span></div>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/aktywnosci/hajnowka-na-niepogode/"><h3>Muzeum, cerkiew, sztuka i jedzenie</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>4–6 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · dobry na deszcz</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i dorośli</dd></div><div><dt>Transport</dt><dd>Pieszo + samochód</dd></div><div><dt>Rezerwacja</dt><dd>Częściowo wymagana</dd></div><div><dt>Charakter</dt><dd>Kultura i lokalność</dd></div></dl>
+              <p class="plan-description">Muzeum BPN, żywa cerkiew, autentyczne rękodzieło oraz regionalny posiłek.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> wejście do cerkwi i wizyta w pracowni wymagają wcześniejszego potwierdzenia.</p>
+              <a class="plan-more" href="/aktywnosci/hajnowka-na-niepogode/">Zobacz szkic planu</a>
+            </div>
           </article>
-          <article class="plan" data-categories="winter active">
-            <a class="plan-link" href="/aktywnosci/biegowki-i-sauna/" aria-label="Dowiedz się więcej: Biegówki i ciepło sauny">
-              <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bialowieza_National_Park_in_Poland0029.JPG" alt="Puszcza Białowieska widziana z leśnej drogi" loading="lazy" decoding="async"><span class="plan-badge">Zimą</span></figure>
-              <div class="plan-body"><div><span class="plan-time">Zimą</span><h3>Biegówki i ciepło sauny</h3><ol><li>Wypożyczenie odpowiedniego sprzętu</li><li>Trasa dopasowana do warunków</li><li>Powrót i rozgrzanie w saunie</li></ol></div><div><p class="plan-foot">To plan sezonowy — wymaga śniegu oraz potwierdzenia dostępności sprzętu i tras.</p><span class="plan-more">Zobacz cały plan</span></div></div>
-            </a>
+          <article class="plan" data-season="spring summer autumn" data-group="children intergenerational adults" data-character="calm nature" data-weather="sun" data-transport="car" data-duration="half" data-reservation="required">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Kolejka-hajnowka-2.JPG" alt="Lokomotywa leśnej kolejki wąskotorowej w Hajnówce" loading="lazy" decoding="async"><span class="plan-badge">Kolejką do Topiła</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Kolejka-hajnowka-2.JPG" target="_blank" rel="noopener">Fot. Dariusz.Biegacz · CC BY-SA 3.0</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/aktywnosci/kolejka-waskotorowa/"><h3>Kolejką przez Puszczę do Topiła</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>Około 3 godzin + dojazd</dd></div><div><dt>Sezon / pogoda</dt><dd>Sezonowo · bez skrajnej pogody</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i grupy</dd></div><div><dt>Transport</dt><dd>Samochód + kolejka</dd></div><div><dt>Rezerwacja</dt><dd>Sprawdzenie kursu konieczne</dd></div><div><dt>Start</dt><dd>Hajnówka</dd></div></dl>
+              <p class="plan-description">Przejazd leśną kolejką, postój w Topile i powrót tą samą trasą.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> kurs zależy od rozkładu, pogody i minimalnej liczby uczestników.</p>
+              <a class="plan-more" href="/aktywnosci/kolejka-waskotorowa/">Zobacz szkic planu</a>
+            </div>
           </article>
-          <article class="plan" data-categories="family weather">
-            <a class="plan-link" href="/aktywnosci/dzien-w-benkowie/" aria-label="Dowiedz się więcej: Dzień bez wyjazdu">
-              <figure class="plan-media"><img src="/assets/benkowo-zewnatrz-google.jpg" alt="Drewniany Dom Główny Benkowa" loading="lazy" decoding="async"><span class="plan-badge">Na miejscu</span></figure>
-              <div class="plan-body"><div><span class="plan-time">Na miejscu</span><h3>Dzień bez wyjazdu</h3><ol><li>Śniadanie bez hotelowych godzin</li><li>Ogród, plac zabaw i przeszklone Akwarium</li><li>Wspólne gotowanie i wieczór pod wiatą</li></ol></div><div><p class="plan-foot">Cały plan wykorzystuje przestrzenie dostępne bezpośrednio na posesji.</p><span class="plan-more">Zobacz cały plan</span></div></div>
-            </a>
+          <article class="plan" data-season="spring summer autumn" data-group="adults" data-character="active nature" data-weather="sun" data-transport="bike car" data-duration="full" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Poland_-_Topilo_Lake_with_dam.JPG" alt="Zbiornik i grobla w Topile" loading="lazy" decoding="async"><span class="plan-badge">Rowerem do Topiła</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Poland_-_Topilo_Lake_with_dam.JPG" target="_blank" rel="noopener">Fot. Merlin · CC BY 2.5</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/aktywnosci/rowerem-i-sauna/"><h3>Hajnówka–Topiło na rowerze</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>5–7 godzin z przerwami</dd></div><div><dt>Sezon / pogoda</dt><dd>Wiosna–jesień · sucho</dd></div><div><dt>Dla kogo</dt><dd>Sprawni dorośli</dd></div><div><dt>Transport</dt><dd>Rower + dojazd autem</dd></div><div><dt>Rezerwacja</dt><dd>Bez rezerwacji</dd></div><div><dt>Dystans</dt><dd>42,5 km</dd></div></dl>
+              <p class="plan-description">Pełna pętla po nawierzchniach asfaltowych, żwirowych i gruntowych z postojem w Topile.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> to nie jest łatwy rodzinny spacer; stan nawierzchni i pogoda realnie zmieniają trudność.</p>
+              <a class="plan-more" href="/aktywnosci/rowerem-i-sauna/">Zobacz szkic planu</a>
+            </div>
           </article>
-          <article class="plan" data-categories="active family">
-            <a class="plan-link" href="/aktywnosci/grzybobranie/" aria-label="Dowiedz się więcej: Puszcza i grzyby — legalnie">
-              <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Bialowieza_Deby_rzeka_Barry_Kent.JPG" alt="Stary las i rzeka w Puszczy Białowieskiej" loading="lazy" decoding="async"><span class="plan-badge">Jesienią</span></figure>
-              <div class="plan-body"><div><span class="plan-time">Jesienią</span><h3>Puszcza i grzyby — legalnie</h3><ol><li>Wybór legalnie dostępnego obszaru</li><li>Spacer albo grzybobranie</li><li>Powrót na wspólny posiłek</li></ol></div><div><p class="plan-foot">Zbieranie grzybów nie jest dozwolone na wszystkich terenach chronionych.</p><span class="plan-more">Zobacz cały plan</span></div></div>
-            </a>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm culture food" data-weather="sun rain snow" data-transport="foot car" data-duration="half" data-reservation="required">
+            <div class="plan-media plan-media-missing" role="img" aria-label="Brak zweryfikowanego zdjęcia lokalnych produktów i rękodzieła"><span>Zdjęcie własne partnera za zgodą — do uzupełnienia</span></div>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/aktywnosci/dzien-w-benkowie/"><h3>Lokalne smaki i rękodzieło</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>3–5 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Każda spokojna grupa</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Rezerwacja</dt><dd>Zależnie od pracowni</dd></div><div><dt>Charakter</dt><dd>Jedzenie i rzemiosło</dd></div></dl>
+              <p class="plan-description">Wizyta u potwierdzonego twórcy lub producenta, zakupy bezpośrednie i regionalny posiłek.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> nie obiecujemy dostępności, warsztatów ani rabatu bez potwierdzenia partnera.</p>
+              <a class="plan-more" href="/aktywnosci/dzien-w-benkowie/">Zobacz szkic planu</a>
+            </div>
           </article>
-          <article class="plan" data-categories="family weather">
-            <a class="plan-link" href="/aktywnosci/rezerwat-pokazowy-zubrow/" aria-label="Dowiedz się więcej: Rezerwat Pokazowy Żubrów">
-              <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg" alt="Samiec żubra europejskiego w Białowieży" loading="lazy" decoding="async"><span class="plan-badge">Blisko natury</span></figure>
-              <div class="plan-body"><div><span class="plan-time">Blisko natury</span><h3>Rezerwat Pokazowy Żubrów</h3><ol><li>Sprawdzenie godzin i biletów</li><li>Spokojne zwiedzanie rezerwatu</li><li>Powrót przez Białowieżę</li></ol></div><div><p class="plan-foot">Rezerwat działa niezależnie od Benkowa; aktualne godziny i ceny publikuje Białowieski Park Narodowy.</p><span class="plan-more">Zobacz cały plan</span></div></div>
-            </a>
+          <article class="plan" data-season="winter" data-group="children intergenerational adults" data-character="active calm culture nature" data-weather="snow rain" data-transport="foot car" data-duration="half" data-reservation="none required">
+            <div class="plan-media plan-media-missing" role="img" aria-label="Brak zweryfikowanego zimowego zdjęcia Białowieży"><span>Zimowe zdjęcie własne — do uzupełnienia</span></div>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/aktywnosci/biegowki-i-sauna/"><h3>Zimowy dzień z ciepłym finałem</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>3–6 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Zima · śnieg lub mróz</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i dorośli</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Rezerwacja</dt><dd>Zależnie od aktywności</dd></div><div><dt>Plan B</dt><dd>Muzeum i kultura</dd></div></dl>
+              <p class="plan-description">Krótka aktywność dobrana do warunków, a potem spokojny powrót i ciepły wieczór w Benkowie.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> nie gwarantujemy śniegu, przygotowanych tras ani dostępności sprzętu.</p>
+              <a class="plan-more" href="/aktywnosci/biegowki-i-sauna/">Zobacz szkic planu</a>
+            </div>
           </article>
-          <article class="plan" data-categories="active family">
-            <a class="plan-link" href="/aktywnosci/puszcza-z-przewodnikiem/" aria-label="Dowiedz się więcej: Puszcza z przewodnikiem">
-              <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bialowieza_National_Park_in_Poland0029.JPG" alt="Naturalny las Białowieskiego Parku Narodowego" loading="lazy" decoding="async"><span class="plan-badge">Z przewodnikiem</span></figure>
-              <div class="plan-body"><div><span class="plan-time">Z przewodnikiem</span><h3>Puszcza z przewodnikiem</h3><ol><li>Wybór trasy i przewodnika</li><li>Spacer w tempie dopasowanym do grupy</li><li>Czas na pytania i obserwację przyrody</li></ol></div><div><p class="plan-foot">Dostęp do części chronionych obszarów podlega zasadom Białowieskiego Parku Narodowego.</p><span class="plan-more">Zobacz cały plan</span></div></div>
-            </a>
-          </article>
-          <article class="plan" data-categories="family active">
-            <a class="plan-link" href="/aktywnosci/kolejka-waskotorowa/" aria-label="Dowiedz się więcej: Leśną kolejką do Topiła">
-              <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Kolejka-hajnowka-2.JPG" alt="Leśna kolejka wąskotorowa w Hajnówce" loading="lazy" decoding="async"><span class="plan-badge">Sezonowo</span></figure>
-              <div class="plan-body"><div><span class="plan-time">Sezonowo</span><h3>Leśną kolejką do Topiła</h3><ol><li>Sprawdzenie rozkładu i biletów</li><li>Przejazd kolejką leśną</li><li>Spacer i odpoczynek w okolicy Topiła</li></ol></div><div><p class="plan-foot">Kolejka kursuje sezonowo; rozkład, trasa i dostępność biletów mogą się zmieniać.</p><span class="plan-more">Zobacz cały plan</span></div></div>
-            </a>
-          </article>
+          <div class="no-results" hidden>
+            <h3>Nie ma planu spełniającego wszystkie warunki.</h3>
+            <p>Wyczyść część filtrów — pokażemy najbliższe sensowne propozycje.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -784,16 +910,101 @@
       menuButton.setAttribute('aria-expanded', 'false');
     }));
 
-    const tabs = document.querySelectorAll('.plan-tab');
-    const plans = document.querySelectorAll('.plan');
-    tabs.forEach(tab => tab.addEventListener('click', () => {
-      tabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
-      const filter = tab.dataset.filter;
-      plans.forEach(plan => {
-        const categories = plan.dataset.categories.split(' ');
-        plan.hidden = filter !== 'all' && !categories.includes(filter);
+    const planCards = Array.from(document.querySelectorAll('.plan'));
+    const filterInputs = Array.from(document.querySelectorAll('.filter-option input'));
+    const quickFilterButtons = Array.from(document.querySelectorAll('.filter-chip'));
+    const clearFilterButtons = Array.from(document.querySelectorAll('.clear-filters'));
+    const filterCount = document.getElementById('filter-count');
+    const noResults = document.querySelector('.no-results');
+    const filterDialog = document.getElementById('plan-filter-dialog');
+    const moreFiltersButton = document.querySelector('.more-filters');
+
+    const selectedFilters = () => {
+      const active = new Map();
+      filterInputs.filter(input => input.checked).forEach(input => {
+        if (!active.has(input.dataset.dimension)) active.set(input.dataset.dimension, new Set());
+        active.get(input.dataset.dimension).add(input.value);
       });
+      return active;
+    };
+
+    const updatePlans = () => {
+      const active = selectedFilters();
+      let visible = 0;
+      planCards.forEach(plan => {
+        const matches = Array.from(active.entries()).every(([dimension, values]) => {
+          const planValues = new Set((plan.dataset[dimension] || '').split(' ').filter(Boolean));
+          return Array.from(values).some(value => planValues.has(value));
+        });
+        plan.hidden = !matches;
+        if (matches) visible += 1;
+      });
+      filterInputs.forEach(input => {
+        const matchingChip = quickFilterButtons.find(button => button.dataset.dimension === input.dataset.dimension && button.dataset.value === input.value);
+        if (matchingChip) matchingChip.setAttribute('aria-pressed', String(input.checked));
+      });
+      const hasFilters = Array.from(active.values()).some(values => values.size);
+      clearFilterButtons.forEach(button => button.hidden = !hasFilters);
+      const countLabel = document.documentElement.lang === 'pl'
+        ? (visible === 1 ? '1 plan' : (visible >= 2 && visible <= 4 ? visible + ' plany' : visible + ' planów'))
+        : visible + (visible === 1 ? ' plan' : ' plans');
+      filterCount.textContent = countLabel;
+      noResults.hidden = visible !== 0;
+      const params = new URLSearchParams(location.search);
+      params.delete('filter');
+      filterInputs.filter(input => input.checked).forEach(input => params.append('filter', input.dataset.dimension + ':' + input.value));
+      const nextQuery = params.toString();
+      history.replaceState(null, '', location.pathname + (nextQuery ? '?' + nextQuery : '') + location.hash);
+    };
+
+    new URLSearchParams(location.search).getAll('filter').forEach(filter => {
+      const separator = filter.indexOf(':');
+      if (separator < 1) return;
+      const dimension = filter.slice(0, separator);
+      const value = filter.slice(separator + 1);
+      const input = filterInputs.find(item => item.dataset.dimension === dimension && item.value === value);
+      if (input) input.checked = true;
+    });
+
+    quickFilterButtons.forEach(button => button.addEventListener('click', () => {
+      const input = filterInputs.find(item => item.dataset.dimension === button.dataset.dimension && item.value === button.dataset.value);
+      if (input) {
+        input.checked = !input.checked;
+        updatePlans();
+      }
     }));
+    filterInputs.forEach(input => input.addEventListener('change', updatePlans));
+    clearFilterButtons.forEach(button => button.addEventListener('click', () => {
+      filterInputs.forEach(input => input.checked = false);
+      updatePlans();
+    }));
+    moreFiltersButton.addEventListener('click', () => {
+      filterDialog.showModal();
+      const firstInput = filterDialog.querySelector('input');
+      if (firstInput) firstInput.focus();
+    });
+    filterDialog.addEventListener('click', event => {
+      if (event.target === filterDialog) filterDialog.close();
+    });
+    updatePlans();
+
+    document.querySelectorAll('[data-youtube-video-id]').forEach(module => {
+      const trigger = module.querySelector('.youtube-trigger');
+      if (!trigger || module.dataset.embedAllowed !== 'true') return;
+      trigger.addEventListener('click', () => {
+        const videoId = module.dataset.youtubeVideoId;
+        const iframe = document.createElement('iframe');
+        iframe.className = 'youtube-frame';
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId);
+        iframe.title = module.dataset.youtubeTitle || 'YouTube video';
+        iframe.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        const poster = module.querySelector('.youtube-poster');
+        poster.replaceChildren(iframe);
+        iframe.focus();
+      }, { once: true });
+    });
 
     const hotspots = document.querySelectorAll('.hotspot');
     const explorerKicker = document.getElementById('explorer-kicker');
