@@ -60,6 +60,13 @@ Zbuduj szeroki longlist, a następnie wybierz miejsca rzeczywiście wartościowe
 9. **Deszcz i zimno** — rzeczywiste całoroczne lub kryte alternatywy.
 10. **Kultura lokalna i jedzenie** — warsztaty, tradycje, wydarzenia i doświadczenia tylko wtedy, gdy mają stabilną ofertę lub jasno oznaczoną sezonowość.
 11. **Wydarzenia sezonowe** — wyłącznie w osobnej warstwie aktualizowanej, bez przedstawiania ich jako stałych atrakcji.
+12. **Wędkarstwo** — lokalne rzeki i zbiorniki, w tym Stawy Dyrektorskie oraz Topiło, ale wyłącznie po ustaleniu zarządcy wody, wymaganej karty wędkarskiej, osobnego zezwolenia, okresów ochronnych, dozwolonych miejsc i aktualnego regulaminu.
+13. **Zbieractwo sezonowe** — grzyby, jagody, maliny i inne legalnie zbierane płody runa leśnego, z jednoznacznym rozróżnieniem BPN, rezerwatów i obszarów, na których zbiór jest dozwolony.
+14. **Dziedzictwo prawosławne i sakralne** — cerkwie, sobory, kapliczki, miejsca pielgrzymkowe, architektura, muzyka i wydarzenia religijne z poszanowaniem funkcji kultowej.
+15. **Muzea i edukacja** — obowiązkowo Muzeum Przyrodniczo-Leśne BPN oraz inne wartościowe muzea i ośrodki edukacyjne regionu.
+16. **Sztuka, rzemiosło i zakupy lokalne** — pracownie, galerie, sklepy z autentyczną sztuką i rękodziełem, jarmarki, kiermasze oraz lokalni twórcy.
+17. **Lokalna żywność** — targi, stragany, sery, miody, mąki, kasze, oleje, zioła, przetwory i inne produkty możliwe do kupienia bezpośrednio od wiarygodnych lokalnych producentów.
+18. **Restauracje i partnerzy** — miejsca, które realnie pasują do gości Benkowa i mogą stać się partnerami polecanymi na stronie lub w przewodniku.
 
 Nie ograniczaj się sztywnym promieniem kilometrów. Podziel propozycje według praktycznego czasu i sposobu dotarcia z Benkowa:
 
@@ -122,6 +129,82 @@ Dla każdego miejsca lub działania przygotuj rekord zawierający:
 
 Jeżeli czegoś nie uda się potwierdzić, wpisz `NIEPOTWIERDZONE` — nie uzupełniaj luk domysłem.
 
+### Dodatkowe wymagania dla wędkarstwa
+
+Dla każdego łowiska lub odcinka rzeki ustal:
+
+- dokładnego zarządcę wody;
+- czy wymagana jest karta wędkarska;
+- czy wymagane jest dodatkowe zezwolenie i gdzie je legalnie uzyskać;
+- aktualny regulamin, sezon, limity i zakazy;
+- dozwolone miejsca dostępu do brzegu;
+- możliwość wędkowania przez dzieci i osoby zagraniczne;
+- dostępność wypożyczenia sprzętu lub lokalnego opiekuna/przewodnika;
+- parking, dojście, bezpieczeństwo i zasięg telefonu;
+- czy informacja nadaje się do publikacji jako stała, czy wymaga każdorazowego sprawdzenia.
+
+Twierdzenie właściciela, że **w Topile można łowić bez pozwolenia**, traktuj jako ważny trop do weryfikacji, a nie jako fakt publikacyjny. Oddziel kartę wędkarską od zezwolenia użytkownika rybackiego — brak jednego dokumentu nie musi oznaczać braku innych wymagań. Tak samo zweryfikuj Stawy Dyrektorskie i lokalne rzeki.
+
+### Dodatkowe wymagania dla zbieractwa
+
+Przygotuj legalny i odpowiedzialny wariant doświadczenia „na grzyby / jagody / maliny”:
+
+- wskaż typy obszarów, na których zbiór jest dozwolony, oraz miejsca, gdzie obowiązuje zakaz;
+- nie publikuj cudzych „sekretnych miejscówek” ani precyzyjnych punktów mogących prowadzić do nadmiernej presji;
+- przygotuj kalendarz sezonowy, ale zaznacz zależność od pogody i danego roku;
+- opisz zasady bezpieczeństwa, identyfikacji grzybów, kleszczy, orientacji w lesie i zasięgu;
+- sprawdź możliwość legalnego spaceru z miejscowym grzybiarzem/przewodnikiem;
+- rozważ mapę bezpiecznych punktów wejścia, parkingów i dozwolonych kompleksów zamiast obietnicy „tu zawsze są grzyby”.
+
+### Dodatkowe wymagania dla cerkwi i miejsc kultu
+
+Dla każdej pozycji ustal:
+
+- czy i kiedy możliwe jest zwiedzanie poza nabożeństwem;
+- zasady ubioru, fotografowania i zachowania;
+- dostępność przewodnika lub koncertów;
+- bariery dostępności;
+- czy miejsce jest przede wszystkim świątynią, a nie komercyjną atrakcją;
+- sposób opisu szanujący prawosławną i lokalną wielokulturowość.
+
+Obowiązkowo sprawdź co najmniej cerkiew św. Mikołaja w Białowieży, Sobór Świętej Trójcy w Hajnówce, Krynoczkę oraz sensowność dalszego wyjazdu na Grabarkę.
+
+### Dodatkowe wymagania dla muzeów, sztuki i produktów lokalnych
+
+- Muzeum Przyrodniczo-Leśne BPN potraktuj jako mocny kandydat do planów całorocznych i na niepogodę.
+- Zidentyfikuj rzeczywiście działające galerie, pracownie i sklepy z oryginalną sztuką/rękodziełem, a nie zwykłe punkty z masowymi pamiątkami.
+- Zbuduj osobną listę twórców i producentów, których można przedstawić z nazwiska lub nazwy pracowni po uzyskaniu zgody.
+- Sprawdź bieżący harmonogram jarmarków i kiermaszów; wydarzenia jednorazowe oznaczaj jako szybkozmienne.
+- Zweryfikuj możliwość odwiedzin, warsztatów, zakupów bezpośrednich i płatności kartą/gotówką.
+- Dla produktów spożywczych sprawdź producenta, miejsce zakupu, sezonowość, warunki przechowywania i ewentualne alergeny.
+
+Jako tropy do sprawdzenia uwzględnij oficjalne katalogi produktów lokalnych regionu, kiermasze w Białowieży i Hajnówce oraz m.in. sery, miody, ekologiczne mąki/kasze/oleje, przetwory, zioła, ceramikę, haft i lokalne malarstwo. Nie publikuj producenta tylko dlatego, że pojawia się w starym artykule — potwierdź, że nadal działa.
+
+### Restauracje i możliwe partnerstwa
+
+Nie twórz rankingu wyłącznie na podstawie jednej opinii lub popularności. Dla każdego kandydata sprawdź:
+
+- aktualne działanie i sezonowość;
+- profil kuchni i obecność rzeczywiście lokalnych dań/produktów;
+- jakość i powtarzalność opinii z kilku źródeł;
+- obsługę rodziny oraz grupy do 14 osób;
+- konieczność rezerwacji, parking, płatności i dostępność;
+- opcje dziecięce, wegetariańskie, alergie i późne godziny posiłków;
+- możliwość zamówienia jedzenia na wynos, dostawy lub cateringu do Benkowa;
+- gotowość do rozmowy o partnerstwie.
+
+Przygotuj **listę partnerstw do rozmowy**, ale nie obiecuj publicznie rabatu. Dla każdej restauracji zaproponuj 1–3 realne warianty współpracy, np.:
+
+- rabat po okazaniu karty/kodu gościa Benkowa;
+- stały zestaw lub regionalne menu dla grupy;
+- wcześniejsza rezerwacja stolika dla gości;
+- dostawa śniadania, obiadu lub kolacji do posiadłości;
+- kosz piknikowy na gotowy plan dnia;
+- wzajemne polecenia bez płatnej prowizji;
+- korzyść niefinansowa zamiast rabatu, np. deser, napój lub priorytet rezerwacji.
+
+Każde partnerstwo musi być osobno wynegocjowane i zapisane. Dopóki partner nie potwierdzi warunków, oznacz je `HIPOTEZA / DO ROZMOWY`.
+
 ## 8. Gotowe scenariusze dnia
 
 Na podstawie bazy przygotuj:
@@ -131,6 +214,10 @@ Na podstawie bazy przygotuj:
 - przynajmniej po 2 sensowne warianty dla każdej pory roku;
 - warianty dla rodzin z dziećmi, grup wielopokoleniowych, aktywnych dorosłych, spokojnego dnia oraz niepogody;
 - wariant „pierwszy dzień w Białowieży” i wariant „dzień bez pośpiechu”.
+- wariant dla amatora wędkarstwa;
+- wariant legalnego sezonowego zbieractwa;
+- wariant „muzeum + cerkiew + lokalna sztuka i jedzenie”;
+- wariant kulinarny oparty na lokalnych producentach lub restauracjach.
 
 Każdy scenariusz ma zawierać:
 
@@ -234,6 +321,8 @@ Przekaż koordynatorowi:
 8. **Luki i pytania do właściciela**, wyłącznie te, których nie można rozstrzygnąć badaniem.
 9. **Rekomendację kolejności publikacji** według wpływu sprzedażowego, przydatności i sezonu.
 10. **Proponowane wpisy do `BENKOWO_MASTER.md`**.
+11. **Macierz potencjalnych partnerów lokalnych**: restauracje, przewodnicy, twórcy, producenci, wypożyczalnie i operatorzy — z propozycją współpracy, statusem weryfikacji i danymi kontaktowymi dostępnymi publicznie.
+12. **Rejestr zezwoleń i ograniczeń** dla wędkarstwa, zbieractwa, BPN, rezerwatów i miejsc kultu.
 
 ## 12. Poza zakresem
 
