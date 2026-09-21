@@ -4,7 +4,7 @@
 
 ## A. Metryka dokumentu
 
-- **Wersja:** 0.3
+- **Wersja:** 0.4
 - **Status:** `W TOKU` — pierwsza wersja rejestru; wymaga bieżącej synchronizacji z wynikami wątków specjalistycznych
 - **Data aktualizacji:** 2026-09-21
 - **Autor aktualizacji:** główny koordynator projektu BENKOWO.PL
@@ -161,6 +161,18 @@ Doprowadzić wersję testową i model rezerwacji do stanu, w którym właścicie
 - **Obszary:** strategia, atrakcje, partnerstwa, treści, prawo, SEO.
 - **Zatwierdzający:** właściciel.
 
+### Stan researchu atrakcji i planów dnia — 2026-09-21
+
+- `POTWIERDZONE` Zbiornik Topiło znajduje się w wykazie wód PZW Białystok 2026, w obwodzie rzeki Leśna nr 1. Nie ma podstaw do komunikatu „łowienie bez pozwolenia”; co do zasady potrzebne są karta wędkarska oraz zezwolenie użytkownika rybackiego, z wyjątkami ustawowymi dotyczącymi samej karty.
+- `BLOKER` „Stawy Dyrektorskie” nie zostały jednoznacznie zidentyfikowane w aktualnym publicznym regulaminie. Do publikacji potrzebne są dokładna lokalizacja, zarządca i pisemne zasady.
+- `POTWIERDZONE` Muzeum BPN jest mocnym planem całorocznym/na niepogodę; informacje operacyjne i ograniczenia remontowe są szybkozmienne i muszą mieć datę sprawdzenia.
+- `POTWIERDZONE` Trasa „Do Dębu Jagiełły” wymaga licencjonowanego przewodnika i ma limit 10 osób łącznie z opiekunami, więc nie mieści całej maksymalnej grupy Benkowa.
+- `POTWIERDZONE` Kolejka Hajnówka–Topiło jest produktem sezonowym; harmonogram, minimum uczestników i kurs zależny od warunków wymagają ponownej kontroli.
+- `POTWIERDZONE` Oficjalny regionalny katalog zawiera aktywną bazę lokalnych producentów i twórców, ale wpis w katalogu nie potwierdza codziennej sprzedaży ani wizyt bez rezerwacji.
+- `NIEPOTWIERDZONE` Nie znaleziono wiarygodnego źródła dla stałego, całorocznego bazaru/straganów w Białowieży; potrzebne jest rozpoznanie terenowe.
+- `REKOMENDACJA` Pierwszy zakres publikacyjny to 7 planów MVP; wędkarstwo i zbieractwo pozostają drugą falą do czasu wskazania legalnych punktów i przejścia tras na sucho.
+- `REKOMENDACJA` Stabilne kody QR powinny prowadzić do adresów Benkowa `/p/{slug}`, a dopiero strona/przekierowanie do aktualnej mapy.
+
 ## E. Hipotezy
 
 - `HIPOTEZA HYP-001` Publiczna nazwa drugiego budynku „Dom Ogrodowy” — użyta w wersji rozwojowej, ale wymaga potwierdzenia jako stały element nazewnictwa.
@@ -184,13 +196,15 @@ Doprowadzić wersję testową i model rezerwacji do stanu, w którym właścicie
 | OQ-007 | Jaki zestaw materiałów zdjęciowych jest dostępny i czego brakuje? | Zdjęcia i materiały + właściciel | blokuje galerię i pełną wiarygodność oferty | teraz |
 | OQ-008 | Czy Cloudflare ma zachować/zmienić ustawienia content signals oraz jak zapewnić docelowy `robots.txt` z sitemapą? | Strona/Cloudflare + SEO + właściciel dla polityki AI | blokuje docelową konfigurację indeksowania i widoczności AI | przed produkcją nowej strony |
 | OQ-009 | Jaki model współpracy lokalnej preferujemy: rabaty, korzyści rzeczowe, dostawy, wzajemne polecenia czy prowizje? | Koordynator + właściciel po rozpoznaniu partnerów | wpływa na rozmowy i sposób komunikacji korzyści | po przygotowaniu shortlisty partnerów |
+| OQ-010 | Gdzie dokładnie znajdują się „Stawy Dyrektorskie” — pinezka lub numery działek — i kto nimi zarządza? | właściciel + koordynator | blokuje jakąkolwiek publiczną rekomendację wędkowania | teraz, przed kontaktem z zarządcą |
+| OQ-011 | Czy właściciel dopuszcza dzielenie grupy do 14 osób na dwa wejścia/podgrupy, gdy operator ma limit 10 osób? | właściciel | wpływa na plan z licencjonowanym przewodnikiem BPN | przed publikacją planu |
 
 ## G. Rejestr wątków roboczych
 
 | Wątek | Rola | Aktualne zadanie / wynik | Status | Zależności | Ostatnia synchronizacja |
 |---|---|---|---|---|---|
 | Główny koordynator BENKOWO.PL | wspólny stan, decyzje, briefy, odbiór | utworzenie rejestru centralnego i diagnoza projektu | `W TOKU` | wszystkie obszary | 2026-09-21 |
-| Strategia Benkowo Białowieża | marka, oferta, treści, SEO | zlecono bazę atrakcji i 12+ planów dnia, rozszerzoną o wędkarstwo, zbieractwo, cerkwie, muzeum, sztukę, lokalną żywność, restauracje i partnerstwa | `W TOKU` | atrakcje, SEO, zdjęcia, strona, mapy, prawo | 2026-09-21 |
+| Strategia Benkowo Białowieża | marka, oferta, treści, SEO | dostarczono research v1: baza potwierdzonych atrakcji, 12 szkiców planów, shortlista 7 planów MVP, partnerzy, mapy/QR i blokery prawne | `W TOKU — V1 ODEBRANE` | weryfikacja telefoniczna, testy terenowe, zdjęcia, wdrożenie | 2026-09-21 |
 | Strona Benkowa Cloudflare | implementacja i wdrożenia | działa podgląd PL/EN pod `/test`; automatyczny język i pamięć wyboru wdrożone testowo | `W TOKU` | treści, SEO, akceptacja właściciela | 2026-09-21 |
 | Analiza systemu rezerwacji | rezerwacje i płatności | trwa porównanie bezpieczeństwa płatności polskich i zagranicznych oraz ochrony obu stron | `W TOKU` | ceny, regulamin, anulowanie | 2026-09-21 |
 | Ceny i rentowność | model cenowy | brak potwierdzonego modelu w rejestrze | `ZABLOKOWANE` | koszty, sezonowość, strategia sprzedaży | 2026-09-21 |
@@ -207,6 +221,7 @@ Każdy etap kończy się sekcjami: **Wykonano, Rekomendacje, Decyzje potrzebne o
 |---|---|---|---|---|
 | Centralny rejestr projektu | `docs/BENKOWO_MASTER.md` | koordynator | `W TOKU` | 2026-09-21 |
 | Brief: atrakcje i gotowe plany dnia | `docs/briefs/BRIEF_STRATEGIA_ATRAKCJE_I_PLANY_DNIA.md` | strategia + koordynator | `W TOKU` | 2026-09-21 |
+| Research v1: atrakcje, partnerzy i plany dnia | `docs/research/ATRAKCJE_PARTNERZY_PLANY_DNIA_V1.md` | strategia + koordynator | `V1 ODEBRANE — wymaga kontaktów i testów terenowych` | 2026-09-21 |
 | Strategia SEO i widoczności AI | `docs/seo-strategia.md` na `redesign-preview` | SEO/analityka | `W TOKU` | 2026-09-21 |
 | Produkcyjna zapowiedź | `public/index.html` na `main` | strona/Cloudflare | `ZATWIERDZONE` jako stan tymczasowy | 2026-09-21 |
 | Polski podgląd | `public/test/index.html` na `main`; https://benkowo.pl/test/ | strona/Cloudflare | `W TOKU` | 2026-09-21 |
@@ -320,3 +335,12 @@ Każdy etap kończy się sekcjami: **Wykonano, Rekomendacje, Decyzje potrzebne o
 ## Komunikat obowiązkowy dla wątków specjalistycznych
 
 > Działasz jako specjalistyczny wątek projektu BENKOWO.PL. Głównym koordynatorem projektu jest wątek „Główny koordynator BENKOWO.PL”. Przed dalszą pracą zapoznaj się z aktualnym `docs/BENKOWO_MASTER.md`. Wykonuj zadania w granicach briefu koordynatora, nie zmieniaj samodzielnie ustaleń ogólnoprojektowych i nie traktuj rekomendacji jako zatwierdzonej decyzji. Konflikty, nowe fakty, ryzyka i decyzje wymagane od właściciela zgłaszaj koordynatorowi. Najwyższą władzę decyzyjną zachowuje właściciel projektu. Każdy etap zakończ raportem w formacie określonym w `BENKOWO_MASTER.md`.
+
+
+## M. Aktualizacja 0.4 — 2026-09-21
+
+- Koordynator uruchomił równoległe tory: przyroda/kolejka, kultura/produkty, gastronomia/partnerzy, wędkarstwo/zbieractwo, plany/mapy/QR oraz strategia.
+- Wszystkie tory otrzymały zasadę raportowania do głównego koordynatora i zakaz zmiany produkcji.
+- Odebrano i scalono research v1 w `docs/research/ATRAKCJE_PARTNERZY_PLANY_DNIA_V1.md`.
+- Odrzucono hipotezę łowienia w Topile bez pozwolenia na podstawie aktualnego wykazu PZW 2026.
+- Produkcja `main` pozostała nietknięta; dokumentacja trafiła wyłącznie na `redesign-preview`.
