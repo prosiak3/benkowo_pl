@@ -277,14 +277,26 @@
     .plan-tab { border: 1px solid var(--line); border-radius: 999px; padding: .65rem 1rem; background: transparent; color: var(--ink); font-weight: 700; cursor: pointer; }
     .plan-tab[aria-selected="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
     .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
-    .plan { min-height: 24rem; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; background: var(--paper); }
+    .plan { min-height: 31rem; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); transition: transform .22s ease, box-shadow .22s ease; }
+    .plan:hover { transform: translateY(-4px); box-shadow: 0 1.2rem 2.8rem rgba(26,29,26,.12); }
     .plan[hidden] { display: none; }
+    .plan-link { min-height: 31rem; display: flex; flex-direction: column; color: inherit; text-decoration: none; }
+    .plan-media { position: relative; aspect-ratio: 16 / 9; margin: 0; overflow: hidden; background: var(--mist); }
+    .plan-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(20,24,20,.55)); }
+    .plan-media img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .45s ease; }
+    .plan:hover .plan-media img { transform: scale(1.035); }
+    .plan-badge { position: absolute; z-index: 1; left: 1rem; bottom: .9rem; color: #fff; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .plan-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 1.35rem 1.5rem 1.5rem; }
     .plan-time { color: var(--copper); font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-    .plan h3 { margin: .8rem 0 0; font-family: var(--serif); font-size: 2.25rem; font-weight: 500; line-height: 1; }
-    .plan ol { margin: 1.5rem 0 0; padding: 0; list-style: none; counter-reset: stop; }
-    .plan li { counter-increment: stop; display: grid; grid-template-columns: 1.5rem 1fr; gap: .6rem; padding-block: .55rem; border-top: 1px solid var(--line); color: rgba(26,29,26,.7); font-size: .9rem; }
-    .plan li::before { content: "0" counter(stop); color: var(--copper); font-size: .7rem; font-weight: 700; }
-    .plan-foot { margin-top: 1.5rem; color: rgba(26,29,26,.48); font-size: .72rem; }
+    .plan h3 { margin: .65rem 0 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; line-height: 1; }
+    .plan ol { margin: 1.25rem 0 0; padding: 0; list-style: none; counter-reset: stop; }
+    .plan li { counter-increment: stop; display: grid; grid-template-columns: 1.5rem 1fr; gap: .6rem; padding-block: .48rem; border-top: 1px solid var(--line); color: rgba(26,29,26,.7); font-size: .86rem; }
+    .plan li::before { content: "0" counter(stop); color: var(--copper); font-size: .68rem; font-weight: 700; }
+    .plan-foot { margin: 1.25rem 0 0; color: rgba(26,29,26,.52); font-size: .72rem; }
+    .plan-more { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1rem; color: var(--ink); font-size: .8rem; font-weight: 800; }
+    .plan-more::after { content: "→"; color: var(--copper); transition: transform .2s ease; }
+    .plan:hover .plan-more::after { transform: translateX(.25rem); }
+
 
     .location { padding-block: clamp(6rem, 10vw, 9rem); background: #e9e6dd; }
     .location-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
@@ -632,34 +644,58 @@
         </div>
         <div class="plans" aria-live="polite">
           <article class="plan" data-categories="family active">
-            <div><span class="plan-time">A relaxed full day</span><h3>A family day in Białowieża</h3>
-              <ol><li>A short trip into the forest</li><li>Mini-golf or time on a public tennis court</li><li>Back to the garden for dinner together</li></ol>
-            </div><p class="plan-foot">Exact routes, distances and opening hours will be verified before publication.</p>
+            <a class="plan-link" href="/en/activities/family-day-in-bialowieza/" aria-label="Read more about A family day in Białowieża">
+              <figure class="plan-media"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg/1200px-European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg" alt="A European bison in Białowieża" loading="lazy" decoding="async"><span class="plan-badge">For families</span></figure>
+              <div class="plan-body"><div><span class="plan-time">For families</span><h3>A family day in Białowieża</h3><ol><li>A short trip towards the Forest</li><li>An activity suited to the children’s age</li><li>Back to the garden for dinner</li></ol></div><div><p class="plan-foot">Choose the route and pace to suit the children and the weather.</p><span class="plan-more">See the full plan</span></div></div>
+            </a>
           </article>
           <article class="plan" data-categories="active">
-            <div><span class="plan-time">For an active group</span><h3>Cycling, followed by the sauna</h3>
-              <ol><li>Choose a route suited to the group</li><li>A break in Białowieża</li><li>An evening in the wood-fired sauna</li></ol>
-            </div><p class="plan-foot">There are bicycles on the property; their number and terms of use are still to be confirmed.</p>
+            <a class="plan-link" href="/en/activities/cycling-and-sauna/" aria-label="Read more about Cycling through the forest landscape">
+              <figure class="plan-media"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Bialowieza_National_Park_in_Poland0029.JPG/1200px-Bialowieza_National_Park_in_Poland0029.JPG" alt="A forest road in Białowieża Forest" loading="lazy" decoding="async"><span class="plan-badge">Active</span></figure>
+              <div class="plan-body"><div><span class="plan-time">Active</span><h3>Cycling through the forest landscape</h3><ol><li>A route matched to the group</li><li>A rest stop in Białowieża</li><li>An evening in the wood-fired sauna</li></ol></div><div><p class="plan-foot">Adapt the route to the weather, surface conditions and access rules in protected areas.</p><span class="plan-more">See the full plan</span></div></div>
+            </a>
           </article>
           <article class="plan" data-categories="weather winter family">
-            <div><span class="plan-time">A weather-proof plan</span><h3>Hajnówka and a quiet evening</h3>
-              <ol><li>The indoor swimming pool in Hajnówka</li><li>In winter, a visit to the ice rink</li><li>Back to Benkowo for time indoors</li></ol>
-            </div><p class="plan-foot">External attractions operate independently of Benkowo and may involve additional charges.</p>
+            <a class="plan-link" href="/en/activities/hajnowka-on-a-rainy-day/" aria-label="Read more about Hajnówka and a quiet evening">
+              <figure class="plan-media"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Kolejka-hajnowka-2.JPG/1200px-Kolejka-hajnowka-2.JPG" alt="The forest narrow-gauge railway in Hajnówka" loading="lazy" decoding="async"><span class="plan-badge">Rainy day</span></figure>
+              <div class="plan-body"><div><span class="plan-time">Rainy day</span><h3>Hajnówka and a quiet evening</h3><ol><li>A swimming pool or another available indoor activity</li><li>A short stop in Hajnówka</li><li>Back to Benkowo for the evening</li></ol></div><div><p class="plan-foot">Check current opening hours, prices and availability directly before travelling.</p><span class="plan-more">See the full plan</span></div></div>
+            </a>
           </article>
           <article class="plan" data-categories="winter active">
-            <div><span class="plan-time">Winter rhythm</span><h3>Cross-country skiing and the warmth of the sauna</h3>
-              <ol><li>Hire cross-country skis</li><li>Choose a route suited to the conditions</li><li>Warm up in the sauna on the property</li></ol>
-            </div><p class="plan-foot">A seasonal plan — equipment availability and trail conditions require advance checking.</p>
+            <a class="plan-link" href="/en/activities/cross-country-skiing-and-sauna/" aria-label="Read more about Cross-country skiing and a warm sauna">
+              <figure class="plan-media"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Bialowieza_National_Park_in_Poland0029.JPG/1200px-Bialowieza_National_Park_in_Poland0029.JPG" alt="Białowieża Forest seen from a forest road" loading="lazy" decoding="async"><span class="plan-badge">Winter</span></figure>
+              <div class="plan-body"><div><span class="plan-time">Winter</span><h3>Cross-country skiing and a warm sauna</h3><ol><li>Hire suitable equipment</li><li>Choose a route for the conditions</li><li>Return and warm up in the sauna</li></ol></div><div><p class="plan-foot">This is seasonal and depends on snow, equipment and route availability.</p><span class="plan-more">See the full plan</span></div></div>
+            </a>
           </article>
           <article class="plan" data-categories="family weather">
-            <div><span class="plan-time">At an easy pace</span><h3>A day without leaving</h3>
-              <ol><li>Breakfast without hotel schedules</li><li>The garden, play area and Aquarium</li><li>Cooking together and an evening under the shelter</li></ol>
-            </div><p class="plan-foot">The simplest plan makes full use of what is available at Benkowo itself.</p>
+            <a class="plan-link" href="/en/activities/a-day-at-benkowo/" aria-label="Read more about A full day at Benkowo">
+              <figure class="plan-media"><img src="/assets/benkowo-zewnatrz-google.jpg" alt="The wooden Main House at Benkowo" loading="lazy" decoding="async"><span class="plan-badge">At the house</span></figure>
+              <div class="plan-body"><div><span class="plan-time">At the house</span><h3>A full day at Benkowo</h3><ol><li>Breakfast without hotel hours</li><li>Garden, playground and the glass Akwarium room</li><li>Cooking together and an evening under the shelter</li></ol></div><div><p class="plan-foot">The whole plan uses spaces available directly on the property.</p><span class="plan-more">See the full plan</span></div></div>
+            </a>
           </article>
           <article class="plan" data-categories="active family">
-            <div><span class="plan-time">In autumn</span><h3>The forest and mushroom picking — where permitted</h3>
-              <ol><li>Choose an area where picking is permitted</li><li>A walk or mushroom picking</li><li>Return for a meal together</li></ol>
-            </div><p class="plan-foot">Mushroom picking is not permitted in all protected areas.</p>
+            <a class="plan-link" href="/en/activities/mushroom-foraging/" aria-label="Read more about Forest walks and legal mushroom foraging">
+              <figure class="plan-media"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Bialowieza_Deby_rzeka_Barry_Kent.JPG/1200px-Bialowieza_Deby_rzeka_Barry_Kent.JPG" alt="Old forest and river in Białowieża Forest" loading="lazy" decoding="async"><span class="plan-badge">Autumn</span></figure>
+              <div class="plan-body"><div><span class="plan-time">Autumn</span><h3>Forest walks and legal mushroom foraging</h3><ol><li>Choose an area where collecting is legal</li><li>Walk or forage</li><li>Return for a shared meal</li></ol></div><div><p class="plan-foot">Mushroom collecting is not permitted in every protected area.</p><span class="plan-more">See the full plan</span></div></div>
+            </a>
+          </article>
+          <article class="plan" data-categories="family weather">
+            <a class="plan-link" href="/en/activities/bison-show-reserve/" aria-label="Read more about Bison Show Reserve">
+              <figure class="plan-media"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg/1200px-European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg" alt="A male European bison in Białowieża" loading="lazy" decoding="async"><span class="plan-badge">Close to wildlife</span></figure>
+              <div class="plan-body"><div><span class="plan-time">Close to wildlife</span><h3>Bison Show Reserve</h3><ol><li>Check opening times and tickets</li><li>Visit the reserve at your own pace</li><li>Return through Białowieża</li></ol></div><div><p class="plan-foot">The reserve operates independently of Benkowo; Białowieża National Park publishes current hours and prices.</p><span class="plan-more">See the full plan</span></div></div>
+            </a>
+          </article>
+          <article class="plan" data-categories="active family">
+            <a class="plan-link" href="/en/activities/primeval-forest-with-a-guide/" aria-label="Read more about The primeval forest with a guide">
+              <figure class="plan-media"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Bialowieza_National_Park_in_Poland0029.JPG/1200px-Bialowieza_National_Park_in_Poland0029.JPG" alt="Natural woodland in Białowieża National Park" loading="lazy" decoding="async"><span class="plan-badge">With a guide</span></figure>
+              <div class="plan-body"><div><span class="plan-time">With a guide</span><h3>The primeval forest with a guide</h3><ol><li>Choose a route and guide</li><li>Walk at the group’s pace</li><li>Time for questions and wildlife signs</li></ol></div><div><p class="plan-foot">Access to some protected areas is governed by Białowieża National Park rules.</p><span class="plan-more">See the full plan</span></div></div>
+            </a>
+          </article>
+          <article class="plan" data-categories="family active">
+            <a class="plan-link" href="/en/activities/narrow-gauge-forest-railway/" aria-label="Read more about The forest railway to Topiło">
+              <figure class="plan-media"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Kolejka-hajnowka-2.JPG/1200px-Kolejka-hajnowka-2.JPG" alt="The forest narrow-gauge railway in Hajnówka" loading="lazy" decoding="async"><span class="plan-badge">Seasonal</span></figure>
+              <div class="plan-body"><div><span class="plan-time">Seasonal</span><h3>The forest railway to Topiło</h3><ol><li>Check the timetable and tickets</li><li>Ride the forest railway</li><li>Walk and rest around Topiło</li></ol></div><div><p class="plan-foot">The railway is seasonal; timetable, route and ticket availability may change.</p><span class="plan-more">See the full plan</span></div></div>
+            </a>
           </article>
         </div>
       </div>
