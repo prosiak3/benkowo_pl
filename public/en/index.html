@@ -3,6 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (() => {
+      const key = 'benkowo-language';
+      const currentLanguage = 'en';
+      let preferredLanguage = null;
+      try { preferredLanguage = localStorage.getItem(key); } catch (_) {}
+      if (!preferredLanguage) {
+        const browserLanguage = (navigator.languages?.[0] || navigator.language || 'pl').toLowerCase();
+        preferredLanguage = browserLanguage.startsWith('pl') ? 'pl' : 'en';
+      }
+      if (preferredLanguage !== currentLanguage) {
+        const target = preferredLanguage === 'en' ? '/en/' : '/';
+        location.replace(target + location.search + location.hash);
+      }
+    })();
+  </script>
+
   <meta name="theme-color" content="#1a1d1a">
   <meta name="description" content="Benkowo Białowieża — two houses, a private garden and a wood-fired sauna for one family or trusted group of up to 14 guests.">
   <meta name="robots" content="index,follow,max-image-preview:large">
@@ -127,6 +144,10 @@
     .nav { display: flex; align-items: center; gap: 1.45rem; }
     .nav > a:not(.button) { color: rgba(245,243,237,.78); font-size: .88rem; font-weight: 600; text-decoration: none; }
     .nav > a:not(.button):hover { color: var(--paper); }
+    .language-switch { display: inline-flex; align-items: center; gap: .38rem; padding: .28rem .5rem; border: 1px solid rgba(245,243,237,.24); border-radius: 999px; }
+    .language-switch a { color: rgba(245,243,237,.72); font-size: .78rem; font-weight: 700; text-decoration: none; }
+    .language-switch a[aria-current="page"] { color: var(--paper); }
+    .language-switch span { color: rgba(245,243,237,.34); }
     .nav-toggle { display: none; border: 0; background: transparent; color: inherit; padding: .6rem; cursor: pointer; }
     .nav-toggle span { display: block; width: 1.55rem; height: 2px; margin: .3rem 0; background: currentColor; }
 
@@ -442,10 +463,12 @@
       <nav class="nav" id="main-nav" aria-label="Main navigation">
         <a href="#miejsce">The place</a>
         <a href="#domy">Houses &amp; garden</a>
-        <a href="#plany">Ways to stay</a>
+        <a href="#plany">Ideas for your stay</a>
         <a href="#lokalizacja">Location</a>
         <a href="#kontakt">Contact</a>
-        <a href="/" lang="pl" hreflang="pl" aria-label="Polska wersja językowa">PL</a>
+        <div class="language-switch" aria-label="Language selection">
+          <a href="/" lang="pl" hreflang="pl" data-language-choice="pl">PL</a><span aria-hidden="true">/</span><a href="/en/" lang="en" hreflang="en" aria-current="page" data-language-choice="en">EN</a>
+        </div>
         <a class="button button-primary" href="#dostepnosc">Ask about dates</a>
       </nav>
     </div>
@@ -596,9 +619,9 @@
         <div class="experience-head">
           <div>
             <p class="eyebrow">Ways to spend your stay</p>
-            <h2 class="display section-title" id="plans-title">Białowieża without ticking off attractions.</h2>
+            <h2 class="display section-title" id="plans-title">Ready-made ideas for a day in Białowieża.</h2>
           </div>
-          <p class="section-lead">Instead of one long list, we will prepare complete ideas for a day — with children, for active guests, in winter and when the weather changes your plans.</p>
+          <p class="section-lead">Choose a day plan to suit your group, the season or the weather.</p>
         </div>
         <div class="plan-tabs" role="tablist" aria-label="Types of stay ideas">
           <button class="plan-tab" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
@@ -790,6 +813,14 @@
       } catch (_) {
         resultText.focus?.();
       }
+    });
+  </script>
+
+  <script>
+    document.querySelectorAll('[data-language-choice]').forEach(link => {
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('benkowo-language', link.dataset.languageChoice); } catch (_) {}
+      });
     });
   </script>
 </body>
