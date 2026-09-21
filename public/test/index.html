@@ -3,8 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (() => {
+      const key = 'benkowo-language';
+      const currentLanguage = 'pl';
+      let preferredLanguage = null;
+      try { preferredLanguage = localStorage.getItem(key); } catch (_) {}
+      if (!preferredLanguage) {
+        const browserLanguage = (navigator.languages?.[0] || navigator.language || 'pl').toLowerCase();
+        preferredLanguage = browserLanguage.startsWith('pl') ? 'pl' : 'en';
+      }
+      if (preferredLanguage !== currentLanguage) {
+        const target = preferredLanguage === 'en' ? '/test/en/' : '/test/';
+        location.replace(target + location.search + location.hash);
+      }
+    })();
+  </script>
+
   <meta name="theme-color" content="#1a1d1a">
   <meta name="description" content="Benkowo Białowieża — dwa budynki, ogród i sauna na wyłączność jednej rodziny lub grupy. Pobyt dla maksymalnie 14 osób.">
+  <meta name="robots" content="noindex,nofollow">
   <title>Benkowo Białowieża — u siebie, na skraju puszczy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,6 +124,10 @@
     .nav { display: flex; align-items: center; gap: 1.45rem; }
     .nav > a:not(.button) { color: rgba(245,243,237,.78); font-size: .88rem; font-weight: 600; text-decoration: none; }
     .nav > a:not(.button):hover { color: var(--paper); }
+    .language-switch { display: inline-flex; align-items: center; gap: .38rem; padding: .28rem .5rem; border: 1px solid rgba(245,243,237,.24); border-radius: 999px; }
+    .language-switch a { color: rgba(245,243,237,.72); font-size: .78rem; font-weight: 700; text-decoration: none; }
+    .language-switch a[aria-current="page"] { color: var(--paper); }
+    .language-switch span { color: rgba(245,243,237,.34); }
     .nav-toggle { display: none; border: 0; background: transparent; color: inherit; padding: .6rem; cursor: pointer; }
     .nav-toggle span { display: block; width: 1.55rem; height: 2px; margin: .3rem 0; background: currentColor; }
 
@@ -422,6 +444,9 @@
         <a href="#plany">Pomysły na pobyt</a>
         <a href="#lokalizacja">Lokalizacja</a>
         <a href="#kontakt">Kontakt</a>
+        <div class="language-switch" aria-label="Wybór języka">
+          <a href="/test/" lang="pl" hreflang="pl" aria-current="page" data-language-choice="pl">PL</a><span aria-hidden="true">/</span><a href="/test/en/" lang="en" hreflang="en" data-language-choice="en">EN</a>
+        </div>
         <a class="button button-primary" href="#dostepnosc">Zapytaj o termin</a>
       </nav>
     </div>
@@ -572,9 +597,9 @@
         <div class="experience-head">
           <div>
             <p class="eyebrow">Pomysły na pobyt</p>
-            <h2 class="display section-title" id="plans-title">Białowieża bez odhaczania atrakcji.</h2>
+            <h2 class="display section-title" id="plans-title">Gotowe pomysły na dzień w Białowieży.</h2>
           </div>
-          <p class="section-lead">Zamiast długiej listy przygotujemy gotowe scenariusze dnia — dla dzieci, aktywnych, na zimę i na pogodę, która zmienia plany.</p>
+          <p class="section-lead">Wybierz plan dnia dopasowany do Waszej grupy, pory roku albo pogody.</p>
         </div>
         <div class="plan-tabs" role="tablist" aria-label="Rodzaje planów pobytu">
           <button class="plan-tab" type="button" role="tab" aria-selected="true" data-filter="all">Wszystkie</button>
@@ -766,6 +791,14 @@
       } catch (_) {
         resultText.focus?.();
       }
+    });
+  </script>
+
+  <script>
+    document.querySelectorAll('[data-language-choice]').forEach(link => {
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('benkowo-language', link.dataset.languageChoice); } catch (_) {}
+      });
     });
   </script>
 </body>
