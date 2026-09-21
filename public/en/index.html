@@ -339,6 +339,10 @@
     .youtube-poster img, .youtube-frame { width: 100%; height: 100%; display: block; border: 0; object-fit: cover; }
     .youtube-trigger { position: absolute; inset: 50% auto auto 50%; min-height: 2.8rem; transform: translate(-50%,-50%); border: 0; border-radius: 999px; padding: .65rem 1rem; background: var(--paper); color: var(--ink); font-weight: 800; cursor: pointer; }
     .youtube-fallback { display: inline-block; margin-top: .55rem; font-size: .75rem; }
+    .youtube-poster { background: linear-gradient(135deg, #171a17, #3d433a); }
+    .youtube-meta { margin: .65rem 0 0; font-size: .74rem; line-height: 1.45; }
+    .youtube-meta span { color: rgba(26,29,26,.58); }
+    .youtube-note { margin: .45rem 0 0; color: rgba(26,29,26,.66); font-size: .72rem; line-height: 1.45; }
     .no-results { grid-column: 1 / -1; border: 1px dashed var(--line); border-radius: var(--radius); padding: 2rem; background: rgba(255,253,248,.55); text-align: center; }
     .no-results h3 { margin: 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; }
     .no-results p { margin: .5rem 0 0; color: rgba(26,29,26,.66); }
@@ -719,7 +723,7 @@
                 <label class="filter-option"><input type="checkbox" data-dimension="group" value="adults"><span>Adults</span></label>
               </div></fieldset>
               <fieldset class="filter-group"><legend>Style</legend><div class="filter-options">
-                <label class="filter-option"><input type="checkbox" data-dimension="character" value="active"><span>Aktywnie</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="active"><span>Active</span></label>
                 <label class="filter-option"><input type="checkbox" data-dimension="character" value="calm"><span>Slow-paced</span></label>
                 <label class="filter-option"><input type="checkbox" data-dimension="character" value="culture"><span>Culture</span></label>
                 <label class="filter-option"><input type="checkbox" data-dimension="character" value="food"><span>Food</span></label>
@@ -750,12 +754,18 @@
         </dialog>
         <div class="plans" id="plan-results" aria-live="polite" aria-busy="false">
           <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm culture nature food" data-weather="sun rain snow" data-transport="foot" data-duration="half" data-reservation="none">
-            <div class="plan-media plan-media-missing" role="img" aria-label="No rights-cleared photograph of the National Park Museum and Palace Park is available"><span>Own or licensed photograph needed</span></div>
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Bialowiezabpn2.jpg" alt="The Białowieża National Park visitor centre complex in Białowieża, exterior view" loading="lazy" decoding="async"><span class="plan-badge">Museum and Palace Park</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Bialowiezabpn2.jpg" target="_blank" rel="noopener">Photo: Jurij · CC BY-SA 2.5</a></figcaption></figure>
             <div class="plan-body">
               <a class="plan-title-link" href="/en/activities/family-day-in-bialowieza/"><h3>A slow first day in Białowieża</h3></a>
               <dl class="plan-facts"><div><dt>Time</dt><dd>3–5 hours</dd></div><div><dt>Season / weather</dt><dd>Year-round · rain-friendly</dd></div><div><dt>Best for</dt><dd>Families and mixed ages</dd></div><div><dt>Transport</dt><dd>On foot in Białowieża</dd></div><div><dt>Booking</dt><dd>Usually not</dd></div><div><dt>Pace</dt><dd>Slow</dd></div></dl>
               <p class="plan-description">The National Park Museum, Palace Park, a break and a local meal — without overloading your first day.</p>
               <p class="plan-limit"><strong>Check first:</strong> museum hours and current National Park notices.</p>
+              <div class="plan-video" data-youtube-video-id="Xxjg6Vpia-0" data-youtube-title="Official material from Białowieża National Park" data-youtube-channel="Białowieża National Park" data-source-url="https://www.youtube.com/watch?v=Xxjg6Vpia-0" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Official material from Białowieża National Park">Watch the video <span aria-hidden="true">▶</span></button></div>
+                <p class="youtube-meta"><strong>Video:</strong> Official material from Białowieża National Park<br><span>Białowieża National Park · Verified: 21 Sep 2026 · captions: not verified</span></p>
+                <p class="youtube-note">The video introduces the region and its nature; check current hours, notices and National Park rules before setting out.</p>
+                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=Xxjg6Vpia-0" target="_blank" rel="noopener">Open on YouTube ↗</a>
+              </div>
               <a class="plan-more" href="/en/activities/family-day-in-bialowieza/">See the draft plan</a>
             </div>
           </article>
@@ -770,12 +780,18 @@
             </div>
           </article>
           <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm culture food" data-weather="rain sun snow" data-transport="foot car" data-duration="half" data-reservation="required">
-            <div class="plan-media plan-media-missing" role="img" aria-label="No rights-cleared photograph for the museum, church, art and food plan is available"><span>Own or licensed photograph needed</span></div>
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerkiew_%C5%9Bw._Miko%C5%82aja_w_Bia%C5%82owie%C5%BCy_-_September_2026.jpg" alt="Exterior of St Nicholas Orthodox Church in Białowieża in September 2026" loading="lazy" decoding="async"><span class="plan-badge">St Nicholas Orthodox Church</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Cerkiew_%C5%9Bw._Miko%C5%82aja_w_Bia%C5%82owie%C5%BCy_-_September_2026.jpg" target="_blank" rel="noopener">Photo: ChopZePolski.nieZJakucka · CC BY 4.0</a></figcaption></figure>
             <div class="plan-body">
               <a class="plan-title-link" href="/en/activities/hajnowka-on-a-rainy-day/"><h3>Museum, Orthodox church, art and food</h3></a>
               <dl class="plan-facts"><div><dt>Time</dt><dd>4–6 hours</dd></div><div><dt>Season / weather</dt><dd>Year-round · good in rain</dd></div><div><dt>Best for</dt><dd>Families and adults</dd></div><div><dt>Transport</dt><dd>On foot + car</dd></div><div><dt>Booking</dt><dd>Partly required</dd></div><div><dt>Style</dt><dd>Culture and local life</dd></div></dl>
               <p class="plan-description">The National Park Museum, a living Orthodox church, authentic craft and a regional meal.</p>
               <p class="plan-limit"><strong>Check first:</strong> church access and studio visits require advance confirmation.</p>
+              <div class="plan-video" data-youtube-video-id="_Przr5SJ1dU" data-youtube-title="Hajnówka Days of Orthodox Church Music — organiser's video" data-youtube-channel="Organiser of the Hajnówka Days of Orthodox Church Music" data-source-url="https://www.youtube.com/watch?v=_Przr5SJ1dU" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Hajnówka Days of Orthodox Church Music — organiser's video">Watch the video <span aria-hidden="true">▶</span></button></div>
+                <p class="youtube-meta"><strong>Video:</strong> Hajnówka Days of Orthodox Church Music — organiser's video<br><span>Organiser of the Hajnówka Days of Orthodox Church Music · Verified: 21 Sep 2026 · captions: not verified</span></p>
+                <p class="youtube-note">The video introduces the local musical tradition. It does not mean a concert will take place during your stay — check dates with the organiser.</p>
+                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=_Przr5SJ1dU" target="_blank" rel="noopener">Open on YouTube ↗</a>
+              </div>
               <a class="plan-more" href="/en/activities/hajnowka-on-a-rainy-day/">See the draft plan</a>
             </div>
           </article>
@@ -786,6 +802,12 @@
               <dl class="plan-facts"><div><dt>Time</dt><dd>About 3 hours + transfer</dd></div><div><dt>Season / weather</dt><dd>Seasonal · fair weather</dd></div><div><dt>Best for</dt><dd>Families and groups</dd></div><div><dt>Transport</dt><dd>Car + railway</dd></div><div><dt>Booking</dt><dd>Confirm the service</dd></div><div><dt>Start</dt><dd>Hajnówka</dd></div></dl>
               <p class="plan-description">A forest railway ride, a stop at Topiło and return on the same route.</p>
               <p class="plan-limit"><strong>Check first:</strong> services depend on the timetable, weather and minimum passenger numbers.</p>
+              <div class="plan-video" data-youtube-video-id="9dQVRzTnS88" data-youtube-title="Forest railway to Topiło — operator's video" data-youtube-channel="Hajnówka Forest District" data-source-url="https://www.youtube.com/watch?v=9dQVRzTnS88" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Forest railway to Topiło — operator's video">Watch the video <span aria-hidden="true">▶</span></button></div>
+                <p class="youtube-meta"><strong>Video:</strong> Forest railway to Topiło — operator's video<br><span>Hajnówka Forest District · Verified: 21 Sep 2026 · captions: not verified</span></p>
+                <p class="youtube-note">This is an information video; check the current timetable, operating conditions and tickets with the operator.</p>
+                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=9dQVRzTnS88" target="_blank" rel="noopener">Open on YouTube ↗</a>
+              </div>
               <a class="plan-more" href="/en/activities/narrow-gauge-forest-railway/">See the draft plan</a>
             </div>
           </article>
@@ -810,10 +832,10 @@
             </div>
           </article>
           <article class="plan" data-season="winter" data-group="children intergenerational adults" data-character="active calm culture nature" data-weather="snow rain" data-transport="foot car" data-duration="half" data-reservation="none required">
-            <div class="plan-media plan-media-missing" role="img" aria-label="No rights-cleared winter photograph of Białowieża is available"><span>Own winter photograph needed</span></div>
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Dolina_Le%C5%9Bnej_Prawej-zima.jpg" alt="A winter floodplain of the Leśna Prawa river in Białowieża Forest in 2010" loading="lazy" decoding="async"><span class="plan-badge">A winter forest landscape</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Dolina_Le%C5%9Bnej_Prawej-zima.jpg" target="_blank" rel="noopener">Photo: Stormbringer76 · CC BY 3.0</a></figcaption></figure>
             <div class="plan-body">
               <a class="plan-title-link" href="/en/activities/cross-country-skiing-and-sauna/"><h3>A winter day with a warm finish</h3></a>
-              <dl class="plan-facts"><div><dt>Time</dt><dd>3–6 hours</dd></div><div><dt>Season / weather</dt><dd>Winter · snow or frost</dd></div><div><dt>Best for</dt><dd>Families and adults</dd></div><div><dt>Transport</dt><dd>On foot or by car</dd></div><div><dt>Booking</dt><dd>Activity-dependent</dd></div><div><dt>Plan B</dt><dd>Museum and culture</dd></div></dl>
+              <dl class="plan-facts"><div><dt>Time</dt><dd>3–6 hours</dd></div><div><dt>Season / weather</dt><dd>Winter · conditions vary</dd></div><div><dt>Best for</dt><dd>Families and adults</dd></div><div><dt>Transport</dt><dd>On foot or by car</dd></div><div><dt>Booking</dt><dd>Activity-dependent</dd></div><div><dt>Plan B</dt><dd>Museum and culture</dd></div></dl>
               <p class="plan-description">A short activity suited to conditions, followed by an unhurried return and a warm evening at Benkowo.</p>
               <p class="plan-limit"><strong>Check first:</strong> snow, prepared trails and equipment availability are not guaranteed.</p>
               <a class="plan-more" href="/en/activities/cross-country-skiing-and-sauna/">See the draft plan</a>
