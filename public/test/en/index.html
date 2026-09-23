@@ -341,6 +341,16 @@
     .no-results h3 { margin: 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; }
     .no-results p { margin: .5rem 0 0; color: rgba(26,29,26,.66); }
 
+    .home-plan-teaser { padding-block: clamp(5.5rem, 9vw, 8rem); background: #ebe8df; }
+    .home-plan-teaser .plan-filter-bar, .home-plan-teaser .filter-summary, .home-plan-teaser .plan:not(.home-feature), .home-plan-teaser .no-results { display: none; }
+    .home-plan-teaser .plans { margin-top: 2rem; }
+    .home-plan-teaser .plan { grid-column: span 3; }
+    .teaser-links { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.8rem; }
+    .teaser-links a { min-height: 2.8rem; display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: .62rem 1rem; background: var(--paper); color: var(--ink); font-size: .82rem; font-weight: 700; text-decoration: none; }
+    .teaser-links a:hover { border-color: var(--copper); color: var(--copper); }
+    .plans-cta { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 2rem; border-top: 1px solid var(--line); padding-top: 1.5rem; }
+    .plans-cta p { max-width: 39rem; margin: 0; color: rgba(26,29,26,.66); }
+
     .location { padding-block: clamp(6rem, 10vw, 9rem); background: #e9e6dd; }
     .location-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
     .location-copy p:not(.eyebrow) { max-width: 32rem; color: rgba(26,29,26,.7); }
@@ -420,6 +430,7 @@
       .house-card:last-child { grid-column: 1 / -1; min-height: 22rem; }
       .plans { grid-template-columns: 1fr 1fr; }
       .plan { grid-column: auto; }
+      .home-plan-teaser .plan { grid-column: auto; }
       .plan.plan-featured { grid-column: 1 / -1; }
       .filter-chip { flex: 0 0 auto; }
       .estate-plan-copy, .history-grid { grid-template-columns: 1fr; }
@@ -457,6 +468,8 @@
       .concept-gallery { grid-template-columns: 1fr; }
       .concept-gallery figure, .concept-gallery figure:first-child, .concept-gallery figure:last-child { grid-column: auto; min-height: 18rem; }
       .experience-head .section-lead { margin-top: 1.2rem; }
+      .plans-cta { align-items: stretch; flex-direction: column; }
+      .plans-cta .button { width: 100%; }
       .plans { gap: .7rem; }
       .visible-filter-group { grid-template-columns: 1fr; gap: .35rem; }
       .visible-filter-group h3 { margin-top: 0; }
@@ -530,7 +543,7 @@
       <nav class="nav" id="main-nav" aria-label="Main navigation">
         <a href="#miejsce">The place</a>
         <a href="#domy">Houses &amp; garden</a>
-        <a href="#plany">Ideas for your stay</a>
+        <a href="/test/en/stay-ideas/">Ideas for your stay</a>
         <a href="#lokalizacja">Location</a>
         <a href="#kontakt">Contact</a>
         <div class="language-switch" aria-label="Language selection">
@@ -688,14 +701,20 @@
       </div>
     </section>
 
-    <section class="experience" id="plany" aria-labelledby="plans-title">
+    <section class="experience home-plan-teaser" id="plany" aria-labelledby="plans-title">
       <div class="shell">
         <div class="experience-head">
           <div>
             <p class="eyebrow">Ways to spend your stay</p>
-            <h2 class="display section-title" id="plans-title">Start with a plan, not a blank page.</h2>
+            <h2 class="display section-title" id="plans-title">Białowieża is more than a place to sleep.</h2>
           </div>
-          <p class="section-lead">Choose the season, your group and a specific attraction type. Results update immediately.</p>
+          <p class="section-lead">From bison and forest walks to local food, art and winter outings. We collected 26 practical ideas so your group does not need to plan from scratch.</p>
+        </div>
+        <div class="teaser-links" aria-label="Quick links to stay ideas">
+          <a href="/test/en/stay-ideas/?filter=group:children">With children</a>
+          <a href="/test/en/stay-ideas/?filter=character:sport">Active</a>
+          <a href="/test/en/stay-ideas/?filter=weather:rain">For a rainy day</a>
+          <a href="/test/en/stay-ideas/?filter=season:winter">In winter</a>
         </div>
         <div class="plan-filter-bar" aria-label="Plan filters"><div class="visible-filter-groups">
           <div class="visible-filter-group"><h3>Season</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="spring">Spring</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="summer">Summer</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="autumn">Autumn</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="winter">Winter</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="year-round">All year</button></div></div>
@@ -709,7 +728,7 @@
           <button class="clear-filters" type="button" hidden>Clear filters</button>
         </div>
         <div class="plans" id="plan-results" aria-live="polite" aria-busy="false">
-          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="museum nature food" data-weather="sun rain snow" data-transport="foot" data-duration="half" data-reservation="none">
+          <article class="plan home-feature" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="museum nature food" data-weather="sun rain snow" data-transport="foot" data-duration="half" data-reservation="none">
             <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Bialowiezabpn2.jpg" alt="The Białowieża National Park visitor centre complex in Białowieża, exterior view" loading="lazy" decoding="async"><span class="plan-badge">Museum and Palace Park</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Bialowiezabpn2.jpg" target="_blank" rel="noopener">Photo: Jurij · CC BY-SA 2.5</a></figcaption></figure>
             <div class="plan-body">
               <a class="plan-title-link" href="/test/en/activities/family-time-in-bialowieza/"><h3>A slow first day in Białowieża</h3></a>
@@ -725,7 +744,7 @@
               <a class="plan-more" href="/test/en/activities/family-time-in-bialowieza/">See the draft plan</a>
             </div>
           </article>
-          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="animals nature" data-weather="sun" data-transport="car" data-duration="short" data-reservation="none">
+          <article class="plan home-feature" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="animals nature" data-weather="sun" data-transport="car" data-duration="short" data-reservation="none">
             <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg" alt="A male European bison photographed in Białowieża Forest" loading="lazy" decoding="async"><span class="plan-badge">Bison and an easy walk</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:European_bison_(Bison_bonasus)_male_Bia%C5%82owieza.jpg" target="_blank" rel="noopener">Photo: Charles J. Sharp · CC BY-SA 4.0</a></figcaption></figure>
             <div class="plan-body">
               <a class="plan-title-link" href="/test/en/activities/bison-show-reserve/"><h3>Bison and an easy family walk</h3></a>
@@ -821,7 +840,7 @@
             <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/20220630_Zapora_na_granicy_polsko-bia%C5%82oruskiej_004.jpg" alt="The steel barrier on the Polish–Belarusian border" loading="lazy" decoding="async"><span class="plan-badge">A contemporary borderland</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:20220630_Zapora_na_granicy_polsko-bia%C5%82oruskiej_004.jpg" target="_blank" rel="noopener">Photo: Chancellery of the Prime Minister of Poland · CC BY 3.0 PL</a></figcaption></figure>
             <div class="plan-body"><a class="plan-title-link" href="/test/en/activities/walk-to-the-border-barrier/"><h3>Walk to the barrier on the Belarusian border</h3></a><dl class="plan-facts"><div><dt>Time</dt><dd>About 2–4 hours</dd></div><div><dt>Season</dt><dd>All year</dd></div><div><dt>Best for</dt><dd>Adults and older children</dd></div><div><dt>Transport</dt><dd>Car + walk</dd></div><div><dt>Character</dt><dd>Unusual and reflective</dd></div></dl><p class="plan-description">An ordinary road leads to a place where the Forest landscape meets the contemporary state border.</p><p class="plan-limit"><strong>On site:</strong> stay on the accessible road and follow current signs.</p><a class="plan-more" href="/test/en/activities/walk-to-the-border-barrier/">See the walk idea</a></div>
           </article>
-          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="nature" data-weather="sun" data-transport="foot car" data-duration="half" data-reservation="none">
+          <article class="plan home-feature" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="nature" data-weather="sun" data-transport="foot car" data-duration="half" data-reservation="none">
             <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/%C5%BBebra_%C5%BBubra.jpg" alt="The wooden boardwalk of the Żebra Żubra trail in Białowieża Forest" loading="lazy" decoding="async"><span class="plan-badge">Forest boardwalk · easy route</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:%C5%BBebra_%C5%BBubra.jpg" target="_blank" rel="noopener">Photo: Bart0012 · CC BY-SA 4.0</a></figcaption></figure>
             <div class="plan-body"><a class="plan-title-link" href="/test/en/activities/zebra-zubra-trail/"><h3>Żebra Żubra — a boardwalk through wet forest</h3></a><dl class="plan-facts"><div><dt>Time</dt><dd>1.5–3 hours</dd></div><div><dt>Season</dt><dd>All year</dd></div><div><dt>Best for</dt><dd>Families and relaxed groups</dd></div><div><dt>Transport</dt><dd>Car + walk</dd></div><div><dt>Character</dt><dd>Easy nature walk</dd></div></dl><p class="plan-description">Boardwalks, wet woodland and a taste of the Forest without organising a full-day expedition.</p><p class="plan-limit"><strong>Good pairing:</strong> combine it with the Bison Show Reserve.</p><a class="plan-more" href="/test/en/activities/zebra-zubra-trail/">See the walking plan</a></div>
           </article>
@@ -841,7 +860,7 @@
             <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Circles_%282010-04-18_by_Ian_T._McFarland%29.jpg" alt="An outdoor theatre performance — illustrative photograph" loading="lazy" decoding="async"><span class="plan-badge">See what happens during your stay</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Circles_(2010-04-18_by_Ian_T._McFarland).jpg" target="_blank" rel="noopener">Photo: Ian T. McFarland · CC BY-SA 2.0 · illustrative</a></figcaption></figure>
             <div class="plan-body"><a class="plan-title-link" href="/test/en/activities/events-calendar/"><h3>WERTEP, Barn Theatre and special events</h3></a><dl class="plan-facts"><div><dt>Time</dt><dd>Depends on the event</dd></div><div><dt>Season</dt><dd>Calendar-based</dd></div><div><dt>Best for</dt><dd>Families and adults</dd></div><div><dt>Transport</dt><dd>On foot or by car</dd></div><div><dt>Character</dt><dd>Theatre, music and local tradition</dd></div></dl><p class="plan-description">WERTEP, the Barn Theatre, concerts and seasonal events — timing can make these the highlight of a stay.</p><p class="plan-limit"><strong>This is a calendar:</strong> events are not daily, so check dates before arrival.</p><a class="plan-more" href="/test/en/activities/events-calendar/">See what to look for</a></div>
           </article>
-          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="food" data-weather="sun rain snow" data-transport="foot car" data-duration="short half" data-reservation="none">
+          <article class="plan home-feature" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="food" data-weather="sun rain snow" data-transport="foot car" data-duration="short half" data-reservation="none">
             <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Babka-ziemniaczana-przekroj.jpg" alt="Podlasie-style potato babka — illustrative photo" loading="lazy" decoding="async"><span class="plan-badge">Marcinek cake · potato babka · honey · cheese</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Babka-ziemniaczana-przekroj.jpg" target="_blank" rel="noopener">Photo: Zuzanna K. Filutowska · CC BY-SA 3.0 · illustrative</a></figcaption></figure>
             <div class="plan-body"><a class="plan-title-link" href="/test/en/activities/local-food-and-shopping/"><h3>Local flavours and food shopping</h3></a><dl class="plan-facts"><div><dt>Time</dt><dd>1–3 hours</dd></div><div><dt>Season</dt><dd>All year + seasonal markets</dd></div><div><dt>Best for</dt><dd>Anyone who likes to taste</dd></div><div><dt>Transport</dt><dd>On foot or by car</dd></div><div><dt>Look for</dt><dd>Marcinek, potato babka, honey and cheese</dd></div></dl><p class="plan-description">Instead of a generic souvenir, try something regional or take home food made by a local producer.</p><p class="plan-limit"><strong>Best paired with:</strong> lunch, a museum visit or a drive through Hajnówka.</p><a class="plan-more" href="/test/en/activities/local-food-and-shopping/">See the food cheat sheet</a></div>
           </article>
@@ -862,8 +881,8 @@
             <div class="plan-body"><a class="plan-title-link" href="/test/en/activities/forest-night-way-of-the-cross/"><h3>Forest Night Way of the Cross</h3></a><dl class="plan-facts"><div><dt>Distance</dt><dd>About 23 km</dd></div><div><dt>When</dt><dd>Lent · by announcement</dd></div><div><dt>Best for</dt><dd>Adults ready for a night walk</dd></div><div><dt>Route</dt><dd>Białowieża → Hajnówka</dd></div><div><dt>Character</dt><dd>Pilgrimage and practice of faith</dd></div></dl><p class="plan-description">A night pilgrimage through Forest villages, starting in Białowieża and finishing in Hajnówka.</p><p class="plan-limit"><strong>Latest verified edition:</strong> 27 March 2026; check the organiser for the next date.</p><a class="plan-more" href="/test/en/activities/forest-night-way-of-the-cross/">Read the dedicated guide</a></div>
           </article>
           <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="nature" data-weather="sun snow" data-transport="foot" data-duration="short half" data-reservation="none">
-            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Oak_Avenue_-_geograph.org.uk_-_6477551.jpg" alt="A road lined with mature oak trees — illustrative photograph" loading="lazy" decoding="async"><span class="plan-badge">A host's local walk</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Oak_Avenue_-_geograph.org.uk_-_6477551.jpg" target="_blank" rel="noopener">Photo: N Chadwick · CC BY-SA 2.0 · illustrative</a></figcaption></figure>
-            <div class="plan-body"><a class="plan-title-link" href="/test/en/activities/oak-avenue-towards-grudki/"><h3>Oak avenue towards Grudki</h3></a><dl class="plan-facts"><div><dt>Time</dt><dd>1–2 hours</dd></div><div><dt>Season</dt><dd>All year</dd></div><div><dt>Best for</dt><dd>A quiet walk, including with a dog</dd></div><div><dt>Transport</dt><dd>On foot</dd></div><div><dt>Character</dt><dd>A low-key local route</dd></div></dl><p class="plan-description">A beautiful avenue of old oaks on the walk towards Grudki and the border — one of Benkowo's host recommendations.</p><p class="plan-limit"><strong>Best start:</strong> ask your host to point out the beginning of the route.</p><a class="plan-more" href="/test/en/activities/oak-avenue-towards-grudki/">See the walk idea</a></div>
+            <figure class="plan-media"><img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?cb_client=maps_sv.tactile&amp;w=900&amp;h=600&amp;pitch=-17.642495146526173&amp;panoid=YyV-tkWD_rCSmvJh7UiixQ&amp;yaw=47.864878367492295" alt="Browska Avenue in Białowieża beneath mature oak trees" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="plan-badge">Droga Browska · former royal route</span><figcaption class="photo-credit"><a href="https://www.google.com/maps/search/?api=1&amp;query=52.7039883,23.8821002" target="_blank" rel="noopener">Google Street View · Białowieża</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/en/activities/browska-oak-avenue/"><h3>Browska Avenue — a walk beneath old oaks</h3></a><dl class="plan-facts"><div><dt>Time</dt><dd>1–2 hours</dd></div><div><dt>Season</dt><dd>All year</dd></div><div><dt>Best for</dt><dd>A quiet walk, including with a dog</dd></div><div><dt>Transport</dt><dd>On foot</dd></div><div><dt>Character</dt><dd>A historic avenue in Białowieża</dd></div></dl><p class="plan-description">Walk along Droga Browska beneath mature oaks lining part of a former royal route.</p><p class="plan-limit"><strong>Start:</strong> the exact point and Street View are saved on the walk page.</p><a class="plan-more" href="/test/en/activities/browska-oak-avenue/">See the walk idea</a></div>
           </article>
           <article class="plan" data-season="spring summer autumn" data-group="children intergenerational adults" data-character="village church" data-weather="sun" data-transport="car bike" data-duration="full" data-reservation="none">
             <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Puch%C5%82y%2C_cerkiew_prawos%C5%82awna_par._p.w._Opieki_Matki_Bo%C5%BCej%2C_1913-1918_19.jpg" alt="Blue wooden Orthodox Church of the Protection of the Mother of God in Puchły" loading="lazy" decoding="async"><span class="plan-badge">Trześcianka · Soce · Puchły</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Puch%C5%82y,_cerkiew_prawos%C5%82awna_par._p.w._Opieki_Matki_Bo%C5%BCej,_1913-1918_19.jpg" target="_blank" rel="noopener">Photo: Piotr Widerski · CC BY-SA 3.0 PL</a></figcaption></figure>
@@ -877,6 +896,10 @@
             <h3>No plan matches every selected filter.</h3>
             <p>Clear one or two filters to see the closest useful options.</p>
           </div>
+        </div>
+        <div class="plans-cta">
+          <p>Browse the complete catalogue by season, weather, group type, transport and attraction type.</p>
+          <a class="button button-dark" href="/test/en/stay-ideas/">See all 26 ideas →</a>
         </div>
       </div>
     </section>
