@@ -34,3 +34,23 @@
   .hero-media::after { background: linear-gradient(90deg, rgba(14,17,14,.91), rgba(14,17,14,.48)), linear-gradient(0deg, rgba(14,17,14,.64), transparent 58%); }
   .hero-media figcaption { font-size: .62rem; }
 }
+/* Shared Benkowo signature across all attraction pages. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .72rem;
+  font-size: 1.18rem;
+}
+.brand::before {
+  content: "";
+  display: block;
+  width: 2.55rem;
+  height: 2.55rem;
+  flex: 0 0 auto;
+  background: url("data:image/png;base64,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") center / contain no-repeat;
+}
+
+@media (max-width: 31rem) {
+  .brand { gap: .55rem; font-size: 1rem; }
+  .brand::before { width: 2.2rem; height: 2.2rem; }
+}
