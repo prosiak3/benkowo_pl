@@ -230,9 +230,13 @@
     .house-card:nth-child(2) { background: #42473e; }
     .house-index { color: rgba(245,243,237,.45); font-size: .72rem; letter-spacing: .15em; }
     .house-card h3 { max-width: 10ch; margin: 0; font-family: var(--serif); font-size: clamp(2.6rem, 4vw, 4.4rem); font-weight: 500; line-height: .95; }
-    .concept-gallery { display: grid; grid-template-columns: repeat(12,1fr); gap: .85rem; margin-top: 3rem; }
-    .concept-gallery figure { position: relative; grid-column: span 4; min-height: 20rem; margin: 0; overflow: hidden; border: 1px solid rgba(245,243,237,.18); background: #20241f; }
-    .concept-gallery figure:first-child, .concept-gallery figure:last-child { grid-column: span 6; }
+    .concept-gallery-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2rem; align-items: end; margin-top: clamp(4.5rem,8vw,7rem); padding-top: 2rem; border-top: 1px solid rgba(245,243,237,.22); }
+    .concept-gallery-head h3 { max-width: 12ch; margin: .35rem 0 0; font-size: clamp(2.6rem,5vw,5rem); line-height: .94; }
+    .concept-gallery-head > p { max-width: 36rem; margin: 0; justify-self: end; color: rgba(245,243,237,.7); }
+    .concept-gallery { display: grid; grid-template-columns: repeat(12,1fr); grid-auto-rows: 18rem; gap: .85rem; margin-top: 2rem; }
+    .concept-gallery figure { position: relative; grid-column: span 6; min-height: 18rem; margin: 0; overflow: hidden; border: 1px solid rgba(245,243,237,.18); background: #20241f; }
+    .concept-gallery figure:first-child { grid-column: span 7; grid-row: span 2; }
+    .concept-gallery figure:nth-child(2), .concept-gallery figure:nth-child(3) { grid-column: span 5; }
     .concept-gallery img { width: 100%; height: 100%; display: block; object-fit: cover; }
     .concept-gallery figcaption { position: absolute; inset: auto .65rem .65rem; padding: .55rem .7rem; background: rgba(18,21,18,.88); color: #fff; font-size: .68rem; line-height: 1.35; }
     .house-card p { margin: 1rem 0 0; color: rgba(245,243,237,.68); }
@@ -465,8 +469,12 @@
       .street-view { min-height: 18rem; }
       .street-view figcaption { align-items: start; flex-direction: column; }
       .house-card, .house-card:last-child { grid-column: auto; min-height: 24rem; }
-      .concept-gallery { grid-template-columns: 1fr; }
+      .concept-gallery-head { display: block; }
+      .concept-gallery-head > p { margin-top: 1rem; }
+      .concept-gallery { grid-template-columns: 1fr; grid-auto-rows: auto; }
       .concept-gallery figure, .concept-gallery figure:first-child, .concept-gallery figure:last-child { grid-column: auto; min-height: 18rem; }
+      .concept-gallery figure:first-child { grid-row: auto; min-height: 26rem; }
+      .concept-gallery figure:nth-child(2), .concept-gallery figure:nth-child(3) { grid-column: auto; }
       .experience-head .section-lead { margin-top: 1.2rem; }
       .plans-cta { align-items: stretch; flex-direction: column; }
       .plans-cta .button { width: 100%; }
@@ -661,6 +669,10 @@
             </div>
           </article>
         </div>
+        <div class="concept-gallery-head">
+          <div><p class="eyebrow">A picture of your stay</p><h3 class="display">Every part of the day has its place here.</h3></div>
+          <p>A shared table, two independent houses, the sauna and an evening by the fire. These concept images show the mood and ways of using the homestead — actual Benkowo interior photography will follow after the photo shoot.</p>
+        </div>
         <div class="concept-gallery" aria-label="Concept views of how Benkowo's spaces may be used">
           <figure><img src="/test/assets/concept/dom-glowny.webp" alt="Concept view of a shared dining and living space" loading="lazy"><figcaption>Main House · Concept image — not an actual view of Benkowo</figcaption></figure>
           <figure><img src="/test/assets/concept/dom-ogrodowy.webp" alt="Concept view of the Garden House bedroom and loft" loading="lazy"><figcaption>Garden House · Concept image — not an actual view of Benkowo</figcaption></figure>
@@ -735,12 +747,6 @@
               <dl class="plan-facts"><div><dt>Time</dt><dd>3–5 hours</dd></div><div><dt>Season / weather</dt><dd>Year-round · rain-friendly</dd></div><div><dt>Best for</dt><dd>Families and mixed ages</dd></div><div><dt>Transport</dt><dd>On foot in Białowieża</dd></div><div><dt>Booking</dt><dd>Usually not</dd></div><div><dt>Pace</dt><dd>Slow</dd></div></dl>
               <p class="plan-description">The National Park Museum, Palace Park, a break and a local meal — without overloading your first day.</p>
               <p class="plan-limit"><strong>Check first:</strong> museum hours and current National Park notices.</p>
-              <div class="plan-video" data-youtube-video-id="Xxjg6Vpia-0" data-youtube-title="Official material from Białowieża National Park" data-youtube-channel="Białowieża National Park" data-source-url="https://www.youtube.com/watch?v=Xxjg6Vpia-0" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
-                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Official material from Białowieża National Park">Watch the video <span aria-hidden="true">▶</span></button></div>
-                <p class="youtube-meta"><strong>Video:</strong> Official material from Białowieża National Park<br><span>Białowieża National Park · Verified: 21 Sep 2026 · captions: not verified</span></p>
-                <p class="youtube-note">The video introduces the region and its nature; check current hours, notices and National Park rules before setting out.</p>
-                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=Xxjg6Vpia-0" target="_blank" rel="noopener">Open on YouTube ↗</a>
-              </div>
               <a class="plan-more" href="/test/en/activities/family-time-in-bialowieza/">See the draft plan</a>
             </div>
           </article>
