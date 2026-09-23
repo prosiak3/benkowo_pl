@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; frame-src https://www.youtube-nocookie.com https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https:;">
+  <script>
+    (() => {
+      const key = 'benkowo-language';
+      const currentLanguage = 'pl';
+      let preferredLanguage = null;
+      try { preferredLanguage = localStorage.getItem(key); } catch (_) {}
+      if (!preferredLanguage) {
+        const browserLanguage = (navigator.languages?.[0] || navigator.language || 'pl').toLowerCase();
+        preferredLanguage = browserLanguage.startsWith('pl') ? 'pl' : 'en';
+      }
+      if (preferredLanguage !== currentLanguage) {
+        const target = preferredLanguage === 'en' ? '/test/en/stay-ideas/' : '/test/pomysly-na-pobyt/';
+        location.replace(target + location.search + location.hash);
+      }
+    })();
+  </script>
+
+  <meta name="theme-color" content="#1a1d1a">
+  <meta name="description" content="26 pomysłów na pobyt w Białowieży i okolicy: żubry, Puszcza, spacery, muzea, cerkwie, lokalne jedzenie i atrakcje na każdą porę roku.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="Benkowo Białowieża">
+  <meta property="og:title" content="Pomysły na pobyt w Białowieży — Benkowo">
+  <meta property="og:description" content="26 sprawdzonych inspiracji z wygodnymi filtrami według pory roku, pogody i rodzaju wyjazdu.">
+  <meta property="og:url" content="https://benkowo.pl/test/pomysly-na-pobyt/">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk-ULmIRnLcEXmeuyu6swzzmGxMBGreLigNJUjJH2Fey6efdYN3HP2j8iISvEUWkTTkcrqpLIbe8NUKIIDpOhPvmXxbQRHvHXDI_GZdCmKL5Ym5Jhmchd7eV9VLdbnCKOqOEs8CdA=s1600-k-no">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Drewniany Dom Główny Benkowa przy ulicy Stoczek w Białowieży">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Pomysły na pobyt w Białowieży — Benkowo</title>
+  <link rel="canonical" href="https://benkowo.pl/test/pomysly-na-pobyt/">
+  <link rel="alternate" hreflang="pl" href="https://benkowo.pl/test/pomysly-na-pobyt/">
+  <link rel="alternate" hreflang="en" href="https://benkowo.pl/test/en/stay-ideas/">
+  <link rel="alternate" hreflang="x-default" href="https://benkowo.pl/test/pomysly-na-pobyt/">
+    <link rel="icon" href="/test/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/test/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/test/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/test/apple-touch-icon.png">
+  <link rel="manifest" href="/test/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1a1d1a;
+      --linen: #f5f3ed;
+      --paper: #fffdf8;
+      --oak: #3d433a;
+      --copper: #9e5a3c;
+      --mist: #dbded6;
+      --line: rgba(26, 29, 26, .16);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: Inter, ui-sans-serif, system-ui, sans-serif;
+      --radius: 1.15rem;
+      --page: min(76rem, calc(100% - 2.5rem));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--linen); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--linen);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    section { scroll-margin-top: 6.5rem; }
+    .shell { width: var(--page); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 .8rem;
+      color: var(--copper);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .display {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: .95;
+      letter-spacing: -.035em;
+    }
+    .section-title { max-width: 14ch; font-size: clamp(2.7rem, 6vw, 5.8rem); }
+    .section-lead { max-width: 42rem; margin: 1.4rem 0 0; font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: rgba(26,29,26,.72); }
+    .button {
+      display: inline-flex;
+      min-height: 3.25rem;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: .8rem 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--copper); color: var(--paper); }
+    .button-primary:hover { background: #7e422c; }
+    .button-light { background: var(--paper); color: var(--ink); }
+    .button-light:hover { background: #e9e5dc; }
+    .button-dark { background: var(--ink); color: var(--paper); }
+    .button-dark:hover { background: #343934; }
+    .button-outline { border-color: currentColor; background: transparent; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid rgba(245,243,237,.13);
+      background: rgba(26,29,26,.94);
+      color: var(--paper);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner { min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .brand { display: inline-flex; align-items: center; gap: .72rem; text-decoration: none; }
+    .brand-mark {
+      display: block;
+      width: 2.55rem;
+      height: 2.55rem;
+    }
+    .brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .brand-type { display: grid; line-height: 1; text-transform: uppercase; }
+    .brand-type strong { font-family: var(--serif); font-size: 1.22rem; letter-spacing: .055em; }
+    .brand-type small { margin-top: .28rem; font-size: .56rem; letter-spacing: .32em; }
+    .nav { display: flex; align-items: center; gap: 1.45rem; }
+    .nav > a:not(.button) { color: rgba(245,243,237,.78); font-size: .88rem; font-weight: 600; text-decoration: none; }
+    .nav > a:not(.button):hover { color: var(--paper); }
+    .language-switch { display: inline-flex; align-items: center; gap: .38rem; padding: .28rem .5rem; border: 1px solid rgba(245,243,237,.24); border-radius: 999px; }
+    .language-switch a { color: rgba(245,243,237,.72); font-size: .78rem; font-weight: 700; text-decoration: none; }
+    .language-switch a[aria-current="page"] { color: var(--paper); }
+    .language-switch span { color: rgba(245,243,237,.34); }
+    .nav-toggle { display: none; border: 0; background: transparent; color: inherit; padding: .6rem; cursor: pointer; }
+    .nav-toggle span { display: block; width: 1.55rem; height: 2px; margin: .3rem 0; background: currentColor; }
+
+    .hero { position: relative; overflow: clip; background: var(--ink); color: var(--paper); }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .38;
+      background:
+        linear-gradient(110deg, transparent 48%, rgba(158,90,60,.15) 48%, rgba(158,90,60,.15) 49%, transparent 49%),
+        repeating-linear-gradient(90deg, rgba(245,243,237,.045) 0 1px, transparent 1px 7.5rem);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; min-height: min(54rem, calc(100svh - 5rem)); display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-block: clamp(4rem, 8vw, 7rem); }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero .eyebrow { color: #d58b68; }
+    .hero h1 { max-width: 10ch; font-size: clamp(4.5rem, 9.3vw, 9rem); }
+    .hero-lead { max-width: 39rem; margin: 1.75rem 0 0; color: rgba(245,243,237,.78); font-size: clamp(1.06rem, 1.7vw, 1.3rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.2rem; }
+    .hero-note { margin: 1.2rem 0 0; color: rgba(245,243,237,.54); font-size: .82rem; }
+    .hero-art { position: relative; min-height: 36rem; display: grid; place-items: center; }
+    .hero-photo { position: absolute; inset: 0 0 0 8%; margin: 0; overflow: hidden; border: 1px solid rgba(245,243,237,.2); background: #101310; }
+    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 72%, rgba(12,15,12,.34)); pointer-events: none; }
+    .hero-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 43% center; }
+    .hero-photo figcaption { position: absolute; z-index: 1; right: 1.2rem; bottom: 1rem; color: rgba(245,243,237,.76); font-size: .72rem; letter-spacing: .04em; }
+    .hero-letter {
+      position: absolute;
+      right: -7%;
+      top: -8%;
+      z-index: 1;
+      width: min(18rem, 42vw);
+      opacity: .12;
+      user-select: none;
+    }
+    .hero-letter img { display: block; width: 100%; height: auto; }
+    .estate-card {
+      position: absolute;
+      left: 0;
+      bottom: 2rem;
+      z-index: 2;
+      width: min(22rem, 100%);
+      border: 1px solid rgba(245,243,237,.2);
+      padding: 1.5rem;
+      background: rgba(26,29,26,.72);
+      backdrop-filter: blur(12px);
+    }
+    .estate-card p { margin: 0; }
+    .estate-card .number { font-family: var(--serif); font-size: 4.2rem; line-height: .9; }
+    .estate-card .label { margin-top: .55rem; color: rgba(245,243,237,.66); font-size: .85rem; }
+    .estate-diagram { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .75rem; margin-top: 1.7rem; }
+    .estate-diagram span { border: 1px solid rgba(245,243,237,.25); padding: .8rem .6rem; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+    .estate-diagram i { width: 2.4rem; height: 1px; background: rgba(245,243,237,.3); }
+
+    .facts { position: relative; z-index: 4; margin-top: -2.4rem; }
+    .facts-grid { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--line); background: var(--paper); box-shadow: 0 1.3rem 3.5rem rgba(26,29,26,.11); }
+    .fact { min-height: 9.4rem; padding: 1.25rem; border-right: 1px solid var(--line); }
+    .fact:last-child { border-right: 0; }
+    .fact-icon { width: 1.65rem; height: 1.65rem; margin-bottom: .75rem; color: var(--copper); }
+    .fact-icon svg { width: 100%; height: 100%; display: block; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .fact strong { display: block; font-family: var(--serif); font-size: 2.4rem; font-weight: 500; line-height: 1; }
+    .fact span { display: block; margin-top: .65rem; color: rgba(26,29,26,.62); font-size: .77rem; letter-spacing: .06em; text-transform: uppercase; }
+
+    .intro { padding-block: clamp(6.5rem, 12vw, 11rem); }
+    .intro-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 8vw, 9rem); align-items: start; }
+    .intro-aside { position: sticky; top: 7rem; }
+    .intro-aside p { max-width: 18rem; margin: 1.2rem 0 0; color: rgba(26,29,26,.62); }
+    .manifesto { margin: 0; font-family: var(--serif); font-size: clamp(2.55rem, 5vw, 5rem); line-height: 1.05; letter-spacing: -.03em; }
+    .manifesto em { color: var(--copper); font-style: normal; }
+    .intro-copy { columns: 2; column-gap: 2rem; margin-top: 2rem; color: rgba(26,29,26,.72); }
+    .intro-copy p { margin: 0 0 1rem; break-inside: avoid; }
+
+    .houses { padding-block: clamp(6rem, 10vw, 9rem); background: var(--oak); color: var(--paper); }
+    .houses-head { display: flex; justify-content: space-between; gap: 2rem; align-items: end; }
+    .houses .eyebrow { color: #d58b68; }
+    .houses .section-lead { color: rgba(245,243,237,.7); }
+    .house-grid { display: grid; grid-template-columns: 1.25fr .9fr .85fr; gap: 1px; margin-top: 3.5rem; background: rgba(245,243,237,.18); border: 1px solid rgba(245,243,237,.18); }
+    .house-card { min-height: 31rem; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(1.5rem, 3vw, 2.5rem); background: var(--oak); }
+    .house-card:first-child { background: #333a31; }
+    .house-card:nth-child(2) { background: #42473e; }
+    .house-index { color: rgba(245,243,237,.45); font-size: .72rem; letter-spacing: .15em; }
+    .house-card h3 { max-width: 10ch; margin: 0; font-family: var(--serif); font-size: clamp(2.6rem, 4vw, 4.4rem); font-weight: 500; line-height: .95; }
+    .concept-gallery { display: grid; grid-template-columns: repeat(12,1fr); gap: .85rem; margin-top: 3rem; }
+    .concept-gallery figure { position: relative; grid-column: span 4; min-height: 20rem; margin: 0; overflow: hidden; border: 1px solid rgba(245,243,237,.18); background: #20241f; }
+    .concept-gallery figure:first-child, .concept-gallery figure:last-child { grid-column: span 6; }
+    .concept-gallery img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .concept-gallery figcaption { position: absolute; inset: auto .65rem .65rem; padding: .55rem .7rem; background: rgba(18,21,18,.88); color: #fff; font-size: .68rem; line-height: 1.35; }
+    .house-card p { margin: 1rem 0 0; color: rgba(245,243,237,.68); }
+    .tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.4rem; }
+    .tag { border: 1px solid rgba(245,243,237,.24); border-radius: 999px; padding: .35rem .7rem; color: rgba(245,243,237,.8); font-size: .74rem; }
+    .estate-plan { margin-top: clamp(4rem, 8vw, 7rem); border-top: 1px solid rgba(245,243,237,.18); padding-top: clamp(3.5rem, 7vw, 6rem); }
+    .estate-plan-copy { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2rem; align-items: end; }
+    .estate-plan-copy p:not(.eyebrow) { max-width: 39rem; margin: 0; justify-self: end; color: rgba(245,243,237,.7); }
+    .estate-explorer { display: grid; grid-template-columns: minmax(17rem, .78fr) 1.22fr; min-height: 49rem; margin-top: 3rem; border: 1px solid rgba(245,243,237,.22); background: #30362f; }
+    .aerial-map { position: relative; min-height: 49rem; overflow: hidden; border-right: 1px solid rgba(245,243,237,.2); background: #1f241f; }
+    .aerial-map > img { width: 100%; height: 100%; position: absolute; inset: 0; display: block; object-fit: cover; object-position: center; filter: saturate(.78) brightness(.72) contrast(1.05); }
+    .aerial-map::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(26,29,26,.25), transparent 45%, rgba(26,29,26,.2)); pointer-events: none; }
+    .map-label { position: absolute; z-index: 2; right: 1rem; left: 1rem; color: rgba(245,243,237,.72); font-size: .65rem; font-weight: 700; letter-spacing: .12em; text-align: center; text-transform: uppercase; }
+    .map-label.entry { top: 1rem; }
+    .map-label.end { bottom: 1rem; }
+    .hotspot { position: absolute; z-index: 3; display: grid; width: 2.65rem; height: 2.65rem; place-items: center; border: 1px solid rgba(255,253,248,.8); border-radius: 50%; background: var(--copper); color: var(--paper); box-shadow: 0 0 0 .55rem rgba(158,90,60,.2); cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .hotspot::before { content: ""; position: absolute; inset: -.55rem; border: 1px solid rgba(255,253,248,.36); border-radius: inherit; animation: map-pulse 2.6s ease-out infinite; }
+    .hotspot:hover, .hotspot[aria-pressed="true"] { transform: scale(1.11); background: #c8734f; box-shadow: 0 0 0 .8rem rgba(158,90,60,.24); }
+    .hotspot svg { width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .hotspot.home-main { top: 8%; left: 58%; }
+    .hotspot.parking { top: 19%; left: 28%; }
+    .hotspot.garden-home { top: 42%; left: 48%; }
+    .hotspot.sauna { top: 55%; left: 39%; }
+    .hotspot.shelter { top: 69%; left: 55%; }
+    .explorer-panel { display: grid; align-content: center; padding: clamp(2rem, 5vw, 4.5rem); }
+    .explorer-kicker { margin: 0 0 .65rem; color: #d58b68; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .explorer-panel h4 { max-width: 12ch; margin: 0; font-family: var(--serif); font-size: clamp(3rem, 5vw, 5.2rem); font-weight: 500; line-height: .93; }
+    .explorer-description { max-width: 34rem; margin: 1.3rem 0 0; color: rgba(245,243,237,.7); }
+    .explorer-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 2.2rem; background: rgba(245,243,237,.16); border: 1px solid rgba(245,243,237,.16); }
+    .explorer-stat { min-height: 5.6rem; padding: 1rem; background: #30362f; }
+    .explorer-stat strong { display: block; font-family: var(--serif); font-size: 1.7rem; font-weight: 500; line-height: 1; }
+    .explorer-stat span { display: block; margin-top: .4rem; color: rgba(245,243,237,.55); font-size: .7rem; text-transform: uppercase; }
+    .explorer-stat:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .explorer-hint { margin: 1.5rem 0 0; color: rgba(245,243,237,.45); font-size: .75rem; }
+    @keyframes map-pulse { 0% { transform: scale(.75); opacity: .75; } 75%, 100% { transform: scale(1.55); opacity: 0; } }
+
+    .history { padding-block: clamp(6rem, 11vw, 10rem); background: var(--paper); }
+    .history-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: start; }
+    .history-year { margin: 0; color: var(--copper); font-family: var(--serif); font-size: clamp(6rem, 12vw, 11rem); line-height: .8; }
+    .history-copy h2 { max-width: 13ch; }
+    .history-copy p { max-width: 43rem; color: rgba(26,29,26,.7); font-size: 1.08rem; }
+
+    .experience { padding-block: clamp(6.5rem, 11vw, 10rem); }
+    .experience-head { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; }
+    .experience-head .section-lead { justify-self: end; }
+    .plan-filter-bar { display: grid; gap: .9rem; margin-top: 2.5rem; }
+    .visible-filter-groups { display: grid; gap: .85rem; }
+    .visible-filter-group { display: grid; grid-template-columns: 8.5rem 1fr; gap: .8rem; align-items: start; }
+    .visible-filter-group h3 { margin: .62rem 0 0; color: rgba(26,29,26,.56); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .filter-options { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .filter-chip, .clear-filters {
+      min-height: 2.8rem; border: 1px solid var(--line); border-radius: 999px; padding: .62rem 1rem;
+      background: var(--paper); color: var(--ink); font-weight: 700; cursor: pointer;
+    }
+    .filter-chip[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+    .filter-chip:focus-visible, .clear-filters:focus-visible, .plan:focus-visible, .plan-title-link:focus-visible, .plan-more:focus-visible, .youtube-trigger:focus-visible {
+      outline: 3px solid rgba(158,90,60,.38); outline-offset: 3px;
+    }
+    .filter-summary { display: flex; min-height: 2.8rem; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .75rem; }
+    .filter-count { margin: 0; color: rgba(26,29,26,.66); font-size: .88rem; }
+    .clear-filters { min-height: 2.35rem; border: 0; padding: .35rem .25rem; background: transparent; color: var(--copper); }
+    .plans { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.15rem; margin-top: 1.5rem; }
+    .plan { display: flex; overflow: hidden; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); cursor: pointer; transition: transform .22s ease, box-shadow .22s ease; }
+    .plan:hover { transform: translateY(-4px); box-shadow: 0 1.2rem 2.8rem rgba(26,29,26,.12); }
+    .plan { grid-column: span 4; }
+    .plan.plan-featured { grid-column: span 8; display: grid; grid-template-columns: 1.25fr .75fr; }
+    .plan[hidden], .no-results[hidden] { display: none; }
+    .plan-media { position: relative; aspect-ratio: 4 / 3; margin: 0; overflow: hidden; background: #30362f; color: var(--paper); }
+    .plan-featured .plan-media { height: 100%; min-height: 31rem; aspect-ratio: auto; }
+    .plan-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(20,24,20,.58)); pointer-events: none; }
+    .plan-media img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .45s ease; }
+    .plan:hover .plan-media img { transform: scale(1.035); }
+    .plan-media-missing { display: grid; place-items: center; padding: 1.5rem; background: linear-gradient(135deg, #30362f, #596052); text-align: center; }
+    .plan-media-missing::after { background: repeating-linear-gradient(135deg, transparent 0 24px, rgba(255,255,255,.025) 24px 25px); }
+    .plan-media-missing span { position: relative; z-index: 1; max-width: 19rem; color: rgba(245,243,237,.84); font-size: .8rem; font-weight: 700; line-height: 1.45; }
+    .plan-badge { position: absolute; z-index: 2; left: 1rem; bottom: .9rem; color: #fff; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .photo-credit { position: absolute; z-index: 2; right: .75rem; bottom: .65rem; max-width: 60%; color: rgba(255,255,255,.88); font-size: .62rem; text-align: right; }
+    .photo-credit a { color: inherit; }
+    .plan-body { display: flex; flex: 1; flex-direction: column; padding: 1.25rem 1.35rem 1.4rem; }
+    .plan-title-link { color: inherit; text-decoration: none; }
+    .plan h3 { min-height: 3em; margin: 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; line-height: 1; }
+    .plan-facts { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem .8rem; margin: 1rem 0 0; padding: .9rem 0; border-block: 1px solid var(--line); }
+    .plan-facts div { min-width: 0; }
+    .plan-facts dt { color: rgba(26,29,26,.5); font-size: .64rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .plan-facts dd { margin: .15rem 0 0; font-size: .78rem; font-weight: 650; line-height: 1.35; }
+    .plan-facts > div:nth-child(n+4) { display: none; }
+    .plan-description { margin: .9rem 0 0; color: rgba(26,29,26,.72); font-size: .88rem; }
+    .plan-limit { margin: .75rem 0 0; border-left: 2px solid var(--copper); padding-left: .7rem; color: rgba(26,29,26,.62); font-size: .74rem; }
+    .plan-more { display: inline-flex; width: 100%; min-height: 2.8rem; align-items: center; justify-content: space-between; gap: .65rem; margin-top: auto; border: 1px solid var(--ink); border-radius: 999px; padding: .65rem 1rem; background: var(--ink); color: var(--paper); font-size: .8rem; font-weight: 800; line-height: 1.2; text-decoration: none; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+    .plan-more::after { content: "→"; flex: 0 0 auto; color: #d58b68; transition: transform .2s ease; }
+    .plan-more:hover { border-color: var(--copper); background: var(--copper); }
+    .plan-more:hover::after { color: var(--paper); }
+    .plan:hover .plan-more::after { transform: translateX(.25rem); }
+    .plan-video { margin-top: 1rem; }
+    .youtube-poster { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: .75rem; background: #171a17; }
+    .youtube-poster img, .youtube-frame { width: 100%; height: 100%; display: block; border: 0; object-fit: cover; }
+    .youtube-poster::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,15,12,.05), rgba(12,15,12,.34)); pointer-events: none; }
+    .youtube-trigger { position: absolute; z-index: 1; inset: 50% auto auto 50%; display: grid; width: 4rem; height: 4rem; place-items: center; transform: translate(-50%,-50%); border: 2px solid rgba(255,255,255,.9); border-radius: 50%; padding: 0; background: rgba(158,90,60,.96); color: #fff; font-size: 0; cursor: pointer; box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.28); }
+    .youtube-trigger span { font-size: 1.35rem; transform: translateX(.1rem); }
+    .youtube-fallback { display: inline-block; margin-top: .55rem; font-size: .75rem; }
+    .youtube-poster { background: linear-gradient(135deg, #171a17, #3d433a); }
+    .youtube-meta { margin: .65rem 0 0; font-size: .74rem; line-height: 1.45; }
+    .youtube-meta span { color: rgba(26,29,26,.58); }
+    .youtube-note { margin: .45rem 0 0; color: rgba(26,29,26,.66); font-size: .72rem; line-height: 1.45; }
+    .no-results { grid-column: 1 / -1; border: 1px dashed var(--line); border-radius: var(--radius); padding: 2rem; background: rgba(255,253,248,.55); text-align: center; }
+    .no-results h3 { margin: 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; }
+    .no-results p { margin: .5rem 0 0; color: rgba(26,29,26,.66); }
+
+    .location { padding-block: clamp(6rem, 10vw, 9rem); background: #e9e6dd; }
+    .location-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+    .location-copy p:not(.eyebrow) { max-width: 32rem; color: rgba(26,29,26,.7); }
+    .location-address { margin: 2rem 0; border-left: 2px solid var(--copper); padding-left: 1rem; font-family: var(--serif); font-size: 1.4rem; line-height: 1.25; }
+    .map-frame { min-height: 33rem; border: 1px solid rgba(26,29,26,.18); background: #d9d6cd; box-shadow: 0 1.2rem 3rem rgba(26,29,26,.12); }
+    .map-frame iframe { width: 100%; height: 33rem; display: block; border: 0; filter: saturate(.72) contrast(.95); }
+    .street-views { display: grid; grid-template-columns: 1.25fr .75fr; gap: 1rem; margin-top: 1rem; }
+    .street-view { position: relative; min-height: 23rem; overflow: hidden; margin: 0; background: var(--ink); }
+    .street-view img { width: 100%; height: 100%; position: absolute; inset: 0; display: block; object-fit: cover; }
+    .street-view::after { content: ""; position: absolute; inset: auto 0 0; height: 45%; background: linear-gradient(transparent, rgba(12,15,12,.78)); pointer-events: none; }
+    .street-view figcaption { position: absolute; z-index: 1; right: 1.2rem; bottom: 1rem; left: 1.2rem; display: flex; justify-content: space-between; gap: 1rem; align-items: end; color: var(--paper); }
+    .street-view figcaption span { max-width: 25rem; font-family: var(--serif); font-size: 1.55rem; line-height: 1.05; }
+    .street-view figcaption small { color: rgba(245,243,237,.72); white-space: nowrap; }
+
+    .availability { padding-block: clamp(5.5rem, 9vw, 8rem); background: var(--copper); color: var(--paper); }
+    .availability-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2.5rem, 8vw, 8rem); align-items: center; }
+    .availability .eyebrow { color: #f0c6b2; }
+    .availability .section-title { max-width: 11ch; }
+    .availability-copy > p:not(.eyebrow) { max-width: 34rem; color: rgba(255,253,248,.76); }
+    .availability-form { border: 1px solid rgba(255,253,248,.28); padding: clamp(1.3rem, 3vw, 2rem); background: rgba(71,28,14,.18); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    .field { display: grid; gap: .38rem; }
+    .field-wide { grid-column: 1 / -1; }
+    .field label { font-size: .76rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .field input, .field select { width: 100%; min-height: 3.35rem; border: 1px solid rgba(255,253,248,.35); border-radius: 0; padding: .75rem; background: rgba(255,253,248,.08); color: var(--paper); }
+    .field select option { color: var(--ink); }
+    .availability-form .button { width: 100%; margin-top: 1rem; }
+    .form-result { margin-top: 1rem; border-top: 1px solid rgba(255,253,248,.28); padding-top: 1rem; }
+    .form-result[hidden] { display: none; }
+    .form-result p { margin: 0 0 .8rem; }
+    .result-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+
+    .contact { padding-block: clamp(6rem, 11vw, 10rem); }
+    .contact-card { display: grid; grid-template-columns: 1.1fr .9fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .contact-main { padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 6vw, 5rem) clamp(2rem, 6vw, 5rem) 0; }
+    .contact-main a.phone { display: inline-block; margin-top: 2rem; font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 4.6rem); line-height: 1; text-decoration: none; }
+    .contact-main a.phone:hover { color: var(--copper); }
+    .contact-aside { display: grid; align-content: center; gap: 1.3rem; border-left: 1px solid var(--line); padding: clamp(2rem, 5vw, 4rem); }
+    .contact-item span { display: block; color: rgba(26,29,26,.52); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .contact-item strong, .contact-item a { display: block; margin-top: .25rem; font-weight: 600; text-decoration: none; }
+
+    .footer { padding-block: 2rem 6rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; color: rgba(26,29,26,.53); font-size: .78rem; }
+    .footer a { text-decoration: none; }
+    .mobile-cta { display: none; }
+
+    @media (max-width: 64rem) {
+      .nav-toggle { display: block; }
+      .nav {
+        position: fixed;
+        inset: 5rem 0 auto 0;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 1.25rem 1.5rem;
+        background: var(--ink);
+        border-bottom: 1px solid rgba(245,243,237,.15);
+      }
+      .menu-open .nav { display: flex; }
+      .nav > a:not(.button) { padding: .9rem 0; border-bottom: 1px solid rgba(245,243,237,.1); }
+      .nav .button { margin-top: 1rem; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-art { position: absolute; inset: 0; min-height: 100%; opacity: .5; pointer-events: none; }
+      .hero-photo { inset: 0; border: 0; }
+      .hero-photo img { object-position: 54% center; }
+      .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(26,29,26,.97) 0%, rgba(26,29,26,.84) 58%, rgba(26,29,26,.38)); pointer-events: none; }
+      .hero-copy { z-index: 3; }
+      .hero-letter, .hero-photo figcaption { display: none; }
+      .estate-card { display: none; }
+      .facts-grid { grid-template-columns: repeat(3, 1fr); }
+      .fact:nth-child(3) { border-right: 0; }
+      .fact:nth-child(n+4) { border-top: 1px solid var(--line); }
+      .intro-grid { grid-template-columns: 1fr; }
+      .intro-aside { position: static; }
+      .house-grid { grid-template-columns: 1fr 1fr; }
+      .house-card:last-child { grid-column: 1 / -1; min-height: 22rem; }
+      .plans { grid-template-columns: 1fr 1fr; }
+      .plan { grid-column: auto; }
+      .plan.plan-featured { grid-column: 1 / -1; }
+      .filter-chip { flex: 0 0 auto; }
+      .estate-plan-copy, .history-grid { grid-template-columns: 1fr; }
+      .estate-plan-copy p:not(.eyebrow) { justify-self: start; }
+      .estate-explorer { grid-template-columns: .9fr 1.1fr; }
+      .location-grid { grid-template-columns: 1fr; }
+      .street-views { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 44rem) {
+      :root { --page: min(100% - 1.5rem, 76rem); }
+      .header-inner { min-height: 4.5rem; }
+      .brand-type strong { font-size: 1.02rem; }
+      .brand-mark { width: 2.2rem; height: 2.2rem; font-size: 1.85rem; }
+      .nav { inset-block-start: 4.5rem; }
+      .hero-inner { min-height: calc(100svh - 4.5rem); padding-block: 4rem 6.5rem; }
+      .hero h1 { font-size: clamp(4rem, 19vw, 6rem); }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .facts { margin-top: -1.4rem; }
+      .facts-grid { grid-template-columns: 1fr 1fr; }
+      .fact { min-height: 7.7rem; border-right: 1px solid var(--line) !important; border-top: 1px solid var(--line); }
+      .fact:nth-child(odd) { border-right: 0 !important; }
+      .fact:first-child, .fact:nth-child(2) { border-top: 0; }
+      .fact:last-child { grid-column: 1 / -1; border-right: 0 !important; }
+      .intro-copy { columns: 1; }
+      .houses-head, .experience-head { display: block; }
+      .house-grid, .plans, .availability-grid, .contact-card, .location-grid { grid-template-columns: 1fr; }
+      .estate-explorer { grid-template-columns: 1fr; }
+      .aerial-map { min-height: 38rem; border-right: 0; border-bottom: 1px solid rgba(245,243,237,.2); }
+      .explorer-panel { min-height: 32rem; }
+      .street-view { min-height: 18rem; }
+      .street-view figcaption { align-items: start; flex-direction: column; }
+      .house-card, .house-card:last-child { grid-column: auto; min-height: 24rem; }
+      .concept-gallery { grid-template-columns: 1fr; }
+      .concept-gallery figure, .concept-gallery figure:first-child, .concept-gallery figure:last-child { grid-column: auto; min-height: 18rem; }
+      .experience-head .section-lead { margin-top: 1.2rem; }
+      .plans { gap: .7rem; }
+      .visible-filter-group { grid-template-columns: 1fr; gap: .35rem; }
+      .visible-filter-group h3 { margin-top: 0; }
+      .filter-options { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .35rem; scrollbar-width: thin; }
+      .filter-chip { flex: 0 0 auto; }
+      .plan.plan-featured { display: block; }
+      .plan-featured .plan-media { min-height: 0; aspect-ratio: 4 / 3; }
+      .plan-facts { grid-template-columns: 1fr; }
+      .plan { min-height: 21rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-wide { grid-column: auto; }
+      .contact-main { padding-right: 0; }
+      .contact-aside { border-top: 1px solid var(--line); border-left: 0; padding-inline: 0; }
+      .footer { padding-bottom: 7rem; }
+      .mobile-cta {
+        position: fixed;
+        z-index: 50;
+        right: .75rem;
+        bottom: .75rem;
+        left: .75rem;
+        display: flex;
+        min-height: 3.5rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: var(--copper);
+        color: var(--paper);
+        box-shadow: 0 .75rem 2.2rem rgba(26,29,26,.28);
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+    .catalog-page main > .hero, .catalog-page main > .facts, .catalog-page main > .intro, .catalog-page main > .history, .catalog-page main > .houses, .catalog-page main > .location, .catalog-page main > .availability, .catalog-page main > .contact { display: none; }
+    .catalog-page .experience { min-height: calc(100vh - 5rem); padding-top: clamp(4rem, 7vw, 6rem); }
+    .catalog-page .experience-head { padding-top: 1.5rem; }
+    .catalog-page .experience-head h1 { margin: .25rem 0 0; }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Benkowo Białowieża",
+      "url": "https://benkowo.pl/test/",
+      "image": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk-ULmIRnLcEXmeuyu6swzzmGxMBGreLigNJUjJH2Fey6efdYN3HP2j8iISvEUWkTTkcrqpLIbe8NUKIIDpOhPvmXxbQRHvHXDI_GZdCmKL5Ym5Jhmchd7eV9VLdbnCKOqOEs8CdA=s1600-k-no",
+      "description": "Prywatna rodzinna posesja w Białowieży: dwa domy, ogród i sauna na wyłączność jednej grupy do 14 osób.",
+      "telephone": "+48602761082",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Stoczek 178",
+        "postalCode": "17-230",
+        "addressLocality": "Białowieża",
+        "addressCountry": "PL"
+      },
+      "amenityFeature": [
+        {"@type":"LocationFeatureSpecification","name":"Sauna","value":true},
+        {"@type":"LocationFeatureSpecification","name":"Kuchnia","value":true},
+        {"@type":"LocationFeatureSpecification","name":"Ogród","value":true}
+      ]
+    }
+  </script>
+</head>
+<body class="catalog-page">
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/test/" aria-label="Benkowo Białowieża — strona główna">
+        <span class="brand-mark" aria-hidden="true"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM0AAAD1CAQAAABZnLkiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAd0SU1FB+oJFBIzAEKpItMAAAWUSURBVHja7Z3RkuIgEADx6v7/l70nt9TTlYQZpsHuxy03QobOEDKSy7UJkz/VDZB3GBoshgaLocHyt7oBKO7nRJfqxmgNlouT5/ZoyzNl9mgNFq3pOQEl5mgNlu+15kzHp9qjNVi+z5rRDk8zR2uwfJc1UZ2dYo7WYPkOa7I6mWqP1mDZ35rsDqaZozVY9rVmdsfC7dEaLHtaU9WpUHO0Bste1hA6E2aO1mDZxxpSR0LM0Ros61tD7cCwOVqDZV1rVmj4kDlag2VNa1Zq9GlztAbLWtYs1dg7TpmjNViOWfP84ZnVjKsac+PwudIaLP3WvPtgtjnZtWMzbTx0rrQGS581nz6UYU7EaD7aLlT1jdZg+WxN70iKNKe6mj/Tnu62aQ2W3605MnoirKnIL5ltGWqj1mBh7LZBsuX+eKUrEFqDpdYaoi2vjl1ij9ZgqbGGbsur74o059rTfq3B8rs1UaMl+lpdsWfM9Bmb1mCJyzUzRlT1zn5TzdEaLIzVgE9U25LBx1ma1mCJecqZ1rqDbZtl15S9brQGS1+umTkz6R35q9elfURrsByvea7eJamqHi7jPJhr1uT4fU3kM4wjIx25g3kmWoPl/GrA/UjNrFWrqBxFoDVYYtbQqDXPmaTf62kNFtbK89FRuG2eaU1rwDCsoeeVDKyoWZc6a77RlENoDRarN7FoDRbGDG1F0nOl1mDRmgr8LefarGnN9rOz1rQGzJrWVDMyO3O3jfXRmpm4s9Me1FhTvpPFAGfb7d6b+2CuOcI0Y1rTGjBa08tUY1rTGjBa08N0Y1rTGjBa84kSY1rTGjBa844yW25oDRateWbKs5getAaL1txTnl/u0RosWtMazJYbWoPlu60ZfdLatV/zWbQGy/daE1WbkLaLodZg+T5rMit5bscOsUdrsHyXNbNq30Ls0Ros32FNVaXo0H2P1mDZ35rq2urTeUdrsOxtTbUxz23x9zV7sK81JGPu2+RvOddnT2uIxjy3zV0E12U/a8jGPLfTN3GsiaGp5Pqb44YGy165ZmR3ddzqtNZg2cuaHi6dfy+f6WkNln2s6RnlR1Z+Z+ahl/lGa7DsY81vjNaFRb5V8R3/maM1WPawZtY7O2fY84PWYDE0Z7gk/armYU3N0GDZI9e8I/O3lll552empjVY9rVm1nsH0nbf1Ros61tTvkLc4s25ttYuWoPF0EQRfq9jaLCsn2teXeer3goVmnO0BouhoXI1NFgMTTRhMzVDg8XQZBBijqHBsv59TWuP9xPbvOlWa7DsE5qs5/Vl7dknNNuxR665wfJmEK3BYmiwGBoshiaToVmaocFiaLAYGiyGBouhwWJosBgaLIYGi6HBUrPyTKjux6M1WGpCQ3siiURrsJhrsGgNFkODxdBgMTRYDA0WQ4PF0GAxNFgMDRZDg8XQYDE0WAwNFkODxdBg8SknFXcR5OJTTmw/tQbLHGvSdhDfFHdHZ5NrTfZbkm5saZDWYLmkDOyqGRjJnrPn4KcPWoMlNtdU369stSea1mCJyzXVxrzsXdH3DueZ1rQGzLg1RFv+6+XE7woxpjWtATM2Q1vBmPt2LjVz0xos53PNKsa87HXSccPyTGtaA+acNSsb89D7wGOFGtOa1oA5bs0uxjychcH/DzemNa0Bc8yaM6Pj04gkWXjGnhRjWtMaMP3W9H6w6rodSU8fRtrZdY60BkufNT0fyrjDJhgUTfd50hosMbUBWWtSt+PuYs+h86Q1WD5bQxixq9tz6qqiNVg+z9Bm3c8cYSV7Tp8XrcGy5hsGV8k9Q1cSrcESl2taq6lYIZoTch60BsvvuYY4Ip+h5Z2wK4fWYFlzhvaKanvC86zWYFl/hjba5lHS+qw1WPbJNffMyjupVwmtwcKuDYgi2p4pfdUaLP8AfqXMLMl80gkAAAAASUVORK5CYII=" alt=""></span>
+        <span class="brand-type"><strong>Benkowo</strong><small>Białowieża</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+      <nav class="nav" id="main-nav" aria-label="Główna nawigacja">
+        <a href="/test/">Benkowo</a>
+        <a href="#plany">Wszystkie pomysły</a>
+        <a href="/test/#domy">Domy i ogród</a>
+        <a href="/test/#lokalizacja">Lokalizacja</a>
+        <a href="/test/#kontakt">Kontakt</a>
+        <div class="language-switch" aria-label="Wybór języka">
+          <a href="/test/pomysly-na-pobyt/" lang="pl" hreflang="pl" aria-current="page" data-language-choice="pl">PL</a><span aria-hidden="true">/</span><a href="/test/en/stay-ideas/" lang="en" hreflang="en" data-language-choice="en">EN</a>
+        </div>
+        <a class="button button-primary" href="/test/#dostepnosc">Zapytaj o termin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="start">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Cała posesja na wyłączność · Białowieża</p>
+          <h2 class="display" id="hero-title">U siebie, na skraju puszczy.</h2>
+          <p class="hero-lead">Dwa budynki, ogród, sauna i przestrzeń dla jednej rodziny albo jednej, zaufanej grupy. Bez przypadkowych gości. Do 14 osób.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#dostepnosc">Zapytaj o wolny termin</a>
+            <a class="button button-outline" href="#miejsce">Poznaj Benkowo</a>
+          </div>
+          <p class="hero-note">Benkowo wynajmowane jest w całości — niezależnie od liczby gości.</p>
+        </div>
+        <div class="hero-art">
+          <figure class="hero-photo">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk-ULmIRnLcEXmeuyu6swzzmGxMBGreLigNJUjJH2Fey6efdYN3HP2j8iISvEUWkTTkcrqpLIbe8NUKIIDpOhPvmXxbQRHvHXDI_GZdCmKL5Ym5Jhmchd7eV9VLdbnCKOqOEs8CdA=s1600-k-no" alt="Dom główny Benkowa widziany od ulicy Stoczek" width="1600" height="900" fetchpriority="high" referrerpolicy="no-referrer">
+            <figcaption>Dom główny od ul. Stoczek</figcaption>
+          </figure>
+          <div class="hero-letter"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM0AAAD1CAQAAABZnLkiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAd0SU1FB+oJFBIzAEKpItMAAAWUSURBVHja7Z3RkuIgEADx6v7/l70nt9TTlYQZpsHuxy03QobOEDKSy7UJkz/VDZB3GBoshgaLocHyt7oBKO7nRJfqxmgNlouT5/ZoyzNl9mgNFq3pOQEl5mgNlu+15kzHp9qjNVi+z5rRDk8zR2uwfJc1UZ2dYo7WYPkOa7I6mWqP1mDZ35rsDqaZozVY9rVmdsfC7dEaLHtaU9WpUHO0Bste1hA6E2aO1mDZxxpSR0LM0Ros61tD7cCwOVqDZV1rVmj4kDlag2VNa1Zq9GlztAbLWtYs1dg7TpmjNViOWfP84ZnVjKsac+PwudIaLP3WvPtgtjnZtWMzbTx0rrQGS581nz6UYU7EaD7aLlT1jdZg+WxN70iKNKe6mj/Tnu62aQ2W3605MnoirKnIL5ltGWqj1mBh7LZBsuX+eKUrEFqDpdYaoi2vjl1ij9ZgqbGGbsur74o059rTfq3B8rs1UaMl+lpdsWfM9Bmb1mCJyzUzRlT1zn5TzdEaLIzVgE9U25LBx1ma1mCJecqZ1rqDbZtl15S9brQGS1+umTkz6R35q9elfURrsByvea7eJamqHi7jPJhr1uT4fU3kM4wjIx25g3kmWoPl/GrA/UjNrFWrqBxFoDVYYtbQqDXPmaTf62kNFtbK89FRuG2eaU1rwDCsoeeVDKyoWZc6a77RlENoDRarN7FoDRbGDG1F0nOl1mDRmgr8LefarGnN9rOz1rQGzJrWVDMyO3O3jfXRmpm4s9Me1FhTvpPFAGfb7d6b+2CuOcI0Y1rTGjBa08tUY1rTGjBa08N0Y1rTGjBa84kSY1rTGjBa844yW25oDRateWbKs5getAaL1txTnl/u0RosWtMazJYbWoPlu60ZfdLatV/zWbQGy/daE1WbkLaLodZg+T5rMit5bscOsUdrsHyXNbNq30Ls0Ros32FNVaXo0H2P1mDZ35rq2urTeUdrsOxtTbUxz23x9zV7sK81JGPu2+RvOddnT2uIxjy3zV0E12U/a8jGPLfTN3GsiaGp5Pqb44YGy165ZmR3ddzqtNZg2cuaHi6dfy+f6WkNln2s6RnlR1Z+Z+ahl/lGa7DsY81vjNaFRb5V8R3/maM1WPawZtY7O2fY84PWYDE0Z7gk/armYU3N0GDZI9e8I/O3lll552empjVY9rVm1nsH0nbf1Ros61tTvkLc4s25ttYuWoPF0EQRfq9jaLCsn2teXeer3goVmnO0BouhoXI1NFgMTTRhMzVDg8XQZBBijqHBsv59TWuP9xPbvOlWa7DsE5qs5/Vl7dknNNuxR665wfJmEK3BYmiwGBoshiaToVmaocFiaLAYGiyGBouhwWJosBgaLIYGi6HBUrPyTKjux6M1WGpCQ3siiURrsJhrsGgNFkODxdBgMTRYDA0WQ4PF0GAxNFgMDRZDg8XQYDE0WAwNFkODxdBg8SknFXcR5OJTTmw/tQbLHGvSdhDfFHdHZ5NrTfZbkm5saZDWYLmkDOyqGRjJnrPn4KcPWoMlNtdU369stSea1mCJyzXVxrzsXdH3DueZ1rQGzLg1RFv+6+XE7woxpjWtATM2Q1vBmPt2LjVz0xos53PNKsa87HXSccPyTGtaA+acNSsb89D7wGOFGtOa1oA5bs0uxjychcH/DzemNa0Bc8yaM6Pj04gkWXjGnhRjWtMaMP3W9H6w6rodSU8fRtrZdY60BkufNT0fyrjDJhgUTfd50hosMbUBWWtSt+PuYs+h86Q1WD5bQxixq9tz6qqiNVg+z9Bm3c8cYSV7Tp8XrcGy5hsGV8k9Q1cSrcESl2taq6lYIZoTch60BsvvuYY4Ip+h5Z2wK4fWYFlzhvaKanvC86zWYFl/hjba5lHS+qw1WPbJNffMyjupVwmtwcKuDYgi2p4pfdUaLP8AfqXMLMl80gkAAAAASUVORK5CYII=" alt=""></div>
+          <div class="estate-card">
+            <p class="number">20 lat</p>
+            <p class="label">rodzinnej historii tego miejsca</p>
+            <div class="estate-diagram"><span>Dom Główny</span><i></i><span>Dom Ogrodowy</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="facts" aria-label="Najważniejsze informacje">
+      <div class="shell facts-grid">
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.4-4 2.2-6 5.5-6s5.1 2 5.5 6M14 15c3.9-.8 6.6 1 7 5"/></svg></span><strong>14</strong><span>maksymalnie osób</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></span><strong>2</strong><span>niezależne domy</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 18v-8M21 18v-6a2 2 0 0 0-2-2H9v8M3 14h18M6 10V7h5a2 2 0 0 1 2 2v1"/></svg></span><strong>6</strong><span>sypialni łącznie</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 11h14v3a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6zM7 20v2M17 20v2M8 11V6a3 3 0 0 1 6 0"/><path d="M14 6h3"/></svg></span><strong>4</strong><span>łazienki łącznie</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v7M9 3v7M6 7h3M7.5 10v11M16 3c3 3 3 7 0 10v8"/></svg></span><strong>2</strong><span>osobne kuchnie</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 16 1.5-5h11l1.5 5M4 16h16v4H4zM7 20v1M17 20v1"/><circle cx="8" cy="18" r=".5"/><circle cx="16" cy="18" r=".5"/></svg></span><strong>4</strong><span>auta na posesji</span></div>
+      </div>
+    </div>
+
+    <section class="intro" id="miejsce">
+      <div class="shell intro-grid">
+        <aside class="intro-aside">
+          <p class="eyebrow">Benkowo Białowieża</p>
+          <p>Rodzinne miejsce tworzone przez dwie dekady. Nie hotel, nie pensjonat i nie zbiór pokoi do wynajęcia.</p>
+        </aside>
+        <div>
+          <p class="manifesto">Przyjeżdżacie razem. Mieszkacie <em>bez obcych osób</em>. Macie dwa budynki, ogród i czas po swojemu.</p>
+          <div class="intro-copy">
+            <p>Benkowo jest przeznaczone dla rodzin, kilku zaprzyjaźnionych rodzin, grup przyjaciół i kameralnych zespołów, które chcą pobyć razem, nie rezygnując z własnej przestrzeni.</p>
+            <p>Mniejsza grupa również może wynająć całość. Nie dokładamy wtedy innych gości — prywatność nie zależy od liczby zajętych łóżek.</p>
+            <p>Swoboda nie oznacza anonimowości. Szukamy ludzi, którzy czują się jak u siebie i potrafią zadbać o miejsce jak o własne.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="history" aria-labelledby="history-title">
+      <div class="shell history-grid">
+        <div>
+          <p class="eyebrow">Historia Benkowa</p>
+          <p class="history-year">20</p>
+          <p>lat rodzinnej historii</p>
+        </div>
+        <div class="history-copy">
+          <h2 class="display section-title" id="history-title">Nie powstało od zera pod wynajem.</h2>
+          <p>Benkowo weszło do naszej rodziny około 20 lat temu. Rodzice kupili siedlisko od małżeństwa nauczycieli i przez kolejne lata dostosowywali je do wygodniejszego życia — bez wymazywania tego, co zastali.</p>
+          <p>Przebudowa zachowała drewniany charakter domu, skalę zabudowy i lokalne uwarunkowania architektoniczne Białowieży. Nowe funkcje miały wpisać się w zastany klimat, a nie go zastąpić.</p>
+          <p>Nazwa Benkowo pochodzi od imienia Benedykta. Dlatego jest nazwą rodzinnego miejsca, a nie wymyśloną etykietą noclegu.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="houses" id="domy" aria-labelledby="houses-title">
+      <div class="shell">
+        <div class="houses-head">
+          <div>
+            <p class="eyebrow">Jedno siedlisko, kilka rytmów</p>
+            <h2 class="display section-title" id="houses-title">Razem, ale nie cały czas w jednym pokoju.</h2>
+          </div>
+          <p class="section-lead">Wspólny pobyt dużej grupy jest wygodny wtedy, gdy można spotkać się przy jednym stole, a później znaleźć własny spokojny kąt.</p>
+        </div>
+        <div class="house-grid">
+          <article class="house-card">
+            <span class="house-index">01 · DOM GŁÓWNY</span>
+            <div>
+              <h3>Serce wspólnego pobytu</h3>
+              <p>Pięć sypialni, trzy łazienki, kuchnia i salon. Do tego przeszklone „Akwarium” — miejsce na książkę, rozmowę i patrzenie w ogród.</p>
+              <div class="tags"><span class="tag">5 sypialni</span><span class="tag">3 łazienki</span><span class="tag">kuchnia</span><span class="tag">salon</span></div>
+            </div>
+          </article>
+          <article class="house-card">
+            <span class="house-index">02 · DOM OGRODOWY</span>
+            <div>
+              <h3>Własny rytm obok</h3>
+              <p>Sypialnia na dole, przestrzeń do spania na poddaszu z czterema łóżkami, osobna kuchnia i łazienka. W budynku znajduje się również garaż.</p>
+              <div class="tags"><span class="tag">1 sypialnia</span><span class="tag">4 łóżka na poddaszu</span><span class="tag">kuchnia</span><span class="tag">łazienka</span><span class="tag">garaż</span></div>
+            </div>
+          </article>
+          <article class="house-card">
+            <span class="house-index">03 · OGRÓD</span>
+            <div>
+              <h3>Dzień może zostać na miejscu</h3>
+              <p>Granitowe ścieżki prowadzą przez trawnik, pergolę z winoroślą i ogród z drzewami owocowymi. Dalej są sauna, wiata, miejsce na ognisko i grill, a na końcu działki świerkowy lasek.</p>
+              <div class="tags"><span class="tag">sauna</span><span class="tag">wiata</span><span class="tag">pergola</span><span class="tag">ognisko i grill</span><span class="tag">plac zabaw</span><span class="tag">świerkowy lasek</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="concept-gallery" aria-label="Wizualizacje sposobu korzystania z przestrzeni Benkowa">
+          <figure><img src="/test/assets/concept/dom-glowny.webp" alt="Koncepcyjna wizualizacja wspólnej jadalni i salonu" loading="lazy"><figcaption>Dom główny · Wizualizacja poglądowa — nie przedstawia wnętrza Benkowa</figcaption></figure>
+          <figure><img src="/test/assets/concept/dom-ogrodowy.webp" alt="Koncepcyjna wizualizacja sypialni i poddasza drugiego domu" loading="lazy"><figcaption>Dom Ogrodowy · Wizualizacja poglądowa — nie przedstawia wnętrza Benkowa</figcaption></figure>
+          <figure><img src="/test/assets/concept/sauna-zima.webp" alt="Koncepcyjna wizualizacja wolnostojącej sauny zimą" loading="lazy"><figcaption>Sauna · Wizualizacja poglądowa — nie przedstawia wnętrza Benkowa</figcaption></figure>
+          <figure><img src="/test/assets/concept/wiata-ognisko.webp" alt="Koncepcyjna wizualizacja wiaty i miejsca na ognisko" loading="lazy"><figcaption>Wiata i ognisko · Wizualizacja poglądowa — nie przedstawia wnętrza Benkowa</figcaption></figure>
+          <figure><img src="/test/assets/concept/ogrod-dwa-domy.webp" alt="Koncepcyjna wizualizacja ogrodu i dwóch budynków" loading="lazy"><figcaption>Ogród · Wizualizacja poglądowa — nie przedstawia wnętrza Benkowa</figcaption></figure>
+        </div>
+        <div class="estate-plan">
+          <div class="estate-plan-copy">
+            <div><p class="eyebrow">Poznaj całą posesję</p><h3 class="display section-title">Od bramy aż po świerkowy lasek.</h3></div>
+            <p>Wybierz punkt na zdjęciu satelitarnym. Zobaczysz, jak dwa domy, ogród, sauna i wiata tworzą jedno prywatne siedlisko, ale pozwalają różnym częściom grupy spędzać czas we własnym rytmie.</p>
+          </div>
+          <div class="estate-explorer">
+            <div class="aerial-map" aria-label="Zdjęcie satelitarne posesji Benkowo z interaktywnymi punktami">
+              <img src="/test/assets/benkowo-plan-satelitarny.jpg" alt="Widok satelitarny długiej, zadrzewionej posesji Benkowo" width="330" height="1226" loading="eager" decoding="async">
+              <span class="map-label entry">ul. Stoczek · brama</span>
+              <button class="hotspot home-main" type="button" aria-label="Pokaż Dom Główny" aria-pressed="true" data-kicker="01 · przy ulicy" data-name="Dom Główny" data-description="Główne miejsce wspólnego pobytu: pięć sypialni, trzy łazienki, kuchnia, salon i przeszklone Akwarium wychodzące w stronę ogrodu." data-values="5|3|1|1" data-labels="sypialni|łazienki|kuchnia|salon + Akwarium"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></button>
+              <button class="hotspot parking" type="button" aria-label="Pokaż parking" aria-pressed="false" data-kicker="02 · wewnątrz posesji" data-name="Parking" data-description="Cztery samochody mieszczą się wygodnie na parkingu wewnątrz posesji. Dodatkowe auto może stanąć przed bramą; Dom Ogrodowy ma również garaż." data-values="4|1|1" data-labels="auta na posesji|garaż|miejsce przed bramą"><svg viewBox="0 0 24 24"><path d="m5 16 1.5-5h11l1.5 5M4 16h16v4H4z"/><circle cx="8" cy="18" r="1"/><circle cx="16" cy="18" r="1"/></svg></button>
+              <button class="hotspot garden-home" type="button" aria-label="Pokaż Dom Ogrodowy" aria-pressed="false" data-kicker="03 · w głębi ogrodu" data-name="Dom Ogrodowy" data-description="Drugi, niezależny dom daje części grupy więcej prywatności: sypialnię na dole, cztery łóżka na poddaszu, własną kuchnię, łazienkę i garaż." data-values="1|4|1|1" data-labels="sypialnia|łóżka na poddaszu|kuchnia|łazienka"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3z"/><path d="M7 10h10M9 20v-5h6v5"/></svg></button>
+              <button class="hotspot sauna" type="button" aria-label="Pokaż saunę" aria-pressed="false" data-kicker="04 · strefa regeneracji" data-name="Sauna" data-description="Osobny budynek sauny opalanej drewnem stoi dalej od domów. To naturalne przejście od wspólnego dnia do spokojniejszego wieczoru." data-values="1|1" data-labels="sauna na posesji|osobny budynek"><svg viewBox="0 0 24 24"><path d="M8 20c-3-3-2-7 1-10 0 3 2 4 3 5 1-4 5-6 3-12 6 5 6 12 1 17z"/></svg></button>
+              <button class="hotspot shelter" type="button" aria-label="Pokaż wiatę i ogród" aria-pressed="false" data-kicker="05 · najgłębiej w ogrodzie" data-name="Wiata i ogród" data-description="Zadaszona wiata, ognisko i grill tworzą miejsce wspólnych wieczorów. Prowadzą do niej granitowe ścieżki przez trawnik, pergolę z winoroślą, drzewa owocowe i świerkowy lasek." data-values="1|1|1|1" data-labels="zadaszona wiata|miejsce na ognisko|pergola|świerkowy lasek"><svg viewBox="0 0 24 24"><path d="M3 10h18L12 4zM5 10v10M19 10v10M9 20v-6h6v6"/></svg></button>
+              <span class="map-label end">świerkowy lasek · koniec ogrodu</span>
+            </div>
+            <div class="explorer-panel" aria-live="polite">
+              <p class="explorer-kicker" id="explorer-kicker">01 · przy ulicy</p>
+              <h4 id="explorer-name">Dom Główny</h4>
+              <p class="explorer-description" id="explorer-description">Główne miejsce wspólnego pobytu: pięć sypialni, trzy łazienki, kuchnia, salon i przeszklone Akwarium wychodzące w stronę ogrodu.</p>
+              <div class="explorer-stats" id="explorer-stats">
+                <div class="explorer-stat"><strong>5</strong><span>sypialni</span></div>
+                <div class="explorer-stat"><strong>3</strong><span>łazienki</span></div>
+                <div class="explorer-stat"><strong>1</strong><span>kuchnia</span></div>
+                <div class="explorer-stat"><strong>1</strong><span>salon + Akwarium</span></div>
+              </div>
+              <p class="explorer-hint">Kliknij pozostałe punkty na mapie, aby poznać całą posesję.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="plany" aria-labelledby="plans-title">
+      <div class="shell">
+        <div class="experience-head">
+          <div>
+            <p class="eyebrow">Pomysły na pobyt</p>
+            <h1 class="display section-title" id="plans-title">Nie szukajcie planu od zera.</h1>
+          </div>
+          <p class="section-lead">Wybierz porę roku, skład grupy i konkretny typ atrakcji. Wyniki zmieniają się od razu.</p>
+        </div>
+        <div class="plan-filter-bar" aria-label="Filtry planów">
+          <div class="visible-filter-groups">
+            <div class="visible-filter-group"><h3>Pora roku</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="spring">Wiosna</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="summer">Lato</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="autumn">Jesień</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="winter">Zima</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="year-round">Cały rok</button></div></div>
+            <div class="visible-filter-group"><h3>Dla kogo</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="children">Z dziećmi</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="intergenerational">Międzypokoleniowo</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="adults">Dorośli</button></div></div>
+            <div class="visible-filter-group"><h3>Typ atrakcji</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="animals">Żubry i zwierzęta</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="nature">Puszcza i spacery</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="museum">Muzea</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="church">Cerkwie i świątynie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="art">Sztuka i rękodzieło</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="food">Lokalne jedzenie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="sport">Sport i aktywnie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="horse">Konie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="village">Wsie i siedliska</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="railway">Kolejka</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="events">Wydarzenia</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="religious">Wydarzenia religijne</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="fishing">Wędkarstwo</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="foraging">Zbieractwo</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="border">Pogranicze</button></div></div>
+            <div class="visible-filter-group"><h3>Pogoda</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="weather" data-value="sun">Pogodnie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="weather" data-value="rain">Na deszcz</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="weather" data-value="snow">Na śnieg</button></div></div>
+            <div class="visible-filter-group"><h3>Jak</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="foot">Pieszo</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="bike">Rowerem</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="car">Samochodem</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="reservation" data-value="none">Bez rezerwacji</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="reservation" data-value="required">Z rezerwacją</button></div></div>
+          </div>
+        </div>
+        <div class="filter-summary">
+          <p class="filter-count" id="filter-count" aria-live="polite">26 planów</p>
+          <button class="clear-filters" type="button" hidden>Wyczyść filtry</button>
+        </div>
+        <div class="plans" id="plan-results" aria-live="polite" aria-busy="false">
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="museum nature food" data-weather="sun rain snow" data-transport="foot" data-duration="half" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Bialowiezabpn2.jpg" alt="Kompleks centrum dla odwiedzających Białowieskiego Parku Narodowego w Białowieży, widok z zewnątrz" loading="lazy" decoding="async"><span class="plan-badge">Muzeum i Park Pałacowy</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Bialowiezabpn2.jpg" target="_blank" rel="noopener">Fot. Jurij · CC BY-SA 2.5</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/test/aktywnosci/rodzinnie-w-bialowiezy/"><h3>Pierwszy dzień w Białowieży bez pośpiechu</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>3–5 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · także deszcz</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i grupy wielopokoleniowe</dd></div><div><dt>Transport</dt><dd>Pieszo w Białowieży</dd></div><div><dt>Rezerwacja</dt><dd>Zwykle nie</dd></div><div><dt>Tempo</dt><dd>Spokojne</dd></div></dl>
+              <p class="plan-description">Muzeum BPN, Park Pałacowy, przerwa i lokalny posiłek — bez przeładowania pierwszego dnia.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> godziny muzeum i bieżące komunikaty BPN trzeba sprawdzić przed wyjściem.</p>
+              <div class="plan-video" data-youtube-video-id="Xxjg6Vpia-0" data-youtube-title="Materiał Białowieskiego Parku Narodowego" data-youtube-channel="Białowieski Park Narodowy" data-source-url="https://www.youtube.com/watch?v=Xxjg6Vpia-0" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Obejrzyj film: Materiał Białowieskiego Parku Narodowego">Obejrzyj film <span aria-hidden="true">▶</span></button></div>
+                <p class="youtube-meta"><strong>Film:</strong> Materiał Białowieskiego Parku Narodowego<br><span>Białowieski Park Narodowy · Zweryfikowano: 21.09.2026 · napisy: niezweryfikowane</span></p>
+                <p class="youtube-note">Film pokazuje region i jego przyrodę; przed wyjściem sprawdź aktualne godziny, komunikaty i zasady BPN.</p>
+                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=Xxjg6Vpia-0" target="_blank" rel="noopener">Otwórz w YouTube ↗</a>
+              </div>
+              <a class="plan-more" href="/test/aktywnosci/rodzinnie-w-bialowiezy/">Zobacz szkic planu</a>
+            </div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="animals nature" data-weather="sun" data-transport="car" data-duration="short" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg" alt="Samiec żubra europejskiego sfotografowany w Puszczy Białowieskiej" loading="lazy" decoding="async"><span class="plan-badge">Żubry i łatwy spacer</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:European_bison_(Bison_bonasus)_male_Bia%C5%82owieza.jpg" target="_blank" rel="noopener">Fot. Charles J. Sharp · CC BY-SA 4.0</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/test/aktywnosci/rezerwat-pokazowy-zubrow/"><h3>Żubry i łatwy spacer z dziećmi</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>2–3 godziny</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · bez ulewy</dd></div><div><dt>Dla kogo</dt><dd>Dzieci i seniorzy</dd></div><div><dt>Transport</dt><dd>Samochód</dd></div><div><dt>Rezerwacja</dt><dd>Bez rezerwacji indywidualnej</dd></div><div><dt>Tempo</dt><dd>Łatwe</dd></div></dl>
+              <p class="plan-description">Rezerwat Pokazowy Żubrów i spokojny spacer dopasowany do wieku dzieci.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> psy są zakazane poza psami asystującymi; aktualne bilety i godziny publikuje BPN.</p>
+              <a class="plan-more" href="/test/aktywnosci/rezerwat-pokazowy-zubrow/">Zobacz szkic planu</a>
+            </div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="museum church art food" data-weather="rain sun snow" data-transport="foot car" data-duration="half" data-reservation="required">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerkiew_%C5%9Bw._Miko%C5%82aja_w_Bia%C5%82owie%C5%BCy_-_September_2026.jpg" alt="Cerkiew św. Mikołaja w Białowieży widziana z zewnątrz we wrześniu 2026 roku" loading="lazy" decoding="async"><span class="plan-badge">Cerkiew św. Mikołaja</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Cerkiew_%C5%9Bw._Miko%C5%82aja_w_Bia%C5%82owie%C5%BCy_-_September_2026.jpg" target="_blank" rel="noopener">Fot. ChopZePolski.nieZJakucka · CC BY 4.0</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/test/aktywnosci/hajnowka-na-niepogode/"><h3>Muzeum, cerkiew, sztuka i jedzenie</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>4–6 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · dobry na deszcz</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i dorośli</dd></div><div><dt>Transport</dt><dd>Pieszo + samochód</dd></div><div><dt>Rezerwacja</dt><dd>Częściowo wymagana</dd></div><div><dt>Charakter</dt><dd>Kultura i lokalność</dd></div></dl>
+              <p class="plan-description">Muzeum BPN, żywa cerkiew, autentyczne rękodzieło oraz regionalny posiłek.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> wejście do cerkwi i wizyta w pracowni wymagają wcześniejszego potwierdzenia.</p>
+              <div class="plan-video" data-youtube-video-id="_Przr5SJ1dU" data-youtube-title="Hajnowskie Dni Muzyki Cerkiewnej — materiał organizatora" data-youtube-channel="Organizator Hajnowskich Dni Muzyki Cerkiewnej" data-source-url="https://www.youtube.com/watch?v=_Przr5SJ1dU" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Obejrzyj film: Hajnowskie Dni Muzyki Cerkiewnej — materiał organizatora">Obejrzyj film <span aria-hidden="true">▶</span></button></div>
+                <p class="youtube-meta"><strong>Film:</strong> Hajnowskie Dni Muzyki Cerkiewnej — materiał organizatora<br><span>Organizator Hajnowskich Dni Muzyki Cerkiewnej · Zweryfikowano: 21.09.2026 · napisy: niezweryfikowane</span></p>
+                <p class="youtube-note">Film przybliża lokalną tradycję muzyczną. Nie oznacza, że podczas pobytu odbywa się koncert — termin trzeba sprawdzić u organizatora.</p>
+                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=_Przr5SJ1dU" target="_blank" rel="noopener">Otwórz w YouTube ↗</a>
+              </div>
+              <a class="plan-more" href="/test/aktywnosci/hajnowka-na-niepogode/">Zobacz szkic planu</a>
+            </div>
+          </article>
+          <article class="plan" data-season="spring summer autumn" data-group="children intergenerational adults" data-character="railway nature" data-weather="sun" data-transport="car" data-duration="half" data-reservation="required">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Kolejka-hajnowka-2.JPG" alt="Lokomotywa leśnej kolejki wąskotorowej w Hajnówce" loading="lazy" decoding="async"><span class="plan-badge">Kolejką do Topiła</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Kolejka-hajnowka-2.JPG" target="_blank" rel="noopener">Fot. Dariusz.Biegacz · CC BY-SA 3.0</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/test/aktywnosci/kolejka-waskotorowa/"><h3>Kolejką przez Puszczę do Topiła</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>Około 3 godzin + dojazd</dd></div><div><dt>Sezon / pogoda</dt><dd>Sezonowo · bez skrajnej pogody</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i grupy</dd></div><div><dt>Transport</dt><dd>Samochód + kolejka</dd></div><div><dt>Rezerwacja</dt><dd>Sprawdzenie kursu konieczne</dd></div><div><dt>Start</dt><dd>Hajnówka</dd></div></dl>
+              <p class="plan-description">Przejazd leśną kolejką, postój w Topile i powrót tą samą trasą.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> kurs zależy od rozkładu, pogody i minimalnej liczby uczestników.</p>
+              <div class="plan-video" data-youtube-video-id="9dQVRzTnS88" data-youtube-title="Kolejka leśna do Topiła — materiał operatora" data-youtube-channel="Nadleśnictwo Hajnówka" data-source-url="https://www.youtube.com/watch?v=9dQVRzTnS88" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Obejrzyj film: Kolejka leśna do Topiła — materiał operatora">Obejrzyj film <span aria-hidden="true">▶</span></button></div>
+                <p class="youtube-meta"><strong>Film:</strong> Kolejka leśna do Topiła — materiał operatora<br><span>Nadleśnictwo Hajnówka · Zweryfikowano: 21.09.2026 · napisy: niezweryfikowane</span></p>
+                <p class="youtube-note">Film ma charakter informacyjny; aktualny rozkład, warunki kursu i bilety trzeba sprawdzić u operatora.</p>
+                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=9dQVRzTnS88" target="_blank" rel="noopener">Otwórz w YouTube ↗</a>
+              </div>
+              <a class="plan-more" href="/test/aktywnosci/kolejka-waskotorowa/">Zobacz szkic planu</a>
+            </div>
+          </article>
+          <article class="plan plan-featured" data-season="spring summer autumn" data-group="adults" data-character="sport nature" data-weather="sun" data-transport="bike car" data-duration="full" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bialowieza_National_Park_in_Poland0029.JPG" alt="Leśna droga i naturalny krajobraz Puszczy Białowieskiej" loading="lazy" decoding="async"><span class="plan-badge">Rowerem przez Puszczę</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Bialowieza_National_Park_in_Poland0029.JPG" target="_blank" rel="noopener">Fot. Jacek Karczmarz · CC BY-SA 3.0</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/test/aktywnosci/rowerem-i-sauna/"><h3>Hajnówka–Topiło na rowerze</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>5–7 godzin z przerwami</dd></div><div><dt>Sezon / pogoda</dt><dd>Wiosna–jesień · sucho</dd></div><div><dt>Dla kogo</dt><dd>Sprawni dorośli</dd></div><div><dt>Transport</dt><dd>Rower + dojazd autem</dd></div><div><dt>Rezerwacja</dt><dd>Bez rezerwacji</dd></div><div><dt>Dystans</dt><dd>42,5 km</dd></div></dl>
+              <p class="plan-description">Pełna pętla po nawierzchniach asfaltowych, żwirowych i gruntowych z postojem w Topile.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> to nie jest łatwy rodzinny spacer; stan nawierzchni i pogoda realnie zmieniają trudność.</p>
+              <a class="plan-more" href="/test/aktywnosci/rowerem-i-sauna/">Zobacz szkic planu</a>
+            </div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="food art" data-weather="sun rain snow" data-transport="foot car" data-duration="half" data-reservation="required">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Hajnowski_Marcinek.jpg" alt="Hajnowski marcinek — tradycyjne wielowarstwowe ciasto z regionu Puszczy Białowieskiej" loading="lazy" decoding="async"><span class="plan-badge">Smak regionu</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Hajnowski_Marcinek.jpg" target="_blank" rel="noopener">Fot. Mika58 · CC BY-SA 4.0</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/test/aktywnosci/dzien-w-benkowie/"><h3>Lokalne smaki i rękodzieło</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>3–5 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Każda spokojna grupa</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Rezerwacja</dt><dd>Zależnie od pracowni</dd></div><div><dt>Charakter</dt><dd>Jedzenie i rzemiosło</dd></div></dl>
+              <p class="plan-description">Wizyta u potwierdzonego twórcy lub producenta, zakupy bezpośrednie i regionalny posiłek.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> nie obiecujemy dostępności, warsztatów ani rabatu bez potwierdzenia partnera.</p>
+              <a class="plan-more" href="/test/aktywnosci/dzien-w-benkowie/">Zobacz szkic planu</a>
+            </div>
+          </article>
+          <article class="plan" data-season="winter" data-group="children intergenerational adults" data-character="sport nature" data-weather="snow rain" data-transport="foot car" data-duration="half" data-reservation="none required">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Dolina_Le%C5%9Bnej_Prawej-zima.jpg" alt="Zimowe rozlewisko rzeki Leśna Prawa w Puszczy Białowieskiej w 2010 roku" loading="lazy" decoding="async"><span class="plan-badge">Zimowy krajobraz Puszczy</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Dolina_Le%C5%9Bnej_Prawej-zima.jpg" target="_blank" rel="noopener">Fot. Stormbringer76 · CC BY 3.0</a></figcaption></figure>
+            <div class="plan-body">
+              <a class="plan-title-link" href="/test/aktywnosci/biegowki-i-sauna/"><h3>Zimowy dzień z ciepłym finałem</h3></a>
+              <dl class="plan-facts"><div><dt>Czas</dt><dd>3–6 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Zima · warunki zmienne</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i dorośli</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Rezerwacja</dt><dd>Zależnie od aktywności</dd></div><div><dt>Plan B</dt><dd>Muzeum i kultura</dd></div></dl>
+              <p class="plan-description">Krótka aktywność dobrana do warunków, a potem spokojny powrót i ciepły wieczór w Benkowie.</p>
+              <p class="plan-limit"><strong>Ważne:</strong> nie gwarantujemy śniegu, przygotowanych tras ani dostępności sprzętu.</p>
+              <a class="plan-more" href="/test/aktywnosci/biegowki-i-sauna/">Zobacz szkic planu</a>
+            </div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="animals nature" data-weather="sun snow" data-transport="car foot" data-duration="half" data-reservation="required">
+            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/European_bison_%28Bison_bonasus%29_female_Bia%C5%82owieza.jpg?width=1280" alt="Dzika samica żubra europejskiego w Puszczy Białowieskiej" loading="lazy" decoding="async"><span class="plan-badge">Przed świtem · z przewodnikiem</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:European_bison_(Bison_bonasus)_female_Bia%C5%82owieza.jpg" target="_blank" rel="noopener">Fot. Charles J. Sharp · CC BY-SA 4.0</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/tropienie-zubrow-o-swicie/"><h3>O świcie na tropie dzikich żubrów</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>3–4 godziny</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · start przed świtem</dd></div><div><dt>Dla kogo</dt><dd>Grupy gotowe na wczesny start</dd></div><div><dt>Transport</dt><dd>Samochód + 0–2 km pieszo</dd></div><div><dt>Rezerwacja</dt><dd>Obowiązkowa</dd></div></dl><p class="plan-description">Wyjazd z licencjonowanym przewodnikiem w miejsca, w których można szukać śladów i obserwować dzikie żubry.</p><p class="plan-limit"><strong>Ważne:</strong> spotkania ze zwierzęciem nie da się zagwarantować; zachowaj co najmniej 50 m dystansu i stosuj się do przewodnika.</p><a class="plan-more" href="/test/aktywnosci/tropienie-zubrow-o-swicie/">Zobacz pełny plan</a></div>
+          </article>
+          <article class="plan" data-season="winter" data-group="children intergenerational adults" data-character="sport nature" data-weather="snow" data-transport="car" data-duration="half" data-reservation="required">
+            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/LKPiW_zima_-_kulig.jpg?width=1280" alt="Konny kulig po ośnieżonej drodze — zdjęcie ilustracyjne" loading="lazy" decoding="async"><span class="plan-badge">Tylko przy dobrym śniegu</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:LKPiW_zima_-_kulig.jpg" target="_blank" rel="noopener">Fot. Pit1233 · CC0 · zdjęcie ilustracyjne</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/kulig-z-ogniskiem/"><h3>Kulig z pochodniami i ogniskiem</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>Do potwierdzenia</dd></div><div><dt>Sezon / pogoda</dt><dd>Zima · właściwa pokrywa śnieżna</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i grupy</dd></div><div><dt>Transport</dt><dd>Samochód</dd></div><div><dt>Rezerwacja</dt><dd>Obowiązkowa</dd></div></dl><p class="plan-description">Zimowy przejazd saniami organizowany przez lokalnego operatora, z możliwością legalnego ogniska po wcześniejszym uzgodnieniu.</p><p class="plan-limit"><strong>Ważne:</strong> czas, cena, minimalna grupa, menu, miejsce i warunki śniegowe wymagają potwierdzenia telefonicznego.</p><a class="plan-more" href="/test/aktywnosci/kulig-z-ogniskiem/">Zobacz pełny plan</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn" data-group="children intergenerational adults" data-character="fishing nature" data-weather="sun" data-transport="foot car" data-duration="half full" data-reservation="none required">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Topi%C5%82o_Lake_-_panoramio_%2820%29.jpg" alt="Leśny zbiornik wodny w Topile" loading="lazy" decoding="async"><span class="plan-badge">Rzeka · Topiło · Stawy Dyrektorskie</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Topi%C5%82o_Lake_-_panoramio_(20).jpg" target="_blank" rel="noopener">Fot. Konrad Wąsik · CC BY 3.0</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/wedkowanie-w-okolicy/"><h3>Wędkowanie: Narewka, Topiło i Stawy Dyrektorskie</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>Od 2 godzin do całego dnia</dd></div><div><dt>Sezon</dt><dd>Wiosna–jesień</dd></div><div><dt>Dla kogo</dt><dd>Amatorzy spokojnego łowienia</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Przed wyjściem</dt><dd>Dobierz właściwe łowisko</dd></div></dl><p class="plan-description">Kilka różnych możliwości blisko Białowieży: rzeka Narewka, leśne Topiło i znane lokalnie Stawy Dyrektorskie.</p><p class="plan-limit"><strong>Krótko:</strong> zasady zależą od konkretnej wody; gospodarz pomoże wybrać właściwy wariant.</p><a class="plan-more" href="/test/aktywnosci/wedkowanie-w-okolicy/">Zobacz możliwości</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="art" data-weather="sun rain snow" data-transport="foot car" data-duration="short" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Souvenir_from_Bia%C5%82owie%C5%BCa_~26k19rkv.jpg" alt="Autorska pamiątka z motywem żubra z Białowieży" loading="lazy" decoding="async"><span class="plan-badge">Sztuka i prawdziwe pamiątki</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Souvenir_from_Bia%C5%82owie%C5%BCa_~26k19rkv.jpg" target="_blank" rel="noopener">Fot. Grzegorz W. Tężycki · CC BY-SA 4.0</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/lokalna-sztuka-i-pamiatki/#sklepiki"><h3>Sklepiki z lokalną sztuką i pamiątkami</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>30–90 minut</dd></div><div><dt>Sezon</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i dorośli</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Charakter</dt><dd>Zakupy i lokalna kultura</dd></div></dl><p class="plan-description">Małe punkty ze sztuką, obrazami i rękodziełem — także sklepiki w rejonie Parku Dyrekcyjnego.</p><p class="plan-limit"><strong>Warto:</strong> szukać prac podpisanych przez lokalnych twórców, zamiast seryjnych pamiątek.</p><a class="plan-more" href="/test/aktywnosci/lokalna-sztuka-i-pamiatki/#sklepiki">Zobacz przewodnik</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children adults" data-character="art" data-weather="sun rain snow" data-transport="foot" data-duration="short half" data-reservation="required">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Paintings_and_easel_in_painters_studio.jpg" alt="Obrazy i sztaluga w pracowni malarskiej — zdjęcie ilustracyjne" loading="lazy" decoding="async"><span class="plan-badge">Atelier przy ulicy Stoczek</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Paintings_and_easel_in_painters_studio.jpg" target="_blank" rel="noopener">Fot. Vadim Cole · CC BY-SA 4.0 · ilustracyjne</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/lokalna-sztuka-i-pamiatki/#banka"><h3>Atelier Barbary Bańki</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>Około 1–2 godzin</dd></div><div><dt>Sezon</dt><dd>Cały rok po umówieniu</dd></div><div><dt>Dla kogo</dt><dd>Miłośnicy sztuki i rodziny</dd></div><div><dt>Transport</dt><dd>Blisko Benkowa · pieszo</dd></div><div><dt>Możliwości</dt><dd>Galeria, zakupy, czasem zajęcia</dd></div></dl><p class="plan-description">Autorska galeria z oryginalnymi obrazami i ilustracjami; okazjonalnie można umówić zajęcia plastyczne.</p><p class="plan-limit"><strong>Ważne:</strong> to niezależna pracownia Barbary Bańki przy Stoczku 148 — nie część Benkowa.</p><a class="plan-more" href="/test/aktywnosci/lokalna-sztuka-i-pamiatki/#banka">Poznaj atelier</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="adults" data-character="border nature" data-weather="sun" data-transport="foot car" data-duration="half" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/20220630_Zapora_na_granicy_polsko-bia%C5%82oruskiej_004.jpg" alt="Stalowa zapora na granicy polsko-białoruskiej" loading="lazy" decoding="async"><span class="plan-badge">Współczesne pogranicze</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:20220630_Zapora_na_granicy_polsko-bia%C5%82oruskiej_004.jpg" target="_blank" rel="noopener">Fot. KPRM · CC BY 3.0 PL</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/spacer-do-zapory-granicznej/"><h3>Spacer do zapory na granicy z Białorusią</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>Około 2–4 godzin</dd></div><div><dt>Sezon</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Dorośli i starsze dzieci</dd></div><div><dt>Transport</dt><dd>Samochód + spacer</dd></div><div><dt>Charakter</dt><dd>Niecodzienny i refleksyjny</dd></div></dl><p class="plan-description">Zwyczajna droga prowadzi do miejsca, w którym krajobraz Puszczy spotyka się ze współczesną granicą.</p><p class="plan-limit"><strong>Na miejscu:</strong> idź dostępną drogą i stosuj się do aktualnych oznaczeń.</p><a class="plan-more" href="/test/aktywnosci/spacer-do-zapory-granicznej/">Zobacz pomysł na spacer</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="nature" data-weather="sun" data-transport="foot car" data-duration="half" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/%C5%BBebra_%C5%BBubra.jpg" alt="Drewniana kładka ścieżki Żebra Żubra w Puszczy Białowieskiej" loading="lazy" decoding="async"><span class="plan-badge">Leśna kładka · łatwa trasa</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:%C5%BBebra_%C5%BBubra.jpg" target="_blank" rel="noopener">Fot. Bart0012 · CC BY-SA 4.0</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/zebra-zubra/"><h3>Żebra Żubra — spacer przez podmokłą Puszczę</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>1,5–3 godziny</dd></div><div><dt>Sezon</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i spokojne grupy</dd></div><div><dt>Transport</dt><dd>Samochód + pieszo</dd></div><div><dt>Charakter</dt><dd>Łatwy spacer przyrodniczy</dd></div></dl><p class="plan-description">Kładki, podmokły las i puszczański krajobraz bez konieczności organizowania całodniowej wyprawy.</p><p class="plan-limit"><strong>Warto:</strong> połączyć spacer z Rezerwatem Pokazowym Żubrów.</p><a class="plan-more" href="/test/aktywnosci/zebra-zubra/">Zobacz plan spaceru</a></div>
+          </article>
+          <article class="plan" data-season="summer autumn" data-group="children intergenerational adults" data-character="foraging nature food" data-weather="sun" data-transport="foot car" data-duration="half" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Basket_full_of_mushrooms_%2854817225577%29.jpg" alt="Kosz pełen leśnych grzybów — zdjęcie ilustracyjne" loading="lazy" decoding="async"><span class="plan-badge">Grzyby · jagody · maliny</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Basket_full_of_mushrooms_(54817225577).jpg" target="_blank" rel="noopener">Fot. AS Photography · CC BY 4.0 · ilustracyjne</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/grzyby-jagody-maliny/"><h3>Leśne zbiory: grzyby, jagody i maliny</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>2–4 godziny</dd></div><div><dt>Sezon</dt><dd>Lato i jesień</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i amatorzy zbieractwa</dd></div><div><dt>Transport</dt><dd>Samochód + spacer</dd></div><div><dt>Tempo</dt><dd>Spokojne</dd></div></dl><p class="plan-description">Koszyk, wygodne buty i kilka godzin w lesie — jeden z najbardziej naturalnych sposobów spędzenia dnia w regionie.</p><p class="plan-limit"><strong>Zasada:</strong> zbieraj tylko gatunki, które rozpoznajesz, i poza obszarami objętymi zakazem zbioru.</p><a class="plan-more" href="/test/aktywnosci/grzyby-jagody-maliny/">Zobacz pomysł na wyjście</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="museum" data-weather="sun rain snow" data-transport="car" data-duration="half" data-reservation="none">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Muzeum_Bia%C5%82oruskie_w_Hajn%C3%B3wce_2025-08-29_029.jpg" alt="Wnętrze Muzeum i Ośrodka Kultury Białoruskiej w Hajnówce" loading="lazy" decoding="async"><span class="plan-badge">Historia i kultura regionu</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Muzeum_Bia%C5%82oruskie_w_Hajn%C3%B3wce_2025-08-29_029.jpg" target="_blank" rel="noopener">Fot. Leszek Jańczuk · CC BY-SA 4.0</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/muzeum-bialoruskie-hajnowka/"><h3>Muzeum Białoruskie w Hajnówce</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>1,5–3 godziny</dd></div><div><dt>Sezon</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Rodziny, dorośli i seniorzy</dd></div><div><dt>Transport</dt><dd>Samochód</dd></div><div><dt>Pogoda</dt><dd>Dobry plan na deszcz</dd></div></dl><p class="plan-description">Historia, etnografia i żywa kultura białoruska — ważny kontekst dla całego regionu Puszczy Białowieskiej.</p><p class="plan-limit"><strong>Po drodze:</strong> można połączyć z soborem, lokalnym obiadem albo basenem w Hajnówce.</p><a class="plan-more" href="/test/aktywnosci/muzeum-bialoruskie-hajnowka/">Zobacz plan wizyty</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="church" data-weather="sun rain snow" data-transport="foot car" data-duration="half" data-reservation="none required">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Hajn%C3%B3wka_-_Sob%C3%B3r_%C5%9Awi%C4%99tej_Tr%C3%B3jcy_2015-05-16_15-43-27.JPG" alt="Sobór Świętej Trójcy w Hajnówce" loading="lazy" decoding="async"><span class="plan-badge">Cerkiew · sobór · Krynoczka</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Hajn%C3%B3wka_-_Sob%C3%B3r_%C5%9Awi%C4%99tej_Tr%C3%B3jcy_2015-05-16_15-43-27.JPG" target="_blank" rel="noopener">Fot. Radosław Drożdżewski · CC BY-SA 4.0</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/dziedzictwo-prawoslawne/"><h3>Szlak cerkwi: od Białowieży po małe wsie</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>4 godziny lub cały dzień</dd></div><div><dt>Sezon</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Spokojne grupy i rodziny</dd></div><div><dt>Transport</dt><dd>Samochód + krótkie spacery</dd></div><div><dt>Trasa</dt><dd>Białowieża · Hajnówka · Dubiny · Nowoberezowo</dd></div></dl><p class="plan-description">Od ceramicznego ikonostasu w Białowieży i niezwykłego soboru w Hajnówce po kameralne cerkwie w podlaskich wsiach.</p><p class="plan-limit"><strong>Wariant długi:</strong> dołóż zieloną Trześciankę i niebieskie Puchły.</p><a class="plan-more" href="/test/aktywnosci/dziedzictwo-prawoslawne/">Zobacz szlak cerkwi</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="events" data-weather="sun rain" data-transport="foot car" data-duration="half full" data-reservation="required">
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Circles_%282010-04-18_by_Ian_T._McFarland%29.jpg" alt="Plenerowy spektakl teatralny — zdjęcie ilustracyjne" loading="lazy" decoding="async"><span class="plan-badge">Sprawdź, co dzieje się podczas pobytu</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Circles_(2010-04-18_by_Ian_T._McFarland).jpg" target="_blank" rel="noopener">Fot. Ian T. McFarland · CC BY-SA 2.0 · ilustracyjne</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/kalendarz-wydarzen/"><h3>WERTEP, Teatr w Stodole i wydarzenia specjalne</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>Zależnie od wydarzenia</dd></div><div><dt>Sezon</dt><dd>Według kalendarza</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i dorośli</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Charakter</dt><dd>Teatr, muzyka, lokalna tradycja</dd></div></dl><p class="plan-description">WERTEP, Teatr w Stodole, koncerty i wydarzenia sezonowe — warto trafić na właściwy termin.</p><p class="plan-limit"><strong>To kalendarz:</strong> wydarzenia nie odbywają się codziennie, ale mogą stać się najmocniejszym punktem pobytu.</p><a class="plan-more" href="/test/aktywnosci/kalendarz-wydarzen/">Sprawdź, czego szukać</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="food" data-weather="sun rain snow" data-transport="foot car" data-duration="short half" data-reservation="none">
+            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Babka-ziemniaczana-przekroj.jpg" alt="Babka ziemniaczana według podlaskiego przepisu — zdjęcie ilustracyjne" loading="lazy" decoding="async"><span class="plan-badge">Marcinek · babka · miody · sery</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Babka-ziemniaczana-przekroj.jpg" target="_blank" rel="noopener">Fot. Zuzanna K. Filutowska · CC BY-SA 3.0 · ilustracyjne</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/lokalne-smaki-i-zakupy/"><h3>Lokalne smaki i zakupy po drodze</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>1–3 godziny</dd></div><div><dt>Sezon</dt><dd>Cały rok + kiermasze sezonowe</dd></div><div><dt>Dla kogo</dt><dd>Każdy, kto lubi próbować</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Szukaj</dt><dd>Marcinek, babka, miody, sery i przetwory</dd></div></dl><p class="plan-description">Zamiast przypadkowej pamiątki — coś do spróbowania na miejscu albo zabrania do domu od regionalnego producenta.</p><p class="plan-limit"><strong>Najlepiej:</strong> połączyć z obiadem, muzeum albo przejazdem przez Hajnówkę.</p><a class="plan-more" href="/test/aktywnosci/lokalne-smaki-i-zakupy/">Zobacz kulinarną ściągę</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="food" data-weather="sun rain snow" data-transport="foot car" data-duration="short half" data-reservation="none required">
+            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bia%C5%82owie%C5%BCa%2C_Stacja_Bia%C5%82owie%C5%BCa_Towarowa_-_fotopolska.eu_%28346975%29.jpg" alt="Zabytkowa stacja Białowieża Towarowa, w której działa Restauracja Carska" loading="lazy" decoding="async"><span class="plan-badge">Białowieża · Hajnówka · Narewka</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Bia%C5%82owie%C5%BCa,_Stacja_Bia%C5%82owie%C5%BCa_Towarowa_-_fotopolska.eu_(346975).jpg" target="_blank" rel="noopener">Fot. mamik / fotopolska.eu · CC BY-SA 3.0</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/gdzie-zjesc/"><h3>Gdzie zjeść po puszczańskim dniu</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>1–2,5 godziny</dd></div><div><dt>Sezon</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Pary, rodziny i grupy</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Styl</dt><dd>Regionalnie, domowo lub odświętnie</dd></div></dl><p class="plan-description">Krótka, konkretna selekcja miejsc na regionalny obiad, szybką kolację albo wyjątkowy wieczór.</p><p class="plan-limit"><strong>Dla większej grupy:</strong> warto wcześniej upewnić się, że będzie wspólny stół.</p><a class="plan-more" href="/test/aktywnosci/gdzie-zjesc/">Zobacz krótką listę</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn" data-group="children intergenerational adults" data-character="sport" data-weather="sun" data-transport="foot car" data-duration="short half" data-reservation="none required">
+            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Miniature_Golf_Course.jpg" alt="Tor do minigolfa z przeszkodami — zdjęcie ilustracyjne" loading="lazy" decoding="async"><span class="plan-badge">Lekka aktywność blisko domu</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Miniature_Golf_Course.jpg" target="_blank" rel="noopener">Fot. Connor Williams · CC BY 2.0 · ilustracyjne</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/korty-i-minigolf/"><h3>Korty i minigolf bez całej wyprawy</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>1–2 godziny</dd></div><div><dt>Sezon</dt><dd>Wiosna–jesień</dd></div><div><dt>Dla kogo</dt><dd>Dzieci, dorośli i grupy</dd></div><div><dt>Transport</dt><dd>Białowieża lub krótki dojazd</dd></div><div><dt>Tempo</dt><dd>Aktywnie, ale bez trekkingu</dd></div></dl><p class="plan-description">Minigolf w Białowieży albo tenis w Hajnówce — dobry przerywnik między spacerem, obiadem i sauną.</p><p class="plan-limit"><strong>Sprzęt i wejście:</strong> sprawdź w dniu gry, bo zasady i dostępność mogą się zmieniać.</p><a class="plan-more" href="/test/aktywnosci/korty-i-minigolf/">Wybierz wariant</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="sport" data-weather="rain snow sun" data-transport="car" data-duration="half" data-reservation="none">
+            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Indoor_Swimming_Pool.JPG" alt="Kryty basen pływacki — zdjęcie ilustracyjne" loading="lazy" decoding="async"><span class="plan-badge">Basen · zjeżdżalnia · sauna</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Indoor_Swimming_Pool.JPG" target="_blank" rel="noopener">Fot. LocalFitness Pty Ltd · CC BY-SA 3.0 · ilustracyjne</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/park-wodny-hajnowka/"><h3>Park Wodny w Hajnówce</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>2–4 godziny</dd></div><div><dt>Sezon</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i aktywne grupy</dd></div><div><dt>Transport</dt><dd>Samochód</dd></div><div><dt>Pogoda</dt><dd>Pewny plan na deszcz i chłód</dd></div></dl><p class="plan-description">Basen sportowy i rekreacyjny, zjeżdżalnie, jacuzzi, sauny i tężnia — mocny rodzinny Plan B.</p><p class="plan-limit"><strong>Przed wyjazdem:</strong> sprawdź komunikaty o godzinach i przerwach technicznych.</p><a class="plan-more" href="/test/aktywnosci/park-wodny-hajnowka/">Zobacz plan wizyty</a></div>
+          </article>
+          <article class="plan" data-season="spring" data-group="adults" data-character="religious" data-weather="sun rain" data-transport="foot" data-duration="full" data-reservation="none">
+            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/POL_Warszawa_2017_Centralna_Droga_Krzy%C5%BCowa_06.jpg" alt="Nocna procesja Drogi Krzyżowej ze świecami — zdjęcie ilustracyjne" loading="lazy" decoding="async"><span class="plan-badge">23 km · Białowieża–Hajnówka</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:POL_Warszawa_2017_Centralna_Droga_Krzy%C5%BCowa_06.jpg" target="_blank" rel="noopener">Fot. Tadeusz Rudzki · CC BY-SA 4.0 · ilustracyjne</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/puszczanska-nocna-droga-krzyzowa/"><h3>Puszczańska Nocna Droga Krzyżowa</h3></a><dl class="plan-facts"><div><dt>Dystans</dt><dd>Około 23 km</dd></div><div><dt>Termin</dt><dd>Wielki Post · według ogłoszeń</dd></div><div><dt>Dla kogo</dt><dd>Dorośli przygotowani na nocny marsz</dd></div><div><dt>Trasa</dt><dd>Białowieża → Hajnówka</dd></div><div><dt>Charakter</dt><dd>Pielgrzymka i praktyka wiary</dd></div></dl><p class="plan-description">Nocna droga przez puszczańskie wsie, rozpoczynająca się w Białowieży i kończąca w Hajnówce.</p><p class="plan-limit"><strong>Ostatnia potwierdzona edycja:</strong> 27 marca 2026; kolejny termin sprawdź u organizatora.</p><a class="plan-more" href="/test/aktywnosci/puszczanska-nocna-droga-krzyzowa/">Zobacz osobny opis</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="nature" data-weather="sun snow" data-transport="foot" data-duration="short half" data-reservation="none">
+            <figure class="plan-media"><img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?cb_client=maps_sv.tactile&amp;w=900&amp;h=600&amp;pitch=-17.642495146526173&amp;panoid=YyV-tkWD_rCSmvJh7UiixQ&amp;yaw=47.864878367492295" alt="Aleja Browska w Białowieży pod koronami starych dębów" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="plan-badge">Droga Browska · dawny trakt królewski</span><figcaption class="photo-credit"><a href="https://www.google.com/maps/search/?api=1&amp;query=52.7039883,23.8821002" target="_blank" rel="noopener">Google Street View · Białowieża</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/aleja-browska/"><h3>Aleja Browska — spacer pod starymi dębami</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>1–2 godziny</dd></div><div><dt>Sezon</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Spokojny spacer, także z psem</dd></div><div><dt>Transport</dt><dd>Pieszo</dd></div><div><dt>Charakter</dt><dd>Historyczna aleja w Białowieży</dd></div></dl><p class="plan-description">Spacer Drogą Browską, pod koronami starych dębów rosnących wzdłuż fragmentu dawnego traktu królewskiego.</p><p class="plan-limit"><strong>Start:</strong> dokładny punkt i widok Street View są zapisane na stronie spaceru.</p><a class="plan-more" href="/test/aktywnosci/aleja-browska/">Zobacz pomysł na spacer</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn" data-group="children intergenerational adults" data-character="village church" data-weather="sun" data-transport="car bike" data-duration="full" data-reservation="none">
+            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Puch%C5%82y%2C_cerkiew_prawos%C5%82awna_par._p.w._Opieki_Matki_Bo%C5%BCej%2C_1913-1918_19.jpg" alt="Niebieska drewniana cerkiew Opieki Matki Bożej w Puchłach" loading="lazy" decoding="async"><span class="plan-badge">Trześcianka · Soce · Puchły</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Puch%C5%82y,_cerkiew_prawos%C5%82awna_par._p.w._Opieki_Matki_Bo%C5%BCej,_1913-1918_19.jpg" target="_blank" rel="noopener">Fot. Piotr Widerski · CC BY-SA 3.0 PL</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/kraina-otwartych-okiennic/"><h3>Wycieczka przez malownicze wsie i siedliska</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>Pół dnia lub cały dzień</dd></div><div><dt>Sezon</dt><dd>Wiosna–jesień</dd></div><div><dt>Dla kogo</dt><dd>Rodziny, fotografowie, spokojne grupy</dd></div><div><dt>Transport</dt><dd>Samochód lub rower</dd></div><div><dt>Trasa</dt><dd>Trześcianka · Soce · Puchły</dd></div></dl><p class="plan-description">Drewniane domy, zdobione okiennice, wiejskie siedliska i kolorowe cerkwie Krainy Otwartych Okiennic.</p><p class="plan-limit"><strong>To żywe wsie:</strong> oglądaj z drogi i szanuj prywatność mieszkańców.</p><a class="plan-more" href="/test/aktywnosci/kraina-otwartych-okiennic/">Zobacz trasę przez wsie</a></div>
+          </article>
+          <article class="plan" data-season="spring summer autumn" data-group="children adults" data-character="horse sport nature" data-weather="sun" data-transport="car" data-duration="short half" data-reservation="required">
+            <figure class="plan-media"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Horse_Riding_in_the_Forest_-_geograph.org.uk_-_5439335.jpg" alt="Jazda konna leśną drogą — zdjęcie ilustracyjne" loading="lazy" decoding="async"><span class="plan-badge">Stare Masiewo · Zabłotczyzna</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Horse_Riding_in_the_Forest_-_geograph.org.uk_-_5439335.jpg" target="_blank" rel="noopener">Fot. Jon Alexander · CC BY-SA 2.0 · ilustracyjne</a></figcaption></figure>
+            <div class="plan-body"><a class="plan-title-link" href="/test/aktywnosci/jazda-konna-w-okolicy/"><h3>Jazda konna w okolicy Puszczy</h3></a><dl class="plan-facts"><div><dt>Czas</dt><dd>1–3 godziny</dd></div><div><dt>Sezon</dt><dd>Wiosna–jesień · według operatora</dd></div><div><dt>Dla kogo</dt><dd>Początkujący i doświadczeni</dd></div><div><dt>Transport</dt><dd>Samochód</dd></div><div><dt>Rezerwacja</dt><dd>Wymagana</dd></div></dl><p class="plan-description">Lekcja na lonży dla początkujących albo wyjazd w teren dla bardziej doświadczonych jeźdźców.</p><p class="plan-limit"><strong>Dwie opcje:</strong> Stare Masiewo oraz stajnia Bukwica w Zabłotczyźnie.</p><a class="plan-more" href="/test/aktywnosci/jazda-konna-w-okolicy/">Zobacz opcje jazdy</a></div>
+          </article>
+          <div class="no-results" hidden>
+            <h3>Nie ma planu spełniającego wszystkie warunki.</h3>
+            <p>Wyczyść część filtrów — pokażemy najbliższe sensowne propozycje.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="lokalizacja" aria-labelledby="location-title">
+      <div class="shell">
+        <div class="location-grid">
+          <div class="location-copy">
+            <p class="eyebrow">W samej Białowieży</p>
+            <h2 class="display section-title" id="location-title">Stoczek 178. Dom zaczyna się już od bramy.</h2>
+            <p>Benkowo leży przy ulicy Stoczek w Białowieży. Na mapie można sprawdzić dokładne położenie, zaplanować dojazd i zobaczyć najbliższe otoczenie.</p>
+            <p class="location-address">Stoczek 178<br>17-230 Białowieża</p>
+            <a class="button button-dark" href="https://www.google.com/maps/place/Benkowo+Bia%C5%82owie%C5%BCa+-+make+Yourself+at+home/@52.7002613,23.8717881,17z" target="_blank" rel="noopener">Wyznacz trasę w Mapach Google ↗</a>
+          </div>
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps?q=Benkowo+Bia%C5%82owie%C5%BCa&amp;output=embed" title="Mapa lokalizacji Benkowo Białowieża" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        <div class="street-views" aria-label="Widoki Benkowa od ulicy Stoczek">
+          <figure class="street-view">
+            <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?cb_client=maps_sv.tactile&amp;w=900&amp;h=600&amp;pitch=-2&amp;panoid=nKySYUjc5RuaFBrJZYsdgg&amp;yaw=90&amp;thumbfov=80" alt="Ulica Stoczek i wjazd do Benkowa po prawej stronie" width="900" height="600" loading="lazy" referrerpolicy="no-referrer">
+            <figcaption><span>Benkowo w rytmie ulicy Stoczek</span><small>Google Street View · maj 2025</small></figcaption>
+          </figure>
+          <figure class="street-view">
+            <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?cb_client=maps_sv.tactile&amp;w=900&amp;h=600&amp;pitch=-2&amp;panoid=nKySYUjc5RuaFBrJZYsdgg&amp;yaw=150" alt="Zbliżenie drewnianej elewacji domu głównego Benkowa" width="900" height="600" loading="lazy" referrerpolicy="no-referrer">
+            <figcaption><span>Drewniany dom od strony ulicy</span><small>Google Street View · maj 2025</small></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="availability" id="dostepnosc" aria-labelledby="availability-title">
+      <div class="shell availability-grid">
+        <div class="availability-copy">
+          <p class="eyebrow">Dostępność i rezerwacja</p>
+          <h2 class="display section-title" id="availability-title">Najpierw termin. Potem jasna cena za całość.</h2>
+          <p>Benkowo jest wynajmowane na wyłączność. Do czasu uruchomienia kalendarza online dostępność potwierdzamy osobiście pod numerem telefonu.</p>
+        </div>
+        <form class="availability-form" id="enquiry-form">
+          <div class="form-grid">
+            <div class="field"><label for="arrival">Przyjazd</label><input id="arrival" name="arrival" type="date" required></div>
+            <div class="field"><label for="departure">Wyjazd</label><input id="departure" name="departure" type="date" required></div>
+            <div class="field field-wide"><label for="guests">Liczba gości</label><select id="guests" name="guests"><option value="2–4">2–4 osoby</option><option value="5–8">5–8 osób</option><option value="9–12">9–12 osób</option><option value="13–14">13–14 osób</option></select></div>
+          </div>
+          <button class="button button-light" type="submit">Przygotuj zapytanie</button>
+          <div class="form-result" id="form-result" hidden>
+            <p id="result-text"></p>
+            <div class="result-actions"><button class="button button-light" id="copy-message" type="button">Kopiuj treść</button><a class="button button-outline" href="tel:+48602761082">Zadzwoń</a></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt" aria-labelledby="contact-title">
+      <div class="shell contact-card">
+        <div class="contact-main">
+          <p class="eyebrow">Porozmawiajmy o terminie</p>
+          <h2 class="display section-title" id="contact-title">Czy Benkowo jest wolne, gdy chcecie przyjechać?</h2>
+          <a class="phone" href="tel:+48602761082">+48 602 761 082</a>
+        </div>
+        <div class="contact-aside">
+          <div class="contact-item"><span>Adres</span><strong>Stoczek 178<br>17-230 Białowieża</strong></div>
+          <div class="contact-item"><span>Lokalizacja</span><a href="https://maps.google.com/?q=Stoczek+178%2C+17-230+Białowieża" target="_blank" rel="noopener">Otwórz w Mapach Google ↗</a></div>
+          <div class="contact-item"><span>Model wynajmu</span><strong>Całość na wyłączność jednej grupy</strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner"><span>© 2026 Benkowo Białowieża</span><span>Rodzinne miejsce w Białowieży od 20 lat</span><a href="tel:+48602761082">+48 602 761 082</a></div>
+  </footer>
+  <a class="mobile-cta" href="tel:+48602761082">Zadzwoń i zapytaj o termin</a>
+
+  <script>
+    const body = document.body;
+    const menuButton = document.querySelector('.nav-toggle');
+    menuButton.addEventListener('click', () => {
+      const open = body.classList.toggle('menu-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+    });
+    document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => {
+      body.classList.remove('menu-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+
+    const planCards = Array.from(document.querySelectorAll('.plan'));
+    const quickFilterButtons = Array.from(document.querySelectorAll('.filter-chip'));
+    const clearFilterButtons = Array.from(document.querySelectorAll('.clear-filters'));
+    const filterCount = document.getElementById('filter-count');
+    const noResults = document.querySelector('.no-results');
+    const selectedFilters = () => {
+      const active = new Map();
+      quickFilterButtons.filter(button => button.getAttribute('aria-pressed') === 'true').forEach(button => {
+        if (!active.has(button.dataset.dimension)) active.set(button.dataset.dimension, new Set());
+        active.get(button.dataset.dimension).add(button.dataset.value);
+      });
+      return active;
+    };
+
+    const updatePlans = () => {
+      const active = selectedFilters();
+      let visible = 0;
+      planCards.forEach(plan => {
+        const matches = Array.from(active.entries()).every(([dimension, values]) => {
+          const planValues = new Set((plan.dataset[dimension] || '').split(' ').filter(Boolean));
+          return Array.from(values).some(value => planValues.has(value));
+        });
+        plan.hidden = !matches;
+        if (matches) visible += 1;
+      });
+      const hasFilters = Array.from(active.values()).some(values => values.size);
+      clearFilterButtons.forEach(button => button.hidden = !hasFilters);
+      const countLabel = document.documentElement.lang === 'pl'
+        ? (visible === 1 ? '1 plan' : (visible >= 2 && visible <= 4 ? visible + ' plany' : visible + ' planów'))
+        : visible + (visible === 1 ? ' plan' : ' plans');
+      filterCount.textContent = countLabel;
+      noResults.hidden = visible !== 0;
+      const params = new URLSearchParams(location.search);
+      params.delete('filter');
+      quickFilterButtons.filter(button => button.getAttribute('aria-pressed') === 'true').forEach(button => params.append('filter', button.dataset.dimension + ':' + button.dataset.value));
+      const nextQuery = params.toString();
+      history.replaceState(null, '', location.pathname + (nextQuery ? '?' + nextQuery : '') + location.hash);
+    };
+
+    new URLSearchParams(location.search).getAll('filter').forEach(filter => {
+      const separator = filter.indexOf(':');
+      if (separator < 1) return;
+      const dimension = filter.slice(0, separator);
+      const value = filter.slice(separator + 1);
+      const button = quickFilterButtons.find(item => item.dataset.dimension === dimension && item.dataset.value === value);
+      if (button) button.setAttribute('aria-pressed', 'true');
+    });
+
+    quickFilterButtons.forEach(button => button.addEventListener('click', () => {
+      button.setAttribute('aria-pressed', String(button.getAttribute('aria-pressed') !== 'true'));
+      updatePlans();
+    }));
+    clearFilterButtons.forEach(button => button.addEventListener('click', () => {
+      quickFilterButtons.forEach(item => item.setAttribute('aria-pressed', 'false'));
+      updatePlans();
+    }));
+    updatePlans();
+
+    planCards.forEach(card => {
+      const destination = card.querySelector('.plan-title-link');
+      if (!destination) return;
+      card.tabIndex = 0;
+      card.setAttribute('role', 'link');
+      card.setAttribute('aria-label', destination.textContent.trim());
+      const openCard = event => {
+        if (event.target.closest('a, button, iframe')) return;
+        if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') return;
+        if (event.type === 'keydown') event.preventDefault();
+        location.href = destination.href;
+      };
+      card.addEventListener('click', openCard);
+      card.addEventListener('keydown', openCard);
+    });
+
+    document.querySelectorAll('[data-youtube-video-id]').forEach(module => {
+      const trigger = module.querySelector('.youtube-trigger');
+      if (!trigger || module.dataset.embedAllowed !== 'true') return;
+      const poster = module.querySelector('.youtube-poster');
+      const thumbnail = document.createElement('img');
+      thumbnail.src = 'https://i.ytimg.com/vi/' + encodeURIComponent(module.dataset.youtubeVideoId) + '/maxresdefault.jpg';
+      thumbnail.alt = '';
+      thumbnail.loading = 'lazy';
+      thumbnail.decoding = 'async';
+      thumbnail.addEventListener('error', () => { thumbnail.src = 'https://i.ytimg.com/vi/' + encodeURIComponent(module.dataset.youtubeVideoId) + '/hqdefault.jpg'; }, { once: true });
+      poster.prepend(thumbnail);
+      trigger.addEventListener('click', () => {
+        const videoId = module.dataset.youtubeVideoId;
+        const iframe = document.createElement('iframe');
+        iframe.className = 'youtube-frame';
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId);
+        iframe.title = module.dataset.youtubeTitle || 'YouTube video';
+        iframe.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        poster.replaceChildren(iframe);
+        iframe.focus();
+      }, { once: true });
+    });
+
+    const hotspots = document.querySelectorAll('.hotspot');
+    const explorerKicker = document.getElementById('explorer-kicker');
+    const explorerName = document.getElementById('explorer-name');
+    const explorerDescription = document.getElementById('explorer-description');
+    const explorerStats = document.getElementById('explorer-stats');
+    hotspots.forEach(hotspot => hotspot.addEventListener('click', () => {
+      hotspots.forEach(item => item.setAttribute('aria-pressed', String(item === hotspot)));
+      explorerKicker.textContent = hotspot.dataset.kicker;
+      explorerName.textContent = hotspot.dataset.name;
+      explorerDescription.textContent = hotspot.dataset.description;
+      const values = hotspot.dataset.values.split('|');
+      const labels = hotspot.dataset.labels.split('|');
+      explorerStats.replaceChildren(...values.map((value, index) => {
+        const item = document.createElement('div');
+        item.className = 'explorer-stat';
+        const strong = document.createElement('strong');
+        const label = document.createElement('span');
+        strong.textContent = value;
+        label.textContent = labels[index];
+        item.append(strong, label);
+        return item;
+      }));
+    }));
+
+    const today = new Date();
+    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const arrival = document.getElementById('arrival');
+    const departure = document.getElementById('departure');
+    arrival.min = localToday;
+    departure.min = localToday;
+    arrival.addEventListener('change', () => {
+      departure.min = arrival.value || localToday;
+      if (departure.value && departure.value <= arrival.value) departure.value = '';
+    });
+
+    let enquiryText = '';
+    const form = document.getElementById('enquiry-form');
+    const result = document.getElementById('form-result');
+    const resultText = document.getElementById('result-text');
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      enquiryText = `Dzień dobry, pytam o dostępność całego Benkowa od ${arrival.value} do ${departure.value} dla ${document.getElementById('guests').value}.`;
+      resultText.textContent = enquiryText;
+      result.hidden = false;
+    });
+    document.getElementById('copy-message').addEventListener('click', async event => {
+      try {
+        await navigator.clipboard.writeText(enquiryText);
+        event.currentTarget.textContent = 'Skopiowano';
+        setTimeout(() => { event.currentTarget.textContent = 'Kopiuj treść'; }, 1800);
+      } catch (_) {
+        resultText.focus?.();
+      }
+    });
+  </script>
+
+  <script>
+    document.querySelectorAll('[data-language-choice]').forEach(link => {
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('benkowo-language', link.dataset.languageChoice); } catch (_) {}
+      });
+    });
+  </script>
+</body>
+</html>
