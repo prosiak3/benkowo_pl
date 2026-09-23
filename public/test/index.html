@@ -230,9 +230,13 @@
     .house-card:nth-child(2) { background: #42473e; }
     .house-index { color: rgba(245,243,237,.45); font-size: .72rem; letter-spacing: .15em; }
     .house-card h3 { max-width: 10ch; margin: 0; font-family: var(--serif); font-size: clamp(2.6rem, 4vw, 4.4rem); font-weight: 500; line-height: .95; }
-    .concept-gallery { display: grid; grid-template-columns: repeat(12,1fr); gap: .85rem; margin-top: 3rem; }
-    .concept-gallery figure { position: relative; grid-column: span 4; min-height: 20rem; margin: 0; overflow: hidden; border: 1px solid rgba(245,243,237,.18); background: #20241f; }
-    .concept-gallery figure:first-child, .concept-gallery figure:last-child { grid-column: span 6; }
+    .concept-gallery-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2rem; align-items: end; margin-top: clamp(4.5rem,8vw,7rem); padding-top: 2rem; border-top: 1px solid rgba(245,243,237,.22); }
+    .concept-gallery-head h3 { max-width: 12ch; margin: .35rem 0 0; font-size: clamp(2.6rem,5vw,5rem); line-height: .94; }
+    .concept-gallery-head > p { max-width: 36rem; margin: 0; justify-self: end; color: rgba(245,243,237,.7); }
+    .concept-gallery { display: grid; grid-template-columns: repeat(12,1fr); grid-auto-rows: 18rem; gap: .85rem; margin-top: 2rem; }
+    .concept-gallery figure { position: relative; grid-column: span 6; min-height: 18rem; margin: 0; overflow: hidden; border: 1px solid rgba(245,243,237,.18); background: #20241f; }
+    .concept-gallery figure:first-child { grid-column: span 7; grid-row: span 2; }
+    .concept-gallery figure:nth-child(2), .concept-gallery figure:nth-child(3) { grid-column: span 5; }
     .concept-gallery img { width: 100%; height: 100%; display: block; object-fit: cover; }
     .concept-gallery figcaption { position: absolute; inset: auto .65rem .65rem; padding: .55rem .7rem; background: rgba(18,21,18,.88); color: #fff; font-size: .68rem; line-height: 1.35; }
     .house-card p { margin: 1rem 0 0; color: rgba(245,243,237,.68); }
@@ -465,8 +469,12 @@
       .street-view { min-height: 18rem; }
       .street-view figcaption { align-items: start; flex-direction: column; }
       .house-card, .house-card:last-child { grid-column: auto; min-height: 24rem; }
-      .concept-gallery { grid-template-columns: 1fr; }
+      .concept-gallery-head { display: block; }
+      .concept-gallery-head > p { margin-top: 1rem; }
+      .concept-gallery { grid-template-columns: 1fr; grid-auto-rows: auto; }
       .concept-gallery figure, .concept-gallery figure:first-child, .concept-gallery figure:last-child { grid-column: auto; min-height: 18rem; }
+      .concept-gallery figure:first-child { grid-row: auto; min-height: 26rem; }
+      .concept-gallery figure:nth-child(2), .concept-gallery figure:nth-child(3) { grid-column: auto; }
       .experience-head .section-lead { margin-top: 1.2rem; }
       .plans-cta { align-items: stretch; flex-direction: column; }
       .plans-cta .button { width: 100%; }
@@ -661,6 +669,10 @@
             </div>
           </article>
         </div>
+        <div class="concept-gallery-head">
+          <div><p class="eyebrow">Obraz pobytu</p><h3 class="display">Tu każda część dnia ma swoje miejsce.</h3></div>
+          <p>Wspólny stół, dwa niezależne domy, sauna i wieczór przy ogniu. To wizualizacje nastroju i sposobu korzystania z siedliska — prawdziwe zdjęcia wnętrz Benkowa dodamy po sesji.</p>
+        </div>
         <div class="concept-gallery" aria-label="Wizualizacje sposobu korzystania z przestrzeni Benkowa">
           <figure><img src="/test/assets/concept/dom-glowny.webp" alt="Koncepcyjna wizualizacja wspólnej jadalni i salonu" loading="lazy"><figcaption>Dom główny · Wizualizacja poglądowa — nie przedstawia wnętrza Benkowa</figcaption></figure>
           <figure><img src="/test/assets/concept/dom-ogrodowy.webp" alt="Koncepcyjna wizualizacja sypialni i poddasza drugiego domu" loading="lazy"><figcaption>Dom Ogrodowy · Wizualizacja poglądowa — nie przedstawia wnętrza Benkowa</figcaption></figure>
@@ -737,12 +749,6 @@
               <dl class="plan-facts"><div><dt>Czas</dt><dd>3–5 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · także deszcz</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i grupy wielopokoleniowe</dd></div><div><dt>Transport</dt><dd>Pieszo w Białowieży</dd></div><div><dt>Rezerwacja</dt><dd>Zwykle nie</dd></div><div><dt>Tempo</dt><dd>Spokojne</dd></div></dl>
               <p class="plan-description">Muzeum BPN, Park Pałacowy, przerwa i lokalny posiłek — bez przeładowania pierwszego dnia.</p>
               <p class="plan-limit"><strong>Ważne:</strong> godziny muzeum i bieżące komunikaty BPN trzeba sprawdzić przed wyjściem.</p>
-              <div class="plan-video" data-youtube-video-id="Xxjg6Vpia-0" data-youtube-title="Materiał Białowieskiego Parku Narodowego" data-youtube-channel="Białowieski Park Narodowy" data-source-url="https://www.youtube.com/watch?v=Xxjg6Vpia-0" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
-                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Obejrzyj film: Materiał Białowieskiego Parku Narodowego">Obejrzyj film <span aria-hidden="true">▶</span></button></div>
-                <p class="youtube-meta"><strong>Film:</strong> Materiał Białowieskiego Parku Narodowego<br><span>Białowieski Park Narodowy · Zweryfikowano: 21.09.2026 · napisy: niezweryfikowane</span></p>
-                <p class="youtube-note">Film pokazuje region i jego przyrodę; przed wyjściem sprawdź aktualne godziny, komunikaty i zasady BPN.</p>
-                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=Xxjg6Vpia-0" target="_blank" rel="noopener">Otwórz w YouTube ↗</a>
-              </div>
               <a class="plan-more" href="/test/aktywnosci/rodzinnie-w-bialowiezy/">Zobacz szkic planu</a>
             </div>
           </article>
