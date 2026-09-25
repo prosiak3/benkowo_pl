@@ -122,14 +122,14 @@
 :root[data-theme="plum"] .history-motif { display:block; }
 :root[data-theme="plum"] .houses { position:relative; isolation:isolate; overflow:hidden; }
 :root[data-theme="plum"] .houses::before {
-  content:"BIAŁOWIEŻA"; position:absolute; right:-.025em; top:.05em;
-  color:#fff; opacity:.075; font:500 clamp(7rem,20vw,24rem)/1 var(--serif);
+  content:"BIAŁOWIEŻA"; position:absolute; right:-.025em; top:.15em;
+  color:#fff; opacity:.035; font:500 clamp(7rem,16vw,18rem)/1 var(--serif);
   letter-spacing:-.065em; white-space:nowrap; pointer-events:none;
 }
 :root[data-theme="plum"] .houses > .shell { position:relative; z-index:1; }
 .history-motif { display:none; width:min(21rem,100%); margin:clamp(2.5rem,5vw,5rem) 0 0; }
 .history-motif img {
-  display:block; width:100%; aspect-ratio:4/3; object-fit:cover;
+  display:block; width:100%; aspect-ratio:2.1; object-fit:cover; object-position:center top;
   filter:grayscale(1) sepia(.3); opacity:.47; mix-blend-mode:multiply;
   mask-image:linear-gradient(90deg,#000 68%,transparent 100%);
 }
@@ -146,11 +146,11 @@
     background:linear-gradient(90deg,rgba(var(--theme-hero-rgb),.87),rgba(var(--theme-hero-rgb),.53)),
                linear-gradient(0deg,var(--theme-hero),transparent 55%);
   }
-  :root[data-theme="plum"] .houses::before { top:.3em; font-size:28vw; opacity:.055; }
+  :root[data-theme="plum"] .houses::before { top:.3em; font-size:22vw; opacity:.035; }
   .history-motif { width:min(16rem,72%); margin-top:2rem; }
 }
 @media(prefers-reduced-motion:no-preference) {
-  .motion-ready .editorial-reveal { opacity:0; transform:translateY(18px); transition:opacity 650ms ease,transform 650ms cubic-bezier(.2,.7,.2,1); }
+  .motion-ready .editorial-reveal { opacity:.72; transform:translateY(12px); transition:opacity 420ms ease,transform 420ms cubic-bezier(.2,.7,.2,1); }
   .motion-ready .editorial-reveal.is-visible { opacity:1; transform:none; }
   .motion-ready .concept-gallery figure.editorial-reveal:nth-child(2n),
   .motion-ready .occasion-card.editorial-reveal:nth-child(2n) { transition-delay:90ms; }
