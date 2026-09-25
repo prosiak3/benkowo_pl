@@ -127,10 +127,10 @@
   letter-spacing:-.065em; white-space:nowrap; pointer-events:none;
 }
 :root[data-theme="plum"] .houses > .shell { position:relative; z-index:1; }
-.history-motif { display:none; width:min(21rem,100%); margin:clamp(2.5rem,5vw,5rem) 0 0; }
+.history-motif { display:none; width:min(17rem,100%); margin:clamp(2rem,4vw,3rem) 0 0; }
 .history-motif img {
-  display:block; width:100%; aspect-ratio:2.1; object-fit:cover; object-position:center top;
-  filter:grayscale(1) sepia(.3); opacity:.47; mix-blend-mode:multiply;
+  display:block; width:100%; aspect-ratio:3/4; object-fit:contain;
+  filter:grayscale(.45) sepia(.12); opacity:.55; mix-blend-mode:multiply;
   mask-image:linear-gradient(90deg,#000 68%,transparent 100%);
 }
 .history-motif figcaption { margin-top:.4rem; color:var(--ink); font-size:.67rem; line-height:1.4; opacity:.67; }
@@ -147,7 +147,7 @@
                linear-gradient(0deg,var(--theme-hero),transparent 55%);
   }
   :root[data-theme="plum"] .houses::before { top:.3em; font-size:22vw; opacity:.035; }
-  .history-motif { width:min(16rem,72%); margin-top:2rem; }
+  .history-motif { width:min(12rem,55%); margin-top:2rem; }
 }
 @media(prefers-reduced-motion:no-preference) {
   .motion-ready .editorial-reveal { opacity:.72; transform:translateY(12px); transition:opacity 420ms ease,transform 420ms cubic-bezier(.2,.7,.2,1); }
