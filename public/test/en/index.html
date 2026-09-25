@@ -334,10 +334,10 @@
     .youtube-poster { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: .75rem; background: #171a17; }
     .youtube-poster img, .youtube-frame { width: 100%; height: 100%; display: block; border: 0; object-fit: cover; }
     .youtube-poster::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,15,12,.05), rgba(12,15,12,.34)); pointer-events: none; }
-    .youtube-trigger { position: absolute; z-index: 1; inset: 50% auto auto 50%; display: grid; width: 4rem; height: 3rem; place-items: center; transform: translate(-50%,-50%); border: 0; border-radius: .85rem; padding: 0; background: #a55f3f; color: #fff; font-size: 0; cursor: pointer; box-shadow: 0 .5rem 1.35rem rgba(0,0,0,.34); transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
-    /* Bootstrap Icons: play-fill (MIT) */
-    .youtube-trigger .play-icon { display: block; width: 1.8rem; height: 1.8rem; fill: currentColor; }
-    .youtube-trigger:hover { transform: translate(-50%,-50%) scale(1.06); background: #bd6b47; box-shadow: 0 .65rem 1.55rem rgba(0,0,0,.4); }
+    .youtube-trigger { position: absolute; z-index: 1; inset: 50% auto auto 50%; display: grid; width: 4.25rem; height: 4.25rem; place-items: center; transform: translate(-50%,-50%); border: 0; border-radius: 50%; padding: 0; background: transparent; color: rgba(255,255,255,.96); font-size: 0; cursor: pointer; filter: drop-shadow(0 .45rem .8rem rgba(0,0,0,.42)); transition: transform .2s ease, color .2s ease, filter .2s ease; }
+    /* Heroicons: play-circle solid (MIT) */
+    .youtube-trigger .play-icon { display: block; width: 100%; height: 100%; fill: currentColor; }
+    .youtube-trigger:hover { transform: translate(-50%,-50%) scale(1.06); color: #fff; filter: drop-shadow(0 .6rem 1rem rgba(0,0,0,.5)); }
     .youtube-fallback { display: inline-block; margin-top: .55rem; font-size: .75rem; }
     .youtube-poster { background: linear-gradient(135deg, #171a17, #3d433a); }
     .youtube-meta { margin: .65rem 0 0; font-size: .74rem; line-height: 1.45; }
@@ -770,7 +770,7 @@
               <p class="plan-description">The National Park Museum, a living Orthodox church, authentic craft and a regional meal.</p>
               <p class="plan-limit"><strong>Check first:</strong> church access and studio visits require advance confirmation.</p>
               <div class="plan-video" data-youtube-video-id="_Przr5SJ1dU" data-youtube-title="Hajnówka Days of Orthodox Church Music — organiser's video" data-youtube-channel="Organiser of the Hajnówka Days of Orthodox Church Music" data-source-url="https://www.youtube.com/watch?v=_Przr5SJ1dU" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
-                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Hajnówka Days of Orthodox Church Music — organiser's video">Watch the video <svg class="play-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M11.596 8.697 5.233 12.39C4.713 12.69 4 12.345 4 11.744V4.256c0-.602.713-.947 1.233-.645l6.363 3.692a.802.802 0 0 1 0 1.394"/></svg></button></div>
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Hajnówka Days of Orthodox Church Music — organiser's video">Watch the video <svg class="play-icon" aria-hidden="true" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M2.25 12a9.75 9.75 0 1 1 19.5 0 9.75 9.75 0 0 1-19.5 0Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.856.921-1.397 1.671-.98l5.603 3.11Z" clip-rule="evenodd"/></svg></button></div>
                 <p class="youtube-meta"><strong>Video:</strong> Hajnówka Days of Orthodox Church Music — organiser's video<br><span>Organiser of the Hajnówka Days of Orthodox Church Music · Verified: 21 Sep 2026 · captions: not verified</span></p>
                 <p class="youtube-note">The video introduces the local musical tradition. It does not mean a concert will take place during your stay — check dates with the organiser.</p>
                 <a class="youtube-fallback" href="https://www.youtube.com/watch?v=_Przr5SJ1dU" target="_blank" rel="noopener">Open on YouTube ↗</a>
@@ -786,7 +786,7 @@
               <p class="plan-description">A forest railway ride, a stop at Topiło and return on the same route.</p>
               <p class="plan-limit"><strong>Check first:</strong> services depend on the timetable, weather and minimum passenger numbers.</p>
               <div class="plan-video" data-youtube-video-id="9dQVRzTnS88" data-youtube-title="Forest railway to Topiło — operator's video" data-youtube-channel="Hajnówka Forest District" data-source-url="https://www.youtube.com/watch?v=9dQVRzTnS88" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
-                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Forest railway to Topiło — operator's video">Watch the video <svg class="play-icon" aria-hidden="true" viewBox="0 0 16 16"><path d="M11.596 8.697 5.233 12.39C4.713 12.69 4 12.345 4 11.744V4.256c0-.602.713-.947 1.233-.645l6.363 3.692a.802.802 0 0 1 0 1.394"/></svg></button></div>
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Forest railway to Topiło — operator's video">Watch the video <svg class="play-icon" aria-hidden="true" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M2.25 12a9.75 9.75 0 1 1 19.5 0 9.75 9.75 0 0 1-19.5 0Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.856.921-1.397 1.671-.98l5.603 3.11Z" clip-rule="evenodd"/></svg></button></div>
                 <p class="youtube-meta"><strong>Video:</strong> Forest railway to Topiło — operator's video<br><span>Hajnówka Forest District · Verified: 21 Sep 2026 · captions: not verified</span></p>
                 <p class="youtube-note">This is an information video; check the current timetable, operating conditions and tickets with the operator.</p>
                 <a class="youtube-fallback" href="https://www.youtube.com/watch?v=9dQVRzTnS88" target="_blank" rel="noopener">Open on YouTube ↗</a>
