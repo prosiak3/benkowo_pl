@@ -14,11 +14,11 @@
   --theme-subtle:#E1E9DE; --theme-subtle-2:#D8E2D6; --theme-on-accent:#FCFEF7;
 }
 :root[data-theme="plum"] {
-  --ink:#30272D; --linen:#F4EDED; --paper:#FFF9F6; --oak:#483640;
-  --copper:#874759; --mist:#E5D8DB; --line:rgba(48,39,45,.17);
-  --theme-hero:#34272E; --theme-hero-rgb:52,39,46; --theme-highlight:#F3C5BE;
-  --theme-card-1:#513B46; --theme-card-2:#604551; --theme-card-3:#70515B;
-  --theme-subtle:#EDE1E2; --theme-subtle-2:#E6D9DC; --theme-on-accent:#FFF9F6;
+  --ink:#332B30; --linen:#F5F0E9; --paper:#FFFBF6; --oak:#624C57;
+  --copper:#88495A; --mist:#E5D8DB; --line:rgba(51,43,48,.17);
+  --theme-hero:#483943; --theme-hero-rgb:72,57,67; --theme-highlight:#F4D1BD;
+  --theme-card-1:#6A5360; --theme-card-2:#735C67; --theme-card-3:#7B636D;
+  --theme-subtle:#EDE4E0; --theme-subtle-2:#E8DED9; --theme-on-accent:#FFFBF6;
 }
 
 /* A review control that leaves the site's navigation and content intact. */
@@ -104,3 +104,54 @@
 .plan-media-missing { background:linear-gradient(135deg,var(--theme-card-1),var(--theme-card-3)); }
 .youtube-meta span, .youtube-note, .no-results p { color:color-mix(in srgb,var(--ink) 65%,transparent); }
 .mobile-cta { color:#fff; }
+
+/* The lighter plum direction keeps its depth without making each chapter dark. */
+:root[data-theme="plum"] .hero-art::after {
+  background:linear-gradient(90deg,var(--theme-hero) 0%,rgba(var(--theme-hero-rgb),.83) 11%,rgba(var(--theme-hero-rgb),.38) 38%,rgba(var(--theme-hero-rgb),.02) 78%),
+             linear-gradient(0deg,rgba(var(--theme-hero-rgb),.68),transparent 38%);
+}
+:root[data-theme="plum"] .houses .section-lead,
+:root[data-theme="plum"] .house-card p,
+:root[data-theme="plum"] .concept-gallery-head > p,
+:root[data-theme="plum"] .estate-plan-copy p:not(.eyebrow) { color:rgba(255,255,255,.88); }
+:root[data-theme="plum"] .house-index { color:#FFE0CC; }
+:root[data-theme="plum"] .house-card:hover { background:#5A4551; }
+:root[data-theme="plum"] .occasions { background:#5B4853; }
+:root[data-theme="plum"] .occasions .section-lead { color:rgba(255,255,255,.88); }
+:root[data-theme="plum"] .history { overflow:hidden; }
+:root[data-theme="plum"] .history-motif { display:block; }
+:root[data-theme="plum"] .houses { position:relative; isolation:isolate; overflow:hidden; }
+:root[data-theme="plum"] .houses::before {
+  content:"BIAŁOWIEŻA"; position:absolute; right:-.025em; top:.05em;
+  color:#fff; opacity:.075; font:500 clamp(7rem,20vw,24rem)/1 var(--serif);
+  letter-spacing:-.065em; white-space:nowrap; pointer-events:none;
+}
+:root[data-theme="plum"] .houses > .shell { position:relative; z-index:1; }
+.history-motif { display:none; width:min(21rem,100%); margin:clamp(2.5rem,5vw,5rem) 0 0; }
+.history-motif img {
+  display:block; width:100%; aspect-ratio:4/3; object-fit:cover;
+  filter:grayscale(1) sepia(.3); opacity:.47; mix-blend-mode:multiply;
+  mask-image:linear-gradient(90deg,#000 68%,transparent 100%);
+}
+.history-motif figcaption { margin-top:.4rem; color:var(--ink); font-size:.67rem; line-height:1.4; opacity:.67; }
+.history-motif a { text-underline-offset:.15em; }
+@media(max-width:64rem) {
+  :root[data-theme="plum"] .hero-art::after {
+    background:linear-gradient(90deg,rgba(var(--theme-hero-rgb),.91),rgba(var(--theme-hero-rgb),.57) 62%,rgba(var(--theme-hero-rgb),.25)),
+               linear-gradient(0deg,rgba(var(--theme-hero-rgb),.72),transparent 50%);
+  }
+}
+@media(max-width:44rem) {
+  :root[data-theme="plum"] .hero-art::after {
+    background:linear-gradient(90deg,rgba(var(--theme-hero-rgb),.87),rgba(var(--theme-hero-rgb),.53)),
+               linear-gradient(0deg,var(--theme-hero),transparent 55%);
+  }
+  :root[data-theme="plum"] .houses::before { top:.3em; font-size:28vw; opacity:.055; }
+  .history-motif { width:min(16rem,72%); margin-top:2rem; }
+}
+@media(prefers-reduced-motion:no-preference) {
+  .motion-ready .editorial-reveal { opacity:0; transform:translateY(18px); transition:opacity 650ms ease,transform 650ms cubic-bezier(.2,.7,.2,1); }
+  .motion-ready .editorial-reveal.is-visible { opacity:1; transform:none; }
+  .motion-ready .concept-gallery figure.editorial-reveal:nth-child(2n),
+  .motion-ready .occasion-card.editorial-reveal:nth-child(2n) { transition-delay:90ms; }
+}
