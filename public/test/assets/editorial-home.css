@@ -4,6 +4,103 @@
   --editorial-motion: 420ms cubic-bezier(.2,.7,.2,1);
 }
 
+/* The opening uses the actual house as an architectural backdrop. */
+.hero { background: #1c231d; }
+.hero::before { display: none; }
+.hero-inner {
+  min-height: clamp(48rem, 88svh, 68rem);
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0;
+  align-items: center;
+  padding-block: clamp(5rem, 9vw, 9rem) clamp(7rem, 10vw, 10rem);
+}
+.hero-copy { grid-column: 1 / 10; align-self: center; }
+.hero .eyebrow { margin-bottom: clamp(1.4rem, 3vw, 3rem); color: #e9ae89; }
+.hero h1 {
+  max-width: none;
+  font-size: clamp(5.8rem, 10.5vw, 11.8rem);
+  line-height: .78;
+  letter-spacing: -.065em;
+  text-wrap: balance;
+}
+.hero h1 span { display: block; }
+.hero h1 em { color: #f2c09f; font-weight: 500; }
+.hero-lead {
+  max-width: 35rem;
+  margin-top: clamp(2.5rem, 5vw, 5rem);
+  padding-left: 1.1rem;
+  border-left: 2px solid #b76e4b;
+  color: #f6f2e9;
+  font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+}
+.hero-actions { margin-top: 2rem; }
+.hero-note { color: rgba(245,243,237,.7); }
+.hero-art {
+  position: absolute;
+  inset: 0 calc(50% - 50vw) 0 38%;
+  min-height: 0;
+  display: block;
+  pointer-events: none;
+}
+.hero-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, #1c231d 0%, rgba(28,35,29,.9) 11%, rgba(28,35,29,.52) 35%, rgba(28,35,29,.02) 75%),
+              linear-gradient(0deg, rgba(28,35,29,.82), transparent 38%);
+  pointer-events: none;
+}
+.hero-photo { inset: 0; border: 0; }
+.hero-photo::after { display: none; }
+.hero-photo img { object-position: 49% center; filter: saturate(.82) contrast(1.05); }
+.hero-photo figcaption {
+  z-index: 3;
+  right: clamp(2rem, 5vw, 6rem);
+  bottom: 1.8rem;
+  font-size: .74rem;
+  text-shadow: 0 1px 8px #101611;
+}
+.hero-letter { right: 3%; top: 5%; width: clamp(11rem, 21vw, 22rem); opacity: .16; }
+.estate-card {
+  z-index: 2;
+  right: clamp(2rem, 5vw, 6rem);
+  bottom: clamp(5rem, 9vw, 9rem);
+  left: auto;
+  width: min(17rem, 26vw);
+  border: 0;
+  border-top: 2px solid #d78961;
+  padding: 1.4rem 0 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+.estate-card .number { font-size: clamp(3rem, 4vw, 5rem); }
+.estate-diagram { display: none; }
+.facts { margin-top: -3.2rem; }
+.facts-grid { box-shadow: 0 1.5rem 4rem rgba(15,24,17,.15); }
+
+@media (max-width: 64rem) {
+  .hero-inner { display: block; min-height: 48rem; }
+  .hero-copy { max-width: 48rem; }
+  .hero-art { inset: 0; opacity: 1; }
+  .hero::after { display: none; }
+  .hero-photo img { object-position: 58% center; }
+  .hero-art::after { background: linear-gradient(90deg, rgba(28,35,29,.97), rgba(28,35,29,.68) 62%, rgba(28,35,29,.3)), linear-gradient(0deg, rgba(28,35,29,.8), transparent 50%); }
+  .hero-letter, .hero-photo figcaption { display: block; }
+  .estate-card { display: none; }
+}
+@media (max-width: 44rem) {
+  .hero-inner { min-height: calc(100svh - 4.5rem); padding-block: clamp(4rem, 11svh, 7rem) 7rem; }
+  .hero h1 { font-size: clamp(4.25rem, 16.5vw, 6.2rem); line-height: .86; }
+  .hero .eyebrow { max-width: 19rem; font-size: .66rem; line-height: 1.5; }
+  .hero-lead { max-width: 28rem; margin-top: 2rem; font-size: 1rem; }
+  .hero-photo img { object-position: 55% center; }
+  .hero-art::after { background: linear-gradient(90deg, rgba(28,35,29,.91), rgba(28,35,29,.54)), linear-gradient(0deg, #1c231d 0%, transparent 55%); }
+  .hero-photo figcaption, .hero-letter { display: none; }
+  .hero-note { font-size: .72rem; }
+  .facts { margin-top: -1.4rem; }
+}
+
 .houses { padding-block: clamp(5rem, 8vw, 8rem); }
 .houses-head { padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
 .houses-head .section-title { max-width: 12ch; }
