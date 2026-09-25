@@ -1,0 +1,106 @@
+/* Three comparable colour directions for the test site. */
+:root[data-theme="warm"] {
+  --ink:#292723; --linen:#F4EFE6; --paper:#FFFBF3; --oak:#40332D;
+  --copper:#925239; --mist:#E2D8CB; --line:rgba(41,39,35,.17);
+  --theme-hero:#29221E; --theme-hero-rgb:41,34,30; --theme-highlight:#F0C3A1;
+  --theme-card-1:#46352E; --theme-card-2:#554037; --theme-card-3:#624A3F;
+  --theme-subtle:#EAE1D5; --theme-subtle-2:#E4D9CC; --theme-on-accent:#FFFBF3;
+}
+:root[data-theme="forest"] {
+  --ink:#27302B; --linen:#F0F2EB; --paper:#FCFEF7; --oak:#33483B;
+  --copper:#526545; --mist:#D9E0D3; --line:rgba(39,48,43,.17);
+  --theme-hero:#25352C; --theme-hero-rgb:37,53,44; --theme-highlight:#DCE4C6;
+  --theme-card-1:#2F4839; --theme-card-2:#3B5746; --theme-card-3:#496352;
+  --theme-subtle:#E1E9DE; --theme-subtle-2:#D8E2D6; --theme-on-accent:#FCFEF7;
+}
+:root[data-theme="plum"] {
+  --ink:#30272D; --linen:#F4EDED; --paper:#FFF9F6; --oak:#483640;
+  --copper:#874759; --mist:#E5D8DB; --line:rgba(48,39,45,.17);
+  --theme-hero:#34272E; --theme-hero-rgb:52,39,46; --theme-highlight:#F3C5BE;
+  --theme-card-1:#513B46; --theme-card-2:#604551; --theme-card-3:#70515B;
+  --theme-subtle:#EDE1E2; --theme-subtle-2:#E6D9DC; --theme-on-accent:#FFF9F6;
+}
+
+/* A review control that leaves the site's navigation and content intact. */
+.theme-preview {
+  position:sticky; top:5rem; z-index:35;
+  border-bottom:1px solid var(--line); background:var(--paper); color:var(--ink);
+  box-shadow:0 .4rem 1.5rem rgba(0,0,0,.06);
+}
+.theme-preview-inner { width:var(--page); margin:auto; min-height:4.25rem; display:flex; align-items:center; gap:clamp(.8rem,2vw,2rem); }
+.theme-preview-title { flex:none; margin:0; font-size:.69rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+.theme-preview-options { display:flex; align-items:center; gap:.4rem; }
+.theme-option {
+  display:inline-flex; align-items:center; gap:.55rem; min-height:2.75rem;
+  border:1px solid transparent; border-radius:999px; padding:.38rem .75rem;
+  background:transparent; color:var(--ink); font-size:.79rem; font-weight:700;
+  white-space:nowrap; cursor:pointer;
+}
+.theme-option:hover { background:var(--linen); }
+.theme-option[aria-pressed="true"] { border-color:var(--ink); background:var(--linen); }
+.theme-option:focus-visible { outline:3px solid var(--copper); outline-offset:2px; }
+.theme-swatch { display:inline-block; width:1.25rem; height:1.25rem; flex:none; border-radius:50%; border:1px solid rgba(0,0,0,.16); background:var(--swatch); box-shadow:inset -.45rem 0 var(--swatch-accent); }
+.theme-option[data-theme-choice="warm"] { --swatch:#40332D; --swatch-accent:#C17C58; }
+.theme-option[data-theme-choice="forest"] { --swatch:#33483B; --swatch-accent:#A4B68D; }
+.theme-option[data-theme-choice="plum"] { --swatch:#483640; --swatch-accent:#C78996; }
+@media(max-width:44rem) {
+  .theme-preview { top:4.5rem; }
+  .theme-preview-inner { min-height:3.75rem; gap:.45rem; }
+  .theme-preview-title { display:none; }
+  .theme-preview-options { flex:1; justify-content:flex-end; gap:0; }
+  .theme-option { min-height:2.5rem; gap:.32rem; padding:.3rem .42rem; font-size:.68rem; }
+  .theme-swatch { width:.95rem; height:.95rem; }
+}
+@media(max-width:23rem) { .theme-preview-title { display:none; } .theme-preview-options { justify-content:space-between; } }
+
+/* Colour is applied across sections, controls, cards and photographic scrims. */
+.site-header { background:rgba(var(--theme-hero-rgb),.96); color:#fff; }
+.nav { color:#fff; }
+.hero { background:var(--theme-hero); color:#fff; }
+.hero .eyebrow, .houses .eyebrow, .explorer-kicker { color:var(--theme-highlight); }
+.hero h1 em { color:var(--theme-highlight); }
+.hero-lead { border-color:var(--theme-highlight); color:#fff; }
+.hero-note, .estate-card .label { color:rgba(255,255,255,.75); }
+.hero-art::after { background:linear-gradient(90deg, var(--theme-hero) 0%, rgba(var(--theme-hero-rgb),.9) 11%, rgba(var(--theme-hero-rgb),.52) 35%, rgba(var(--theme-hero-rgb),.02) 75%),linear-gradient(0deg,rgba(var(--theme-hero-rgb),.82),transparent 38%); }
+.estate-card { border-top-color:var(--theme-highlight); }
+.button-primary { background:var(--copper); color:var(--theme-on-accent); }
+.button-primary:hover, .plan-more:hover { background:var(--oak); border-color:var(--oak); }
+.button-light:hover { background:var(--linen); }
+.button-dark:hover { background:var(--oak); }
+.section-lead, .intro-copy, .history-copy p, .location-copy p:not(.eyebrow), .plans-cta p, .plan-description { color:color-mix(in srgb,var(--ink) 75%,transparent); }
+.intro-aside p, .fact span, .visible-filter-group h3, .filter-count, .plan-facts dt, .plan-limit, .contact-item span, .footer-inner { color:color-mix(in srgb,var(--ink) 62%,transparent); }
+.home-plan-teaser { background:var(--theme-subtle); }
+.location { background:var(--theme-subtle-2); }
+.houses { background:var(--oak); color:#fff; }
+.house-card:first-child { background:var(--theme-card-1); }
+.house-card:nth-child(2) { background:var(--theme-card-2); }
+.house-card:nth-child(3) { background:var(--theme-card-3); }
+.house-index { color:var(--theme-highlight); }
+.house-card:hover { background:var(--oak); }
+.explorer-panel, .explorer-stat, .estate-explorer { background:var(--theme-card-1); }
+.hotspot { color:#fff; box-shadow:0 0 0 .55rem color-mix(in srgb,var(--copper) 22%,transparent); }
+.hotspot:hover, .hotspot[aria-pressed="true"] { background:var(--oak); box-shadow:0 0 0 .8rem color-mix(in srgb,var(--copper) 28%,transparent); }
+.availability { background:var(--copper); color:#fff; }
+.availability .eyebrow { color:#fff; }
+.availability-form { background:rgba(0,0,0,.13); }
+.availability .button-light { color:var(--ink); }
+.plan-more::after { color:var(--theme-highlight); }
+.no-results { background:var(--paper); }
+.catalog-page .experience { background:var(--linen); }
+.catalog-page .experience .eyebrow { color:var(--copper); }
+:where(a,button,input,select):focus-visible { outline:3px solid var(--copper); outline-offset:3px; }
+@media(max-width:64rem) {
+  .hero-art::after { background:linear-gradient(90deg,rgba(var(--theme-hero-rgb),.97),rgba(var(--theme-hero-rgb),.68) 62%,rgba(var(--theme-hero-rgb),.3)),linear-gradient(0deg,rgba(var(--theme-hero-rgb),.8),transparent 50%); }
+  .nav { background:var(--theme-hero); }
+}
+@media(max-width:44rem) {
+  .hero-art::after { background:linear-gradient(90deg,rgba(var(--theme-hero-rgb),.91),rgba(var(--theme-hero-rgb),.54)),linear-gradient(0deg,var(--theme-hero),transparent 55%); }
+}
+.occasions { background:var(--theme-hero); color:#fff; }
+.occasions .eyebrow, .occasion-copy span { color:var(--theme-highlight); }
+.occasions .section-lead, .occasions-foot p { color:rgba(255,255,255,.76); }
+.occasion-card { background:var(--theme-card-1); }
+.occasion-card::after { background:linear-gradient(180deg,rgba(var(--theme-hero-rgb),.04) 25%,rgba(var(--theme-hero-rgb),.92) 100%); }
+.plan-media-missing { background:linear-gradient(135deg,var(--theme-card-1),var(--theme-card-3)); }
+.youtube-meta span, .youtube-note, .no-results p { color:color-mix(in srgb,var(--ink) 65%,transparent); }
+.mobile-cta { color:#fff; }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" data-theme="warm">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +21,12 @@
     })();
   </script>
 
+  <script>
+    try {
+      const theme = localStorage.getItem('benkowo-theme-preview');
+      if (['warm', 'forest', 'plum'].includes(theme)) document.documentElement.dataset.theme = theme;
+    } catch (_) {}
+  </script>
   <meta name="theme-color" content="#1a1d1a">
   <meta name="description" content="Benkowo Białowieża — dwa budynki, ogród i sauna na wyłączność jednej rodziny lub grupy. Pobyt dla maksymalnie 14 osób.">
   <meta name="robots" content="noindex,nofollow">
@@ -540,6 +546,7 @@
     }
   </style>
   <link rel="stylesheet" href="/test/assets/editorial-home.css">
+  <link rel="stylesheet" href="/test/assets/theme-preview.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -585,6 +592,10 @@
       </nav>
     </div>
   </header>
+
+  <div class="theme-preview" role="group" aria-label="Kolorystyka">
+    <div class="theme-preview-inner"><p class="theme-preview-title">Kolorystyka</p><div class="theme-preview-options"><button type="button" class="theme-option" data-theme-choice="warm" aria-pressed="true"><span class="theme-swatch" aria-hidden="true"></span>Ciepły</button><button type="button" class="theme-option" data-theme-choice="forest" aria-pressed="false"><span class="theme-swatch" aria-hidden="true"></span>Leśny</button><button type="button" class="theme-option" data-theme-choice="plum" aria-pressed="false"><span class="theme-swatch" aria-hidden="true"></span>Śliwkowy</button></div></div>
+  </div>
 
   <main id="start">
     <section class="hero" aria-labelledby="hero-title">
@@ -1216,5 +1227,6 @@
       });
     });
   </script>
+  <script src="/test/assets/theme-preview.js" defer></script>
 </body>
 </html>

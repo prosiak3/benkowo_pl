@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" data-theme="warm">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +21,12 @@
     })();
   </script>
 
+  <script>
+    try {
+      const theme = localStorage.getItem('benkowo-theme-preview');
+      if (['warm', 'forest', 'plum'].includes(theme)) document.documentElement.dataset.theme = theme;
+    } catch (_) {}
+  </script>
   <meta name="theme-color" content="#1a1d1a">
   <meta name="description" content="26 pomysłów na pobyt w Białowieży i okolicy: żubry, Puszcza, spacery, muzea, cerkwie, lokalne jedzenie i atrakcje na każdą porę roku.">
   <meta name="robots" content="noindex,nofollow">
@@ -501,6 +507,7 @@
     .catalog-page .experience-head { padding-top: 1.5rem; }
     .catalog-page .experience-head h1 { margin: .25rem 0 0; }
   </style>
+  <link rel="stylesheet" href="/test/assets/theme-preview.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -546,6 +553,10 @@
       </nav>
     </div>
   </header>
+
+  <div class="theme-preview" role="group" aria-label="Kolorystyka">
+    <div class="theme-preview-inner"><p class="theme-preview-title">Kolorystyka</p><div class="theme-preview-options"><button type="button" class="theme-option" data-theme-choice="warm" aria-pressed="true"><span class="theme-swatch" aria-hidden="true"></span>Ciepły</button><button type="button" class="theme-option" data-theme-choice="forest" aria-pressed="false"><span class="theme-swatch" aria-hidden="true"></span>Leśny</button><button type="button" class="theme-option" data-theme-choice="plum" aria-pressed="false"><span class="theme-swatch" aria-hidden="true"></span>Śliwkowy</button></div></div>
+  </div>
 
   <main id="start">
     <section class="hero" aria-labelledby="hero-title">
@@ -1135,5 +1146,6 @@
       });
     });
   </script>
+  <script src="/test/assets/theme-preview.js" defer></script>
 </body>
 </html>
