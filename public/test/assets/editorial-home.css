@@ -1,0 +1,112 @@
+/* Benkowo visual system, stage 1: editorial rhythm around the homestead. */
+:root {
+  --editorial-gap: clamp(.7rem, 1.2vw, 1.15rem);
+  --editorial-motion: 420ms cubic-bezier(.2,.7,.2,1);
+}
+
+.houses { padding-block: clamp(5rem, 8vw, 8rem); }
+.houses-head { padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.houses-head .section-title { max-width: 12ch; }
+.house-grid { margin-top: 0; grid-template-columns: 1.15fr 1fr 1fr; }
+.house-card { min-height: 27rem; padding: clamp(1.5rem, 3vw, 3rem); transition: background-color var(--editorial-motion); }
+.house-card:first-child { background: #283229; }
+.house-card:nth-child(2) { background: #384137; }
+.house-card:nth-child(3) { background: #44483c; }
+.house-index { color: #e5aa87; font-weight: 700; }
+.house-card h3 { max-width: 12ch; }
+.house-card p { max-width: 34ch; }
+@media (hover: hover) {
+  .house-card:hover { background: #4d5143; }
+}
+
+.concept-gallery-head {
+  grid-template-columns: 1.2fr .8fr;
+  align-items: end;
+  gap: clamp(2rem, 6vw, 7rem);
+  margin-top: clamp(5rem, 9vw, 9rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+.concept-gallery-head h3 { max-width: 13ch; font-size: clamp(3.2rem, 6vw, 6.5rem); }
+.concept-gallery-head > p { max-width: 32rem; line-height: 1.75; }
+.concept-gallery {
+  grid-auto-rows: clamp(15rem, 24vw, 23rem);
+  gap: var(--editorial-gap);
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+.concept-gallery figure { border: 0; isolation: isolate; }
+.concept-gallery figure:first-child { grid-column: span 7; grid-row: span 2; }
+.concept-gallery figure:nth-child(2),
+.concept-gallery figure:nth-child(3) { grid-column: span 5; }
+.concept-gallery figure:nth-child(4),
+.concept-gallery figure:nth-child(5) { grid-column: span 6; }
+.concept-gallery figure::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  z-index: 0;
+  background: linear-gradient(transparent, rgba(14,20,15,.86));
+  pointer-events: none;
+}
+.concept-gallery img { transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
+@media (hover: hover) {
+  .concept-gallery figure:hover img { transform: scale(1.035); }
+}
+.concept-gallery figcaption {
+  z-index: 1;
+  inset: auto clamp(1rem, 2vw, 2rem) clamp(1rem, 2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .35rem;
+  max-width: 34rem;
+  padding: 0;
+  background: none;
+  line-height: 1.35;
+}
+.concept-gallery .gallery-name {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.4vw, 3.5rem);
+  line-height: .95;
+}
+.concept-gallery .gallery-note {
+  color: rgba(255,255,255,.86);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .025em;
+}
+.concept-gallery figure:first-child .gallery-name { font-size: clamp(3rem, 5vw, 5.2rem); }
+.estate-plan { margin-top: clamp(5rem, 9vw, 8rem); }
+
+@media (max-width: 64rem) {
+  .house-grid { grid-template-columns: 1fr 1fr; }
+  .house-card:last-child { grid-column: 1 / -1; min-height: 19rem; }
+  .concept-gallery { grid-auto-rows: clamp(13rem, 28vw, 20rem); }
+}
+@media (max-width: 44rem) {
+  .houses { padding-block: 5rem; }
+  .houses-head { padding-bottom: 2rem; }
+  .house-grid { grid-template-columns: 1fr; }
+  .house-card, .house-card:last-child { min-height: 0; padding: 1.75rem; gap: 3rem; }
+  .house-card h3 { font-size: clamp(2.7rem, 11vw, 4rem); }
+  .concept-gallery-head { display: block; margin-top: 5rem; }
+  .concept-gallery-head > p { margin-top: 1.5rem; }
+  .concept-gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; gap: .6rem; margin-inline: -.75rem; }
+  .concept-gallery figure, .concept-gallery figure:first-child,
+  .concept-gallery figure:nth-child(2), .concept-gallery figure:nth-child(3),
+  .concept-gallery figure:nth-child(4), .concept-gallery figure:nth-child(5) {
+    grid-column: 1 / -1; grid-row: auto; min-height: 0;
+    aspect-ratio: 1.2;
+  }
+  .concept-gallery figure:first-child { aspect-ratio: .95; }
+  .concept-gallery figure:nth-child(4), .concept-gallery figure:nth-child(5) {
+    grid-column: span 1; aspect-ratio: .73;
+  }
+  .concept-gallery figcaption { inset: auto 1rem 1rem; }
+  .concept-gallery .gallery-name { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .concept-gallery figure:first-child .gallery-name { font-size: clamp(3rem, 12vw, 4.5rem); }
+  .concept-gallery figure:nth-child(n+4) .gallery-name { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+  .concept-gallery .gallery-note { font-size: .65rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .house-card, .concept-gallery img { transition: none; }
+}
