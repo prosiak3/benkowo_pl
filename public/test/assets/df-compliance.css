@@ -1,3 +1,5 @@
+@import url("/test/assets/site-shell.css");
+
 .df-compliance {
   display: inline-flex;
   min-height: 2.4rem;

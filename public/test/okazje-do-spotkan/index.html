@@ -4,15 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self';">
-  <script>
-    (() => {
-      let language = null;
-      try { language = localStorage.getItem('benkowo-language'); } catch (_) {}
-      if (!language) language = (navigator.languages?.[0] || navigator.language || 'pl').toLowerCase().startsWith('pl') ? 'pl' : 'en';
-      if (language === 'en') location.replace('/test/en/occasions-for-gatherings/' + location.search + location.hash);
-    })();
-  </script>
-  <script>try{const theme=localStorage.getItem('benkowo-theme-preview');if(['warm','forest','plum'].includes(theme))document.documentElement.dataset.theme=theme}catch(_){}</script>
+  <script src="/test/assets/preferences-early.js" data-current-language="pl" data-pl="/test/okazje-do-spotkan/" data-en="/test/en/occasions-for-gatherings/"></script>
+
   <meta name="theme-color" content="#29221e">
   <meta name="robots" content="noindex,nofollow">
   <meta name="description" content="Pomysły na spokojne rodzinne święta, rocznice i spotkania bliskich w Benkowie Białowieża — całej posesji na wyłączność do 14 osób.">
@@ -29,13 +22,8 @@
   <link rel="stylesheet" href="/test/assets/df-compliance.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="/test/" aria-label="Benkowo Białowieża — strona główna"><span class="brand-mark" aria-hidden="true"><img src="/test/assets/icon-192.png" alt=""></span><span class="brand-type"><strong>Benkowo</strong><small>Białowieża</small></span></a>
-      <nav class="nav" aria-label="Główna nawigacja"><a href="/test/">← Strona główna</a><a href="/test/pomysly-na-pobyt/">Pomysły na pobyt</a><a href="#kontakt">Kontakt</a><div class="language-switch" aria-label="Wybór języka"><a href="/test/okazje-do-spotkan/" aria-current="page" data-language-choice="pl">PL</a><span>/</span><a href="/test/en/occasions-for-gatherings/" data-language-choice="en">EN</a></div></nav>
-    </div>
-  </header>
-  <div class="theme-preview" role="group" aria-label="Kolorystyka"><div class="theme-preview-inner"><p class="theme-preview-title">Kolorystyka</p><div class="theme-preview-options"><button type="button" class="theme-option" data-theme-choice="warm" aria-pressed="true"><span class="theme-swatch" aria-hidden="true"></span>Ciepły</button><button type="button" class="theme-option" data-theme-choice="forest" aria-pressed="false"><span class="theme-swatch" aria-hidden="true"></span>Leśny</button><button type="button" class="theme-option" data-theme-choice="plum" aria-pressed="false"><span class="theme-swatch" aria-hidden="true"></span>Śliwkowy</button></div></div></div>
+  <header class="site-header" data-site-header data-page="occasion" data-lang-href="/test/en/occasions-for-gatherings/"></header><script src="/test/assets/site-shell.js"></script>
+  <div data-theme-preview></div>
 
   <main>
     <section class="occasion-hero">
@@ -66,8 +54,7 @@
 
     <section class="closing" id="kontakt"><div class="shell closing-grid"><div><p class="eyebrow">Jedna grupa. Całe Benkowo.</p><h2>Opowiedz, kogo chcesz zebrać.</h2><p>Najpierw krótko rozmawiamy o terminie, liczbie osób i charakterze pobytu. Dzięki temu wiemy, że Benkowo będzie dobrym miejscem dla Waszej grupy.</p></div><div class="closing-actions"><a class="button button-light" href="tel:+48602761082">Zadzwoń: +48 602 761 082</a><a class="button button-outline" href="/test/#dostepnosc">Zapytaj o dostępność</a></div></div></section>
   </main>
-  <footer class="footer" data-site-footer></footer><script src="/test/assets/site-footer.js" defer></script>
-  <script>document.querySelectorAll('[data-language-choice]').forEach(link=>link.addEventListener('click',()=>{try{localStorage.setItem('benkowo-language',link.dataset.languageChoice)}catch(_){}}));</script>
+  <footer class="footer" data-site-footer></footer>
   <script src="/test/assets/theme-preview.js" defer></script>
 </body>
 </html>
