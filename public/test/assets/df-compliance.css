@@ -1,0 +1,53 @@
+.df-compliance {
+  display: inline-flex;
+  min-height: 2.4rem;
+  align-items: center;
+  gap: .65rem;
+  border: 1px solid rgba(26, 29, 26, .16);
+  border-radius: 999px;
+  padding: .34rem .82rem .34rem .38rem;
+  color: inherit;
+  font-size: .7rem;
+  font-weight: 650;
+  letter-spacing: .035em;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: border-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.df-compliance-mark {
+  display: grid;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: .48rem;
+  background: #1a1d1a;
+  color: #fffdf8;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: -.04em;
+}
+
+.df-compliance:hover {
+  border-color: #9e5a3c;
+  color: #9e5a3c;
+  transform: translateY(-1px);
+}
+
+.df-compliance:focus-visible {
+  outline: 2px solid #9e5a3c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 44rem) {
+  .df-compliance {
+    width: fit-content;
+    margin-top: .25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .df-compliance { transition: none; }
+}
