@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">DebilFirst DF mark</title>
+  <desc id="desc">A compact D containing a clear F-shaped opening.</desc>
+  <defs>
+    <mask id="df-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="1000">
+      <rect width="1000" height="1000" fill="white"/>
+      <path d="M275 282H650V407H408V470H600V592H408V718H275V282Z" fill="black"/>
+    </mask>
+  </defs>
+  <path d="M105 110H395C710 110 890 260 890 500S710 890 395 890H105V110Z" fill="#111111" mask="url(#df-cut)"/>
+</svg>
