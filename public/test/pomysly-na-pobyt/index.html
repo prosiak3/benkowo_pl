@@ -488,6 +488,7 @@
     .catalog-page .experience-head h1 { margin: .25rem 0 0; }
   </style>
   <link rel="stylesheet" href="/test/assets/theme-preview.css">
+  <link rel="stylesheet" href="/test/assets/design-refresh.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -675,13 +676,14 @@
           <p class="section-lead">Wybierz porę roku, skład grupy i konkretny typ atrakcji. Wyniki zmieniają się od razu.</p>
         </div>
         <div class="plan-filter-bar" aria-label="Filtry planów">
-          <div class="visible-filter-groups">
+          <div class="quick-filters"><span class="quick-filters-label">Szybki wybór</span><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="winter">Zimą</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="children">Z dziećmi</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="sport">Aktywnie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="car">Samochodem</button></div>
+          <details class="all-filters"><summary>Więcej filtrów</summary><div class="visible-filter-groups">
             <div class="visible-filter-group"><h3>Pora roku</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="spring">Wiosna</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="summer">Lato</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="autumn">Jesień</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="winter">Zima</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="year-round">Cały rok</button></div></div>
             <div class="visible-filter-group"><h3>Dla kogo</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="children">Z dziećmi</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="intergenerational">Międzypokoleniowo</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="adults">Dorośli</button></div></div>
             <div class="visible-filter-group"><h3>Typ atrakcji</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="animals">Żubry i zwierzęta</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="nature">Puszcza i spacery</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="museum">Muzea</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="church">Cerkwie i świątynie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="art">Sztuka i rękodzieło</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="food">Lokalne jedzenie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="sport">Sport i aktywnie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="horse">Konie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="village">Wsie i siedliska</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="railway">Kolejka</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="events">Wydarzenia</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="religious">Wydarzenia religijne</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="fishing">Wędkarstwo</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="foraging">Zbieractwo</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="border">Pogranicze</button></div></div>
             <div class="visible-filter-group"><h3>Pogoda</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="weather" data-value="sun">Pogodnie</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="weather" data-value="rain">Na deszcz</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="weather" data-value="snow">Na śnieg</button></div></div>
             <div class="visible-filter-group"><h3>Jak</h3><div class="filter-options"><button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="foot">Pieszo</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="bike">Rowerem</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="car">Samochodem</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="reservation" data-value="none">Bez rezerwacji</button><button class="filter-chip" type="button" aria-pressed="false" data-dimension="reservation" data-value="required">Z rezerwacją</button></div></div>
-          </div>
+          </div></details>
         </div>
         <div class="filter-summary">
           <p class="filter-count" id="filter-count" aria-live="polite">26 planów</p>
@@ -965,7 +967,7 @@
       noResults.hidden = visible !== 0;
       const params = new URLSearchParams(location.search);
       params.delete('filter');
-      quickFilterButtons.filter(button => button.getAttribute('aria-pressed') === 'true').forEach(button => params.append('filter', button.dataset.dimension + ':' + button.dataset.value));
+      new Set(quickFilterButtons.filter(button => button.getAttribute('aria-pressed') === 'true').map(button => button.dataset.dimension + ':' + button.dataset.value)).forEach(filter => params.append('filter', filter));
       const nextQuery = params.toString();
       history.replaceState(null, '', location.pathname + (nextQuery ? '?' + nextQuery : '') + location.hash);
     };
@@ -976,11 +978,12 @@
       const dimension = filter.slice(0, separator);
       const value = filter.slice(separator + 1);
       const button = quickFilterButtons.find(item => item.dataset.dimension === dimension && item.dataset.value === value);
-      if (button) button.setAttribute('aria-pressed', 'true');
+      if (button) quickFilterButtons.filter(item => item.dataset.dimension === dimension && item.dataset.value === value).forEach(item => item.setAttribute('aria-pressed', 'true'));
     });
 
     quickFilterButtons.forEach(button => button.addEventListener('click', () => {
-      button.setAttribute('aria-pressed', String(button.getAttribute('aria-pressed') !== 'true'));
+      const next = String(button.getAttribute('aria-pressed') !== 'true');
+      quickFilterButtons.filter(item => item.dataset.dimension === button.dataset.dimension && item.dataset.value === button.dataset.value).forEach(item => item.setAttribute('aria-pressed', next));
       updatePlans();
     }));
     clearFilterButtons.forEach(button => button.addEventListener('click', () => {
@@ -1009,6 +1012,7 @@
       const trigger = module.querySelector('.youtube-trigger');
       if (!trigger || module.dataset.embedAllowed !== 'true') return;
       const poster = module.querySelector('.youtube-poster');
+      if (getComputedStyle(poster).display === 'none') return;
       const thumbnail = document.createElement('img');
       thumbnail.src = 'https://i.ytimg.com/vi/' + encodeURIComponent(module.dataset.youtubeVideoId) + '/maxresdefault.jpg';
       thumbnail.alt = '';
