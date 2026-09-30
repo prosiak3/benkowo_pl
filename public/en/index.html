@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
     (() => {
       const key = 'benkowo-language';
-      const currentLanguage = 'pl';
+      const currentLanguage = 'en';
       let preferredLanguage = null;
       try { preferredLanguage = localStorage.getItem(key); } catch (_) {}
       if (!preferredLanguage) {
@@ -21,25 +21,25 @@
   </script>
 
   <meta name="theme-color" content="#1a1d1a">
-  <meta name="description" content="Benkowo Białowieża — dwa budynki, ogród i sauna na wyłączność jednej rodziny lub grupy. Pobyt dla maksymalnie 14 osób.">
+  <meta name="description" content="Benkowo Białowieża — two houses, a private garden and a wood-fired sauna for one family or trusted group of up to 14 guests.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="pl_PL">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:site_name" content="Benkowo Białowieża">
-  <meta property="og:title" content="Benkowo Białowieża — u siebie, na skraju puszczy">
-  <meta property="og:description" content="Dwa domy, ogród i sauna na wyłączność jednej rodziny lub grupy. Pobyt dla maksymalnie 14 osób w Białowieży.">
-  <meta property="og:url" content="https://benkowo.pl/">
+  <meta property="og:title" content="Benkowo Białowieża — at home at the edge of the wild">
+  <meta property="og:description" content="Two houses, a private garden and a wood-fired sauna for one family or trusted group of up to 14 guests in Białowieża.">
+  <meta property="og:url" content="https://benkowo.pl/en/">
   <meta property="og:image" content="https://benkowo.pl/assets/benkowo-zewnatrz-google.jpg">
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="900">
-  <meta property="og:image:alt" content="Drewniany Dom Główny Benkowa przy ulicy Stoczek w Białowieży">
+  <meta property="og:image:alt" content="The wooden Main House at Benkowo on Stoczek Street in Białowieża">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Benkowo Białowieża — u siebie, na skraju puszczy</title>
-  <link rel="canonical" href="https://benkowo.pl/">
+  <title>Benkowo Białowieża — at home at the edge of the wild</title>
+  <link rel="canonical" href="https://benkowo.pl/en/">
   <link rel="alternate" hreflang="pl" href="https://benkowo.pl/">
   <link rel="alternate" hreflang="en" href="https://benkowo.pl/en/">
   <link rel="alternate" hreflang="x-default" href="https://benkowo.pl/">
-  <link rel="alternate" type="text/markdown" href="https://benkowo.pl/benkowo-bialowieza.md" title="Benkowo Białowieża — wersja Markdown">
+  <link rel="alternate" type="text/markdown" href="https://benkowo.pl/en/benkowo-bialowieza.md" title="Benkowo Białowieża — Markdown version">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -502,9 +502,9 @@
       "@context": "https://schema.org",
       "@type": "LodgingBusiness",
       "name": "Benkowo Białowieża",
-      "url": "https://benkowo.pl/",
+      "url": "https://benkowo.pl/en/",
       "image": "https://benkowo.pl/assets/benkowo-zewnatrz-google.jpg",
-      "description": "Prywatna rodzinna posesja w Białowieży: dwa domy, ogród i sauna na wyłączność jednej grupy do 14 osób.",
+      "description": "A private family property in Białowieża: two houses, a garden and a wood-fired sauna reserved for one group of up to 14 guests.",
       "telephone": "+48602761082",
       "address": {
         "@type": "PostalAddress",
@@ -515,8 +515,8 @@
       },
       "amenityFeature": [
         {"@type":"LocationFeatureSpecification","name":"Sauna","value":true},
-        {"@type":"LocationFeatureSpecification","name":"Kuchnia","value":true},
-        {"@type":"LocationFeatureSpecification","name":"Ogród","value":true}
+        {"@type":"LocationFeatureSpecification","name":"Two kitchens","value":true},
+        {"@type":"LocationFeatureSpecification","name":"Private garden","value":true}
       ]
     }
   </script>
@@ -524,21 +524,21 @@
 <body>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="#start" aria-label="Benkowo Białowieża — strona główna">
+      <a class="brand" href="#start" aria-label="Benkowo Białowieża — home page">
         <span class="brand-mark" aria-hidden="true"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM0AAAD1CAQAAABZnLkiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAd0SU1FB+oJFBIzAEKpItMAAAWUSURBVHja7Z3RkuIgEADx6v7/l70nt9TTlYQZpsHuxy03QobOEDKSy7UJkz/VDZB3GBoshgaLocHyt7oBKO7nRJfqxmgNlouT5/ZoyzNl9mgNFq3pOQEl5mgNlu+15kzHp9qjNVi+z5rRDk8zR2uwfJc1UZ2dYo7WYPkOa7I6mWqP1mDZ35rsDqaZozVY9rVmdsfC7dEaLHtaU9WpUHO0Bste1hA6E2aO1mDZxxpSR0LM0Ros61tD7cCwOVqDZV1rVmj4kDlag2VNa1Zq9GlztAbLWtYs1dg7TpmjNViOWfP84ZnVjKsac+PwudIaLP3WvPtgtjnZtWMzbTx0rrQGS581nz6UYU7EaD7aLlT1jdZg+WxN70iKNKe6mj/Tnu62aQ2W3605MnoirKnIL5ltGWqj1mBh7LZBsuX+eKUrEFqDpdYaoi2vjl1ij9ZgqbGGbsur74o059rTfq3B8rs1UaMl+lpdsWfM9Bmb1mCJyzUzRlT1zn5TzdEaLIzVgE9U25LBx1ma1mCJecqZ1rqDbZtl15S9brQGS1+umTkz6R35q9elfURrsByvea7eJamqHi7jPJhr1uT4fU3kM4wjIx25g3kmWoPl/GrA/UjNrFWrqBxFoDVYYtbQqDXPmaTf62kNFtbK89FRuG2eaU1rwDCsoeeVDKyoWZc6a77RlENoDRarN7FoDRbGDG1F0nOl1mDRmgr8LefarGnN9rOz1rQGzJrWVDMyO3O3jfXRmpm4s9Me1FhTvpPFAGfb7d6b+2CuOcI0Y1rTGjBa08tUY1rTGjBa08N0Y1rTGjBa84kSY1rTGjBa844yW25oDRateWbKs5getAaL1txTnl/u0RosWtMazJYbWoPlu60ZfdLatV/zWbQGy/daE1WbkLaLodZg+T5rMit5bscOsUdrsHyXNbNq30Ls0Ros32FNVaXo0H2P1mDZ35rq2urTeUdrsOxtTbUxz23x9zV7sK81JGPu2+RvOddnT2uIxjy3zV0E12U/a8jGPLfTN3GsiaGp5Pqb44YGy165ZmR3ddzqtNZg2cuaHi6dfy+f6WkNln2s6RnlR1Z+Z+ahl/lGa7DsY81vjNaFRb5V8R3/maM1WPawZtY7O2fY84PWYDE0Z7gk/armYU3N0GDZI9e8I/O3lll552empjVY9rVm1nsH0nbf1Ros61tTvkLc4s25ttYuWoPF0EQRfq9jaLCsn2teXeer3goVmnO0BouhoXI1NFgMTTRhMzVDg8XQZBBijqHBsv59TWuP9xPbvOlWa7DsE5qs5/Vl7dknNNuxR665wfJmEK3BYmiwGBoshiaToVmaocFiaLAYGiyGBouhwWJosBgaLIYGi6HBUrPyTKjux6M1WGpCQ3siiURrsJhrsGgNFkODxdBgMTRYDA0WQ4PF0GAxNFgMDRZDg8XQYDE0WAwNFkODxdBg8SknFXcR5OJTTmw/tQbLHGvSdhDfFHdHZ5NrTfZbkm5saZDWYLmkDOyqGRjJnrPn4KcPWoMlNtdU369stSea1mCJyzXVxrzsXdH3DueZ1rQGzLg1RFv+6+XE7woxpjWtATM2Q1vBmPt2LjVz0xos53PNKsa87HXSccPyTGtaA+acNSsb89D7wGOFGtOa1oA5bs0uxjychcH/DzemNa0Bc8yaM6Pj04gkWXjGnhRjWtMaMP3W9H6w6rodSU8fRtrZdY60BkufNT0fyrjDJhgUTfd50hosMbUBWWtSt+PuYs+h86Q1WD5bQxixq9tz6qqiNVg+z9Bm3c8cYSV7Tp8XrcGy5hsGV8k9Q1cSrcESl2taq6lYIZoTch60BsvvuYY4Ip+h5Z2wK4fWYFlzhvaKanvC86zWYFl/hjba5lHS+qw1WPbJNffMyjupVwmtwcKuDYgi2p4pfdUaLP8AfqXMLMl80gkAAAAASUVORK5CYII=" alt=""></span>
         <span class="brand-type"><strong>Benkowo</strong><small>Białowieża</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
-      <nav class="nav" id="main-nav" aria-label="Główna nawigacja">
-        <a href="#miejsce">Miejsce</a>
-        <a href="#domy">Domy i ogród</a>
-        <a href="#plany">Pomysły na pobyt</a>
-        <a href="#lokalizacja">Lokalizacja</a>
-        <a href="#kontakt">Kontakt</a>
-        <div class="language-switch" aria-label="Wybór języka">
-          <a href="/" lang="pl" hreflang="pl" aria-current="page" data-language-choice="pl">PL</a><span aria-hidden="true">/</span><a href="/en/" lang="en" hreflang="en" data-language-choice="en">EN</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+      <nav class="nav" id="main-nav" aria-label="Main navigation">
+        <a href="#miejsce">The place</a>
+        <a href="#domy">Houses &amp; garden</a>
+        <a href="#plany">Ideas for your stay</a>
+        <a href="#lokalizacja">Location</a>
+        <a href="#kontakt">Contact</a>
+        <div class="language-switch" aria-label="Language selection">
+          <a href="/" lang="pl" hreflang="pl" data-language-choice="pl">PL</a><span aria-hidden="true">/</span><a href="/en/" lang="en" hreflang="en" aria-current="page" data-language-choice="en">EN</a>
         </div>
-        <a class="button button-primary" href="#dostepnosc">Zapytaj o termin</a>
+        <a class="button button-primary" href="#dostepnosc">Ask about dates</a>
       </nav>
     </div>
   </header>
@@ -547,38 +547,38 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="shell hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">Cała posesja na wyłączność · Białowieża</p>
-          <h1 class="display" id="hero-title">U siebie, na skraju puszczy.</h1>
-          <p class="hero-lead">Dwa budynki, ogród, sauna i przestrzeń dla jednej rodziny albo jednej, zaufanej grupy. Bez przypadkowych gości. Do 14 osób.</p>
+          <p class="eyebrow">The entire property to yourselves · Białowieża</p>
+          <h1 class="display" id="hero-title">At home at the edge of the wild.</h1>
+          <p class="hero-lead">Two houses, a private garden and a wood-fired sauna for one family or one trusted group. No other guests. Up to 14 people.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#dostepnosc">Zapytaj o wolny termin</a>
-            <a class="button button-outline" href="#miejsce">Poznaj Benkowo</a>
+            <a class="button button-primary" href="#dostepnosc">Ask about available dates</a>
+            <a class="button button-outline" href="#miejsce">Discover Benkowo</a>
           </div>
-          <p class="hero-note">Benkowo wynajmowane jest w całości — niezależnie od liczby gości.</p>
+          <p class="hero-note">Benkowo is always rented as an entire property, regardless of group size.</p>
         </div>
         <div class="hero-art">
           <figure class="hero-photo">
-            <img src="/assets/benkowo-zewnatrz-google.jpg" alt="Drewniany Dom Główny Benkowa przy ulicy Stoczek w Białowieży" width="1600" height="900" fetchpriority="high" decoding="async">
-            <figcaption>Dom główny od ul. Stoczek</figcaption>
+            <img src="/assets/benkowo-zewnatrz-google.jpg" alt="The wooden Main House at Benkowo on Stoczek Street in Białowieża" width="1600" height="900" fetchpriority="high" decoding="async">
+            <figcaption>The Main House from Stoczek Street</figcaption>
           </figure>
           <div class="hero-letter"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM0AAAD1CAQAAABZnLkiAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAd0SU1FB+oJFBIzAEKpItMAAAWUSURBVHja7Z3RkuIgEADx6v7/l70nt9TTlYQZpsHuxy03QobOEDKSy7UJkz/VDZB3GBoshgaLocHyt7oBKO7nRJfqxmgNlouT5/ZoyzNl9mgNFq3pOQEl5mgNlu+15kzHp9qjNVi+z5rRDk8zR2uwfJc1UZ2dYo7WYPkOa7I6mWqP1mDZ35rsDqaZozVY9rVmdsfC7dEaLHtaU9WpUHO0Bste1hA6E2aO1mDZxxpSR0LM0Ros61tD7cCwOVqDZV1rVmj4kDlag2VNa1Zq9GlztAbLWtYs1dg7TpmjNViOWfP84ZnVjKsac+PwudIaLP3WvPtgtjnZtWMzbTx0rrQGS581nz6UYU7EaD7aLlT1jdZg+WxN70iKNKe6mj/Tnu62aQ2W3605MnoirKnIL5ltGWqj1mBh7LZBsuX+eKUrEFqDpdYaoi2vjl1ij9ZgqbGGbsur74o059rTfq3B8rs1UaMl+lpdsWfM9Bmb1mCJyzUzRlT1zn5TzdEaLIzVgE9U25LBx1ma1mCJecqZ1rqDbZtl15S9brQGS1+umTkz6R35q9elfURrsByvea7eJamqHi7jPJhr1uT4fU3kM4wjIx25g3kmWoPl/GrA/UjNrFWrqBxFoDVYYtbQqDXPmaTf62kNFtbK89FRuG2eaU1rwDCsoeeVDKyoWZc6a77RlENoDRarN7FoDRbGDG1F0nOl1mDRmgr8LefarGnN9rOz1rQGzJrWVDMyO3O3jfXRmpm4s9Me1FhTvpPFAGfb7d6b+2CuOcI0Y1rTGjBa08tUY1rTGjBa08N0Y1rTGjBa84kSY1rTGjBa844yW25oDRateWbKs5getAaL1txTnl/u0RosWtMazJYbWoPlu60ZfdLatV/zWbQGy/daE1WbkLaLodZg+T5rMit5bscOsUdrsHyXNbNq30Ls0Ros32FNVaXo0H2P1mDZ35rq2urTeUdrsOxtTbUxz23x9zV7sK81JGPu2+RvOddnT2uIxjy3zV0E12U/a8jGPLfTN3GsiaGp5Pqb44YGy165ZmR3ddzqtNZg2cuaHi6dfy+f6WkNln2s6RnlR1Z+Z+ahl/lGa7DsY81vjNaFRb5V8R3/maM1WPawZtY7O2fY84PWYDE0Z7gk/armYU3N0GDZI9e8I/O3lll552empjVY9rVm1nsH0nbf1Ros61tTvkLc4s25ttYuWoPF0EQRfq9jaLCsn2teXeer3goVmnO0BouhoXI1NFgMTTRhMzVDg8XQZBBijqHBsv59TWuP9xPbvOlWa7DsE5qs5/Vl7dknNNuxR665wfJmEK3BYmiwGBoshiaToVmaocFiaLAYGiyGBouhwWJosBgaLIYGi6HBUrPyTKjux6M1WGpCQ3siiURrsJhrsGgNFkODxdBgMTRYDA0WQ4PF0GAxNFgMDRZDg8XQYDE0WAwNFkODxdBg8SknFXcR5OJTTmw/tQbLHGvSdhDfFHdHZ5NrTfZbkm5saZDWYLmkDOyqGRjJnrPn4KcPWoMlNtdU369stSea1mCJyzXVxrzsXdH3DueZ1rQGzLg1RFv+6+XE7woxpjWtATM2Q1vBmPt2LjVz0xos53PNKsa87HXSccPyTGtaA+acNSsb89D7wGOFGtOa1oA5bs0uxjychcH/DzemNa0Bc8yaM6Pj04gkWXjGnhRjWtMaMP3W9H6w6rodSU8fRtrZdY60BkufNT0fyrjDJhgUTfd50hosMbUBWWtSt+PuYs+h86Q1WD5bQxixq9tz6qqiNVg+z9Bm3c8cYSV7Tp8XrcGy5hsGV8k9Q1cSrcESl2taq6lYIZoTch60BsvvuYY4Ip+h5Z2wK4fWYFlzhvaKanvC86zWYFl/hjba5lHS+qw1WPbJNffMyjupVwmtwcKuDYgi2p4pfdUaLP8AfqXMLMl80gkAAAAASUVORK5CYII=" alt=""></div>
           <div class="estate-card">
-            <p class="number">20 lat</p>
-            <p class="label">rodzinnej historii tego miejsca</p>
-            <div class="estate-diagram"><span>Dom Główny</span><i></i><span>Dom Ogrodowy</span></div>
+            <p class="number">20 years</p>
+            <p class="label">of family history in this place</p>
+            <div class="estate-diagram"><span>Main House</span><i></i><span>Garden House</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="facts" aria-label="Najważniejsze informacje">
+    <div class="facts" aria-label="Key facts">
       <div class="shell facts-grid">
-        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.4-4 2.2-6 5.5-6s5.1 2 5.5 6M14 15c3.9-.8 6.6 1 7 5"/></svg></span><strong>14</strong><span>maksymalnie osób</span></div>
-        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></span><strong>2</strong><span>niezależne domy</span></div>
-        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 18v-8M21 18v-6a2 2 0 0 0-2-2H9v8M3 14h18M6 10V7h5a2 2 0 0 1 2 2v1"/></svg></span><strong>6</strong><span>sypialni łącznie</span></div>
-        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 11h14v3a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6zM7 20v2M17 20v2M8 11V6a3 3 0 0 1 6 0"/><path d="M14 6h3"/></svg></span><strong>4</strong><span>łazienki łącznie</span></div>
-        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v7M9 3v7M6 7h3M7.5 10v11M16 3c3 3 3 7 0 10v8"/></svg></span><strong>2</strong><span>osobne kuchnie</span></div>
-        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 16 1.5-5h11l1.5 5M4 16h16v4H4zM7 20v1M17 20v1"/><circle cx="8" cy="18" r=".5"/><circle cx="16" cy="18" r=".5"/></svg></span><strong>4</strong><span>auta na posesji</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.4-4 2.2-6 5.5-6s5.1 2 5.5 6M14 15c3.9-.8 6.6 1 7 5"/></svg></span><strong>14</strong><span>maximum guests</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></span><strong>2</strong><span>independent houses</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 18v-8M21 18v-6a2 2 0 0 0-2-2H9v8M3 14h18M6 10V7h5a2 2 0 0 1 2 2v1"/></svg></span><strong>6</strong><span>bedrooms in total</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 11h14v3a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6zM7 20v2M17 20v2M8 11V6a3 3 0 0 1 6 0"/><path d="M14 6h3"/></svg></span><strong>4</strong><span>bathrooms in total</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v7M9 3v7M6 7h3M7.5 10v11M16 3c3 3 3 7 0 10v8"/></svg></span><strong>2</strong><span>separate kitchens</span></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 16 1.5-5h11l1.5 5M4 16h16v4H4zM7 20v1M17 20v1"/><circle cx="8" cy="18" r=".5"/><circle cx="16" cy="18" r=".5"/></svg></span><strong>4</strong><span>cars on the property</span></div>
       </div>
     </div>
 
@@ -586,14 +586,14 @@
       <div class="shell intro-grid">
         <aside class="intro-aside">
           <p class="eyebrow">Benkowo Białowieża</p>
-          <p>Rodzinne miejsce tworzone przez dwie dekady. Nie hotel, nie pensjonat i nie zbiór pokoi do wynajęcia.</p>
+          <p>A family place shaped over two decades. Not a hotel, not a guesthouse and not a collection of rooms for rent.</p>
         </aside>
         <div>
-          <p class="manifesto">Przyjeżdżacie razem. Mieszkacie <em>bez obcych osób</em>. Macie dwa budynki, ogród i czas po swojemu.</p>
+          <p class="manifesto">You arrive together. You stay <em>without strangers</em>. Two houses, a garden and time at your own pace.</p>
           <div class="intro-copy">
-            <p>Benkowo jest przeznaczone dla rodzin, kilku zaprzyjaźnionych rodzin, grup przyjaciół i kameralnych zespołów, które chcą pobyć razem, nie rezygnując z własnej przestrzeni.</p>
-            <p>Mniejsza grupa również może wynająć całość. Nie dokładamy wtedy innych gości — prywatność nie zależy od liczby zajętych łóżek.</p>
-            <p>Swoboda nie oznacza anonimowości. Szukamy ludzi, którzy czują się jak u siebie i potrafią zadbać o miejsce jak o własne.</p>
+            <p>Benkowo is designed for families, several families travelling together, groups of friends and small teams who want shared time without giving up personal space.</p>
+            <p>A smaller group may rent the entire property too. We never add other guests — privacy does not depend on the number of occupied beds.</p>
+            <p>Freedom does not mean anonymity. We welcome people who feel at home here and care for the place as they would for their own.</p>
           </div>
         </div>
       </div>
@@ -602,15 +602,15 @@
     <section class="history" aria-labelledby="history-title">
       <div class="shell history-grid">
         <div>
-          <p class="eyebrow">Historia Benkowa</p>
+          <p class="eyebrow">The story of Benkowo</p>
           <p class="history-year">20</p>
-          <p>lat rodzinnej historii</p>
+          <p>years of family history</p>
         </div>
         <div class="history-copy">
-          <h2 class="display section-title" id="history-title">Nie powstało od zera pod wynajem.</h2>
-          <p>Benkowo weszło do naszej rodziny około 20 lat temu. Rodzice kupili siedlisko od małżeństwa nauczycieli i przez kolejne lata dostosowywali je do wygodniejszego życia — bez wymazywania tego, co zastali.</p>
-          <p>Przebudowa zachowała drewniany charakter domu, skalę zabudowy i lokalne uwarunkowania architektoniczne Białowieży. Nowe funkcje miały wpisać się w zastany klimat, a nie go zastąpić.</p>
-          <p>Nazwa Benkowo pochodzi od imienia Benedykta. Dlatego jest nazwą rodzinnego miejsca, a nie wymyśloną etykietą noclegu.</p>
+          <h2 class="display section-title" id="history-title">It was not built from scratch as a rental.</h2>
+          <p>Benkowo became part of our family around 20 years ago. Our parents bought the homestead from a married couple of teachers and gradually adapted it for more comfortable living without erasing what was already here.</p>
+          <p>The work preserved the wooden character of the house, the scale of the buildings and Białowieża's local architectural context. New functions were meant to belong to the place, not replace its character.</p>
+          <p>The name Benkowo comes from Benedykt. It is the name of a family place, not a label invented for tourist accommodation.</p>
         </div>
       </div>
     </section>
@@ -619,64 +619,64 @@
       <div class="shell">
         <div class="houses-head">
           <div>
-            <p class="eyebrow">Jedno siedlisko, kilka rytmów</p>
-            <h2 class="display section-title" id="houses-title">Razem, ale nie cały czas w jednym pokoju.</h2>
+            <p class="eyebrow">One homestead, several rhythms</p>
+            <h2 class="display section-title" id="houses-title">Together, without sharing every moment or every room.</h2>
           </div>
-          <p class="section-lead">Wspólny pobyt dużej grupy jest wygodny wtedy, gdy można spotkać się przy jednym stole, a później znaleźć własny spokojny kąt.</p>
+          <p class="section-lead">A large group stays comfortably when everyone can meet around one table and later retreat to a quiet space of their own.</p>
         </div>
         <div class="house-grid">
           <article class="house-card">
-            <span class="house-index">01 · DOM GŁÓWNY</span>
+            <span class="house-index">01 · MAIN HOUSE</span>
             <div>
-              <h3>Serce wspólnego pobytu</h3>
-              <p>Pięć sypialni, trzy łazienki, kuchnia i salon. Do tego przeszklone „Akwarium” — miejsce na książkę, rozmowę i patrzenie w ogród.</p>
-              <div class="tags"><span class="tag">5 sypialni</span><span class="tag">3 łazienki</span><span class="tag">kuchnia</span><span class="tag">salon</span></div>
+              <h3>The heart of your time together</h3>
+              <p>Five bedrooms, three bathrooms, a kitchen and a living room. There is also the glass-walled “Aquarium” — a place for reading, conversation and looking out into the garden.</p>
+              <div class="tags"><span class="tag">5 bedrooms</span><span class="tag">3 bathrooms</span><span class="tag">kitchen</span><span class="tag">living room</span></div>
             </div>
           </article>
           <article class="house-card">
-            <span class="house-index">02 · DOM OGRODOWY</span>
+            <span class="house-index">02 · GARDEN HOUSE</span>
             <div>
-              <h3>Własny rytm obok</h3>
-              <p>Sypialnia na dole, przestrzeń do spania na poddaszu z czterema łóżkami, osobna kuchnia i łazienka. W budynku znajduje się również garaż.</p>
-              <div class="tags"><span class="tag">1 sypialnia</span><span class="tag">4 łóżka na poddaszu</span><span class="tag">kuchnia</span><span class="tag">łazienka</span><span class="tag">garaż</span></div>
+              <h3>A separate rhythm nearby</h3>
+              <p>A downstairs bedroom, an attic sleeping area with four beds, a separate kitchen and bathroom. The building also contains a garage.</p>
+              <div class="tags"><span class="tag">1 bedroom</span><span class="tag">4 attic beds</span><span class="tag">kitchen</span><span class="tag">bathroom</span><span class="tag">garage</span></div>
             </div>
           </article>
           <article class="house-card">
-            <span class="house-index">03 · OGRÓD</span>
+            <span class="house-index">03 · GARDEN</span>
             <div>
-              <h3>Dzień może zostać na miejscu</h3>
-              <p>Granitowe ścieżki prowadzą przez trawnik, pergolę z winoroślą i ogród z drzewami owocowymi. Dalej są sauna, wiata, miejsce na ognisko i grill, a na końcu działki świerkowy lasek.</p>
-              <div class="tags"><span class="tag">sauna</span><span class="tag">wiata</span><span class="tag">pergola</span><span class="tag">ognisko i grill</span><span class="tag">plac zabaw</span><span class="tag">świerkowy lasek</span></div>
+              <h3>A full day without leaving</h3>
+              <p>Granite paths lead across the lawn, past a grapevine pergola and fruit trees. Further on are the sauna, covered shelter, firepit and barbecue area, with a small spruce grove at the far end of the property.</p>
+              <div class="tags"><span class="tag">sauna</span><span class="tag">covered shelter</span><span class="tag">pergola</span><span class="tag">firepit and barbecue</span><span class="tag">play area</span><span class="tag">spruce grove</span></div>
             </div>
           </article>
         </div>
         <div class="estate-plan">
           <div class="estate-plan-copy">
-            <div><p class="eyebrow">Poznaj całą posesję</p><h3 class="display section-title">Od bramy aż po świerkowy lasek.</h3></div>
-            <p>Wybierz punkt na zdjęciu satelitarnym. Zobaczysz, jak dwa domy, ogród, sauna i wiata tworzą jedno prywatne siedlisko, ale pozwalają różnym częściom grupy spędzać czas we własnym rytmie.</p>
+            <div><p class="eyebrow">Explore the whole property</p><h3 class="display section-title">From the gate to the spruce grove.</h3></div>
+            <p>Select a point on the satellite image to see how the two houses, garden, sauna and covered shelter form one private homestead while allowing different parts of the group to follow their own rhythm.</p>
           </div>
           <div class="estate-explorer">
-            <div class="aerial-map" aria-label="Zdjęcie satelitarne posesji Benkowo z interaktywnymi punktami">
-              <img src="/assets/benkowo-plan-satelitarny.jpg" alt="Widok satelitarny długiej, zadrzewionej posesji Benkowo" width="330" height="1226" loading="eager" decoding="async">
-              <span class="map-label entry">ul. Stoczek · brama</span>
-              <button class="hotspot home-main" type="button" aria-label="Pokaż Dom Główny" aria-pressed="true" data-kicker="01 · przy ulicy" data-name="Dom Główny" data-description="Główne miejsce wspólnego pobytu: pięć sypialni, trzy łazienki, kuchnia, salon i przeszklone Akwarium wychodzące w stronę ogrodu." data-values="5|3|1|1" data-labels="sypialni|łazienki|kuchnia|salon + Akwarium"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></button>
-              <button class="hotspot parking" type="button" aria-label="Pokaż parking" aria-pressed="false" data-kicker="02 · wewnątrz posesji" data-name="Parking" data-description="Cztery samochody mieszczą się wygodnie na parkingu wewnątrz posesji. Dodatkowe auto może stanąć przed bramą; Dom Ogrodowy ma również garaż." data-values="4|1|1" data-labels="auta na posesji|garaż|miejsce przed bramą"><svg viewBox="0 0 24 24"><path d="m5 16 1.5-5h11l1.5 5M4 16h16v4H4z"/><circle cx="8" cy="18" r="1"/><circle cx="16" cy="18" r="1"/></svg></button>
-              <button class="hotspot garden-home" type="button" aria-label="Pokaż Dom Ogrodowy" aria-pressed="false" data-kicker="03 · w głębi ogrodu" data-name="Dom Ogrodowy" data-description="Drugi, niezależny dom daje części grupy więcej prywatności: sypialnię na dole, cztery łóżka na poddaszu, własną kuchnię, łazienkę i garaż." data-values="1|4|1|1" data-labels="sypialnia|łóżka na poddaszu|kuchnia|łazienka"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3z"/><path d="M7 10h10M9 20v-5h6v5"/></svg></button>
-              <button class="hotspot sauna" type="button" aria-label="Pokaż saunę" aria-pressed="false" data-kicker="04 · strefa regeneracji" data-name="Sauna" data-description="Osobny budynek sauny opalanej drewnem stoi dalej od domów. To naturalne przejście od wspólnego dnia do spokojniejszego wieczoru." data-values="1|1" data-labels="sauna na posesji|osobny budynek"><svg viewBox="0 0 24 24"><path d="M8 20c-3-3-2-7 1-10 0 3 2 4 3 5 1-4 5-6 3-12 6 5 6 12 1 17z"/></svg></button>
-              <button class="hotspot shelter" type="button" aria-label="Pokaż wiatę i ogród" aria-pressed="false" data-kicker="05 · najgłębiej w ogrodzie" data-name="Wiata i ogród" data-description="Zadaszona wiata, ognisko i grill tworzą miejsce wspólnych wieczorów. Prowadzą do niej granitowe ścieżki przez trawnik, pergolę z winoroślą, drzewa owocowe i świerkowy lasek." data-values="1|1|1|1" data-labels="zadaszona wiata|miejsce na ognisko|pergola|świerkowy lasek"><svg viewBox="0 0 24 24"><path d="M3 10h18L12 4zM5 10v10M19 10v10M9 20v-6h6v6"/></svg></button>
-              <span class="map-label end">świerkowy lasek · koniec ogrodu</span>
+            <div class="aerial-map" aria-label="Satellite image of the Benkowo property with interactive points">
+              <img src="/assets/benkowo-plan-satelitarny.jpg" alt="Satellite view of the long, tree-filled Benkowo property" width="330" height="1226" loading="eager" decoding="async">
+              <span class="map-label entry">Stoczek Street · gate</span>
+              <button class="hotspot home-main" type="button" aria-label="Show the Main House" aria-pressed="true" data-kicker="01 · by the street" data-name="Main House" data-description="The main shared house: five bedrooms, three bathrooms, a kitchen, living room and the glass-walled Aquarium facing the garden." data-values="5|3|1|1" data-labels="bedrooms|bathrooms|kitchen|living room + Aquarium"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></button>
+              <button class="hotspot parking" type="button" aria-label="Show parking" aria-pressed="false" data-kicker="02 · inside the property" data-name="Parking" data-description="Four cars fit comfortably inside the property. An additional car may be left outside the gate, and the Garden House also has a garage." data-values="4|1|1" data-labels="cars on the property|garage|space outside the gate"><svg viewBox="0 0 24 24"><path d="m5 16 1.5-5h11l1.5 5M4 16h16v4H4z"/><circle cx="8" cy="18" r="1"/><circle cx="16" cy="18" r="1"/></svg></button>
+              <button class="hotspot garden-home" type="button" aria-label="Show the Garden House" aria-pressed="false" data-kicker="03 · deeper in the garden" data-name="Garden House" data-description="The second independent house gives part of the group more privacy: a downstairs bedroom, four attic beds, its own kitchen, bathroom and garage." data-values="1|4|1|1" data-labels="bedroom|attic beds|kitchen|bathroom"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9H3z"/><path d="M7 10h10M9 20v-5h6v5"/></svg></button>
+              <button class="hotspot sauna" type="button" aria-label="Show the sauna" aria-pressed="false" data-kicker="04 · the sauna area" data-name="Sauna" data-description="The separate wood-fired sauna stands further away from the houses — a natural transition from a shared day to a quieter evening." data-values="1|1" data-labels="sauna on the property|separate building"><svg viewBox="0 0 24 24"><path d="M8 20c-3-3-2-7 1-10 0 3 2 4 3 5 1-4 5-6 3-12 6 5 6 12 1 17z"/></svg></button>
+              <button class="hotspot shelter" type="button" aria-label="Show the shelter and garden" aria-pressed="false" data-kicker="05 · at the far end of the garden" data-name="Shelter and garden" data-description="The covered shelter, firepit and barbecue create a place for evenings together. Granite paths lead there across the lawn, past the grapevine pergola, fruit trees and spruce grove." data-values="1|1|1|1" data-labels="covered shelter|firepit|pergola|spruce grove"><svg viewBox="0 0 24 24"><path d="M3 10h18L12 4zM5 10v10M19 10v10M9 20v-6h6v6"/></svg></button>
+              <span class="map-label end">spruce grove · koniec ogrodu</span>
             </div>
             <div class="explorer-panel" aria-live="polite">
-              <p class="explorer-kicker" id="explorer-kicker">01 · przy ulicy</p>
-              <h4 id="explorer-name">Dom Główny</h4>
-              <p class="explorer-description" id="explorer-description">Główne miejsce wspólnego pobytu: pięć sypialni, trzy łazienki, kuchnia, salon i przeszklone Akwarium wychodzące w stronę ogrodu.</p>
+              <p class="explorer-kicker" id="explorer-kicker">01 · by the street</p>
+              <h4 id="explorer-name">Main House</h4>
+              <p class="explorer-description" id="explorer-description">The main shared house: five bedrooms, three bathrooms, a kitchen, living room and the glass-walled Aquarium facing the garden.</p>
               <div class="explorer-stats" id="explorer-stats">
-                <div class="explorer-stat"><strong>5</strong><span>sypialni</span></div>
-                <div class="explorer-stat"><strong>3</strong><span>łazienki</span></div>
-                <div class="explorer-stat"><strong>1</strong><span>kuchnia</span></div>
-                <div class="explorer-stat"><strong>1</strong><span>salon + Akwarium</span></div>
+                <div class="explorer-stat"><strong>5</strong><span>bedrooms</span></div>
+                <div class="explorer-stat"><strong>3</strong><span>bathrooms</span></div>
+                <div class="explorer-stat"><strong>1</strong><span>kitchen</span></div>
+                <div class="explorer-stat"><strong>1</strong><span>living room + Akwarium</span></div>
               </div>
-              <p class="explorer-hint">Kliknij pozostałe punkty na mapie, aby poznać całą posesję.</p>
+              <p class="explorer-hint">Select the other points on the map to explore the entire property.</p>
             </div>
           </div>
         </div>
@@ -687,163 +687,163 @@
       <div class="shell">
         <div class="experience-head">
           <div>
-            <p class="eyebrow">Pomysły na pobyt</p>
-            <h2 class="display section-title" id="plans-title">Nie szukajcie planu od zera.</h2>
+            <p class="eyebrow">Ways to spend your stay</p>
+            <h2 class="display section-title" id="plans-title">Start with a plan, not a blank page.</h2>
           </div>
-          <p class="section-lead">Połącz filtry według pory roku, pogody, składu grupy i tempa. Wyniki zmieniają się od razu.</p>
+          <p class="section-lead">Combine season, weather, group and pace. Results update immediately.</p>
         </div>
         <div class="plan-filter-bar">
-          <div class="quick-filters" role="group" aria-label="Szybkie filtry planów">
-            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="children">Z dziećmi</button>
-            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="active">Aktywnie</button>
-            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="weather" data-value="rain">Na deszcz</button>
-            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="winter">Zimą</button>
-            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="car">Samochodem</button>
+          <div class="quick-filters" role="group" aria-label="Quick plan filters">
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="group" data-value="children">With children</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="character" data-value="active">Active</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="weather" data-value="rain">Rainy day</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="season" data-value="winter">Winter</button>
+            <button class="filter-chip" type="button" aria-pressed="false" data-dimension="transport" data-value="car">By car</button>
           </div>
-          <button class="more-filters" type="button" aria-haspopup="dialog" aria-controls="plan-filter-dialog">Więcej filtrów <span aria-hidden="true">＋</span></button>
+          <button class="more-filters" type="button" aria-haspopup="dialog" aria-controls="plan-filter-dialog">More filters <span aria-hidden="true">＋</span></button>
         </div>
         <div class="filter-summary">
-          <p class="filter-count" id="filter-count" aria-live="polite">7 planów</p>
-          <button class="clear-filters" type="button" hidden>Wyczyść filtry</button>
+          <p class="filter-count" id="filter-count" aria-live="polite">7 plans</p>
+          <button class="clear-filters" type="button" hidden>Clear filters</button>
         </div>
         <dialog class="filter-dialog" id="plan-filter-dialog" aria-labelledby="filter-dialog-title">
           <form class="filter-form" method="dialog">
-            <div class="filter-dialog-head"><h3 id="filter-dialog-title">Dopasuj plan dnia</h3><button class="filter-close" value="close" aria-label="Zamknij filtry">×</button></div>
+            <div class="filter-dialog-head"><h3 id="filter-dialog-title">Refine your day plan</h3><button class="filter-close" value="close" aria-label="Close filters">×</button></div>
             <div class="filter-groups">
-              <fieldset class="filter-group"><legend>Pora roku</legend><div class="filter-options">
-                <label class="filter-option"><input type="checkbox" data-dimension="season" value="spring"><span>Wiosna</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="season" value="summer"><span>Lato</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="season" value="autumn"><span>Jesień</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="season" value="winter"><span>Zima</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="season" value="year-round"><span>Cały rok</span></label>
+              <fieldset class="filter-group"><legend>Season</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="spring"><span>Spring</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="summer"><span>Summer</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="autumn"><span>Autumn</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="winter"><span>Winter</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="season" value="year-round"><span>Year-round</span></label>
               </div></fieldset>
-              <fieldset class="filter-group"><legend>Dla kogo</legend><div class="filter-options">
-                <label class="filter-option"><input type="checkbox" data-dimension="group" value="children"><span>Dzieci</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="group" value="intergenerational"><span>Międzypokoleniowo</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="group" value="adults"><span>Dorośli</span></label>
+              <fieldset class="filter-group"><legend>Group</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="group" value="children"><span>Children</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="group" value="intergenerational"><span>Multi-generational</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="group" value="adults"><span>Adults</span></label>
               </div></fieldset>
-              <fieldset class="filter-group"><legend>Charakter</legend><div class="filter-options">
-                <label class="filter-option"><input type="checkbox" data-dimension="character" value="active"><span>Aktywnie</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="character" value="calm"><span>Spokojnie</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="character" value="culture"><span>Kultura</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="character" value="food"><span>Jedzenie</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="character" value="nature"><span>Przyroda</span></label>
+              <fieldset class="filter-group"><legend>Style</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="active"><span>Active</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="calm"><span>Slow-paced</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="culture"><span>Culture</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="food"><span>Food</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="character" value="nature"><span>Nature</span></label>
               </div></fieldset>
-              <fieldset class="filter-group"><legend>Pogoda</legend><div class="filter-options">
-                <label class="filter-option"><input type="checkbox" data-dimension="weather" value="sun"><span>Słońce</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="weather" value="rain"><span>Deszcz</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="weather" value="snow"><span>Śnieg</span></label>
+              <fieldset class="filter-group"><legend>Weather</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="weather" value="sun"><span>Sun</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="weather" value="rain"><span>Rain</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="weather" value="snow"><span>Snow</span></label>
               </div></fieldset>
               <fieldset class="filter-group"><legend>Transport</legend><div class="filter-options">
-                <label class="filter-option"><input type="checkbox" data-dimension="transport" value="foot"><span>Pieszo</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="transport" value="bike"><span>Rower</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="transport" value="car"><span>Samochód</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="transport" value="foot"><span>On foot</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="transport" value="bike"><span>Bicycle</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="transport" value="car"><span>Car</span></label>
               </div></fieldset>
-              <fieldset class="filter-group"><legend>Czas</legend><div class="filter-options">
-                <label class="filter-option"><input type="checkbox" data-dimension="duration" value="short"><span>2–3 godziny</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="duration" value="half"><span>Pół dnia</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="duration" value="full"><span>Cały dzień</span></label>
+              <fieldset class="filter-group"><legend>Duration</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="duration" value="short"><span>2–3 hours</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="duration" value="half"><span>Half day</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="duration" value="full"><span>Full day</span></label>
               </div></fieldset>
-              <fieldset class="filter-group"><legend>Rezerwacja</legend><div class="filter-options">
-                <label class="filter-option"><input type="checkbox" data-dimension="reservation" value="none"><span>Bez rezerwacji</span></label>
-                <label class="filter-option"><input type="checkbox" data-dimension="reservation" value="required"><span>Wymagana</span></label>
+              <fieldset class="filter-group"><legend>Booking</legend><div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-dimension="reservation" value="none"><span>No booking</span></label>
+                <label class="filter-option"><input type="checkbox" data-dimension="reservation" value="required"><span>Required</span></label>
               </div></fieldset>
             </div>
-            <div class="filter-dialog-foot"><button class="clear-filters" type="button" hidden>Wyczyść</button><button class="filter-apply" value="close">Pokaż wyniki</button></div>
+            <div class="filter-dialog-foot"><button class="clear-filters" type="button" hidden>Clear</button><button class="filter-apply" value="close">Show results</button></div>
           </form>
         </dialog>
         <div class="plans" id="plan-results" aria-live="polite" aria-busy="false">
           <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm culture nature food" data-weather="sun rain snow" data-transport="foot" data-duration="half" data-reservation="none">
-            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Bialowiezabpn2.jpg" alt="Kompleks centrum dla odwiedzających Białowieskiego Parku Narodowego w Białowieży, widok z zewnątrz" loading="lazy" decoding="async"><span class="plan-badge">Muzeum i Park Pałacowy</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Bialowiezabpn2.jpg" target="_blank" rel="noopener">Fot. Jurij · CC BY-SA 2.5</a></figcaption></figure>
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Bialowiezabpn2.jpg" alt="The Białowieża National Park visitor centre complex in Białowieża, exterior view" loading="lazy" decoding="async"><span class="plan-badge">Museum and Palace Park</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Bialowiezabpn2.jpg" target="_blank" rel="noopener">Photo: Jurij · CC BY-SA 2.5</a></figcaption></figure>
             <div class="plan-body">
-              <a class="plan-title-link" href="/aktywnosci/rodzinnie-w-bialowiezy/"><h3>Pierwszy dzień w Białowieży bez pośpiechu</h3></a>
-              <dl class="plan-facts"><div><dt>Czas</dt><dd>3–5 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · także deszcz</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i grupy wielopokoleniowe</dd></div><div><dt>Transport</dt><dd>Pieszo w Białowieży</dd></div><div><dt>Rezerwacja</dt><dd>Zwykle nie</dd></div><div><dt>Tempo</dt><dd>Spokojne</dd></div></dl>
-              <p class="plan-description">Muzeum BPN, Park Pałacowy, przerwa i lokalny posiłek — bez przeładowania pierwszego dnia.</p>
-              <p class="plan-limit"><strong>Ważne:</strong> godziny muzeum i bieżące komunikaty BPN trzeba sprawdzić przed wyjściem.</p>
-              <div class="plan-video" data-youtube-video-id="Xxjg6Vpia-0" data-youtube-title="Materiał Białowieskiego Parku Narodowego" data-youtube-channel="Białowieski Park Narodowy" data-source-url="https://www.youtube.com/watch?v=Xxjg6Vpia-0" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
-                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Obejrzyj film: Materiał Białowieskiego Parku Narodowego">Obejrzyj film <span aria-hidden="true">▶</span></button></div>
-                <p class="youtube-meta"><strong>Film:</strong> Materiał Białowieskiego Parku Narodowego<br><span>Białowieski Park Narodowy · Zweryfikowano: 21.09.2026 · napisy: niezweryfikowane</span></p>
-                <p class="youtube-note">Film pokazuje region i jego przyrodę; przed wyjściem sprawdź aktualne godziny, komunikaty i zasady BPN.</p>
-                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=Xxjg6Vpia-0" target="_blank" rel="noopener">Otwórz w YouTube ↗</a>
+              <a class="plan-title-link" href="/en/activities/family-day-in-bialowieza/"><h3>A slow first day in Białowieża</h3></a>
+              <dl class="plan-facts"><div><dt>Time</dt><dd>3–5 hours</dd></div><div><dt>Season / weather</dt><dd>Year-round · rain-friendly</dd></div><div><dt>Best for</dt><dd>Families and mixed ages</dd></div><div><dt>Transport</dt><dd>On foot in Białowieża</dd></div><div><dt>Booking</dt><dd>Usually not</dd></div><div><dt>Pace</dt><dd>Slow</dd></div></dl>
+              <p class="plan-description">The National Park Museum, Palace Park, a break and a local meal — without overloading your first day.</p>
+              <p class="plan-limit"><strong>Check first:</strong> museum hours and current National Park notices.</p>
+              <div class="plan-video" data-youtube-video-id="Xxjg6Vpia-0" data-youtube-title="Official material from Białowieża National Park" data-youtube-channel="Białowieża National Park" data-source-url="https://www.youtube.com/watch?v=Xxjg6Vpia-0" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Official material from Białowieża National Park">Watch the video <span aria-hidden="true">▶</span></button></div>
+                <p class="youtube-meta"><strong>Video:</strong> Official material from Białowieża National Park<br><span>Białowieża National Park · Verified: 21 Sep 2026 · captions: not verified</span></p>
+                <p class="youtube-note">The video introduces the region and its nature; check current hours, notices and National Park rules before setting out.</p>
+                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=Xxjg6Vpia-0" target="_blank" rel="noopener">Open on YouTube ↗</a>
               </div>
-              <a class="plan-more" href="/aktywnosci/rodzinnie-w-bialowiezy/">Zobacz szkic planu</a>
+              <a class="plan-more" href="/en/activities/family-day-in-bialowieza/">See the draft plan</a>
             </div>
           </article>
           <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm nature" data-weather="sun" data-transport="car" data-duration="short" data-reservation="none">
-            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg" alt="Samiec żubra europejskiego sfotografowany w Puszczy Białowieskiej" loading="lazy" decoding="async"><span class="plan-badge">Żubry i łatwy spacer</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:European_bison_(Bison_bonasus)_male_Bia%C5%82owieza.jpg" target="_blank" rel="noopener">Fot. Charles J. Sharp · CC BY-SA 4.0</a></figcaption></figure>
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/European_bison_%28Bison_bonasus%29_male_Bia%C5%82owieza.jpg" alt="A male European bison photographed in Białowieża Forest" loading="lazy" decoding="async"><span class="plan-badge">Bison and an easy walk</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:European_bison_(Bison_bonasus)_male_Bia%C5%82owieza.jpg" target="_blank" rel="noopener">Photo: Charles J. Sharp · CC BY-SA 4.0</a></figcaption></figure>
             <div class="plan-body">
-              <a class="plan-title-link" href="/aktywnosci/rezerwat-pokazowy-zubrow/"><h3>Żubry i łatwy spacer z dziećmi</h3></a>
-              <dl class="plan-facts"><div><dt>Czas</dt><dd>2–3 godziny</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · bez ulewy</dd></div><div><dt>Dla kogo</dt><dd>Dzieci i seniorzy</dd></div><div><dt>Transport</dt><dd>Samochód</dd></div><div><dt>Rezerwacja</dt><dd>Bez rezerwacji indywidualnej</dd></div><div><dt>Tempo</dt><dd>Łatwe</dd></div></dl>
-              <p class="plan-description">Rezerwat Pokazowy Żubrów i spokojny spacer dopasowany do wieku dzieci.</p>
-              <p class="plan-limit"><strong>Ważne:</strong> psy są zakazane poza psami asystującymi; aktualne bilety i godziny publikuje BPN.</p>
-              <a class="plan-more" href="/aktywnosci/rezerwat-pokazowy-zubrow/">Zobacz szkic planu</a>
+              <a class="plan-title-link" href="/en/activities/bison-show-reserve/"><h3>Bison and an easy family walk</h3></a>
+              <dl class="plan-facts"><div><dt>Time</dt><dd>2–3 hours</dd></div><div><dt>Season / weather</dt><dd>Year-round · avoid heavy rain</dd></div><div><dt>Best for</dt><dd>Children and seniors</dd></div><div><dt>Transport</dt><dd>Car</dd></div><div><dt>Booking</dt><dd>No individual booking</dd></div><div><dt>Pace</dt><dd>Easy</dd></div></dl>
+              <p class="plan-description">The Bison Show Reserve and a calm walk adjusted to the children's age.</p>
+              <p class="plan-limit"><strong>Check first:</strong> dogs are not permitted except assistance dogs; verify current tickets and hours.</p>
+              <a class="plan-more" href="/en/activities/bison-show-reserve/">See the draft plan</a>
             </div>
           </article>
           <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm culture food" data-weather="rain sun snow" data-transport="foot car" data-duration="half" data-reservation="required">
-            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerkiew_%C5%9Bw._Miko%C5%82aja_w_Bia%C5%82owie%C5%BCy_-_September_2026.jpg" alt="Cerkiew św. Mikołaja w Białowieży widziana z zewnątrz we wrześniu 2026 roku" loading="lazy" decoding="async"><span class="plan-badge">Cerkiew św. Mikołaja</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Cerkiew_%C5%9Bw._Miko%C5%82aja_w_Bia%C5%82owie%C5%BCy_-_September_2026.jpg" target="_blank" rel="noopener">Fot. ChopZePolski.nieZJakucka · CC BY 4.0</a></figcaption></figure>
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerkiew_%C5%9Bw._Miko%C5%82aja_w_Bia%C5%82owie%C5%BCy_-_September_2026.jpg" alt="Exterior of St Nicholas Orthodox Church in Białowieża in September 2026" loading="lazy" decoding="async"><span class="plan-badge">St Nicholas Orthodox Church</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Cerkiew_%C5%9Bw._Miko%C5%82aja_w_Bia%C5%82owie%C5%BCy_-_September_2026.jpg" target="_blank" rel="noopener">Photo: ChopZePolski.nieZJakucka · CC BY 4.0</a></figcaption></figure>
             <div class="plan-body">
-              <a class="plan-title-link" href="/aktywnosci/hajnowka-na-niepogode/"><h3>Muzeum, cerkiew, sztuka i jedzenie</h3></a>
-              <dl class="plan-facts"><div><dt>Czas</dt><dd>4–6 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok · dobry na deszcz</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i dorośli</dd></div><div><dt>Transport</dt><dd>Pieszo + samochód</dd></div><div><dt>Rezerwacja</dt><dd>Częściowo wymagana</dd></div><div><dt>Charakter</dt><dd>Kultura i lokalność</dd></div></dl>
-              <p class="plan-description">Muzeum BPN, żywa cerkiew, autentyczne rękodzieło oraz regionalny posiłek.</p>
-              <p class="plan-limit"><strong>Ważne:</strong> wejście do cerkwi i wizyta w pracowni wymagają wcześniejszego potwierdzenia.</p>
-              <div class="plan-video" data-youtube-video-id="_Przr5SJ1dU" data-youtube-title="Hajnowskie Dni Muzyki Cerkiewnej — materiał organizatora" data-youtube-channel="Organizator Hajnowskich Dni Muzyki Cerkiewnej" data-source-url="https://www.youtube.com/watch?v=_Przr5SJ1dU" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
-                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Obejrzyj film: Hajnowskie Dni Muzyki Cerkiewnej — materiał organizatora">Obejrzyj film <span aria-hidden="true">▶</span></button></div>
-                <p class="youtube-meta"><strong>Film:</strong> Hajnowskie Dni Muzyki Cerkiewnej — materiał organizatora<br><span>Organizator Hajnowskich Dni Muzyki Cerkiewnej · Zweryfikowano: 21.09.2026 · napisy: niezweryfikowane</span></p>
-                <p class="youtube-note">Film przybliża lokalną tradycję muzyczną. Nie oznacza, że podczas pobytu odbywa się koncert — termin trzeba sprawdzić u organizatora.</p>
-                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=_Przr5SJ1dU" target="_blank" rel="noopener">Otwórz w YouTube ↗</a>
+              <a class="plan-title-link" href="/en/activities/hajnowka-on-a-rainy-day/"><h3>Museum, Orthodox church, art and food</h3></a>
+              <dl class="plan-facts"><div><dt>Time</dt><dd>4–6 hours</dd></div><div><dt>Season / weather</dt><dd>Year-round · good in rain</dd></div><div><dt>Best for</dt><dd>Families and adults</dd></div><div><dt>Transport</dt><dd>On foot + car</dd></div><div><dt>Booking</dt><dd>Partly required</dd></div><div><dt>Style</dt><dd>Culture and local life</dd></div></dl>
+              <p class="plan-description">The National Park Museum, a living Orthodox church, authentic craft and a regional meal.</p>
+              <p class="plan-limit"><strong>Check first:</strong> church access and studio visits require advance confirmation.</p>
+              <div class="plan-video" data-youtube-video-id="_Przr5SJ1dU" data-youtube-title="Hajnówka Days of Orthodox Church Music — organiser's video" data-youtube-channel="Organiser of the Hajnówka Days of Orthodox Church Music" data-source-url="https://www.youtube.com/watch?v=_Przr5SJ1dU" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Hajnówka Days of Orthodox Church Music — organiser's video">Watch the video <span aria-hidden="true">▶</span></button></div>
+                <p class="youtube-meta"><strong>Video:</strong> Hajnówka Days of Orthodox Church Music — organiser's video<br><span>Organiser of the Hajnówka Days of Orthodox Church Music · Verified: 21 Sep 2026 · captions: not verified</span></p>
+                <p class="youtube-note">The video introduces the local musical tradition. It does not mean a concert will take place during your stay — check dates with the organiser.</p>
+                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=_Przr5SJ1dU" target="_blank" rel="noopener">Open on YouTube ↗</a>
               </div>
-              <a class="plan-more" href="/aktywnosci/hajnowka-na-niepogode/">Zobacz szkic planu</a>
+              <a class="plan-more" href="/en/activities/hajnowka-on-a-rainy-day/">See the draft plan</a>
             </div>
           </article>
           <article class="plan" data-season="spring summer autumn" data-group="children intergenerational adults" data-character="calm nature" data-weather="sun" data-transport="car" data-duration="half" data-reservation="required">
-            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Kolejka-hajnowka-2.JPG" alt="Lokomotywa leśnej kolejki wąskotorowej w Hajnówce" loading="lazy" decoding="async"><span class="plan-badge">Kolejką do Topiła</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Kolejka-hajnowka-2.JPG" target="_blank" rel="noopener">Fot. Dariusz.Biegacz · CC BY-SA 3.0</a></figcaption></figure>
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Kolejka-hajnowka-2.JPG" alt="A forest narrow-gauge railway locomotive in Hajnówka" loading="lazy" decoding="async"><span class="plan-badge">Railway to Topiło</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Kolejka-hajnowka-2.JPG" target="_blank" rel="noopener">Photo: Dariusz.Biegacz · CC BY-SA 3.0</a></figcaption></figure>
             <div class="plan-body">
-              <a class="plan-title-link" href="/aktywnosci/kolejka-waskotorowa/"><h3>Kolejką przez Puszczę do Topiła</h3></a>
-              <dl class="plan-facts"><div><dt>Czas</dt><dd>Około 3 godzin + dojazd</dd></div><div><dt>Sezon / pogoda</dt><dd>Sezonowo · bez skrajnej pogody</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i grupy</dd></div><div><dt>Transport</dt><dd>Samochód + kolejka</dd></div><div><dt>Rezerwacja</dt><dd>Sprawdzenie kursu konieczne</dd></div><div><dt>Start</dt><dd>Hajnówka</dd></div></dl>
-              <p class="plan-description">Przejazd leśną kolejką, postój w Topile i powrót tą samą trasą.</p>
-              <p class="plan-limit"><strong>Ważne:</strong> kurs zależy od rozkładu, pogody i minimalnej liczby uczestników.</p>
-              <div class="plan-video" data-youtube-video-id="9dQVRzTnS88" data-youtube-title="Kolejka leśna do Topiła — materiał operatora" data-youtube-channel="Nadleśnictwo Hajnówka" data-source-url="https://www.youtube.com/watch?v=9dQVRzTnS88" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
-                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Obejrzyj film: Kolejka leśna do Topiła — materiał operatora">Obejrzyj film <span aria-hidden="true">▶</span></button></div>
-                <p class="youtube-meta"><strong>Film:</strong> Kolejka leśna do Topiła — materiał operatora<br><span>Nadleśnictwo Hajnówka · Zweryfikowano: 21.09.2026 · napisy: niezweryfikowane</span></p>
-                <p class="youtube-note">Film ma charakter informacyjny; aktualny rozkład, warunki kursu i bilety trzeba sprawdzić u operatora.</p>
-                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=9dQVRzTnS88" target="_blank" rel="noopener">Otwórz w YouTube ↗</a>
+              <a class="plan-title-link" href="/en/activities/narrow-gauge-forest-railway/"><h3>Forest railway to Topiło</h3></a>
+              <dl class="plan-facts"><div><dt>Time</dt><dd>About 3 hours + transfer</dd></div><div><dt>Season / weather</dt><dd>Seasonal · fair weather</dd></div><div><dt>Best for</dt><dd>Families and groups</dd></div><div><dt>Transport</dt><dd>Car + railway</dd></div><div><dt>Booking</dt><dd>Confirm the service</dd></div><div><dt>Start</dt><dd>Hajnówka</dd></div></dl>
+              <p class="plan-description">A forest railway ride, a stop at Topiło and return on the same route.</p>
+              <p class="plan-limit"><strong>Check first:</strong> services depend on the timetable, weather and minimum passenger numbers.</p>
+              <div class="plan-video" data-youtube-video-id="9dQVRzTnS88" data-youtube-title="Forest railway to Topiło — operator's video" data-youtube-channel="Hajnówka Forest District" data-source-url="https://www.youtube.com/watch?v=9dQVRzTnS88" data-verified-at="2026-09-21" data-embed-allowed="true" data-captions="unverified">
+                <div class="youtube-poster"><button class="youtube-trigger" type="button" aria-label="Watch the video: Forest railway to Topiło — operator's video">Watch the video <span aria-hidden="true">▶</span></button></div>
+                <p class="youtube-meta"><strong>Video:</strong> Forest railway to Topiło — operator's video<br><span>Hajnówka Forest District · Verified: 21 Sep 2026 · captions: not verified</span></p>
+                <p class="youtube-note">This is an information video; check the current timetable, operating conditions and tickets with the operator.</p>
+                <a class="youtube-fallback" href="https://www.youtube.com/watch?v=9dQVRzTnS88" target="_blank" rel="noopener">Open on YouTube ↗</a>
               </div>
-              <a class="plan-more" href="/aktywnosci/kolejka-waskotorowa/">Zobacz szkic planu</a>
+              <a class="plan-more" href="/en/activities/narrow-gauge-forest-railway/">See the draft plan</a>
             </div>
           </article>
           <article class="plan" data-season="spring summer autumn" data-group="adults" data-character="active nature" data-weather="sun" data-transport="bike car" data-duration="full" data-reservation="none">
-            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Poland_-_Topilo_Lake_with_dam.JPG" alt="Zbiornik i grobla w Topile" loading="lazy" decoding="async"><span class="plan-badge">Rowerem do Topiła</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Poland_-_Topilo_Lake_with_dam.JPG" target="_blank" rel="noopener">Fot. Merlin · CC BY 2.5</a></figcaption></figure>
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Poland_-_Topilo_Lake_with_dam.JPG" alt="The lake and dam at Topiło" loading="lazy" decoding="async"><span class="plan-badge">Cycling to Topiło</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Poland_-_Topilo_Lake_with_dam.JPG" target="_blank" rel="noopener">Photo: Merlin · CC BY 2.5</a></figcaption></figure>
             <div class="plan-body">
-              <a class="plan-title-link" href="/aktywnosci/rowerem-i-sauna/"><h3>Hajnówka–Topiło na rowerze</h3></a>
-              <dl class="plan-facts"><div><dt>Czas</dt><dd>5–7 godzin z przerwami</dd></div><div><dt>Sezon / pogoda</dt><dd>Wiosna–jesień · sucho</dd></div><div><dt>Dla kogo</dt><dd>Sprawni dorośli</dd></div><div><dt>Transport</dt><dd>Rower + dojazd autem</dd></div><div><dt>Rezerwacja</dt><dd>Bez rezerwacji</dd></div><div><dt>Dystans</dt><dd>42,5 km</dd></div></dl>
-              <p class="plan-description">Pełna pętla po nawierzchniach asfaltowych, żwirowych i gruntowych z postojem w Topile.</p>
-              <p class="plan-limit"><strong>Ważne:</strong> to nie jest łatwy rodzinny spacer; stan nawierzchni i pogoda realnie zmieniają trudność.</p>
-              <a class="plan-more" href="/aktywnosci/rowerem-i-sauna/">Zobacz szkic planu</a>
+              <a class="plan-title-link" href="/en/activities/cycling-and-sauna/"><h3>Hajnówka–Topiło by bicycle</h3></a>
+              <dl class="plan-facts"><div><dt>Time</dt><dd>5–7 hours with stops</dd></div><div><dt>Season / weather</dt><dd>Spring–autumn · dry</dd></div><div><dt>Best for</dt><dd>Fit adults</dd></div><div><dt>Transport</dt><dd>Bicycle + car transfer</dd></div><div><dt>Booking</dt><dd>No booking</dd></div><div><dt>Distance</dt><dd>42.5 km</dd></div></dl>
+              <p class="plan-description">A full loop on asphalt, gravel and unsurfaced roads, with a rest at Topiło.</p>
+              <p class="plan-limit"><strong>Check first:</strong> this is not an easy family outing; surface and weather substantially affect difficulty.</p>
+              <a class="plan-more" href="/en/activities/cycling-and-sauna/">See the draft plan</a>
             </div>
           </article>
           <article class="plan" data-season="spring summer autumn winter year-round" data-group="children intergenerational adults" data-character="calm culture food" data-weather="sun rain snow" data-transport="foot car" data-duration="half" data-reservation="required">
-            <div class="plan-media plan-media-missing" role="img" aria-label="Brak zweryfikowanego zdjęcia lokalnych produktów i rękodzieła"><span>Zdjęcie własne partnera za zgodą — do uzupełnienia</span></div>
+            <div class="plan-media plan-media-missing" role="img" aria-label="No rights-cleared photograph of local produce and craft is available"><span>Partner photograph with permission needed</span></div>
             <div class="plan-body">
-              <a class="plan-title-link" href="/aktywnosci/dzien-w-benkowie/"><h3>Lokalne smaki i rękodzieło</h3></a>
-              <dl class="plan-facts"><div><dt>Czas</dt><dd>3–5 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Cały rok</dd></div><div><dt>Dla kogo</dt><dd>Każda spokojna grupa</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Rezerwacja</dt><dd>Zależnie od pracowni</dd></div><div><dt>Charakter</dt><dd>Jedzenie i rzemiosło</dd></div></dl>
-              <p class="plan-description">Wizyta u potwierdzonego twórcy lub producenta, zakupy bezpośrednie i regionalny posiłek.</p>
-              <p class="plan-limit"><strong>Ważne:</strong> nie obiecujemy dostępności, warsztatów ani rabatu bez potwierdzenia partnera.</p>
-              <a class="plan-more" href="/aktywnosci/dzien-w-benkowie/">Zobacz szkic planu</a>
+              <a class="plan-title-link" href="/en/activities/a-day-at-benkowo/"><h3>Local food and genuine craft</h3></a>
+              <dl class="plan-facts"><div><dt>Time</dt><dd>3–5 hours</dd></div><div><dt>Season / weather</dt><dd>Year-round</dd></div><div><dt>Best for</dt><dd>Any slow-paced group</dd></div><div><dt>Transport</dt><dd>On foot or by car</dd></div><div><dt>Booking</dt><dd>Depends on the studio</dd></div><div><dt>Style</dt><dd>Food and craft</dd></div></dl>
+              <p class="plan-description">Visit a confirmed maker or producer, buy directly and finish with a regional meal.</p>
+              <p class="plan-limit"><strong>Check first:</strong> availability, workshops and discounts are never promised without the partner's confirmation.</p>
+              <a class="plan-more" href="/en/activities/a-day-at-benkowo/">See the draft plan</a>
             </div>
           </article>
           <article class="plan" data-season="winter" data-group="children intergenerational adults" data-character="active calm culture nature" data-weather="snow rain" data-transport="foot car" data-duration="half" data-reservation="none required">
-            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Dolina_Le%C5%9Bnej_Prawej-zima.jpg" alt="Zimowe rozlewisko rzeki Leśna Prawa w Puszczy Białowieskiej w 2010 roku" loading="lazy" decoding="async"><span class="plan-badge">Zimowy krajobraz Puszczy</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Dolina_Le%C5%9Bnej_Prawej-zima.jpg" target="_blank" rel="noopener">Fot. Stormbringer76 · CC BY 3.0</a></figcaption></figure>
+            <figure class="plan-media"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Dolina_Le%C5%9Bnej_Prawej-zima.jpg" alt="A winter floodplain of the Leśna Prawa river in Białowieża Forest in 2010" loading="lazy" decoding="async"><span class="plan-badge">A winter forest landscape</span><figcaption class="photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Dolina_Le%C5%9Bnej_Prawej-zima.jpg" target="_blank" rel="noopener">Photo: Stormbringer76 · CC BY 3.0</a></figcaption></figure>
             <div class="plan-body">
-              <a class="plan-title-link" href="/aktywnosci/biegowki-i-sauna/"><h3>Zimowy dzień z ciepłym finałem</h3></a>
-              <dl class="plan-facts"><div><dt>Czas</dt><dd>3–6 godzin</dd></div><div><dt>Sezon / pogoda</dt><dd>Zima · warunki zmienne</dd></div><div><dt>Dla kogo</dt><dd>Rodziny i dorośli</dd></div><div><dt>Transport</dt><dd>Pieszo lub samochód</dd></div><div><dt>Rezerwacja</dt><dd>Zależnie od aktywności</dd></div><div><dt>Plan B</dt><dd>Muzeum i kultura</dd></div></dl>
-              <p class="plan-description">Krótka aktywność dobrana do warunków, a potem spokojny powrót i ciepły wieczór w Benkowie.</p>
-              <p class="plan-limit"><strong>Ważne:</strong> nie gwarantujemy śniegu, przygotowanych tras ani dostępności sprzętu.</p>
-              <a class="plan-more" href="/aktywnosci/biegowki-i-sauna/">Zobacz szkic planu</a>
+              <a class="plan-title-link" href="/en/activities/cross-country-skiing-and-sauna/"><h3>A winter day with a warm finish</h3></a>
+              <dl class="plan-facts"><div><dt>Time</dt><dd>3–6 hours</dd></div><div><dt>Season / weather</dt><dd>Winter · conditions vary</dd></div><div><dt>Best for</dt><dd>Families and adults</dd></div><div><dt>Transport</dt><dd>On foot or by car</dd></div><div><dt>Booking</dt><dd>Activity-dependent</dd></div><div><dt>Plan B</dt><dd>Museum and culture</dd></div></dl>
+              <p class="plan-description">A short activity suited to conditions, followed by an unhurried return and a warm evening at Benkowo.</p>
+              <p class="plan-limit"><strong>Check first:</strong> snow, prepared trails and equipment availability are not guaranteed.</p>
+              <a class="plan-more" href="/en/activities/cross-country-skiing-and-sauna/">See the draft plan</a>
             </div>
           </article>
           <div class="no-results" hidden>
-            <h3>Nie ma planu spełniającego wszystkie warunki.</h3>
-            <p>Wyczyść część filtrów — pokażemy najbliższe sensowne propozycje.</p>
+            <h3>No plan matches every selected filter.</h3>
+            <p>Clear one or two filters to see the closest useful options.</p>
           </div>
         </div>
       </div>
@@ -853,24 +853,24 @@
       <div class="shell">
         <div class="location-grid">
           <div class="location-copy">
-            <p class="eyebrow">W samej Białowieży</p>
-            <h2 class="display section-title" id="location-title">Stoczek 178. Dom zaczyna się już od bramy.</h2>
-            <p>Benkowo leży przy ulicy Stoczek w Białowieży. Na mapie można sprawdzić dokładne położenie, zaplanować dojazd i zobaczyć najbliższe otoczenie.</p>
+            <p class="eyebrow">In Białowieża itself</p>
+            <h2 class="display section-title" id="location-title">Stoczek 178. The sense of home begins at the gate.</h2>
+            <p>Benkowo is located on Stoczek Street in Białowieża. Use the map to check the exact location, plan your journey and explore the immediate surroundings.</p>
             <p class="location-address">Stoczek 178<br>17-230 Białowieża</p>
-            <a class="button button-dark" href="https://www.google.com/maps/place/Benkowo+Bia%C5%82owie%C5%BCa+-+make+Yourself+at+home/@52.7002613,23.8717881,17z" target="_blank" rel="noopener">Wyznacz trasę w Mapach Google ↗</a>
+            <a class="button button-dark" href="https://www.google.com/maps/place/Benkowo+Bia%C5%82owie%C5%BCa+-+make+Yourself+at+home/@52.7002613,23.8717881,17z" target="_blank" rel="noopener">Get directions in Google Maps ↗</a>
           </div>
           <div class="map-frame">
-            <iframe src="https://www.google.com/maps?q=Benkowo+Bia%C5%82owie%C5%BCa&amp;output=embed" title="Mapa lokalizacji Benkowo Białowieża" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps?q=Benkowo+Bia%C5%82owie%C5%BCa&amp;output=embed" title="Map showing the location of Benkowo Białowieża" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-        <div class="street-views" aria-label="Widoki Benkowa od ulicy Stoczek">
+        <div class="street-views" aria-label="Views of Benkowo from Stoczek Street">
           <figure class="street-view">
-            <img src="/assets/street-view-ulica.webp" alt="Ulica Stoczek i wjazd na prywatną posesję Benkowo w Białowieży" width="900" height="600" loading="lazy" decoding="async">
-            <figcaption><span>Benkowo w rytmie ulicy Stoczek</span><small>Google Street View · maj 2025</small></figcaption>
+            <img src="/assets/street-view-ulica.webp" alt="Stoczek Street and the entrance to the private Benkowo property in Białowieża" width="900" height="600" loading="lazy" decoding="async">
+            <figcaption><span>Benkowo on Stoczek Street</span><small>Google Street View · May 2025</small></figcaption>
           </figure>
           <figure class="street-view">
-            <img src="/assets/street-view-dom.webp" alt="Drewniana elewacja Domu Głównego Benkowa widziana od ulicy Stoczek" width="900" height="600" loading="lazy" decoding="async">
-            <figcaption><span>Drewniany dom od strony ulicy</span><small>Google Street View · maj 2025</small></figcaption>
+            <img src="/assets/street-view-dom.webp" alt="The wooden façade of Benkowo's Main House seen from Stoczek Street" width="900" height="600" loading="lazy" decoding="async">
+            <figcaption><span>The wooden house from the street</span><small>Google Street View · May 2025</small></figcaption>
           </figure>
         </div>
       </div>
@@ -879,20 +879,20 @@
     <section class="availability" id="dostepnosc" aria-labelledby="availability-title">
       <div class="shell availability-grid">
         <div class="availability-copy">
-          <p class="eyebrow">Dostępność i rezerwacja</p>
-          <h2 class="display section-title" id="availability-title">Najpierw termin. Potem jasna cena za całość.</h2>
-          <p>Benkowo jest wynajmowane na wyłączność. Do czasu uruchomienia kalendarza online dostępność potwierdzamy osobiście pod numerem telefonu.</p>
+          <p class="eyebrow">Availability and booking</p>
+          <h2 class="display section-title" id="availability-title">First the dates. Then one clear price for the entire property.</h2>
+          <p>Benkowo is rented for exclusive use. Until the online calendar is available, we confirm availability personally by telephone.</p>
         </div>
         <form class="availability-form" id="enquiry-form">
           <div class="form-grid">
-            <div class="field"><label for="arrival">Przyjazd</label><input id="arrival" name="arrival" type="date" required></div>
-            <div class="field"><label for="departure">Wyjazd</label><input id="departure" name="departure" type="date" required></div>
-            <div class="field field-wide"><label for="guests">Liczba gości</label><select id="guests" name="guests"><option value="2–4">2–4 osoby</option><option value="5–8">5–8 osób</option><option value="9–12">9–12 osób</option><option value="13–14">13–14 osób</option></select></div>
+            <div class="field"><label for="arrival">Arrival</label><input id="arrival" name="arrival" type="date" required></div>
+            <div class="field"><label for="departure">Departure</label><input id="departure" name="departure" type="date" required></div>
+            <div class="field field-wide"><label for="guests">Number of guests</label><select id="guests" name="guests"><option value="2–4">2–4 guests</option><option value="5–8">5–8 guests</option><option value="9–12">9–12 guests</option><option value="13–14">13–14 guests</option></select></div>
           </div>
-          <button class="button button-light" type="submit">Przygotuj zapytanie</button>
+          <button class="button button-light" type="submit">Prepare an enquiry</button>
           <div class="form-result" id="form-result" hidden>
             <p id="result-text"></p>
-            <div class="result-actions"><button class="button button-light" id="copy-message" type="button">Kopiuj treść</button><a class="button button-outline" href="tel:+48602761082">Zadzwoń</a></div>
+            <div class="result-actions"><button class="button button-light" id="copy-message" type="button">Copy message</button><a class="button button-outline" href="tel:+48602761082">Call</a></div>
           </div>
         </form>
       </div>
@@ -901,23 +901,23 @@
     <section class="contact" id="kontakt" aria-labelledby="contact-title">
       <div class="shell contact-card">
         <div class="contact-main">
-          <p class="eyebrow">Porozmawiajmy o terminie</p>
-          <h2 class="display section-title" id="contact-title">Czy Benkowo jest wolne, gdy chcecie przyjechać?</h2>
+          <p class="eyebrow">Let us talk about your dates</p>
+          <h2 class="display section-title" id="contact-title">Is Benkowo available when you would like to come?</h2>
           <a class="phone" href="tel:+48602761082">+48 602 761 082</a>
         </div>
         <div class="contact-aside">
-          <div class="contact-item"><span>Adres</span><strong>Stoczek 178<br>17-230 Białowieża</strong></div>
-          <div class="contact-item"><span>Lokalizacja</span><a href="https://maps.google.com/?q=Stoczek+178%2C+17-230+Białowieża" target="_blank" rel="noopener">Otwórz w Mapach Google ↗</a></div>
-          <div class="contact-item"><span>Model wynajmu</span><strong>Całość na wyłączność jednej grupy</strong></div>
+          <div class="contact-item"><span>Address</span><strong>Stoczek 178<br>17-230 Białowieża</strong></div>
+          <div class="contact-item"><span>Location</span><a href="https://maps.google.com/?q=Stoczek+178%2C+17-230+Białowieża" target="_blank" rel="noopener">Open in Google Maps ↗</a></div>
+          <div class="contact-item"><span>Rental model</span><strong>The entire property for one group only</strong></div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="shell footer-inner"><span>© 2026 Benkowo Białowieża</span><span>Rodzinne miejsce w Białowieży od 20 lat</span><a href="tel:+48602761082">+48 602 761 082</a></div>
+    <div class="shell footer-inner"><span>© 2026 Benkowo Białowieża</span><span>A family place in Białowieża for 20 years</span><a href="tel:+48602761082">+48 602 761 082</a></div>
   </footer>
-  <a class="mobile-cta" href="tel:+48602761082">Zadzwoń i zapytaj o termin</a>
+  <a class="mobile-cta" href="tel:+48602761082">Call and ask about dates</a>
 
   <script>
     const body = document.body;
@@ -925,7 +925,7 @@
     menuButton.addEventListener('click', () => {
       const open = body.classList.toggle('menu-open');
       menuButton.setAttribute('aria-expanded', String(open));
-      menuButton.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+      menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
     document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => {
       body.classList.remove('menu-open');
@@ -1070,15 +1070,15 @@
     form.addEventListener('submit', event => {
       event.preventDefault();
       if (!form.reportValidity()) return;
-      enquiryText = `Dzień dobry, pytam o dostępność całego Benkowa od ${arrival.value} do ${departure.value} dla ${document.getElementById('guests').value}.`;
+      enquiryText = `Hello, I would like to ask about availability of the entire Benkowo property from ${arrival.value} to ${departure.value} for ${document.getElementById('guests').value}.`;
       resultText.textContent = enquiryText;
       result.hidden = false;
     });
     document.getElementById('copy-message').addEventListener('click', async event => {
       try {
         await navigator.clipboard.writeText(enquiryText);
-        event.currentTarget.textContent = 'Skopiowano';
-        setTimeout(() => { event.currentTarget.textContent = 'Kopiuj treść'; }, 1800);
+        event.currentTarget.textContent = 'Copied';
+        setTimeout(() => { event.currentTarget.textContent = 'Copy message'; }, 1800);
       } catch (_) {
         resultText.focus?.();
       }

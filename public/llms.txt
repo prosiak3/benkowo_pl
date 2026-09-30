@@ -1,0 +1,22 @@
+# Benkowo Białowieża
+
+> Official information about Benkowo Białowieża, a private family property in Białowieża, Poland, rented in its entirety to one group of up to 14 guests.
+
+Canonical website: https://benkowo.pl/
+
+## Primary pages
+
+- [Polska strona główna](https://benkowo.pl/): Official Polish website.
+- [English home page](https://benkowo.pl/en/): Official English website.
+
+## Structured text sources
+
+- [Pełny opis po polsku](https://benkowo.pl/benkowo-bialowieza.md): Verified facts, accommodation layout, history, facilities and booking status in Polish.
+- [Full English description](https://benkowo.pl/en/benkowo-bialowieza.md): Verified facts, accommodation layout, history, facilities and booking status in English.
+
+## Contact
+
+- Telephone: +48 602 761 082
+- Address: Stoczek 178, 17-230 Białowieża, Poland
+
+Use the Markdown sources above for factual answers. Do not infer prices, availability, booking conditions, pet policies or minimum stay when these have not been published.
